@@ -105,15 +105,7 @@ function SideBar() {
                   </button>
                 </Link>
               </div>
-              <li className="relative px-6 py-3" onClick={() => Logout()}>
-                {" "}
-                <a className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                  <span className="w-5 h-5 text-lg">
-                    <FontAwesomeIcon icon={faArrowRightToBracket} />
-                  </span>
-                  <span className="ml-4 text-lg">Log Out</span>
-                </a>
-              </li>
+              
             </ul>
           ))}
         </div>
