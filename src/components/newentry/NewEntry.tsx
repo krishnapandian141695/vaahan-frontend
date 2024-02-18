@@ -16,15 +16,15 @@ function NewEntry() {
   const [addCertificate] = useAddCertificateMutation();
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false)
- 
- 
- 
+
+
+
   function closeModal() {
     setIsOpen(false)
     navigate("/certificate-list");
   }
- 
- 
+
+
   const {
     handleSubmit,
     control,
@@ -48,7 +48,7 @@ function NewEntry() {
         alert("Certificate Title already exists");
       } else {
         setIsOpen(true)
-         //navigate("/certificate-list");
+        //navigate("/certificate-list");
       }
     } catch (error) {
       console.error("Error making POST request:", error);
@@ -61,7 +61,7 @@ function NewEntry() {
       <div className="w-full">
         <TopBar />
         <main className="h-full  overflow-y-auto">
-         
+        
 
         <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -93,11 +93,11 @@ function NewEntry() {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                   🎉 Certificate Generated successfully 🎉
+                  🎉 Certificate Generated successfully 🎉
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                     Your Certificate Has Been Created Successfully. Please
+                    Your Certificate Has Been Created Successfully. Please
                       Download the Certificate From Certificate List Page
                     </p>
                   </div>
@@ -141,9 +141,9 @@ function NewEntry() {
 
             <div className="bg-white">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="p-6">
-                  <div className="mb-4 flex flex-col gap-6 xl:flex-row">
-                    <div className="w-full xl:w-1/2">
+                <div className="p-14">
+                  <div className="mb-4  gap-6 xl:flex-row">
+                    <div className="w-full mb-4">
                       <label className="mb-2.5 block text-blac">Date</label>
                       <Controller
                         name="date"
@@ -165,7 +165,7 @@ function NewEntry() {
                       )}
                     </div>
 
-                    <div className="w-full xl:w-1/2">
+                    <div className="w-full mb-4">
                       <label className="mb-2.5 block text-blac">
                         Vehicle Reg No
                       </label>
@@ -189,8 +189,8 @@ function NewEntry() {
                       )}
                     </div>
                   </div>
-                  <div className="mb-4 flex flex-col gap-6 xl:flex-row">
-                    <div className="w-full xl:w-1/2">
+                  <div className="mb-4  gap-6 ">
+                    <div className="w-full mb-4">
                       <label className="mb-2.5 block text-blac">
                         Vehicle Manufacturing Year
                       </label>
@@ -214,7 +214,7 @@ function NewEntry() {
                       )}
                     </div>
 
-                    <div className="w-full xl:w-1/2">
+                    <div className="w-full mb-4">
                       <label className="mb-2.5 block text-blac">
                         Chassis No
                       </label>
@@ -238,6 +238,31 @@ function NewEntry() {
                       )}
                     </div>
                   </div>
+                
+                  <div className="mb-4">
+                    <label className="mb-2 block text-blac">
+                      Dealer Name: <span className="text-meta-1">*</span>
+                    </label>
+                    <Controller
+                      name="dealername"
+                      control={control}
+                      rules={{ required: true }}
+                      render={({ field }) => (
+                        <input
+                          type="text"
+                          placeholder="Enter Value"
+                          {...field}
+                          className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                        />
+                      )}
+                    />
+                    {errors.dealername?.type === "required" && (
+                      <p role="alert" className="error">
+                        Field is required
+                      </p>
+                    )}
+                  </div>
+
 
                   <div className="mb-4">
                     <label className="mb-2 block text-blac">
@@ -382,52 +407,27 @@ function NewEntry() {
                   </div>
 
                   <div className="mb-4">
-                    <label className="mb-2 block text-blac">RTO:</label>
-                    <div className="relative z-20 bg-transparent dark:bg-form-input">
-                      <Controller
-                        name="rto"
-                        control={control}
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                          <select
-                            {...field}
-                            className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          >
-                            <option value="">Select Your RTO</option>
-                            {tamilNaduRTOs.map((rto) => (
-                              <option value={rto.rtonum} key={rto.rtonum}>
-                                {rto.rtonum} - {rto.rtoarea}
-                              </option>
-                            ))}
-                          </select>
-                        )}
-                      />
-                      {errors.rto?.type === "required" && (
-                        <p role="alert" className="error">
-                          Field is required
-                        </p>
+                    <label className="mb-2 block text-blac">
+                      RTO
+                    </label>
+                    <Controller
+                      name="rtonum"
+                      control={control}
+                      rules={{ required: true }}
+                      render={({ field }) => (
+                        <input
+                          type="text"
+                          placeholder="Enter Value"
+                          {...field}
+                          className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                        />
                       )}
-
-                      <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
-                        <svg
-                          className="fill-current"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g opacity="0.8">
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                              fill=""
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                    </div>
+                    />
+                    {errors.rtonum?.type === "required" && (
+                      <p role="alert" className="error">
+                        Field is required
+                      </p>
+                    )}
                   </div>
 
                   <div className="mb-4">
@@ -454,130 +454,7 @@ function NewEntry() {
                     )}
                   </div>
 
-                  <div>
-                    <div>
-                      <h3 className="text-black font-bold mt-8">
-                        Old Certificate Details (Optional)
-                      </h3>
-                    </div>
-                    <div>
-                      <div className="mb-4 mt-4">
-                        <label className="mb-2 block text-blac">
-                          Old Certificate Number :
-                        </label>
-                        <Controller
-                          name="oldcertificatenum"
-                          control={control}
-                          rules={{ required: false }}
-                          render={({ field }) => (
-                            <input
-                              type="text"
-                              placeholder="Enter Value"
-                              {...field}
-                              className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                            />
-                          )}
-                        />
-                        {errors.oldcertificatenum?.type === "required" && (
-                          <p role="alert" className="error">
-                            Field is required
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <label className="mb-2 block text-blac">RTO:</label>
-                    <div className="relative z-20 bg-transparent dark:bg-form-input">
-                      <Controller
-                        name="rto"
-                        control={control}
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                          <select
-                            {...field}
-                            className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          >
-                            <option value="">Select Your RTO</option>
-                            {tamilNaduRTOs.map((rto) => (
-                              <option value={rto.rtonum} key={rto.rtonum}>
-                                {rto.rtonum} - {rto.rtoarea}
-                              </option>
-                            ))}
-                          </select>
-                        )}
-                      />
-                      {errors.rto?.type === "required" && (
-                        <p role="alert" className="error">
-                          Field is required
-                        </p>
-                      )}
-                      <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
-                        <svg
-                          className="fill-current"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g opacity="0.8">
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                              fill=""
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mb-4 w-full">
-                    <div className="w-full ">
-                      <label className="mb-2.5 block text-blac">Date</label>
-                      <Controller
-                        name="date"
-                        control={control}
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                          <input
-                            type="text"
-                            placeholder="Enter Value"
-                            {...field}
-                            className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          />
-                        )}
-                      />
-                      {errors.date?.type === "required" && (
-                        <p role="alert" className="error">
-                          Field is required
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="w-full mt-4">
-                      <label className="mb-2 block text-blac">Remarks :</label>
-                      <Controller
-                        name="remarks"
-                        control={control}
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                          <input
-                            type="text"
-                            placeholder="Enter Value"
-                            {...field}
-                            className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          />
-                        )}
-                      />
-                      {errors.remarks?.type === "required" && (
-                        <p role="alert" className="error">
-                          Field is required
-                        </p>
-                      )}
-                    </div>
-                  </div>
+                
 
                   <div className="flex justify-items-center items-center w-full">
                     <h3 className="text-black font-bold mt-8 text-center">
@@ -599,6 +476,7 @@ function NewEntry() {
                               type="text"
                               placeholder="Enter Value"
                               {...field}
+                              
                               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                             />
                           )}

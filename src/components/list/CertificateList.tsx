@@ -143,7 +143,7 @@ function CertificateList() {
                               setId(result.id);
                             }}
                           >
-                            <FontAwesomeIcon icon={faDownload} /> Download Pdf
+                            <FontAwesomeIcon icon={faDownload} /> Print
                           </button>
                           {id === result.id && (
                             <div
