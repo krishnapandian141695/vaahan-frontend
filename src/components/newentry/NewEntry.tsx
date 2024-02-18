@@ -23,6 +23,7 @@ function NewEntry() {
     setIsOpen(false)
     navigate("/certificate-list");
   }
+ 
 
 
   const {
@@ -470,6 +471,7 @@ function NewEntry() {
                         <Controller
                           name="red20mm"
                           control={control}
+                          defaultValue="0.00"
                           rules={{ required: true }}
                           render={({ field }) => (
                             <input
@@ -497,6 +499,7 @@ function NewEntry() {
                         <Controller
                           name="white20mm"
                           control={control}
+                          defaultValue="0.00"
                           rules={{ required: true }}
                           render={({ field }) => (
                             <input
@@ -524,6 +527,7 @@ function NewEntry() {
                         <Controller
                           name="red50mm"
                           control={control}
+                          defaultValue="0.00"
                           rules={{ required: true }}
                           render={({ field }) => (
                             <input
@@ -550,6 +554,7 @@ function NewEntry() {
                         <Controller
                           name="white50mm"
                           control={control}
+                          defaultValue="0.00"
                           rules={{ required: true }}
                           render={({ field }) => (
                             <input
@@ -578,6 +583,7 @@ function NewEntry() {
                         <Controller
                           name="yellow50mm"
                           control={control}
+                          defaultValue="0.00"
                           rules={{ required: true }}
                           render={({ field }) => (
                             <input
@@ -605,6 +611,7 @@ function NewEntry() {
                           name="yellow80circularreflector"
                           control={control}
                           rules={{ required: true }}
+                          defaultValue="0.00"
                           render={({ field }) => (
                             <input
                               type="text"
@@ -634,6 +641,7 @@ function NewEntry() {
                           name="white80circularreflector"
                           control={control}
                           rules={{ required: true }}
+                          defaultValue="0.00"
                           render={({ field }) => (
                             <input
                               type="text"
@@ -661,6 +669,7 @@ function NewEntry() {
                           name="white80circularreflector"
                           control={control}
                           rules={{ required: true }}
+                          defaultValue="0.00"
                           render={({ field }) => (
                             <input
                               type="text"
@@ -690,9 +699,10 @@ function NewEntry() {
                           name="class3"
                           control={control}
                           rules={{ required: true }}
+                          defaultValue="0.00"
                           render={({ field }) => (
                             <input
-                              type="text"
+                              type="checkbox"
                               placeholder="Enter Value"
                               {...field}
                               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
@@ -716,9 +726,10 @@ function NewEntry() {
                           name="class4"
                           control={control}
                           rules={{ required: true }}
+                          defaultValue="0.00"
                           render={({ field }) => (
                             <input
-                              type="text"
+                              type="checkbox"
                               placeholder="Enter Value"
                               {...field}
                               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
