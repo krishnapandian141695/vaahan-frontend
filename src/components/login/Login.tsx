@@ -140,14 +140,7 @@ const Login = () => {
                     Forgot your password?
                   </a>
                 </p>
-                <p className="mt-1">
-                  <Link
-                    className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                    to="./Register"
-                  >
-                    Create account
-                  </Link>
-                </p>
+                
               </div>
             </div>
           </div>

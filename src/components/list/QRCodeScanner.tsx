@@ -38,7 +38,7 @@ const QRCodeScanner = (props) => {
   useEffect(() => {
     function navigateAfterPrint() {
       // Navigate to another page after print
-
+      window.close()
      // navigate("/certificate-list"); // Replace with the actual URL
     }
 
@@ -577,7 +577,7 @@ const QRCodeScanner = (props) => {
                 textAlign: "left",
               }}
             >
-              Vehicle Model : AL 1612/4210WB
+              Vehicle Model : {data?.data?.vehiclemodel}
             </p>
           </td>
           <td
@@ -1316,7 +1316,7 @@ xml:space="preserve"
                   <span></span>
                 </p>
                 <img
-                  style={{ width: "100%", height: "142px" }}
+                  style={{ width: "3.4in", height: "142px" }}
                   src={data?.data?.leftimage}
                 />
                 <p />
@@ -1345,7 +1345,7 @@ xml:space="preserve"
                   <span></span>
                 </p>
                 <img
-                  style={{ width: "100%", height: "142px" }}
+                  style={{ width: "3.4in", height: "142px" }}
                   src={data?.data?.rightimage}
                 />
                 <p />
