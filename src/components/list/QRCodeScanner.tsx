@@ -215,7 +215,9 @@ const QRCodeScanner = (props) => {
           height: "max-content",
         }}
       >
-        <QRCode value={qrData} size={150} />
+       { //<QRCode value={qrData} size={150} />
+       }
+       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/QR_Code_Example.svg/1200px-QR_Code_Example.svg.png" sizes="150" />
       </div>
     </div>
 
@@ -254,7 +256,7 @@ const QRCodeScanner = (props) => {
           <p style={{ marginBottom: "-10px" }}>
             The Regional Transport Office
           </p>{" "}
-          <br /> TN12 POONAMALLE
+          <br /> {data?.data?.rto}
         </p>
       </div>
       <div>
@@ -1437,7 +1439,7 @@ xml:space="preserve"
                 textAlign: "left",
               }}
             >
-              For APPU (RMAPMMS12)
+              For {data?.data?.dealername}
             </p>
             <p style={{ textIndent: "0pt", textAlign: "left" }}>
               <br />
