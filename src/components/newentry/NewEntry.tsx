@@ -699,7 +699,7 @@ function NewEntry() {
                           name="class3"
                           control={control}
                           rules={{ required: true }}
-                          defaultValue="0.00"
+                          defaultValue="null"
                           render={({ field }) => (
                             <input
                               type="checkbox"
@@ -723,7 +723,7 @@ function NewEntry() {
                           Class 4 :
                         </label>
                         <Controller
-                          name="class4"
+                          name="null"
                           control={control}
                           rules={{ required: true }}
                           defaultValue="0.00"
