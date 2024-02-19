@@ -35,13 +35,13 @@ function NewEntry() {
   const onSubmit = async (data) => {
     console.log(data, "data");
     const dataFrom = data ;
-    console.log('datafrom data form',dataFrom)
+    console.log('datafrom data form',data.dealername)
     const formData = new FormData();  
     for (const key in data) {
       formData.append(key, data[key]);
       console.log(formData)
     }
-    console.log('data from formData Faizal',formData)
+    console.log('data from formData Faizal',data)
     try {
       const result = await addCertificate(formData);
       console.log(result, "result252345234");
@@ -263,8 +263,7 @@ function NewEntry() {
                       </p>
                     )}
                   </div>
-
-
+                   
                   <div className="mb-4">
                     <label className="mb-2 block text-blac">
                       Engine No : <span className="text-meta-1">*</span>
@@ -412,7 +411,7 @@ function NewEntry() {
                       RTO
                     </label>
                     <Controller
-                      name="rtonum"
+                      name="rto"
                       control={control}
                       rules={{ required: true }}
                       render={({ field }) => (
@@ -436,7 +435,7 @@ function NewEntry() {
                       Hologram Number:
                     </label>
                     <Controller
-                      name="hologramno"
+                      name="hologramnum"
                       control={control}
                       rules={{ required: true }}
                       render={({ field }) => (
