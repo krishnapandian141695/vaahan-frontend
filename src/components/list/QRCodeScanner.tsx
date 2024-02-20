@@ -67,11 +67,11 @@ const QRCodeScanner = (props) => {
     }
 
     // // Initiate the print operation if it hasn't occurred already
-    // if (!printed) {
-    //   setTimeout(() => {
-    //     window.print();
-    //   }, 3000);
-    // }
+    if (!printed) {
+      setTimeout(() => {
+        window.print();
+      }, 3000);
+    }
 
     // Clean up the event listener when the component unmounts
     return () => {
