@@ -128,6 +128,17 @@ const QRCodeScanner = (props) => {
     pdf.save("certificate.pdf");
   };
 
+  const fomateData = (date) => {
+    const dynamicDate = new Date(date)
+    const day = dynamicDate.getDate().toString().padStart(2, "0");
+    const month = (dynamicDate.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-based
+    const year = dynamicDate.getFullYear();
+
+    // Format date as dd/mm/yyyy
+    const formattedDate = `${day}/${month}/${year}`;
+    return formattedDate
+  };
+
   return (
     <div
       id="certificateContent"
@@ -297,7 +308,7 @@ const QRCodeScanner = (props) => {
                   textAlign: "right",
                 }}
               >
-                Fitment Date: <span className="h2">{data?.data?.date}</span>
+                Fitment Date: <span className="h2">{fomateData(data?.data?.date)}</span>
               </p>
             </div>
           </div>
@@ -435,7 +446,7 @@ const QRCodeScanner = (props) => {
                     className="s6"
                     style={{ textIndent: "0pt", textAlign: "left" }}
                   >
-                    Registration Year: {data?.data?.date}
+                    Registration Year: {fomateData(data?.data?.date)}
                   </p>
                 </td>
                 <td
@@ -707,7 +718,7 @@ const QRCodeScanner = (props) => {
                     style={{
                       maxWidth: "50%",
                       maxHeight: "12.5in",
-                      width : "50%",
+                      width: "50%",
                       height: "292.5px",
                       borderTopStyle: "solid",
                       borderTopWidth: "1px",
