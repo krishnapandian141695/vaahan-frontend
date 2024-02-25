@@ -67,11 +67,11 @@ const QRCodeScanner = (props) => {
     }
 
     // // Initiate the print operation if it hasn't occurred already
-    if (!printed) {
-      setTimeout(() => {
-        window.print();
-      }, 3000);
-    }
+    // if (!printed) {
+    //   setTimeout(() => {
+    //     window.print();
+    //   }, 3000);
+    // }
 
     // Clean up the event listener when the component unmounts
     return () => {
@@ -129,14 +129,14 @@ const QRCodeScanner = (props) => {
   };
 
   const fomateData = (date) => {
-    const dynamicDate = new Date(date)
+    const dynamicDate = new Date(date);
     const day = dynamicDate.getDate().toString().padStart(2, "0");
     const month = (dynamicDate.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-based
     const year = dynamicDate.getFullYear();
 
     // Format date as dd/mm/yyyy
     const formattedDate = `${day}/${month}/${year}`;
-    return formattedDate
+    return formattedDate;
   };
 
   return (
@@ -155,7 +155,7 @@ const QRCodeScanner = (props) => {
             type="text/css"
             dangerouslySetInnerHTML={{
               __html:
-                ' * {margin:0; padding:0; text-indent:0; }\n         .s1 { color: #525252; font-family:"Nunito", sans-serif; font-weight: 700; font-style: normal; text-decoration: none; font-size: 25px; }\n         .s2 { color: black; font-family:"Nunito", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16px; }\n         .s3 { color: #525252; font-family:"Lucida Sans Unicode", sans-serif; font-style: normal; font-weight: 600; text-decoration: none; font-size: 19px; }\n         p { color: black; font-family:"Times New Roman", Times, serif; line-height: 1;font-style: normal; font-weight: bold; text-decoration: none; font-size: 14px; margin0px;}\n         .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         h1 { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14pt; }\n         .h2 { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }\n         .s5 { color: #000000;  font-family: "Times New Roman", Times, serif; padding:5px; font-size: 17px !important;display: flex;padding-top: 5px !important;align-items: center; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10.5pt; }\n         .s6 { color: #000000;font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14px; }\n         .s7 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13px; }\n         .s8 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px;}\n         .s9 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         .s10 { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         .a { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         table, tbody {vertical-align: top; overflow: visible; }\n  .tabConte:{margin-bottom: 10px}    ',
+                " * {margin:0; padding:0; text-indent:0; }\n         .s1 {     font-family: 'Inter';color: #242424;font-weight: 200; font-style: normal; text-decoration: none; font-size: 29px; }\n         .s2 {  font-family: 'Inter';color: #000000d1; font-style: normal; font-weight: 200; text-decoration: none; font-size: 19px; }\n         .s3 {font-family: 'Inter'; color:#000000d1;     font-weight: 200; text-decoration: none; font-size: 20px; }\n         p { color: black;  line-height: 1;font-style: normal;text-decoration: none; }\n         .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         h1 { color: black; font-style: normal; font-weight: 400; text-decoration: none; font-size: 20px; }\n         .h2 { color: black; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; }\n         .s5 { color: #000000; font-style: normal; font-weight: 700; text-decoration: none; }\n         .s6 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14px; }\n         .s7 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14px; }\n         .s8 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none;}\n         .s9 { color: #000000; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         .s10 { color: black; font-style: normal; font-weight: normal; text-decoration: none; 15px; }\n         .a { color: black; font-style: normal; font-weight: normal; text-decoration: none; }\n         table, tbody {vertical-align: top; overflow: visible; }\n  .tabConte:{margin-bottom: 10px}    ",
             }}
           />
           <p style={{ textIndent: "0pt", textAlign: "left" }}>
@@ -185,20 +185,16 @@ const QRCodeScanner = (props) => {
                 style={{
                   width: "max-content",
                   float: "right",
-                  marginRight: "52px",
+                  marginRight: "40px",
                 }}
               >
                 <p
                   className="s1"
                   style={{
                     paddingTop: "1pt",
-                    paddingLeft: "67pt",
                     textIndent: "0pt",
                     textAlign: "center",
                     lineHeight: "35px",
-                    fontFamily: "Nunito, sans-serif",
-                    fontWeight: "bold",
-                    color: "black",
                   }}
                 >
                   VEHICLE CONSPICUITY ONLINE MIS CERTIFICATE
@@ -206,7 +202,7 @@ const QRCodeScanner = (props) => {
                 <p
                   className="s2"
                   style={{
-                    paddingTop: "5pt",
+                    paddingTop: "10px",
                     paddingLeft: "67pt",
                     textIndent: "0pt",
                     textAlign: "center",
@@ -219,7 +215,7 @@ const QRCodeScanner = (props) => {
                   className="s3"
                   style={{
                     paddingTop: "3pt",
-                    paddingLeft: "67pt",
+                    // paddingLeft: "67pt",
                     textIndent: "0pt",
                     textAlign: "center",
                     lineHeight: "35px",
@@ -232,9 +228,9 @@ const QRCodeScanner = (props) => {
             <div
               style={{
                 display: "flex",
-                width: "13.9%",
+                // width: "13.9%",
                 justifyContent: "end",
-                height: "max-content",
+                height: "170px",
               }}
             >
               {
@@ -242,7 +238,6 @@ const QRCodeScanner = (props) => {
               }
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/QR_Code_Example.svg/1200px-QR_Code_Example.svg.png"
-                sizes="150"
               />
             </div>
           </div>
@@ -260,35 +255,28 @@ const QRCodeScanner = (props) => {
             <div>
               <p
                 style={{
-                  paddingTop: "4pt",
-                  paddingLeft: "6pt",
                   textIndent: "0pt",
                   textAlign: "left",
+                  lineHeight: "1.5",
                 }}
               >
                 To:
               </p>
-              <p style={{ textIndent: "0pt", textAlign: "left" }}></p>
-              <p style={{ textIndent: "0pt", textAlign: "left" }}></p>
               <p
                 style={{
-                  paddingTop: "4pt",
-                  paddingLeft: "6pt",
                   textIndent: "0pt",
                   lineHeight: "145%",
                   textAlign: "left",
+                  lineHeight: "1.5",
                 }}
               >
-                <p style={{ marginBottom: "-10px" }}>
-                  The Regional Transport Office
-                </p>{" "}
-                <br /> {data?.data?.rto}
+                <p>The Regional Transport Office</p>
+                <p style={{ marginTop: "5px" }}> {data?.data?.rto}</p>
               </p>
             </div>
             <div>
               <h1
                 style={{
-                  paddingLeft: "6pt",
                   textIndent: "0pt",
                   textAlign: "left",
                 }}
@@ -297,18 +285,29 @@ const QRCodeScanner = (props) => {
               </h1>
             </div>
             <div>
-              <p style={{ textIndent: "0pt", textAlign: "right" }}>
-                Certificate No:{" "}
-                <span className="h2">{data?.data?.certificateno}</span>
+              <p
+                style={{
+                  textIndent: "0pt",
+                  textAlign: "right",
+                  fontWeight: "bold",
+                }}
+              >
+                Certificate No:
+                <span style={{ fontWeight: "normal" }}>{data?.data?.certificateno}</span>
               </p>
               <p
                 style={{
                   paddingTop: "4pt",
                   textIndent: "0pt",
                   textAlign: "right",
+                  lineHeight: "1.5",
+                  fontWeight: "bold",
                 }}
               >
-                Fitment Date: <span className="h2">{fomateData(data?.data?.date)}</span>
+                Fitment Date:{" "}
+                <span style={{ fontWeight: "normal" }}>
+                  {fomateData(data?.data?.date)}
+                </span>
               </p>
             </div>
           </div>
@@ -719,7 +718,7 @@ const QRCodeScanner = (props) => {
                       maxWidth: "50%",
                       maxHeight: "12.5in",
                       width: "50%",
-                      height: "292.5px",
+                      height: "268.5px",
                       borderTopStyle: "solid",
                       borderTopWidth: "1px",
                       borderLeftStyle: "solid",
@@ -1009,7 +1008,7 @@ const QRCodeScanner = (props) => {
               <tr style={{ display: "flex", marginTop: "4px" }}>
                 <td
                   style={{
-                    width: "30%",
+                    width: "20%",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -1034,7 +1033,7 @@ const QRCodeScanner = (props) => {
                 </td>
                 <td
                   style={{
-                    width: "70%",
+                    width: "80%",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -1063,7 +1062,7 @@ const QRCodeScanner = (props) => {
               <tr style={{ display: "flex" }}>
                 <td
                   style={{
-                    width: "30%",
+                    width: "20%",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -1091,7 +1090,7 @@ const QRCodeScanner = (props) => {
                 </td>
                 <td
                   style={{
-                    width: "35%",
+                    width: "40%",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -1119,7 +1118,7 @@ const QRCodeScanner = (props) => {
                 </td>
                 <td
                   style={{
-                    width: "35%",
+                    width: "40%",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -1180,6 +1179,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
+                    borderWidth : "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1198,6 +1198,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
+                    borderWidth : "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1216,6 +1217,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
+                    borderWidth : "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1249,12 +1251,13 @@ const QRCodeScanner = (props) => {
                   </p>
                 </td>
               </tr>
-              <tr style={{ height: "150px", display: "flex" }}>
+              <tr style={{ height: "180px", display: "flex" }}>
                 <td
                   style={{
                     width: "25%",
-                    height: "147px",
+                    height: "180px",
                     border: "1px solid #000000",
+                    borderWidth : "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1268,7 +1271,7 @@ const QRCodeScanner = (props) => {
                     <span></span>
                   </p>
                   <img
-                    style={{ width: "100%", height: "140px" }}
+                    style={{ width: "100%", height: "168px" }}
                     src={data?.data?.frontimage}
                     alt="Front Image"
                   />
@@ -1277,8 +1280,9 @@ const QRCodeScanner = (props) => {
                 <td
                   style={{
                     width: "25%",
-                    height: "147px",
+                    height: "180px",
                     border: "1px solid #000000",
+                    borderWidth : "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1292,7 +1296,7 @@ const QRCodeScanner = (props) => {
                     <span></span>
                   </p>
                   <img
-                    style={{ width: "100%", height: "140px" }}
+                    style={{ width: "100%", height: "168px" }}
                     src={data?.data?.leftimage}
                     alt="Left Image"
                   />
@@ -1301,8 +1305,9 @@ const QRCodeScanner = (props) => {
                 <td
                   style={{
                     width: "25%",
-                    height: "147px",
+                    height: "180px",
                     border: "1px solid #000000",
+                    borderWidth : "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1316,7 +1321,7 @@ const QRCodeScanner = (props) => {
                     <span></span>
                   </p>
                   <img
-                    style={{ width: "100%", height: "140px" }}
+                    style={{ width: "100%", height: "168px" }}
                     src={data?.data?.rightimage}
                     alt="Right Image"
                   />
@@ -1325,8 +1330,9 @@ const QRCodeScanner = (props) => {
                 <td
                   style={{
                     width: "25%",
-                    height: "147px",
+                    height: "180px",
                     border: "1px solid #000000",
+                    borderWidth : "0px 1px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1340,7 +1346,7 @@ const QRCodeScanner = (props) => {
                     <span></span>
                   </p>
                   <img
-                    style={{ width: "100%", height: "140px" }}
+                    style={{ width: "100%", height: "168px" }}
                     src={data?.data?.backimage}
                     alt="Back Image"
                   />
