@@ -1,4 +1,4 @@
 export const configData = {
-  targetUrl: "https://dev.fantasticcanefurniture.in/api",
+  targetUrl: "https://api.vaahansafety.org/api",
   domain : "http://localhost:5173"
 };
