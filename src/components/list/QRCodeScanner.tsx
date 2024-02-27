@@ -69,16 +69,35 @@ const QRCodeScanner = (props) => {
     // // Initiate the print operation if it hasn't occurred already
     if (!printed) {
       setTimeout(() => {
+        // Apply custom print styles
+        const style = document.createElement("style");
+        style.appendChild(
+          document.createTextNode(`
+          @media print {
+            @page {
+              size: 290mm 360mm;
+              margin: 0mm 10mm;
+            }
+          }
+          `)
+        );
+        document.head.appendChild(style);
         window.print();
       }, 3000);
     }
 
-    // Clean up the event listener when the component unmounts
+    // Clean up the event listener and styles when the component unmounts
     return () => {
       if (window.matchMedia) {
         window.matchMedia("print").removeListener(() => {});
       } else {
         window.onafterprint = null;
+      }
+
+      // Remove custom print styles
+      const styleElement = document.querySelector("style");
+      if (styleElement) {
+        styleElement.remove();
       }
     };
   }, [printed]); // Dependency on 'printed' to re-run effect if 'printed' changes
@@ -135,7 +154,7 @@ const QRCodeScanner = (props) => {
     const year = dynamicDate.getFullYear();
 
     // Format date as dd/mm/yyyy
-    const formattedDate = `${day}/${month}/${year}`;
+    const formattedDate = `${day}-${month}-${year}`;
     return formattedDate;
   };
 
@@ -146,6 +165,8 @@ const QRCodeScanner = (props) => {
         width: "995px",
         paddingBottom: "15px",
         fontFamily: "times-new-roman",
+        margin: "auto",
+        marginTop: "5%",
       }}
       className="qrcodescannerclass"
     >
@@ -155,7 +176,7 @@ const QRCodeScanner = (props) => {
             type="text/css"
             dangerouslySetInnerHTML={{
               __html:
-                " * {margin:0; padding:0; text-indent:0; }\n         .s1 {     font-family: 'Inter';color: #242424;font-weight: 200; font-style: normal; text-decoration: none; font-size: 29px; }\n         .s2 {  font-family: 'Inter';color: #000000d1; font-style: normal; font-weight: 200; text-decoration: none; font-size: 19px; }\n         .s3 {font-family: 'Inter'; color:#000000d1;     font-weight: 200; text-decoration: none; font-size: 20px; }\n         p { color: black;  line-height: 1;font-style: normal;text-decoration: none; }\n         .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         h1 { color: black; font-style: normal; font-weight: 400; text-decoration: none; font-size: 20px; }\n         .h2 { color: black; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; }\n         .s5 { color: #000000; font-style: normal; font-weight: 700; text-decoration: none; }\n         .s6 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14px; }\n         .s7 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14px; }\n         .s8 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none;}\n         .s9 { color: #000000; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         .s10 { color: black; font-style: normal; font-weight: normal; text-decoration: none; 15px; }\n         .a { color: black; font-style: normal; font-weight: normal; text-decoration: none; }\n         table, tbody {vertical-align: top; overflow: visible; }\n  .tabConte:{margin-bottom: 10px}    ",
+                ' * {margin:0; padding:0; text-indent:0; }\n         .s1 { color: #525252; font-family:"Nunito", sans-serif; font-weight: 700; font-style: normal; text-decoration: none; font-size: 25px; }\n         .s2 { color: #525252; font-family:"Nunito", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16px; }\n         .s3 { color: #525252; font-family:"Lucida Sans Unicode", sans-serif; font-style: normal; font-weight: 600; text-decoration: none; font-size: 19px; }\n         p { color: black; font-family:"Times New Roman", Times, serif; line-height: 1;font-style: normal; font-weight: bold; text-decoration: none; font-size: 14px; margin0px;}\n         .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         h1 { color: #525252; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14pt; }\n         .h2 { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }\n         .s5 { color: #000000;  font-family: "Times New Roman", Times, serif; padding:5px; font-size: 17px !important;display: flex;padding-top: 5px !important;align-items: center; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10.5pt; }\n         .s6 { color: #000000;font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14px; }\n         .s7 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13px; }\n         .s8 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px;}\n         .s9 { color: #000000; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         .s10 { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         .a { color: black; font-family:"Times New Roman", Times, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         table, tbody {vertical-align: top; overflow: visible; }\n  .tabConte:{margin-bottom: 10px}    ',
             }}
           />
           <p style={{ textIndent: "0pt", textAlign: "left" }}>
@@ -236,9 +257,7 @@ const QRCodeScanner = (props) => {
               {
                 //<QRCode value={qrData} size={150} />
               }
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/QR_Code_Example.svg/1200px-QR_Code_Example.svg.png"
-              />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/QR_Code_Example.svg/1200px-QR_Code_Example.svg.png" />
             </div>
           </div>
 
@@ -293,7 +312,9 @@ const QRCodeScanner = (props) => {
                 }}
               >
                 Certificate No:
-                <span style={{ fontWeight: "normal" }}>{data?.data?.certificateno}</span>
+                <span style={{ fontWeight: "normal" }}>
+                  {data?.data?.certificateno}
+                </span>
               </p>
               <p
                 style={{
@@ -718,7 +739,7 @@ const QRCodeScanner = (props) => {
                       maxWidth: "50%",
                       maxHeight: "12.5in",
                       width: "50%",
-                      height: "268.5px",
+                      height: "293.5px",
                       borderTopStyle: "solid",
                       borderTopWidth: "1px",
                       borderLeftStyle: "solid",
@@ -895,6 +916,7 @@ const QRCodeScanner = (props) => {
                 <td
                   style={{
                     width: "50%",
+                    height: "50px",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -927,23 +949,7 @@ const QRCodeScanner = (props) => {
                         >
                           <path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
                         </svg>
-                      ) : (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          fill="#000000"
-                          version="1.1"
-                          id="Capa_1"
-                          width="17px"
-                          height="17px"
-                          viewBox="0 0 278.799 278.799"
-                          xml:space="preserve"
-                        >
-                          <g>
-                            <path d="M265.54,0H13.259C5.939,0,0.003,5.936,0.003,13.256v252.287c0,7.32,5.936,13.256,13.256,13.256H265.54   c7.318,0,13.256-5.936,13.256-13.256V13.255C278.796,5.935,272.86,0,265.54,0z M252.284,252.287H26.515V26.511h225.769V252.287z" />
-                          </g>
-                        </svg>
-                      )}
+                      ) : null}
                     </span>
                   </p>
                 </td>
@@ -952,6 +958,7 @@ const QRCodeScanner = (props) => {
                 <td
                   style={{
                     width: "50%",
+                    height: "50px",
                     borderTopStyle: "solid",
                     borderTopWidth: "1px",
                     borderLeftStyle: "solid",
@@ -984,23 +991,7 @@ const QRCodeScanner = (props) => {
                         >
                           <path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
                         </svg>
-                      ) : (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          fill="#000000"
-                          version="1.1"
-                          id="Capa_1"
-                          width="17px"
-                          height="17px"
-                          viewBox="0 0 278.799 278.799"
-                          xml:space="preserve"
-                        >
-                          <g>
-                            <path d="M265.54,0H13.259C5.939,0,0.003,5.936,0.003,13.256v252.287c0,7.32,5.936,13.256,13.256,13.256H265.54   c7.318,0,13.256-5.936,13.256-13.256V13.255C278.796,5.935,272.86,0,265.54,0z M252.284,252.287H26.515V26.511h225.769V252.287z" />
-                          </g>
-                        </svg>
-                      )}
+                      ) : null}
                     </span>
                   </p>
                 </td>
@@ -1179,7 +1170,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
-                    borderWidth : "1px 0px 1px 1px",
+                    borderWidth: "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1198,7 +1189,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
-                    borderWidth : "1px 0px 1px 1px",
+                    borderWidth: "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1217,7 +1208,7 @@ const QRCodeScanner = (props) => {
                   style={{
                     width: "25%",
                     border: "1px solid #000000",
-                    borderWidth : "1px 0px 1px 1px",
+                    borderWidth: "1px 0px 1px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1257,7 +1248,7 @@ const QRCodeScanner = (props) => {
                     width: "25%",
                     height: "180px",
                     border: "1px solid #000000",
-                    borderWidth : "0px 0px 0px 1px",
+                    borderWidth: "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1282,7 +1273,7 @@ const QRCodeScanner = (props) => {
                     width: "25%",
                     height: "180px",
                     border: "1px solid #000000",
-                    borderWidth : "0px 0px 0px 1px",
+                    borderWidth: "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1307,7 +1298,7 @@ const QRCodeScanner = (props) => {
                     width: "25%",
                     height: "180px",
                     border: "1px solid #000000",
-                    borderWidth : "0px 0px 0px 1px",
+                    borderWidth: "0px 0px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -1332,7 +1323,7 @@ const QRCodeScanner = (props) => {
                     width: "25%",
                     height: "180px",
                     border: "1px solid #000000",
-                    borderWidth : "0px 1px 0px 1px",
+                    borderWidth: "0px 1px 0px 1px",
                     boxSizing: "border-box",
                   }}
                 >
