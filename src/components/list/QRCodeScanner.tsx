@@ -75,7 +75,7 @@ const QRCodeScanner = (props) => {
           document.createTextNode(`
           @media print {
             @page {
-              size: 290mm 360mm;
+              size: A4;
               margin: 0mm 10mm;
             }
           }
