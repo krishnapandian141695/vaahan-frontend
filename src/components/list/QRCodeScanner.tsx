@@ -81,7 +81,7 @@ const QRCodeScanner = (props) => {
           `)
         );
         document.head.appendChild(style);
-        // window.print();
+        window.print();
       }, 3000);
     }
 
