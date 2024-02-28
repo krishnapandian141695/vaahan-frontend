@@ -16,10 +16,11 @@ function CertificateList() {
   const [itemList, setItemList] = React.useState(null);
   const [id, setId] = React.useState(null);
   const [qrData, setQrData] = React.useState(null); // QR code data
+  const [vno, setVno] = React.useState(null);
   console.log(itemList, "itemList45234");
   React.useEffect(() => {
     fetchData();
-  }, []);
+  }, [vno]);
 
   const fetchData = async () => {
     try {
@@ -33,7 +34,15 @@ function CertificateList() {
           },
         }
       );
-      setItemList(response?.data?.data?.data);
+      if (vno) {
+        let data = response?.data?.data?.data?.filter((item) =>
+          item?.vehicleregno?.toLowerCase()?.includes(vno)
+        );
+
+        setItemList(data);
+      } else {
+        setItemList(response?.data?.data?.data);
+      }
       console.log("Response:", response?.data?.data?.data);
       return response.data;
     } catch (error) {
@@ -92,10 +101,11 @@ function CertificateList() {
                       </svg>
                     </div>
                     <input
-                      className="w-full p-2 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                      className="w-full p-2 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md focus:shadow-outline-purple form-input"
                       type="text"
                       placeholder="Search for projects"
                       aria-label="Search"
+                      onChange={(e) => setVno(e.target.value)}
                     />
                   </div>
                 </div>
