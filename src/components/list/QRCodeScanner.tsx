@@ -14,7 +14,6 @@ const QRCodeScanner = (props) => {
   const navigate = useNavigate();
   const globaccessToken = useSelector((state: RootState) => state.user);
   const [printed, setPrinted] = useState(false);
-
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
@@ -82,7 +81,7 @@ const QRCodeScanner = (props) => {
           `)
         );
         document.head.appendChild(style);
-        window.print();
+        // window.print();
       }, 3000);
     }
 
@@ -252,12 +251,13 @@ const QRCodeScanner = (props) => {
                 // width: "13.9%",
                 justifyContent: "end",
                 height: "170px",
+                marginBottom : "5px"
               }}
             >
               {
                 //<QRCode value={qrData} size={150} />
               }
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/QR_Code_Example.svg/1200px-QR_Code_Example.svg.png" />
+              <img src="../src/assets/dummyqr.png" />
             </div>
           </div>
 
