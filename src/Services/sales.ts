@@ -65,7 +65,7 @@ export const salesApi = createApi({
         body,
       }),
     }),
-    createDealerSale: builder.mutation({
+    createDealerStockSale: builder.mutation({
       query: (body: any) => ({
         url: `/registrations`,
         method: "POST",
@@ -80,7 +80,7 @@ export const {
   useGetDisbutersQuery,
   useGetManufacturerQuery,
   useGetSubDistributerQuery,
-  useCreateDealerSaleMutation,
+  useCreateDealerStockSaleMutation,
   useCreateDistributerSaleMutation,
   useCreateSubDistributerSaleMutation,
   useGetDisbutersSaleQuery,

@@ -99,7 +99,7 @@ const Entries = () => {
           column={columns}
           data={registerrationSaleData?.["data"]?.data}
           scopedColumns={scopedColumns}
-          TableName={"Dealer Sale"}
+          TableName={"Entries"}
         />
       )}
     </CCard>

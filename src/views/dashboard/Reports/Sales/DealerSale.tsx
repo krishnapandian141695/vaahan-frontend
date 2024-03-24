@@ -15,7 +15,7 @@ const DealerSale = () => {
   let urlString: any = `dealerName=${userInfo?.name}`;
   let distributer: any = `distributer_name=${userInfo?.name}`;
   let subDistributer: any = `sub_distributer_name=${userInfo?.name}`;
-  let urlStringAdmin: any = `distributer_name=`;
+  let urlStringAdmin: any = `dealerName=`;
 
   let finalQUery =
     userInfo?.role_id === "4"
@@ -37,25 +37,52 @@ const DealerSale = () => {
 
   const columns = [
     {
-      key: "name",
+      key: "dealerName",
     },
     {
-      key: "phone_number",
+      key: "red20mm",
     },
     {
-      key: "email_id",
+      key: "red50mm",
     },
     {
-      key: "address",
+      key: "white20mm",
     },
     {
-      key: "manufacturer_name",
+      key: "white50mm",
+    },
+    {
+      key: "yellow50mm",
+    },
+    {
+      key: "redReflector80mm",
+    },
+    {
+      key: "whiteReflector80mm",
+    },
+    {
+      key: "yellowReflector80mm",
+    },
+    {
+      key: "class3",
+    },
+    {
+      key: "class4",
+    },
+    {
+      key: "hologram",
+    },
+    {
+      key: "invoiceNumber",
     },
     {
       key: "distributer_name",
     },
     {
       key: "sub_distributer_name",
+    },
+    {
+      key: "manufacturer_name",
     },
   ];
   return (

@@ -109,7 +109,7 @@ const AppSidebar = () => {
         {
           component: CNavItem,
           name: "Dealer",
-          to: "/Entries",
+          to: "/DealerSale",
           display:
             userInfo?.role_id === "1" || userInfo?.role_id === "2"
               ? true

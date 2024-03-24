@@ -27,6 +27,7 @@ import {
   useCreateDealerStockMutation,
   useCreateDistributerSaleMutation,
   useCreateSubDistributerSaleMutation,
+  useGetDealerSaleQuery,
   useGetDealerUserQuery,
   useGetDisbutersQuery,
   useGetDisbutersSaleQuery,
@@ -77,6 +78,13 @@ const Dashboard = () => {
   } = useGetDealerUserQuery();
 
   const {
+    data: dealerStockData,
+    error: dealerStockError,
+    isLoading: dealerStockLoading,
+    refetch: dealerStockRefetch,
+  } = useGetDealerSaleQuery();
+
+  const {
     data: byDistributerUser,
     error: byDistributerUserError,
     refetch: byDistributerUserRefetch,
@@ -125,6 +133,7 @@ const Dashboard = () => {
     bySubDistributerUserRefetch();
     byDealerUserRefetch();
     refetch();
+    dealerStockRefetch();
   }, []);
 
   React.useEffect(() => {
@@ -134,14 +143,14 @@ const Dashboard = () => {
           ? distributerSaleData
           : userInfo?.role_id === "3"
           ? subDistributerSaleData
-          : [];
+          : dealerStockData;
       if (tempResult) {
         const totalValues = getTotalItemsValues(tempResult?.["data"]?.data);
         setTotalEachItemValues(totalValues);
         console.log(totalValues, "totalValuesdistributerSaleData");
       }
     }
-  }, [distributerSaleData, subDistributerSaleData]);
+  }, [distributerSaleData, subDistributerSaleData, dealerStockData]);
 
   console.log(
     bySubDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
@@ -208,7 +217,7 @@ const Dashboard = () => {
       }
       console.log(tempResult, "tempResult52345");
       if (tempResult?.["data"]?.code === 201) {
-        location.reload()
+        location.reload();
       }
     } catch (error) {
       console.error("Error:", error);
@@ -338,7 +347,7 @@ const Dashboard = () => {
                   {userInfo?.role_id === "3"
                     ? bySubDistributerUser?.["data"]?.data?.[0]
                         ?.distributer_name
-                    : byDealerUser?.["data"]?.data?.[0]?.distributer_name}
+                    : byDealerUser?.["data"]?.data?.[0]?.distributor_name}
                 </p>
               </h6>
             )}
@@ -369,6 +378,7 @@ const Dashboard = () => {
           </div>
         </CCardHeader>
       }
+      totalEachIitemValues={totalEachIitemValues}
     />
   ) : (
     <>

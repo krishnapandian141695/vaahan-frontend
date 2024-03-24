@@ -73,6 +73,9 @@ const SubDistributorSale = () => {
     {
       key: "invoiceNumber",
     },
+    {
+      key: "distributer_name",
+    },
   ];
   return (
     <CCard className="mb-4 pb-3 p-3">
