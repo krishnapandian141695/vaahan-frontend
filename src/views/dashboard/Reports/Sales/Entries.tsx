@@ -32,10 +32,13 @@ const Entries = () => {
 
   const columns = [
     { key: "Action" },
+    { key: "certificateno", label: "Certificate No" },
+    { key: "vehicleregno", label : "Vehical No" },
     { key: "date" },
-    { key: "dealername" },
-    { key: "certificateno" },
-    { key: "vehicleregno" },
+    { key: "manufacturer_name" },
+    { key: "distributer_name" },
+    { key: "sub_distributer_name" },
+    { key: "dealer_name" },
     { key: "vehiclemanufacturingyear" },
     { key: "chassisnum" },
     { key: "engineno" },
@@ -67,14 +70,6 @@ const Entries = () => {
     { key: "backimage" },
     { key: "leftimage" },
     { key: "rightimage" },
-    { key: "distributer_id" },
-    { key: "subdistributer_id" },
-    { key: "dealer_id" },
-    { key: "manufacturer_name" },
-    { key: "distributer_name" },
-    { key: "sub_distributer_name" },
-    { key: "dealer_name" },
-    { key: "manufacturer_name" },
   ];
 
   const scopedColumns = {

@@ -34,6 +34,7 @@ const DistributorSale = () => {
   const columns = [
     {
       key: "dealerName",
+      label : "Distributor Name"
     },
     {
       key: "red20mm",
@@ -75,7 +76,11 @@ const DistributorSale = () => {
   return (
     <CCard className="mb-4 pb-3 p-3">
       {distributerSaleData && (
-        <Table column={columns} data={distributerSaleData?.["data"]?.data} TableName={"Distributer Sale"}/>
+        <Table
+          column={columns}
+          data={distributerSaleData?.["data"]?.data}
+          TableName={"Distributer Sale"}
+        />
       )}
     </CCard>
   );

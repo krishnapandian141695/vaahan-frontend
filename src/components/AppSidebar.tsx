@@ -39,6 +39,17 @@ const AppSidebar = () => {
         userInfo?.role_id !== "4" && userInfo?.role_id !== "3" ? true : false,
     },
     {
+      component: CNavItem,
+      name: "Password",
+      to: "/changePassword",
+      icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+      badge: {
+        color: "danger",
+        text: "Change",
+      },
+      display: true,
+    },
+    {
       component: CNavGroup,
       name: "Profiles",
       to: "/manufacturer",
@@ -81,7 +92,7 @@ const AppSidebar = () => {
     },
     {
       component: CNavGroup,
-      name: "Sales",
+      name: "Reports",
       to: "/Sales",
       display: true,
       items: [

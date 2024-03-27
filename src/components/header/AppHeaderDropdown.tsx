@@ -1,6 +1,7 @@
 import React from "react";
 import {
   CAvatar,
+  CButton,
   CDropdown,
   CDropdownHeader,
   CDropdownItem,
@@ -25,7 +26,8 @@ const AppHeaderDropdown = () => {
 
   return (
     <CDropdown variant="nav-item">
-      <CDropdownToggle className="py-0" caret={false}>
+      <CButton type="button" color="danger" className="text-white fw-bold" onClick={() => logOut()}>Log Out</CButton>
+      {/* <CDropdownToggle className="py-0" caret={false}>
         <CAvatar src={avatar9} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0">
@@ -37,7 +39,7 @@ const AppHeaderDropdown = () => {
           <CIcon icon={cilLockLocked} className="me-2" />
           Lock Account
         </CDropdownItem>
-      </CDropdownMenu>
+      </CDropdownMenu> */}
     </CDropdown>
   );
 };

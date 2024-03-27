@@ -37,7 +37,7 @@ const AppHeader = () => {
         <CHeaderBrand className="mx-auto d-md-none">
           <CIcon icon={logo} height={48} />
         </CHeaderBrand>
-        <CHeaderNav className="d-none d-md-flex me-auto">
+        <CHeaderNav className="d-none d-md-flex me-auto fw-bold headerName">
           <CNavItem>
             <CNavLink to="/dashboard" component={NavLink}>
               {userInfo?.name}

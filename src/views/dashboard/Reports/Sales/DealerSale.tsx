@@ -37,6 +37,18 @@ const DealerSale = () => {
 
   const columns = [
     {
+      key: "distributer_name",
+      label : "Distributor Name"
+    },
+    {
+      key: "sub_distributer_name",
+      label : "Sub Distributor Name"
+    },
+    {
+      key: "manufacturer_name",
+      label : "Manufacturer Name"
+    },
+    {
       key: "dealerName",
     },
     {
@@ -74,15 +86,6 @@ const DealerSale = () => {
     },
     {
       key: "invoiceNumber",
-    },
-    {
-      key: "distributer_name",
-    },
-    {
-      key: "sub_distributer_name",
-    },
-    {
-      key: "manufacturer_name",
     },
   ];
   return (
