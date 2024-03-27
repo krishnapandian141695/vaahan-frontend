@@ -26,6 +26,7 @@ function App() {
   let name: any = localStorage.getItem("name");
   let role_id: any = localStorage.getItem("role_id");
   let userId: any = localStorage.getItem("userId");
+  let username: any = localStorage.getItem("username");
   React.useEffect(() => {
     if (token) {
       let userinfo: any = {
@@ -33,6 +34,7 @@ function App() {
         name: name,
         role_id: role_id,
         userId: userId,
+        username: username,
       };
       dispatch(login(userinfo));
     } else {

@@ -38,11 +38,16 @@ const Login = () => {
         localStorage.setItem("name", result?.["data"]?.data?.user?.name);
         localStorage.setItem("role_id", result?.["data"]?.data?.user?.role_id);
         localStorage.setItem("userId", result?.["data"]?.data?.user?.id);
+        localStorage.setItem(
+          "username",
+          result?.["data"]?.data?.user?.username
+        );
         let userinfo: any = {
           token: result?.["data"]?.data?.access_token,
           name: result?.["data"]?.data?.user?.name,
           userId: result?.["data"]?.data?.user?.id,
           role_id: result?.["data"]?.data?.user?.role_id,
+          username: result?.["data"]?.data?.user?.username,
         };
         dispatch(login(userinfo));
       } else {

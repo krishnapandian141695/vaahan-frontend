@@ -38,11 +38,14 @@ const Manufacturer = () => {
     {
       key: "quantity_price",
     },
+    {
+      key: "status",
+    },
   ];
   return (
     <CCard className="mb-4 pb-3 p-3">
       {manifactData && (
-        <Table column={columns} data={manifactData?.["data"]?.data} TableName={"Manufacturers"}/>
+        <Table column={columns} data={manifactData?.["data"]?.data} TableName={"Manufacturers"} className="width-auto"/>
       )}
     </CCard>
   );

@@ -1,6 +1,12 @@
 import { CHeader, CHeaderDivider, CHeaderText } from "@coreui/react";
 import { CHeaderBrand, CSmartTable } from "@coreui/react-pro";
-const Table = ({ column, data, scopedColumns = null, TableName }) => {
+const Table = ({
+  column,
+  data,
+  scopedColumns = null,
+  TableName,
+  className = "width-max",
+}) => {
   return (
     <>
       <CHeaderBrand className="mb-3 bg-body-tertiary width-max px-3 py-1 rounded-1">
@@ -14,7 +20,7 @@ const Table = ({ column, data, scopedColumns = null, TableName }) => {
         itemsPerPage={50}
         pagination
         tableProps={{
-          className: "add-this-class width-max customStayless",
+          className: `add-this-class  customStayless ${className}`,
           responsive: true,
           striped: true,
           hover: true,

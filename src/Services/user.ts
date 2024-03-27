@@ -65,6 +65,13 @@ export const usersApi = createApi({
         body,
       }),
     }),
+    changePassword: builder.mutation({
+      query: (body: any) => ({
+        url: `/reset-pasword`,
+        method: "POST",
+        body,
+      }),
+    }),
     getByDistributerUserName: builder.query<any[], void>({
       query: (name) => `/distributorUser/?name=${name}`,
     }),
@@ -89,5 +96,6 @@ export const {
   useGetByDistributerUserNameQuery,
   useGetBySubDistributerUserNameQuery,
   useGetByDealerUserNameQuery,
+  useChangePasswordMutation
 } = usersApi;
 export const { endpoints } = usersApi;

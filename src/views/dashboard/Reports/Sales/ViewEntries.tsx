@@ -8,6 +8,8 @@ import { useGetRegistrationsSaleByIdQuery } from "../../../../Services/sales";
 import { CBadge, CButton } from "@coreui/react";
 
 const ViewEntries = (props) => {
+  const sectionToPrintRef = useRef(null);
+
   const navigate = useNavigate();
   const [printed, setPrinted] = useState(false);
   const location = useLocation();
@@ -18,64 +20,83 @@ const ViewEntries = (props) => {
 
   console.log(id, "queryParams43", data?.["data"], location);
 
-  React.useEffect(() => {
-    if (id) {
-      //   refetch();
-      // setTimeout(() => {
-      //   downloadPDF().then(() => {
-      //     navigate("/certificate-list");
-      //   });
-      // }, 2000);
-    }
-  }, [id]);
+  // React.useEffect(() => {
+  //   if (id) {
+  //     //   refetch();
+  //     // setTimeout(() => {
+  //     //   downloadPDF().then(() => {
+  //     //     navigate("/certificate-list");
+  //     //   });
+  //     // }, 2000);
+  //   }
+  // }, [id]);
 
-  useEffect(() => {
-    function navigateAfterPrint() {
-      // Navigate to another page after print
-      navigate("/certificate-list"); // Replace with the actual URL
-    }
-
-    function handleAfterPrint() {
-      // This function will be called after the print operation is complete
-      console.log("Print operation completed");
-
-      // Navigate to another page if printing hasn't already occurred
-      if (!printed) {
-        navigateAfterPrint();
-        setPrinted(true); // Update the state to indicate that printing has occurred
-      }
-    }
-
-    // Attach the afterprint event listener
-    if (window.matchMedia) {
-      // For modern browsers
-      window.matchMedia("print").addListener((mediaEvent) => {
-        if (!mediaEvent.matches) {
-          // The print operation has finished
-          handleAfterPrint();
-        }
-      });
-    } else {
-      // For older browsers
-      window.onafterprint = handleAfterPrint;
-    }
-
-    // Initiate the print operation if it hasn't occurred already
-    // if (!printed) {
-    //   setTimeout(() => {
-    //     window.print();
-    //   }, 3000);
-    // }
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      if (window.matchMedia) {
-        window.matchMedia("print").removeListener(() => {});
+  
+  const onPrint = () => {
+    const section = sectionToPrintRef.current;
+    if (section) {
+      // Clone the section element to avoid altering the original DOM
+      const clonedSection = section.cloneNode(true);
+      // Create a new window for printing
+      const printWindow = window.open('', '_blank');
+      if (printWindow) {
+        // Append the cloned section to the new window's document
+        printWindow.document.body.appendChild(clonedSection);
+        // Initiate printing
+        printWindow.print();
       } else {
-        window.onafterprint = null;
+        console.error('Failed to open printing window.');
       }
-    };
-  }, [printed]); // Dependency on 'printed' to re-run effect if 'printed' changes
+    }
+  };
+  
+  // const onPrint = () => {
+  //   function navigateAfterPrint() {
+  //     // Navigate to another page after print
+  //     navigate("/Entries"); // Replace with the actual URL
+  //   }
+
+  //   function handleAfterPrint() {
+  //     // This function will be called after the print operation is complete
+  //     console.log("Print operation completed");
+
+  //     // Navigate to another page if printing hasn't already occurred
+  //     if (!printed) {
+  //       navigateAfterPrint();
+  //       setPrinted(true); // Update the state to indicate that printing has occurred
+  //     }
+  //   }
+
+  //   // Attach the afterprint event listener
+  //   if (window.matchMedia) {
+  //     // For modern browsers
+  //     window.matchMedia("print").addListener((mediaEvent) => {
+  //       if (!mediaEvent.matches) {
+  //         // The print operation has finished
+  //         handleAfterPrint();
+  //       }
+  //     });
+  //   } else {
+  //     // For older browsers
+  //     window.onafterprint = handleAfterPrint;
+  //   }
+
+  //   // Initiate the print operation if it hasn't occurred already
+  //   if (!printed) {
+  //     setTimeout(() => {
+  //       window.print();
+  //     }, 3000);
+  //   }
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     if (window.matchMedia) {
+  //       window.matchMedia("print").removeListener(() => {});
+  //     } else {
+  //       window.onafterprint = null;
+  //     }
+  //   };
+  // };
 
   const downloadPDF = async () => {
     const element = document.getElementById("certificateContent");
@@ -124,24 +145,10 @@ const ViewEntries = (props) => {
 
   return (
     <>
-      <div className="d-flex justify-content-between py-3">
-        <Link to={"/dashboard"}>
-          <CButton color="dark" type="button" variant="outline">
-            New Enttriy
-          </CButton>
-        </Link>
-        <Link to={"/Entries"}>
-          <CButton color="danger" type="button" variant="outline">
-            Back
-          </CButton>
-        </Link>
-        <CButton color="success" type="button" variant="outline">
-          Print
-        </CButton>
-      </div>
       <div
         id="certificateContent"
         style={{ background: "white", padding: "0px 16px" }}
+        ref={sectionToPrintRef}
       >
         <>
           <style
@@ -1451,6 +1458,26 @@ const ViewEntries = (props) => {
             WWW.RTVSTA.TN.GOV.IN]
           </p>
         </>
+      </div>
+      <div className="d-flex justify-content-between py-3">
+        <Link to={"/dashboard"}>
+          <CButton color="dark" type="button" variant="outline">
+            New Enttriy
+          </CButton>
+        </Link>
+        <Link to={"/Entries"}>
+          <CButton color="danger" type="button" variant="outline">
+            Back
+          </CButton>
+        </Link>
+        <CButton
+          color="success"
+          type="button"
+          variant="outline"
+          onClick={() => onPrint()}
+        >
+          Print
+        </CButton>
       </div>
     </>
   );

@@ -236,7 +236,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               className="border"
                               label="Vahicle Manufacturing Year"
                               {...field}
-                              type="text"
+                              type="date"
                               placeholder="0"
                             />
                           )}

@@ -50,6 +50,9 @@ const SubDistributor = () => {
     {
       key: "distributor_name",
     },
+    {
+      key: "status",
+    },
   ];
 
   return (
@@ -60,6 +63,7 @@ const SubDistributor = () => {
           column={columns}
           data={subDistributerData?.["data"]?.data}
           scopedColumns={null}
+          className="width-auto"
         />
       )}
     </CCard>

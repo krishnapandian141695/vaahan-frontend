@@ -104,6 +104,7 @@ const AddCompany = () => {
             manufacturer_name:
               byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
             distributor_name: userInfo?.name,
+            status: "Active",
           }
         : {}),
       ...(userInfo?.role_id === "3"
@@ -112,6 +113,12 @@ const AddCompany = () => {
               bySubDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
             distributor_name:
               bySubDistributerUser?.["data"]?.data?.[0]?.distributor_name,
+            status: "Active",
+          }
+        : {}),
+      ...(userInfo?.role_id === "1"
+        ? {
+            status: "Active",
           }
         : {}),
     };
@@ -282,6 +289,28 @@ const AddCompany = () => {
               />
               {errors.password && (
                 <div className="text-danger">{"Field is required"}</div>
+              )}
+            </div>
+            <div className="col-sm-6 mb-3">
+              <Controller
+                name="confirmPassword"
+                control={control}
+                rules={{
+                  validate: (value) =>
+                    value === formData?.password || "Passwords do not match",
+                }}
+                defaultValue=""
+                render={({ field }) => (
+                  <CFormInput
+                    className="border"
+                    {...field}
+                    type="password"
+                    placeholder="Confirm Password"
+                  />
+                )}
+              />
+              {errors.confirmPassword && (
+                <div className="text-danger">{"Passwords do not match"}</div>
               )}
             </div>
             <div className="col-sm-6 mb-3">

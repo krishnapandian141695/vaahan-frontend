@@ -33,7 +33,7 @@ const Entries = () => {
   const columns = [
     { key: "Action" },
     { key: "certificateno", label: "Certificate No" },
-    { key: "vehicleregno", label : "Vehical No" },
+    { key: "vehicleregno", label: "Vehical No" },
     { key: "date" },
     { key: "manufacturer_name" },
     { key: "distributer_name" },

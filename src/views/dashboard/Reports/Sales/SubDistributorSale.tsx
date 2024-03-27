@@ -12,7 +12,7 @@ import { RootState } from "../../../../Store";
 const SubDistributorSale = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   let urlString: any = `dealerName=${userInfo?.name}`;
-  let distributer: any = `distributer_name=${userInfo?.name}`;
+  let distributer: any = `dealerName=${userInfo?.name}`;
   let urlStringAdmin: any = `distributer_name=`;
   let finalQUery =
     userInfo?.role_id === "3"
@@ -20,12 +20,13 @@ const SubDistributorSale = () => {
       : userInfo?.role_id === "2"
       ? distributer
       : urlStringAdmin;
+      
   const {
     data: subDistributerSaleData,
     error: subDistributerError,
     isLoading: subDistributerLoading,
     refetch: subDistributerRefetcg,
-  } = useGetSubDistributerSaleQuery(finalQUery);
+  } = useGetSubDistributerSaleQuery(urlStringAdmin);
 
   React.useEffect(() => {
     subDistributerRefetcg();

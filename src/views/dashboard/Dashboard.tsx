@@ -32,6 +32,7 @@ import {
   useGetDisbutersQuery,
   useGetDisbutersSaleQuery,
   useGetManufacturerQuery,
+  useGetRegistrationsSaleByUserQuery,
   useGetSubDistributerQuery,
   useGetSubDistributerSaleQuery,
 } from "../../Services/sales";
@@ -53,9 +54,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   let urlStringquery: any =
     userInfo?.role_id === "2" ? `dealerName= ` : `dealerName=${userInfo?.name}`;
-
-  console.log(totalEachIitemValues, "roleList45234", roleList);
-
   const {
     data: distributerData,
     error: distributerError,
@@ -123,6 +121,13 @@ const Dashboard = () => {
     refetch: subDistributerSaleDataRefetch,
   } = useGetSubDistributerSaleQuery(urlStringquery);
 
+  const {
+    data: registerrationSaleData,
+    error: registerationError,
+    isLoading: registerrationLoding,
+    refetch: registerrationRefetch,
+  } = useGetRegistrationsSaleByUserQuery(urlStringquery);
+
   React.useEffect(() => {
     distributerSaleDataRefetch();
     subDistributerSaleDataRefetch();
@@ -136,26 +141,10 @@ const Dashboard = () => {
     dealerStockRefetch();
   }, []);
 
-  React.useEffect(() => {
-    if (distributerSaleData || subDistributerSaleData) {
-      let tempResult =
-        userInfo?.role_id === "2"
-          ? distributerSaleData
-          : userInfo?.role_id === "3"
-          ? subDistributerSaleData
-          : dealerStockData;
-      if (tempResult) {
-        const totalValues = getTotalItemsValues(tempResult?.["data"]?.data);
-        setTotalEachItemValues(totalValues);
-        console.log(totalValues, "totalValuesdistributerSaleData");
-      }
-    }
-  }, [distributerSaleData, subDistributerSaleData, dealerStockData]);
-
   console.log(
-    bySubDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
+    subDistributerSaleData?.["data"]?.data,
     "byDistributerUser25234",
-    userInfo
+    dealerStockData?.["data"]?.data
   );
 
   React.useEffect(() => {
@@ -184,6 +173,98 @@ const Dashboard = () => {
     byDealerUser,
     byDistributerUser,
   ]);
+
+  const fieldsToCalculate = [
+    "red20mm",
+    "red50mm",
+    "white20mm",
+    "white50mm",
+    "yellow50mm",
+    "redReflector80mm",
+    "whiteReflector80mm",
+    "yellowReflector80mm",
+    "class3",
+    "class4",
+    "hologram",
+  ];
+
+  React.useEffect(() => {
+    let calculateData1 =
+      userInfo?.role_id === "2"
+        ? distributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "3"
+        ? subDistributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "4"
+        ? dealerStockData?.["data"]?.data
+        : null;
+    let calculateDate2 =
+      userInfo?.role_id === "2"
+        ? subDistributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "3"
+        ? dealerStockData?.["data"]?.data
+        : userInfo?.role_id === "4"
+        ? registerrationSaleData?.["data"]?.data
+        : null;
+
+    if (calculateData1?.length > 0) {
+      const calculatedTotalForData = {};
+      const calculatedTotalForData2 = {};
+      const finalTotal = {};
+
+      // Calculate total for each field for data1 array
+      fieldsToCalculate.forEach((fieldName) => {
+        calculatedTotalForData[fieldName] = calculateTotalForDistributor(
+          calculateData1,
+          userInfo.name,
+          fieldName
+        );
+      });
+
+      // If data2 is not empty, calculate totals for data2 array
+      if (calculateDate2?.length > 0) {
+        fieldsToCalculate.forEach((fieldName) => {
+          calculatedTotalForData2[fieldName] = calculateTotalForDistributor(
+            calculateDate2,
+            userInfo.name,
+            fieldName
+          );
+        });
+
+        // Subtract totals from data2 array from totals of data1 array
+        fieldsToCalculate.forEach((fieldName) => {
+          finalTotal[fieldName] =
+            calculatedTotalForData[fieldName] -
+            calculatedTotalForData2[fieldName];
+        });
+      } else {
+        // If data2 is empty, final total is the same as calculated total for data1
+        Object.assign(finalTotal, calculatedTotalForData);
+      }
+
+      console.log(finalTotal, "finalTotal56345");
+      // Update state with calculated totals
+      setTotalEachItemValues(finalTotal);
+    }
+  }, [
+    distributerSaleData,
+    subDistributerSaleData,
+    dealerStockData,
+    registerrationSaleData,
+    userInfo,
+  ]);
+
+  const calculateTotalForDistributor = (data, dealerName, fieldName) => {
+    let total = 0;
+    data.forEach((item) => {
+      if (item?.dealerName === dealerName || item?.sub_distributer_name === dealerName) {
+        // Parse the field value to ensure it's a number
+        const fieldValue = parseInt(item[fieldName]) || 0;
+        total += fieldValue;
+        console.log(`Adding ${fieldValue} for ${fieldName}`);
+      }
+    });
+    return total;
+  };
 
   console.log(formData, "324532", userInfo);
   const onSubmit = async (data) => {
@@ -240,37 +321,6 @@ const Dashboard = () => {
     return totalQuantity;
   };
 
-  const getTotalItemsValues = (data) => {
-    console.log(data, "data37452890374");
-    const totals = {};
-    if (data) {
-      // Initialize totals object with all fields set to 0
-      for (const item of data) {
-        for (const key in item) {
-          if (!totals.hasOwnProperty(key)) {
-            totals[key] = 0;
-          }
-        }
-      }
-    }
-
-    // Iterate over each object in the data array
-    data?.forEach((item) => {
-      // Iterate over each field in the object
-      for (const key in item) {
-        if (totals.hasOwnProperty(key)) {
-          // Parse field value as float and add to total
-          const value = parseFloat(item[key]);
-          if (!isNaN(value)) {
-            totals[key] += value;
-          }
-        }
-      }
-    });
-
-    return totals;
-  };
-
   return userInfo?.role_id === "4" ? (
     <NewEntry
       heading={
@@ -289,14 +339,11 @@ const Dashboard = () => {
                       className="border form-control h-100"
                       {...field}
                     >
+                      <option value="">{"Select"}</option>
                       {roleList &&
-                        [{ id: 0, name: "select" }, ...roleList]?.map(
-                          (item) => {
-                            return (
-                              <option value={item?.name}>{item?.name}</option>
-                            );
-                          }
-                        )}
+                        roleList?.map((item) => (
+                          <option value={item?.name}>{item?.name}</option>
+                        ))}
                     </CFormSelect>
                   )}
                 />
@@ -334,8 +381,7 @@ const Dashboard = () => {
                 <>
                   <b>Total Quanity</b> <br />
                   <p className="m-0 p-2 bg-white mt-2">
-                    {getTotalQuantity(manifactData?.["data"]?.data) -
-                      getTotalQuantity(distributerSaleData?.["data"]?.data)}
+                    {getTotalQuantity(manifactData?.["data"]?.data)}
                   </p>
                 </>
               )}
@@ -404,7 +450,7 @@ const Dashboard = () => {
                     className="border form-control"
                     {...field}
                   >
-                    {roleList &&
+                    {roleList?.length > 0 &&
                       [{ id: 0, name: "select" }, ...roleList]?.map((item) => {
                         return <option value={item?.name}>{item?.name}</option>;
                       })}

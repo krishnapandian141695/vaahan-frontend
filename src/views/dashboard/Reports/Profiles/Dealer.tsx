@@ -57,6 +57,9 @@ const Dealer = () => {
     {
       key: "sub_distributer_name",
     },
+    {
+      key: "status",
+    },
   ];
   return (
     <CCard className="mb-4 pb-3 p-3">
@@ -65,6 +68,7 @@ const Dealer = () => {
           column={columns}
           data={dealerData?.["data"]?.data}
           TableName={"Dealer"}
+          className="width-auto"
         />
       )}
     </CCard>

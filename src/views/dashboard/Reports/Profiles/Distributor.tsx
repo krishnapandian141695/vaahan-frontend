@@ -43,11 +43,14 @@ const Distributor = () => {
     {
       key: "manufacturer_name",
     },
+    {
+      key: "status",
+    },
   ];
   return (
     <CCard className="mb-4 pb-3 p-3">
       {distributerData && (
-        <Table column={columns} data={distributerData?.["data"]?.data} TableName={"Distributer"}/>
+        <Table column={columns} data={distributerData?.["data"]?.data} TableName={"Distributer"} className="width-auto"/>
       )}
     </CCard>
   );
