@@ -32,12 +32,12 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const result = await loginApi(data);
-      console.log(result, "sadfasd", result?.["data"]?.access_token);
+      console.log(result, "sadfasd");
       if (result?.["data"]?.success) {
         localStorage.setItem("token", result?.["data"]?.data?.access_token);
         localStorage.setItem("name", result?.["data"]?.data?.user?.name);
         localStorage.setItem("role_id", result?.["data"]?.data?.user?.role_id);
-        localStorage.setItem("userId", result?.["data"]?.data?.user?.id);
+        localStorage.setItem("userId", result?.["data"]?.data?.user?.mobile);
         localStorage.setItem(
           "username",
           result?.["data"]?.data?.user?.username

@@ -26,7 +26,7 @@ const SubDistributorSale = () => {
     error: subDistributerError,
     isLoading: subDistributerLoading,
     refetch: subDistributerRefetcg,
-  } = useGetSubDistributerSaleQuery(urlStringAdmin);
+  } = useGetSubDistributerSaleQuery(finalQUery);
 
   React.useEffect(() => {
     subDistributerRefetcg();

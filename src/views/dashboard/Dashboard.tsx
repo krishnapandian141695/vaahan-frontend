@@ -50,10 +50,12 @@ const Dashboard = () => {
   const [createSubDistributerSale] = useCreateSubDistributerSaleMutation();
   const [createDealerStock] = useCreateDealerStockMutation();
   const [roleList, setRoleList] = React.useState(null);
+
   const [totalEachIitemValues, setTotalEachItemValues] = React.useState(null);
   const navigate = useNavigate();
-  let urlStringquery: any =
-    userInfo?.role_id === "2" ? `dealerName= ` : `dealerName=${userInfo?.name}`;
+
+  console.log(roleList, "roleList", userInfo);
+
   const {
     data: distributerData,
     error: distributerError,
@@ -61,44 +63,41 @@ const Dashboard = () => {
     refetch: distributerRefetch,
   } = useGetDisbutersQuery();
 
+  let urlSubDistributorString: any = `distributor_name=${userInfo?.name}`;
   const {
     data: subDistributerData,
     error: subDistributerError,
     isLoading: subDistributerLoading,
     refetch: subDistributerRefetcg,
-  } = useGetSubDistributerQuery();
+  } = useGetSubDistributerQuery(urlSubDistributorString);
 
+  let urlDealerStringSubDis: any = `sub_distributor_name=${userInfo?.name}`;
   const {
     data: dealerData,
     error: dealerError,
     isLoading: dealerLoading,
     refetch: dealerRefetch,
-  } = useGetDealerUserQuery();
-
-  const {
-    data: dealerStockData,
-    error: dealerStockError,
-    isLoading: dealerStockLoading,
-    refetch: dealerStockRefetch,
-  } = useGetDealerSaleQuery();
+  } = useGetDealerUserQuery(urlDealerStringSubDis);
 
   const {
     data: byDistributerUser,
     error: byDistributerUserError,
     refetch: byDistributerUserRefetch,
-  } = useGetByDistributerUserNameQuery(userInfo?.name);
+  } = useGetByDistributerUserNameQuery(userInfo?.username);
 
   const {
     data: bySubDistributerUser,
     error: bySUbDistributerUserError,
     refetch: bySubDistributerUserRefetch,
-  } = useGetBySubDistributerUserNameQuery(userInfo?.name);
+  } = useGetBySubDistributerUserNameQuery(userInfo?.username);
 
   const {
     data: byDealerUser,
     error: byDealerUserError,
     refetch: byDealerUserRefetch,
-  } = useGetByDealerUserNameQuery(userInfo?.name);
+  } = useGetByDealerUserNameQuery(userInfo?.userId);
+
+  console.log(byDealerUser, "byDealerUser3452345");
 
   const {
     data: manifactData,
@@ -107,26 +106,59 @@ const Dashboard = () => {
     refetch,
   } = useGetManufacturerQuery();
 
+  let saleDistributorStockQuery: any = `dealerName=${userInfo?.userId}`;
   const {
     data: distributerSaleData,
     error: distributerSaleDataError,
     isLoading: distributerSaleDataLoading,
     refetch: distributerSaleDataRefetch,
-  } = useGetDisbutersSaleQuery(urlStringquery);
+  } = useGetDisbutersSaleQuery(saleDistributorStockQuery);
 
+  console.log(distributerSaleData, "distributerSaleData");
+
+  let salesubDistributorStockQuery: any =
+    userInfo?.role_id === "2"
+      ? `distributer_id=${userInfo?.userId}`
+      : `dealerName=${userInfo?.userId}`;
   const {
     data: subDistributerSaleData,
     error: subDistributerSaleDataError,
     isLoading: subDistributerSaleDataLoading,
     refetch: subDistributerSaleDataRefetch,
-  } = useGetSubDistributerSaleQuery(urlStringquery);
+  } = useGetSubDistributerSaleQuery(salesubDistributorStockQuery);
 
+  console.log(
+    subDistributerSaleData,
+    "subDistributerSaleData",
+    salesubDistributorStockQuery
+  );
+
+  let urlDealerStockStringSubDis: any =
+    userInfo?.role_id === "3"
+      ? `subdistributer_id=${userInfo?.userId}`
+      : `dealerName=${userInfo?.userId}`;
+  const {
+    data: dealerStockData,
+    error: dealerStockError,
+    isLoading: dealerStockLoading,
+    refetch: dealerStockRefetch,
+  } = useGetDealerSaleQuery(urlDealerStockStringSubDis);
+
+  console.log(
+    dealerStockData,
+    "subDistributerSaleData",
+    urlDealerStockStringSubDis
+  );
+
+  let urlEntriesStockStringSubDis: any = `dealerName=${userInfo?.userId}`;
   const {
     data: registerrationSaleData,
     error: registerationError,
     isLoading: registerrationLoding,
     refetch: registerrationRefetch,
-  } = useGetRegistrationsSaleByUserQuery(urlStringquery);
+  } = useGetRegistrationsSaleByUserQuery(urlEntriesStockStringSubDis);
+
+  console.log(registerrationSaleData, "registerrationSaleData4254");
 
   React.useEffect(() => {
     distributerSaleDataRefetch();
@@ -139,13 +171,7 @@ const Dashboard = () => {
     byDealerUserRefetch();
     refetch();
     dealerStockRefetch();
-  }, []);
-
-  console.log(
-    subDistributerSaleData?.["data"]?.data,
-    "byDistributerUser25234",
-    dealerStockData?.["data"]?.data
-  );
+  }, [userInfo]);
 
   React.useEffect(() => {
     if (
@@ -189,33 +215,41 @@ const Dashboard = () => {
   ];
 
   React.useEffect(() => {
-    let calculateData1 =
-      userInfo?.role_id === "2"
-        ? distributerSaleData?.["data"]?.data
-        : userInfo?.role_id === "3"
-        ? subDistributerSaleData?.["data"]?.data
-        : userInfo?.role_id === "4"
-        ? dealerStockData?.["data"]?.data
-        : null;
-    let calculateDate2 =
-      userInfo?.role_id === "2"
-        ? subDistributerSaleData?.["data"]?.data
-        : userInfo?.role_id === "3"
-        ? dealerStockData?.["data"]?.data
-        : userInfo?.role_id === "4"
-        ? registerrationSaleData?.["data"]?.data
-        : null;
+    let calculateData1 = dealerStockData?.["data"]?.data;
+    userInfo?.role_id === "2"
+      ? distributerSaleData?.["data"]?.data
+      : userInfo?.role_id === "3"
+      ? subDistributerSaleData?.["data"]?.data
+      : userInfo?.role_id === "4"
+      ? dealerStockData?.["data"]?.data
+      : null;
+    let calculateDate2 = registerrationSaleData?.["data"]?.data;
+    userInfo?.role_id === "2"
+      ? subDistributerSaleData?.["data"]?.data
+      : userInfo?.role_id === "3"
+      ? dealerStockData?.["data"]?.data
+      : userInfo?.role_id === "4"
+      ? registerrationSaleData?.["data"]?.data
+      : null;
+
+    console.log("calculateData123453", calculateDate2);
 
     if (calculateData1?.length > 0) {
       const calculatedTotalForData = {};
       const calculatedTotalForData2 = {};
       const finalTotal = {};
 
+      console.log(
+        calculatedTotalForData,
+        "calculatedTotalForData2",
+        calculatedTotalForData2
+      );
+
       // Calculate total for each field for data1 array
       fieldsToCalculate.forEach((fieldName) => {
         calculatedTotalForData[fieldName] = calculateTotalForDistributor(
           calculateData1,
-          userInfo.name,
+          userInfo?.userId,
           fieldName
         );
       });
@@ -225,7 +259,7 @@ const Dashboard = () => {
         fieldsToCalculate.forEach((fieldName) => {
           calculatedTotalForData2[fieldName] = calculateTotalForDistributor(
             calculateDate2,
-            userInfo.name,
+            userInfo?.userId,
             fieldName
           );
         });
@@ -255,8 +289,14 @@ const Dashboard = () => {
 
   const calculateTotalForDistributor = (data, dealerName, fieldName) => {
     let total = 0;
-    data.forEach((item) => {
-      if (item?.dealerName === dealerName || item?.sub_distributer_name === dealerName) {
+    data?.forEach((item) => {
+      console.log(item?.dealer_id, "item", dealerName);
+      if (
+        item?.dealer_id === dealerName ||
+        item?.dealerName === dealerName ||
+        item?.subdistributer_id === dealerName ||
+        item?.distributer_id === dealerName
+      ) {
         // Parse the field value to ensure it's a number
         const fieldValue = parseInt(item[fieldName]) || 0;
         total += fieldValue;
@@ -266,7 +306,6 @@ const Dashboard = () => {
     return total;
   };
 
-  console.log(formData, "324532", userInfo);
   const onSubmit = async (data) => {
     console.log(data, "data32452345");
     let tempResult;
@@ -281,7 +320,9 @@ const Dashboard = () => {
         let tempObjec = {
           ...formData,
           distributer_name: userInfo?.name,
+          distributer_id: userInfo?.userId,
           sub_distributer_name: formData?.dealerName,
+          subdistributer_id: formData?.dealerName,
         };
         tempResult = await createSubDistributerSale(tempObjec);
       } else if (userInfo?.role_id === "3") {
@@ -292,7 +333,9 @@ const Dashboard = () => {
           manufacturer_name:
             bySubDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
           sub_distributer_name: userInfo?.name,
+          subdistributer_id: userInfo?.userId,
           dealer_name: formData?.dealerName,
+          distributer_id: formData?.dealerName,
         };
         tempResult = await createDealerStock(tempObjec);
       }
@@ -308,7 +351,6 @@ const Dashboard = () => {
 
   const getTotalQuantity = (data) => {
     let totalQuantity = 0;
-
     // Iterate over each object in the data array
     data?.forEach((item) => {
       // Parse quantity as integer and add to total
@@ -317,7 +359,6 @@ const Dashboard = () => {
         totalQuantity += quantity;
       }
     });
-
     return totalQuantity;
   };
 
@@ -398,14 +439,14 @@ const Dashboard = () => {
               </h6>
             )}
 
-            {userInfo?.role_id === "4" && (
+            {/* {userInfo?.role_id === "4" && (
               <h6 className="text-center">
                 <b>Sub Distributor</b> <br />{" "}
                 <p className="m-0 p-2 bg-white mt-2">
                   {byDealerUser?.["data"]?.data?.[0]?.sub_distributer_name}
                 </p>
               </h6>
-            )}
+            )} */}
             {userInfo?.role_id !== "1" && (
               <div>
                 <h6>
@@ -452,7 +493,11 @@ const Dashboard = () => {
                   >
                     {roleList?.length > 0 &&
                       [{ id: 0, name: "select" }, ...roleList]?.map((item) => {
-                        return <option value={item?.name}>{item?.name}</option>;
+                        return (
+                          <option value={item?.phone_number}>
+                            {item?.name}
+                          </option>
+                        );
                       })}
                   </CFormSelect>
                 )}

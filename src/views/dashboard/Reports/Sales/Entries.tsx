@@ -34,42 +34,12 @@ const Entries = () => {
     { key: "Action" },
     { key: "certificateno", label: "Certificate No" },
     { key: "vehicleregno", label: "Vehical No" },
-    { key: "date" },
-    { key: "manufacturer_name" },
-    { key: "distributer_name" },
-    { key: "sub_distributer_name" },
-    { key: "dealer_name" },
-    { key: "vehiclemanufacturingyear" },
-    { key: "chassisnum" },
-    { key: "engineno" },
-    { key: "vehiclemake" },
-    { key: "vehiclemodel" },
-    { key: "ownername" },
+    { key: "date", label: "Entrie Date" },
+    { key: "ownername", label: "Owner Name" },
     { key: "address" },
-    { key: "phoneo" },
+    { key: "phoneo", label: "Phone Number" },
     { key: "rto" },
-    { key: "hologramnum" },
-    { key: "oldcertificatenum" },
-    { key: "oldcertificaterto" },
-    { key: "oldcertificatedate" },
-    { key: "remarks" },
-    { key: "red20mm" },
-    { key: "white20mm" },
-    { key: "red50mm" },
-    { key: "white50mm" },
-    { key: "yellow50mm" },
-    { key: "red80circularreflector" },
-    { key: "white80circularreflector" },
-    { key: "yellow80circularreflector" },
-    { key: "class3" },
-    { key: "class4" },
-    { key: "hologram" },
     { key: "invoice_number" },
-    { key: "rcimage" },
-    { key: "frontimage" },
-    { key: "backimage" },
-    { key: "leftimage" },
-    { key: "rightimage" },
   ];
 
   const scopedColumns = {
@@ -85,6 +55,14 @@ const Entries = () => {
         </td>
       );
     },
+    certificateno: (item) => {
+      console.log(item, "item4523452");
+      return (
+        <td>
+          <Link to={`/ViewEntries/${item?.id}`}>{item?.certificateno}</Link>
+        </td>
+      );
+    },
   };
 
   return (
@@ -95,6 +73,7 @@ const Entries = () => {
           data={registerrationSaleData?.["data"]?.data}
           scopedColumns={scopedColumns}
           TableName={"Entries"}
+          className="w-100"
         />
       )}
     </CCard>

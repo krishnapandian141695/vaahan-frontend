@@ -29,7 +29,7 @@ export const salesApi = createApi({
     getDealerUser: builder.query<any[], void>({
       query: (params) => `/dealerUser/?${params}`,
     }),
-    getDisbutersSale: builder.query<any[], void>({
+    getDisbutersSale: builder.query<any[], void>({ 
       query: (params) => `/distributor/?${params}`,
     }),
     getSubDistributerSale: builder.query<any[], void>({

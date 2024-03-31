@@ -7,11 +7,16 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
+import { useUpdateSubDistributerMutation } from "../../../../Services/user";
 
 const SubDistributor = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
-  let urlString: any = `distributer_name=${userInfo?.userId}`;
-  let urlStringAdmin: any = `distributer_name=`;
+  const [reload, setReload] = React.useState(false);
+
+  const [updateSubDistributor] = useUpdateSubDistributerMutation();
+
+  let urlString: any = `distributor_name=${userInfo?.name}`;
+  let urlStringAdmin: any = `distributor_name=`;
   let finalQUery = userInfo?.role_id === "2" ? urlString : urlStringAdmin;
   const {
     data: subDistributerData,
@@ -22,7 +27,7 @@ const SubDistributor = () => {
 
   React.useEffect(() => {
     subDistributerRefetcg();
-  }, []);
+  }, [reload]);
 
   console.log(
     subDistributerData,
@@ -31,7 +36,57 @@ const SubDistributor = () => {
     userInfo
   );
 
+  const scopedColumns = {
+    Action: (item) => {
+      console.log(item, "item4523452");
+      return (
+        <td>
+          {item?.status === "Active" ? (
+            <CButton
+              variant="ghost"
+              type="button"
+              onClick={async () => {
+                let tempdata = {
+                  ...item,
+                  status: "InActive",
+                };
+                let restult = await updateSubDistributor(tempdata);
+                console.log(restult, "restult");
+                if (restult) {
+                  setReload((prev) => !prev);
+                }
+              }}
+            >
+              InActive
+            </CButton>
+          ) : (
+            <CButton
+              variant="ghost"
+              type="button"
+              onClick={async () => {
+                let tempdata = {
+                  ...item,
+                  status: "Active",
+                };
+                let restult = await updateSubDistributor(tempdata);
+                console.log(restult, "restult");
+                if (restult) {
+                  setReload((prev) => !prev);
+                }
+              }}
+            >
+              Active
+            </CButton>
+          )}
+        </td>
+      );
+    },
+  };
+
   const columns = [
+    {
+      key: "Action",
+    },
     {
       key: "name",
     },
@@ -62,8 +117,8 @@ const SubDistributor = () => {
           TableName={"Sub Distributor"}
           column={columns}
           data={subDistributerData?.["data"]?.data}
-          scopedColumns={null}
           className="width-auto"
+          scopedColumns={scopedColumns}
         />
       )}
     </CCard>

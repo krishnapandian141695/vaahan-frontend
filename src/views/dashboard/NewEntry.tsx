@@ -23,7 +23,7 @@ import { useGetByDealerUserNameQuery } from "../../Services/user";
 const NewEntry = ({ heading, totalEachIitemValues }) => {
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
-    const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
 
   const {
     data: byDealerUser,
@@ -44,12 +44,13 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
     console.log(data, "data");
     let tempData = {
       ...data,
-
-    }
-    console.log("datafrom data form", data.dealername);
+      dealername: userInfo?.userId,
+      dealer_id: userInfo?.userId,
+    };
+    console.log("datafrom data form", tempData.dealername);
     const formData = new FormData();
-    for (const key in data) {
-      formData.append(key, data[key]);
+    for (const key in tempData) {
+      formData.append(key, tempData[key]);
       console.log(formData);
     }
     console.log("data from formData Faizal", data);
@@ -1414,7 +1415,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 </div>
               </CCardBody>
             </CCard>
-            <CCard className="mb-4 spiltForm">
+            {/* <CCard className="mb-4 spiltForm">
               <CCardHeader className="spiltFormHead">
                 <strong>Old Certificate Details</strong>
               </CCardHeader>
@@ -2482,7 +2483,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                   </div>
                 </div>
               </CCardBody>
-            </CCard>
+            </CCard> */}
             <CCard className="mb-4 spiltForm">
               <CCardHeader className="spiltFormHead">
                 <strong>Reflective Tape Details</strong>
@@ -2763,7 +2764,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 </div>
               </CCardBody>
             </CCard>
-            <CCard className="mb-4 spiltForm">
+            {/* <CCard className="mb-4 spiltForm">
               <CCardHeader className="spiltFormHead">
                 <strong>Image Details</strong>
               </CCardHeader>
@@ -2906,7 +2907,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                   </div>
                 </div>
               </CCardBody>
-            </CCard>
+            </CCard> */}
           </CCardBody>
           <div className="col-sm-12 text-center mb-3">
             <CButton variant="outline" type="submit">

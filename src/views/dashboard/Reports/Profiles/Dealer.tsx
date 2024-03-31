@@ -1,4 +1,4 @@
-import { CCard } from "@coreui/react";
+import { CButton, CCard } from "@coreui/react";
 import React from "react";
 import Table from "../../../../components/Table";
 import {
@@ -8,9 +8,14 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
+import { useUpdateDealerMutation } from "../../../../Services/user";
 
 const Dealer = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  const [reload, setReload] = React.useState(false);
+
+  const [updateDealer] = useUpdateDealerMutation();
+
   let urlString: any = `distributor_name=${userInfo?.name}`;
   let urlStringSubDis: any = `sub_distributor_name=${userInfo?.name}`;
   let urlStringAdmin: any = `distributor_name=`;
@@ -31,11 +36,60 @@ const Dealer = () => {
 
   React.useEffect(() => {
     dealerRefetch();
-  }, []);
+  }, [reload]);
 
+  const scopedColumns = {
+    Action: (item) => {
+      console.log(item, "item4523452");
+      return (
+        <td>
+          {item?.status === "Active" ? (
+            <CButton
+              variant="ghost"
+              type="button"
+              onClick={async () => {
+                let tempdata = {
+                  ...item,
+                  status: "InActive",
+                };
+                let restult = await updateDealer(tempdata);
+                console.log(restult, "restult");
+                if (restult) {
+                  setReload((prev) => !prev);
+                }
+              }}
+            >
+              InActive
+            </CButton>
+          ) : (
+            <CButton
+              variant="ghost"
+              type="button"
+              onClick={async () => {
+                let tempdata = {
+                  ...item,
+                  status: "Active",
+                };
+                let restult = await updateDealer(tempdata);
+                console.log(restult, "restult");
+                if (restult) {
+                  setReload((prev) => !prev);
+                }
+              }}
+            >
+              Active
+            </CButton>
+          )}
+        </td>
+      );
+    },
+  };
   console.log(dealerData, "manifactDatamanifactDatamanifactData");
 
   const columns = [
+    {
+      key: "Action",
+    },
     {
       key: "name",
     },
@@ -51,15 +105,6 @@ const Dealer = () => {
     {
       key: "distributor_name",
     },
-    {
-      key: "manufacturer_name",
-    },
-    {
-      key: "sub_distributer_name",
-    },
-    {
-      key: "status",
-    },
   ];
   return (
     <CCard className="mb-4 pb-3 p-3">
@@ -69,6 +114,7 @@ const Dealer = () => {
           data={dealerData?.["data"]?.data}
           TableName={"Dealer"}
           className="width-auto"
+          scopedColumns={scopedColumns}
         />
       )}
     </CCard>

@@ -31,6 +31,7 @@ import {
 
 const AddCompany = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  console.log(userInfo, "userInfo45");
   const {
     control,
     handleSubmit,
@@ -45,19 +46,14 @@ const AddCompany = () => {
   const [createDealer] = useCreateDealerMutation();
   const [registerApi] = useRegisterUserMutation();
   const navigate = useNavigate();
-  console.log(formData, "324532");
 
   const {
     data: byDistributerUser,
     error: byDistributerUserError,
     refetch: byDistributerUserRefetch,
-  } = useGetByDistributerUserNameQuery(userInfo?.name);
+  } = useGetByDistributerUserNameQuery(userInfo?.username);
 
-  console.log(
-    userInfo,
-    "userInfo34523",
-    byDistributerUser?.["data"]?.data?.[0]
-  );
+  console.log(byDistributerUser, "byDistributerUser43523");
 
   const {
     data: manifactData,
@@ -67,99 +63,94 @@ const AddCompany = () => {
   } = useGetManufacturerQuery();
 
   const {
-    data: distributerUserData,
-    error: distributerUserError,
-    isLoading: distributerLoading,
-    refetch: distributerUserRefetch,
-  } = useGetDisbutersQuery();
-
-  const {
     data: subDistributerData,
     error: subDistributerError,
     isLoading: subDistributerLoading,
     refetch: subDistributerRefetch,
   } = useGetSubDistributerQuery();
 
-  const {
-    data: bySubDistributerUser,
-    error: bySUbDistributerUserError,
-    refetch: bySubDistributerUserRefetch,
-  } = useGetBySubDistributerUserNameQuery(userInfo?.name);
+  // const {
+  //   data: bySubDistributerUser,
+  //   error: bySUbDistributerUserError,
+  //   refetch: bySubDistributerUserRefetch,
+  // } = useGetBySubDistributerUserNameQuery(userInfo?.name);
 
   React.useEffect(() => {
-    bySubDistributerUserRefetch();
+    // bySubDistributerUserRefetch();
     subDistributerRefetch();
     byDistributerUserRefetch();
     refetch();
   }, []);
 
-  console.log(bySubDistributerUser, "bySubDistributerUser345234");
-
   const onSubmit = async (data) => {
-    let tempResult: any;
-    let tempFormData = {
+    let userType =
+      data?.user_type === "Manufacturer"
+        ? 6
+        : data?.user_type === "Distributor"
+        ? 2
+        : data?.user_type === "Sub_Distributor"
+        ? 3
+        : 4;
+    let tempRegister = {
       ...formData,
-      ...(userInfo?.role_id === "2"
-        ? {
-            manufacturer_name:
-              byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
-            distributor_name: userInfo?.name,
-            status: "Active",
-          }
-        : {}),
-      ...(userInfo?.role_id === "3"
-        ? {
-            manufacturer_name:
-              bySubDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
-            distributor_name:
-              bySubDistributerUser?.["data"]?.data?.[0]?.distributor_name,
-            status: "Active",
-          }
-        : {}),
-      ...(userInfo?.role_id === "1"
-        ? {
-            status: "Active",
-          }
-        : {}),
+      name: data?.name,
+      username: data?.user_name,
+      password: data?.password,
+      role_id: userType,
     };
+
     try {
-      if (data?.user_type === "Manufacturer") {
-        tempResult = await createManufact(tempFormData);
-      } else if (data?.user_type === "Distributor") {
-        tempResult = await createDistributer(tempFormData);
-      } else if (data?.user_type === "Sub_Distributor") {
-        tempResult = await createSubDistributer(tempFormData);
-      } else {
-        tempResult = await createDealer(tempFormData);
-      }
-      console.log(tempResult, "result");
-      if (tempResult && tempResult?.["data"]?.code === 201) {
-        let userType =
-          data?.user_type === "Manufacturer"
-            ? 6
-            : data?.user_type === "Distributor"
-            ? 2
-            : data?.user_type === "Sub_Distributor"
-            ? 3
-            : 4;
-        let tempRegister = {
-          name: data?.name,
-          username: data?.user_name,
-          password: data?.password,
-          role_id: userType,
+      let result = await registerApi(tempRegister);
+      console.log(result?.["error"]?.status, "result4352345");
+      if (
+        result &&
+        (result?.["data"]?.code === 201 || result?.["error"]?.status === 422)
+      ) {
+        let tempResult: any;
+        let tempFormData = {
+          ...formData,
+          ...(userInfo?.role_id === "2"
+            ? {
+                manufacturer_name:
+                  byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
+                distributor_name: userInfo?.name,
+                distributor_id: userInfo?.userId,
+                status: "Active",
+                phone_number: formData?.mobile,
+              }
+            : {}),
+          ...(userInfo?.role_id === "1"
+            ? {
+                status: "Active",
+                phone_number: formData?.mobile,
+              }
+            : {}),
         };
         try {
-          await registerApi(tempRegister);
-          alert("User creation success");
-          navigate("/dashboard");
+          if (data?.user_type === "Manufacturer") {
+            tempResult = await createManufact(tempFormData);
+          } else if (data?.user_type === "Distributor") {
+            tempResult = await createDistributer(tempFormData);
+          } else if (data?.user_type === "Sub_Distributor") {
+            tempResult = await createSubDistributer(tempFormData);
+          } else {
+            tempResult = await createDealer(tempFormData);
+          }
+          console.log(tempResult, "result");
+          if (tempResult && tempResult?.["data"]?.code === 201) {
+            alert("User creation success");
+            navigate("/dashboard");
+          } else {
+            alert("Phone number should unique");
+          }
         } catch (error) {
-          console.log(error, "error");
+          console.error("Error:", error);
         }
       } else {
-        alert("Something want worng");
+        alert("Phone number and Mail id should unique");
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.log(error, "error");
     }
   };
 
@@ -192,7 +183,7 @@ const AddCompany = () => {
             </div>
             <div className="col-sm-6 mb-3">
               <Controller
-                name="phone_number"
+                name="mobile"
                 control={control}
                 rules={{ required: "Phone number is required" }}
                 defaultValue=""
@@ -205,7 +196,7 @@ const AddCompany = () => {
                   />
                 )}
               />
-              {errors.phone_number && (
+              {errors.mobile && (
                 <div className="text-danger">{"Field is required"}</div>
               )}
             </div>
@@ -470,7 +461,7 @@ const AddCompany = () => {
               <>
                 <div className="col-sm-6 mb-3">
                   <Controller
-                    name="sub_distributer_name"
+                    name="sub_distributor_id"
                     control={control}
                     rules={{ required: "Type is required" }}
                     defaultValue=""
@@ -486,13 +477,13 @@ const AddCompany = () => {
                             ...subDistributerData?.["data"]?.data,
                           ]?.map((item) => {
                             return (
-                              <option value={item?.name}>{item?.name}</option>
+                              <option value={item?.id}>{item?.name}</option>
                             );
                           })}
                       </CFormSelect>
                     )}
                   />
-                  {errors.sub_distributer_name && (
+                  {errors.sub_distributor_id && (
                     <div className="text-danger">{"Field is required"}</div>
                   )}
                 </div>

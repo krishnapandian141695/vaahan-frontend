@@ -73,13 +73,42 @@ export const usersApi = createApi({
       }),
     }),
     getByDistributerUserName: builder.query<any[], void>({
-      query: (name) => `/distributorUser/?name=${name}`,
+      query: (username) => `/distributorUser/?user_name=${username}`,
     }),
     getBySubDistributerUserName: builder.query<any[], void>({
-      query: (name) => `/subDistributorUser/?name=${name}`,
+      query: (username) => `/subDistributorUser/?user_name=${username}`,
     }),
     getByDealerUserName: builder.query<any[], void>({
-      query: (name) => `/dealerUser/?name=${name}`,
+      query: (username) => `/dealerUser/?phone_number=${username}`,
+    }),
+
+    updateManufacturer: builder.mutation({
+      query: (body: any) => ({
+        url: `/manufacturerUser/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
+    updateDistributer: builder.mutation({
+      query: (body: any) => ({
+        url: `/distributorUser/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
+    updateSubDistributer: builder.mutation({
+      query: (body: any) => ({
+        url: `/subDistributorUser/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
+    updateDealer: builder.mutation({
+      query: (body: any) => ({
+        url: `/dealerUser/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
     }),
   }),
 });
@@ -96,6 +125,10 @@ export const {
   useGetByDistributerUserNameQuery,
   useGetBySubDistributerUserNameQuery,
   useGetByDealerUserNameQuery,
-  useChangePasswordMutation
+  useChangePasswordMutation,
+  useUpdateDealerMutation,
+  useUpdateDistributerMutation,
+  useUpdateManufacturerMutation,
+  useUpdateSubDistributerMutation,
 } = usersApi;
 export const { endpoints } = usersApi;

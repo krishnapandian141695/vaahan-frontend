@@ -14,6 +14,7 @@ const DefaultLayout = () => {
   let name: any = localStorage.getItem("name");
   let role_id: any = localStorage.getItem("role_id");
   let userId: any = localStorage.getItem("userId");
+  let username: any = localStorage.getItem("username");
   React.useEffect(() => {
     if (userInfo) {
       let userinfo: any = {
@@ -21,6 +22,7 @@ const DefaultLayout = () => {
         name: name,
         userId: userId,
         role_id: role_id,
+        username: username,
       };
       dispatch(login(userinfo));
     } else {
