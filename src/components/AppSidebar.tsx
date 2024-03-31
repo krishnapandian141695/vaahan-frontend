@@ -47,7 +47,7 @@ const AppSidebar = () => {
         color: "danger",
         text: "Change",
       },
-      display: userInfo?.role_id === "1" ? false : true,
+      display: true,
     },
     {
       component: CNavGroup,

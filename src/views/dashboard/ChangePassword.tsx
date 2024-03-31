@@ -15,6 +15,7 @@ import { RootState } from "../../Store";
 import { useChangePasswordMutation } from "../../Services/user";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../Slices/loginSlice";
+import { useGetDisbutersQuery } from "../../Services/sales";
 
 const ChangePassword = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -34,6 +35,14 @@ const ChangePassword = () => {
   });
   const formData = watch();
   const dispatch = useDispatch();
+
+  const {
+    data: distributerData,
+    error: distributerError,
+    isLoading: distributerLoading,
+    refetch: distributerRefetch,
+  } = useGetDisbutersQuery();
+
   const onSubmit = async () => {
     let tempRegister = {
       ...formData,
@@ -68,25 +77,53 @@ const ChangePassword = () => {
         </CCardHeader>
         <CCardBody>
           <div className="row">
-            <div className="col-sm-6 mb-3">
-              <Controller
-                name="user_name"
-                control={control}
-                rules={{ required: "User Name is required" }}
-                render={({ field }) => (
-                  <CFormInput
-                    disabled={true}
-                    className="border"
-                    {...field}
-                    type="text"
-                    placeholder="User Name"
-                  />
+            {userInfo?.role_id && (
+              <div className="col-sm-6 mb-3">
+                <Controller
+                  name="user_name"
+                  control={control}
+                  rules={{ required: "Type is required" }}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <CFormSelect
+                      aria-label="Default select"
+                      className="border form-control"
+                      {...field}
+                    >
+                      <option>Select</option>
+                      {distributerData?.["data"]?.data &&
+                        distributerData?.["data"]?.data?.map((item) => (
+                          <option value={item?.name}>{item?.name}</option>
+                        ))}
+                    </CFormSelect>
+                  )}
+                />
+                {errors.user_name && (
+                  <div className="text-danger">{"Field is required"}</div>
                 )}
-              />
-              {errors.user_name && (
-                <div className="text-danger">{"Field is required"}</div>
-              )}
-            </div>
+              </div>
+            )}
+            {userInfo?.role_id !== "1" && (
+              <div className="col-sm-6 mb-3">
+                <Controller
+                  name="user_name"
+                  control={control}
+                  rules={{ required: "User Name is required" }}
+                  render={({ field }) => (
+                    <CFormInput
+                      disabled={true}
+                      className="border"
+                      {...field}
+                      type="text"
+                      placeholder="User Name"
+                    />
+                  )}
+                />
+                {errors.user_name && (
+                  <div className="text-danger">{"Field is required"}</div>
+                )}
+              </div>
+            )}
             <div className="col-sm-6 mb-3">
               <Controller
                 name="password"

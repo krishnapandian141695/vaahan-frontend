@@ -43,7 +43,7 @@ body {
       color: black;
       font-weight: 600;
       box-shadow: 0px 0px 10px 0px #e3e3e3;
-      background : white;
+      background: white;
       &:hover {
         background: #b8b7f0;
         color: black;
@@ -235,4 +235,13 @@ button.btn.btn-outline-primary {
 }
 .customStayless thead tr th {
   background: #97cbff;
+}
+
+button.btn.btn-outline-primary {
+  border: 1px solid lightgray;
+  background: #034b14;
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: white;
 }

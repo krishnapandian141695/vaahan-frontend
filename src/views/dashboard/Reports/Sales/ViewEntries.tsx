@@ -31,25 +31,20 @@ const ViewEntries = (props) => {
   //   }
   // }, [id]);
 
-  
   const onPrint = () => {
     const section = sectionToPrintRef.current;
     if (section) {
       // Clone the section element to avoid altering the original DOM
       const clonedSection = section.cloneNode(true);
-      // Create a new window for printing
-      const printWindow = window.open('', '_blank');
-      if (printWindow) {
-        // Append the cloned section to the new window's document
-        printWindow.document.body.appendChild(clonedSection);
-        // Initiate printing
-        printWindow.print();
-      } else {
-        console.error('Failed to open printing window.');
-      }
+      // Append the cloned section to the current document body
+      document.body.appendChild(clonedSection);
+      // Initiate printing
+      window.print();
+      // Remove the cloned section from the document after printing
+      document.body.removeChild(clonedSection);
     }
   };
-  
+
   // const onPrint = () => {
   //   function navigateAfterPrint() {
   //     // Navigate to another page after print
@@ -1459,25 +1454,28 @@ const ViewEntries = (props) => {
           </p>
         </>
       </div>
-      <div className="d-flex justify-content-between py-3">
-        <Link to={"/dashboard"}>
-          <CButton color="dark" type="button" variant="outline">
-            New Enttriy
+      <div className="d-flex justify-content-center py-3">
+        <div>
+          <CButton
+            color="success"
+            type="button"
+            variant="outline"
+            onClick={() => onPrint()}
+            className="me-3"
+          >
+            Print
           </CButton>
-        </Link>
-        <Link to={"/Entries"}>
+          <Link to={"/dashboard"}>
+            <CButton color="dark" type="button" variant="outline">
+              New Enttriy
+            </CButton>
+          </Link>
+        </div>
+        {/* <Link to={"/Entries"}>
           <CButton color="danger" type="button" variant="outline">
             Back
           </CButton>
-        </Link>
-        <CButton
-          color="success"
-          type="button"
-          variant="outline"
-          onClick={() => onPrint()}
-        >
-          Print
-        </CButton>
+        </Link> */}
       </div>
     </>
   );

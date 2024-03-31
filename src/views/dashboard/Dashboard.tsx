@@ -215,22 +215,22 @@ const Dashboard = () => {
   ];
 
   React.useEffect(() => {
-    let calculateData1 = dealerStockData?.["data"]?.data;
-    userInfo?.role_id === "2"
-      ? distributerSaleData?.["data"]?.data
-      : userInfo?.role_id === "3"
-      ? subDistributerSaleData?.["data"]?.data
-      : userInfo?.role_id === "4"
-      ? dealerStockData?.["data"]?.data
-      : null;
-    let calculateDate2 = registerrationSaleData?.["data"]?.data;
-    userInfo?.role_id === "2"
-      ? subDistributerSaleData?.["data"]?.data
-      : userInfo?.role_id === "3"
-      ? dealerStockData?.["data"]?.data
-      : userInfo?.role_id === "4"
-      ? registerrationSaleData?.["data"]?.data
-      : null;
+    let calculateData1 =
+      userInfo?.role_id === "2"
+        ? distributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "3"
+        ? subDistributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "4"
+        ? dealerStockData?.["data"]?.data
+        : null;
+    let calculateDate2 =
+      userInfo?.role_id === "2"
+        ? subDistributerSaleData?.["data"]?.data
+        : userInfo?.role_id === "3"
+        ? dealerStockData?.["data"]?.data
+        : userInfo?.role_id === "4"
+        ? registerrationSaleData?.["data"]?.data
+        : null;
 
     console.log("calculateData123453", calculateDate2);
 
@@ -699,7 +699,7 @@ const Dashboard = () => {
                       defaultValue=""
                       render={({ field }) => (
                         <CFormInput
-                          className="border text-danger"
+                          className="border"
                           label="RED 20MM"
                           {...field}
                           type="text"
@@ -740,7 +740,7 @@ const Dashboard = () => {
                       defaultValue=""
                       render={({ field }) => (
                         <CFormInput
-                          className="border text-danger"
+                          className="border"
                           label="RED 50MM"
                           {...field}
                           type="text"
@@ -780,7 +780,7 @@ const Dashboard = () => {
                       defaultValue=""
                       render={({ field }) => (
                         <CFormInput
-                          className="border text-warning"
+                          className="border"
                           label="YELLOW 50MM"
                           {...field}
                           type="text"
@@ -801,7 +801,7 @@ const Dashboard = () => {
                       defaultValue=""
                       render={({ field }) => (
                         <CFormInput
-                          className="border text-danger"
+                          className="border"
                           label="RED 80MM"
                           {...field}
                           type="text"
@@ -841,7 +841,7 @@ const Dashboard = () => {
                       defaultValue=""
                       render={({ field }) => (
                         <CFormInput
-                          className="border text-warning"
+                          className="border"
                           label="YLLOW 80MM"
                           {...field}
                           type="text"
