@@ -13,11 +13,11 @@ $enable-rtl: true;
 // If you want to add custom CSS you can put it here.
 @import "custom";
 @import url("https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300&display=swap");
-body {
-  font-family: "Roboto", sans-serif;
-  // font-weight: 300;
-  font-style: normal;
-}
+// body {
+//   font-family: "Roboto", sans-serif;
+//   // font-weight: 300;
+//   font-style: normal;
+// }
 
 .nav-group-toggle {
   color: black !important;
@@ -244,4 +244,7 @@ button.btn.btn-outline-primary {
   border-radius: 30px;
   font-weight: 700;
   color: white;
+}
+.row {
+  margin:  0px !important;
 }

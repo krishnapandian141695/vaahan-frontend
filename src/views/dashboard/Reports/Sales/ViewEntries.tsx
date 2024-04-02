@@ -2,23 +2,32 @@ import React, { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useGetRegistrationsSaleByIdQuery } from "../../../../Services/sales";
+import {
+  useGetRegistrationsSaleByIdQuery,
+  useGetRegistrationsSaleByUserQuery,
+} from "../../../../Services/sales";
 import { CBadge, CButton } from "@coreui/react";
+import mm3 from "../../../../assets/images/3mm.png";
+import qrcode from "../../../../assets/images/qr.png";
 
-const ViewEntries = (props) => {
+const ViewEntries = () => {
   const sectionToPrintRef = useRef(null);
-
   const navigate = useNavigate();
   const [printed, setPrinted] = useState(false);
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const id = queryParams.get("id");
+  const { id } = useParams();
   const { data, refetch } = useGetRegistrationsSaleByIdQuery(id);
-  const [qrData, setQrData] = React.useState(window.location.href); // QR code data
-
-  console.log(id, "queryParams43", data?.["data"], location);
+  const [qrData, setQrData] = React.useState(window.location.href);
+  let urlStringAdmin: any = `dealerName=`;
+  // QR code data
+  const {
+    data: registerrationSaleData,
+    error: registerationError,
+    isLoading: registerrationLoding,
+    refetch: registerrationRefetch,
+  } = useGetRegistrationsSaleByUserQuery(urlStringAdmin);
+  console.log(id, "queryParams43", registerrationSaleData?.["data"]?.total);
 
   // React.useEffect(() => {
   //   if (id) {
@@ -32,99 +41,86 @@ const ViewEntries = (props) => {
   // }, [id]);
 
   const onPrint = () => {
-    const section = sectionToPrintRef.current;
-    if (section) {
-      // Clone the section element to avoid altering the original DOM
-      const clonedSection = section.cloneNode(true);
-      // Append the cloned section to the current document body
-      document.body.appendChild(clonedSection);
-      // Initiate printing
-      window.print();
-      // Remove the cloned section from the document after printing
-      document.body.removeChild(clonedSection);
+    function navigateAfterPrint() {
+      // Navigate to another page after print
+      // navigate("/Entries"); // Replace with the actual URL
     }
+
+    function handleAfterPrint() {
+      // This function will be called after the print operation is complete
+      console.log("Print operation completed");
+
+      // Navigate to another page if printing hasn't already occurred
+      // if (!printed) {
+      //   navigateAfterPrint();
+      //   setPrinted(true); // Update the state to indicate that printing has occurred
+      // }
+    }
+
+    // Attach the afterprint event listener
+    if (window.matchMedia) {
+      // For modern browsers
+      window.matchMedia("print").addListener((mediaEvent) => {
+        if (!mediaEvent.matches) {
+          // The print operation has finished
+          handleAfterPrint();
+        }
+      });
+    } else {
+      // For older browsers
+      window.onafterprint = handleAfterPrint;
+    }
+
+    // Initiate the print operation if it hasn't occurred already
+    if (!printed) {
+      setTimeout(() => {
+        const section = sectionToPrintRef.current;
+        if (section) {
+          // Clone the section element to avoid altering the original DOM
+          const clonedSection = section.cloneNode(true);
+          // Append the cloned section to the current document body
+          document.body.appendChild(clonedSection);
+          // Initiate printing
+          window.print();
+          // Remove the cloned section from the document after printing
+          document.body.removeChild(clonedSection);
+        }
+      }, 1000);
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      if (window.matchMedia) {
+        window.matchMedia("print").removeListener(() => {});
+      } else {
+        window.onafterprint = null;
+      }
+    };
   };
-
-  // const onPrint = () => {
-  //   function navigateAfterPrint() {
-  //     // Navigate to another page after print
-  //     navigate("/Entries"); // Replace with the actual URL
-  //   }
-
-  //   function handleAfterPrint() {
-  //     // This function will be called after the print operation is complete
-  //     console.log("Print operation completed");
-
-  //     // Navigate to another page if printing hasn't already occurred
-  //     if (!printed) {
-  //       navigateAfterPrint();
-  //       setPrinted(true); // Update the state to indicate that printing has occurred
-  //     }
-  //   }
-
-  //   // Attach the afterprint event listener
-  //   if (window.matchMedia) {
-  //     // For modern browsers
-  //     window.matchMedia("print").addListener((mediaEvent) => {
-  //       if (!mediaEvent.matches) {
-  //         // The print operation has finished
-  //         handleAfterPrint();
-  //       }
-  //     });
-  //   } else {
-  //     // For older browsers
-  //     window.onafterprint = handleAfterPrint;
-  //   }
-
-  //   // Initiate the print operation if it hasn't occurred already
-  //   if (!printed) {
-  //     setTimeout(() => {
-  //       window.print();
-  //     }, 3000);
-  //   }
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     if (window.matchMedia) {
-  //       window.matchMedia("print").removeListener(() => {});
-  //     } else {
-  //       window.onafterprint = null;
-  //     }
-  //   };
-  // };
 
   const downloadPDF = async () => {
     const element = document.getElementById("certificateContent");
 
     const canvas = await html2canvas(element, {
-      scale: 4, // Adjust scale if needed
-      useCORS: true, // Enable CORS if required for cross-origin content
-      logging: true, // Enable logging for debugging (optional)
+      scale: 4,
+      useCORS: true,
+      logging: true,
     });
 
     const imgData = canvas.toDataURL("image/png");
 
-    // Calculate the aspect ratio of the image
     const aspectRatio = canvas.width / canvas.height;
-
-    // Set the PDF dimensions based on the aspect ratio
-    const pdfWidth = 215; // Width in mm (A4 size)
+    const pdfWidth = 215;
     const pdfHeight = pdfWidth / aspectRatio;
-
-    // Set padding in mm
     const padding = 10;
-
-    // Calculate adjusted dimensions with padding
     const adjustedPdfWidth = pdfWidth - 2 * padding;
     const adjustedPdfHeight = pdfHeight - 2 * padding;
 
-    // Create a new jsPDF instance
     const pdf = new jsPDF({
       unit: "mm",
       format: [pdfWidth, pdfHeight],
     });
 
-    // Add image with padding
     pdf.addImage(
       imgData,
       "PNG",
@@ -134,15 +130,23 @@ const ViewEntries = (props) => {
       adjustedPdfHeight
     );
 
-    // Save the PDF
-    pdf.save("certificate.pdf");
+    // Create a temporary URL for the PDF blob
+    const pdfBlob = pdf.output("blob");
+    const pdfURL = URL.createObjectURL(pdfBlob);
+
+    // Open the PDF in a new tab for preview
+    window.open(pdfURL, "_blank");
+
+    // Optionally, you can also save the PDF
+    // pdf.save("certificate.pdf");
   };
 
   return (
     <>
       <div
         id="certificateContent"
-        style={{ background: "white", padding: "0px 16px" }}
+        className="p-2"
+        style={{ background: "white" }}
         ref={sectionToPrintRef}
       >
         <>
@@ -150,1308 +154,415 @@ const ViewEntries = (props) => {
             type="text/css"
             dangerouslySetInnerHTML={{
               __html:
-                " * {margin:0; padding:0; text-indent:0; }\n         .s1 { color: #242424;font-weight: 200; font-style: normal; text-decoration: none; font-size: 29px; }\n         .s2 { color: #000000d1; font-style: normal; font-weight: 200; text-decoration: none; font-size: 19px; }\n         .s3 { color:#000000d1;     font-weight: 200; text-decoration: none; font-size: 23px; }\n         p { color: black;  line-height: 1;font-style: normal;text-decoration: none; font-size: 14px; margin0px;padding:5px 2px 5px}\n         .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         h1 { color: black; font-style: normal; font-weight: 400; text-decoration: none; font-size: 22px; }\n         .h2 { color: black; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; }\n         .s5 { color: #000000; font-style: normal; font-weight: 700; text-decoration: none; }\n         .s6 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14px; }\n         .s7 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14px; }\n         .s8 { color: #000000; font-family:sans-serif; font-style: normal; font-weight: normal; text-decoration: none;}\n         .s9 { color: #000000; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }\n         .s10 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         .a { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13px; }\n         table, tbody {vertical-align: top; overflow: visible; }\n  .tabConte:{margin-bottom: 10px}    ",
+                "p {padding: 5px;}h5{margin:0px}.border {border: 1.5px solid black;} div#certificateContent { position: relative;   background: white; } #certificateContent:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 90%)), url(http://127.0.0.1:5173/src/assets/images/3mmjpg.jpg);  opacity: 0.1; background-size: 75px;}   ",
             }}
           />
-          <p />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "-14px",
-            }}
-          >
-            <div style={{ width: "85%" }}>
-              <div
+          <div className="row">
+            <div className="col-sm-3 d-flex align-items-center">
+              <img src={qrcode} width={120} height={120} />
+            </div>
+            <div className="col-sm-6 text-center">
+              <p className="m-0">
+                <strong>3M INDIA LIMITED</strong>
+              </p>
+              <p className="m-0">
+                <small>VECHICLE CONSPICUITY ONLINE MIS CERTIFICATE</small>
+              </p>
+              <small>
+                COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089,090&037
+              </small>
+            </div>
+            <div className="col-sm-3 d-flex justify-content-end align-items-center">
+              <img src={mm3} width={160} height={120} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-3 d-flex align-items-end">
+              <p className="d-flex  m-0">
+                <small>TO :</small>
+                <small>
+                  The regional Transport Office <br /> {data?.["data"]?.rto}
+                </small>
+              </p>
+            </div>
+            <div className="col-sm-6 text-center d-flex justify-content-center mb-1 align-items-end">
+              <p
+                className="m-0"
                 style={{
-                  width: "max-content",
-                  float: "right",
-                  marginRight: "52px",
+                  border: "1px dashed",
+                  width: "inherit",
+                  padding: "15px 10px 20px",
+                  height: "fit-content",
                 }}
               >
-                <p
-                  className="s1"
-                  style={{
-                    paddingTop: "1pt",
-                    paddingLeft: "67pt",
-                    textIndent: "0pt",
-                    textAlign: "center",
-                  }}
-                >
-                  VEHICLE CONSPICUITY ONLINE MIS CERTIFICATE
+                Past Hologram here
+              </p>
+            </div>
+            <div className="col-sm-3 d-flex align-items-center justify-content-end">
+              <div>
+                <p className="d-flex m-0 justify-content-end">
+                  <small>Hologram No :</small>
+                  <small>{data?.["data"]?.hologramnum}</small>
+                </p>
+                <p className="d-flex m-0 justify-content-end">
+                  <small>Certificate NO : </small>
+                  <small>
+                    <b>{data?.["data"]?.certificateno}</b>
+                  </small>
+                </p>
+                <p className="d-flex m-0 justify-content-end">
+                  <small>Fitment Date : </small>
+                  <small>
+                    <b>{data?.["data"]?.date}</b>
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="border mb-1">
+            <div className="row">
+              <div className="col-sm-12 p-0">
+                <p className="m-0 py-2">
+                  <h5>Vehicle Details</h5>
+                </p>
+              </div>
+              <div className="col-sm-6 p-0 text-center">
+                <p className="m-0 py-2 border-top">
+                  <small>
+                    Registration No : {data?.["data"]?.vehicleregno}
+                  </small>
+                </p>
+                <p className="m-0 py-2 border-top">
+                  Chassis No : {data?.["data"]?.chassisnum}
+                </p>
+                <p className="m-0 py-2 border-top">
+                  <small> Vehicle Make: {data?.["data"]?.vehiclemake}</small>
+                </p>
+              </div>
+              <div className="col-sm-6 p-0 text-center">
+                <p className="m-0 py-2 border-top border-start">
+                  <small>
+                    Registration Year:{data?.["data"]?.vehiclemanufacturingyear}
+                  </small>
+                </p>
+                <p className="m-0 py-2 border-top border-start">
+                  <small>
+                    Engine NO : {data?.["data"]?.vehiclemanufacturingyear}
+                  </small>
+                </p>
+                <p className="m-0 py-2 border-top border-start">
+                  <small>Vehicle Model : {data?.["data"]?.engineno}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="border mb-1">
+            <div className="row">
+              <div className="col-sm-5 p-0">
+                <p className="m-0 py-2 border-top">
+                  <h5>Vehicle Owner Details</h5>
+                </p>
+                <p className="m-0 py-2 border-top" style={{ height: "70px" }}>
+                  <small className="m-0">
+                    Company Name/Owner Name : {data?.["data"]?.ownername}
+                  </small>
+                  <br />
+                  <small className="m-0">
+                    Contact Number : {data?.["data"]?.phoneo}
+                  </small>
+                  <br />
+                </p>
+              </div>
+              <div className="col-sm-7 p-0 ">
+                <p className="m-0 py-2 border-top border-start">
+                  <h5>Manufacture & Distributor Details</h5>
                 </p>
                 <p
-                  className="s2"
-                  style={{
-                    paddingTop: "5pt",
-                    paddingLeft: "67pt",
-                    textIndent: "0pt",
-                    textAlign: "center",
-                  }}
+                  className="m-0 py-2 border-top border-start"
+                  style={{ height: "70px" }}
                 >
-                  COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089 &amp; 090
+                  <small className="m-0">
+                    Manufacturer Name : {data?.["data"]?.manufacturer_name}
+                  </small>
                 </p>
-                <p
-                  className="s3"
-                  style={{
-                    paddingTop: "3pt",
-                    paddingLeft: "67pt",
-                    textIndent: "0pt",
-                    textAlign: "center",
-                  }}
-                >
-                  (Generated online in rtvsta.tn.gov.in)
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-5 p-0 d-flex">
+                <p className="m-0 py-2 border-top w-100">
+                  <small className="m-0">
+                    Owner Address / Register Address : {data?.["data"]?.address}
+                    ,
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-7 p-0 ">
+                <div className="row">
+                  <div className="col-sm-6 p-0">
+                    <p className="m-0 py-2 border-top border-start">
+                      <small className="m-0">
+                        MFG Address: 3M India Limited Plot No-48-51,Electronic
+                        City Hosur Road-560100 Bangalore / Karnataka, India
+                      </small>
+                    </p>
+                  </div>
+                  <div className="col-sm-6 p-0">
+                    <p className="m-0 py-2 border-top border-start">
+                      <small className="m-0">
+                        MFG Address: 3M India Limited Plot No-48-51,Electronic
+                        City Hosur Road-560100 Bangalore / Karnataka, India
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border mb-1">
+            <div className="row">
+              <div className="col-sm-4 p-0">
+                <h6 className="m-0 p-2 border-top">
+                  Conspicuity Tapes 20MM Fitment Details
+                </h6>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0">
+                <h6 className="m-0 p-2 border-top border-start">
+                  Rear Marking Plates Details
+                </h6>
+              </div>
+              <div className="col-sm-4 p-0">
+                <h6 className="m-0 p-2 border-top border-start">
+                  Certificate Details
+                </h6>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4 p-0 d-flex">
+                <p className="m-0 py-2 border-top w-100">
+                  <small className="m-0">20MM - RED : 0.00 Mtrs</small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    Class 3 : Red Retro Reflective and Yellow Retro Reflective -
+                    Alternative Strips
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">Type Approved Number: A94495</small>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4 p-0 d-flex">
+                <p className="m-0 py-2 border-top w-100">
+                  <small className="m-0">20MM WHITE : 0.00 Mtrs</small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    Class 4 : Red Retro Reflective border and Yellow Retro
+                    Reflective Centre
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    COP Number : SHL/16/2018-2019/3000002951/COP/2711
+                  </small>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4 p-0 d-flex">
+                <p className="m-0 py-2 border-top w-100">
+                  <small className="m-0">
+                    Conspicuity Tapes 50MM Fitment Details
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">Previous Certificate Details</small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    Test Report Number :SHL/16/2007-2008/2528/1584
+                  </small>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4 p-0 d-flex">
+                <p className="m-0 py-2 border-top w-100">
+                  <small className="m-0">50MM-RED : 0.50 Mtrs</small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    Old Certificate No. : {data?.["data"]?.oldcertificatenum}
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-4 ps-0 pe-0 d-flex">
+                <p className="m-0 py-2 border-top border-start w-100">
+                  <small className="m-0">
+                    EC MARK:REAR MARK :SHL/16/2013/-2014/9149/2783 /17.12.2014
+                  </small>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-8 p-0 d-flex">
+                <div className="row w-100">
+                  <div className="col-sm-6 p-0 d-flex">
+                    <p className="m-0 py-2 border-top w-100">
+                      <small className="m-0">50MM-WHITE : 0.50 Mtrs</small>
+                    </p>
+                  </div>
+                  <div className="col-sm-6 p-0 d-flex">
+                    <p className="m-0 py-2 border-top border-start w-100">
+                      <small className="m-0">Old Certificate date : NA</small>
+                    </p>
+                  </div>
+                  <div className="col-sm-6 p-0 d-flex">
+                    <p className="m-0 py-2 border-top w-100">
+                      <small className="m-0">50MM-WHITE : 0.50 Mtrs</small>
+                    </p>
+                  </div>
+                  <div className="col-sm-6 p-0 d-flex">
+                    <p className="m-0 py-2 border-top border-start w-100">
+                      <small className="m-0">
+                        Old Certificate date :{" "}
+                        {data?.["data"]?.oldcertificatedate}
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4 ps-0 p-0 d-flex">
+                <p className="m-0 py-2 border-top border-start  w-100">
+                  <small className="m-0">
+                    EC MARK:REAR MARK :SHL/16/2013/-2014/9149/2783 /17.12.2014
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="border mb-1">
+            <div className="row">
+              <div className="col-sm-6 p-0 d-flex">
+                <p className="m-0 py-2">
+                  <small className="m-0">
+                    The Maximun Retail Price for the products specified in this
+                    Certificate is Rs.300 only.
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-6 p-0 d-flex">
+                <p className="m-0 py-2 border-start">
+                  <small className="m-0">
+                    20mm: Rs. 30/feet | 50mm: Rs.46/feet | C3: Rs.650/piece |
+                    C4: Rs.750/piece
+                  </small>
+                </p>
+              </div>
+              <div className="col-sm-12 p-0 ">
+                <p className="m-0 py-2 border-top">
+                  <small className="m-0">Fitment Images</small>
+                </p>
+              </div>
+              <div className="col-sm-3 p-0">
+                <p className="m-0 py-2 border-top">
+                  <img
+                    src={data?.["data"]?.frontimage}
+                    width={200}
+                    height={150}
+                  />
+                </p>
+              </div>
+              <div className="col-sm-3 p-0">
+                <p className="m-0 py-2 border-top border-start">
+                  <img
+                    src={data?.["data"]?.backimage}
+                    width={200}
+                    height={150}
+                  />
+                </p>
+              </div>
+              <div className="col-sm-3 p-0">
+                <p className="m-0 py-2 border-top border-start">
+                  <img
+                    src={data?.["data"]?.leftimage}
+                    width={200}
+                    height={150}
+                  />
+                </p>
+              </div>
+              <div className="col-sm-3 p-0 ">
+                <p className="m-0 py-2 border-top border-start">
+                  <img src={data?.["data"]?.rcimage} width={200} height={150} />
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-9 p-0 d-flex">
+                <div className="row w-100">
+                  <div className="col-sm-12 p-0 d-flex">
+                    <p className="m-0 py-2 border-top w-100">
+                      <small className="m-0">
+                        This is to certify that we have authorised Distributor /
+                        Dealer for the sale AIS-089,090,&037 Compliant 3M Brand
+                        Retro reflective Tapes Supplied by us as per CMVR
+                        104-1989. The New Print no:{" "}
+                        {registerrationSaleData?.["data"]?.total}
+                      </small>
+                    </p>
+                  </div>
+                  <div className="col-sm-12 p-0 d-flex">
+                    <p className="m-0 py-2 border-top w-100">
+                      <small className="m-0">
+                        We hereby certify that we have supplied/installed
+                        ICAT/ARAI Approved Retro Reflective Tapes as per CMRV
+                        rule 104 specified under CMVR GSR 784 (E)
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-3 ps-0 p-0 d-flex">
+                <p className="m-0 py-2 border-start border-top w-100 d-flex align-items-end">
+                  <small className="m-0">
+                    Authorized Distributor Seal & Signatur
+                  </small>
                 </p>
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                width: "13%",
-                justifyContent: "end",
-                height: "max-content",
-              }}
+              className="d-flex justify-content-between align-items-end border-top"
+              style={{ height: "100px" }}
             >
-              <QRCode value={qrData} size={100} />
+              <div className="">
+                <p className="m-0 border-top">Authorized Dealer Signature</p>
+              </div>
+              <div className="">
+                <p className="m-0 border-top">Customer Signature</p>
+              </div>
             </div>
           </div>
-
-          <p style={{ textIndent: "0pt", textAlign: "left" }}>
-            <br />
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <p
-                style={{
-                  textIndent: "0pt",
-                  textAlign: "left",
-                }}
-              >
-                To:
-              </p>
-              <p
-                style={{
-                  textAlign: "left",
-                }}
-              >
-                <p style={{ marginBottom: "-10px" }}>
-                  The Regional Transport Office
-                </p>{" "}
-                <br /> TN12 POONAMALLE
-              </p>
-            </div>
-            <div>
-              <h1
-                style={{
-                  paddingLeft: "6pt",
-                  textIndent: "0pt",
-                  textAlign: "left",
-                }}
-              >
-                RTV - CERTIFICATE
-              </h1>
-            </div>
-            <div>
-              <p style={{ textIndent: "0pt", textAlign: "right" }}>
-                Certificate No: <span className="h2">TN12NC646699</span>
-              </p>
-              <p
-                style={{
-                  paddingTop: "4pt",
-                  textIndent: "0pt",
-                  textAlign: "right",
-                }}
-              >
-                Fitment Date: <span className="h2">{data?.["data"]?.date}</span>
-              </p>
-            </div>
+          <div className="bottompring text-center">
+            <h4>
+              [Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT VALID]
+            </h4>
           </div>
-
-          <table
-            style={{
-              borderCollapse: "collapse",
-              // marginLeft: "5.98939pt",
-              width: "100%",
-            }}
-            cellSpacing={0}
-          >
-            <tbody>
-              <tr style={{ height: "19pt" }}>
-                <td
-                  style={{
-                    width: "185pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Vehicle Details
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Vehicle Make &amp; Model
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "231pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Manufacturer &amp; Distributor Details
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "15pt" }}>
-                <td
-                  style={{
-                    width: "185pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Registration No : <b>{data?.["data"]?.vehicleregno}</b>
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{ textIndent: "0pt", textAlign: "left" }}
-                  >
-                    Registration Year: {data?.["data"]?.date}
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "231pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Trade Name : <b>REFLOMAX</b>
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "16pt" }}>
-                <td
-                  style={{
-                    width: "185pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Chassis No : {data?.["data"]?.chassisnum}
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Engine No : {data?.["data"]?.engineno}
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "231pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s8"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Manufacturer Details: M/S. GLODIAN REFLECTIVE PVT LTD
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "15pt" }}>
-                <td
-                  style={{
-                    width: "185pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Vehicle Make: {data?.["data"]?.vehiclemake}
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Vehicle Model : AL 1612/4210WB
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "231pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s8"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Distributor Details: M/S. RAATANJEY AND CO
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "19pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Vehicle Owner Details
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    RC IMAGE
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "15pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Company Name/Owner Name : N VARALAKSHMI
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                  rowSpan={8}
-                >
-                  <p
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <span></span>
-                  </p>
-                  <img
-                    style={{ width: "100%" }}
-                    src={data?.["data"]?.rcimage}
-                  />
-                  <p />
-                </td>
-              </tr>
-              <tr style={{ height: "37pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s8"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      lineHeight: "146%",
-                      textAlign: "left",
-                    }}
-                  >
-                    Owner Address / Register Address : 25 PRAKASAM STREET EZHIL
-                    NAGAR VEPPAMPATTU TN 602024
-                  </p>
-                  <p
-                    className="s8"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Contact Number : 9940565735
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "18pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Conspicuity Tapes 20MM &amp; 50MM Fitment Details
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "14pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      lineHeight: "10pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    20MM RED : 0 Mtrs | 20MM WHITE : 0 Mtrs
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "14pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    50MM Red : 2 Mtrs | 50MM White : 2 Mtrs | 50MM Yellow : 10
-                    Mtrs
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "17pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Rear Marking Plates Details
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "34pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Class 3 : Red Retro Reflective and Yellow Retro Reflective -
-                    Alternative Strips
-                  </p>
-                  <p
-                    className="s9"
-                    style={{
-                      paddingTop: "5pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 500 500"
-                      width={20}
-                      height={20}
-                    >
-                      <path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
-                    </svg>
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "15pt" }}>
-                <td
-                  style={{
-                    width: "277pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Class 4 : Red Retro Reflective border and Yellow Retro
-                    Reflective Centre
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "19pt" }}>
-                <td
-                  style={{
-                    width: "173pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Approval Details
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "381pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingLeft: "129pt",
-                      paddingRight: "129pt",
-                      textIndent: "0pt",
-                      textAlign: "center",
-                    }}
-                  >
-                    Certified By ARAI / ICAT
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "28pt" }}>
-                <td
-                  style={{
-                    width: "173pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={2}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      lineHeight: "132%",
-                      textAlign: "left",
-                    }}
-                  >
-                    TAC:ARAI Ref No: AG0824 Dated 29.03.2016 and ADDENDUM NO -
-                    01 Dated 25.01.2017
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "179pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      lineHeight: "132%",
-                      textAlign: "left",
-                    }}
-                  >
-                    COP Number : SHL/307/2021-2022/3000018791/COP/3252 Dated
-                    30.09.2021
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "202pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      paddingRight: "19pt",
-                      textIndent: "0pt",
-                      lineHeight: "132%",
-                      textAlign: "left",
-                    }}
-                  >
-                    Test Report Number :SHL/310/2016-2017/8555/277
-                    SHL/310/2018-2019/3000000938/TA/1913
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "19pt" }}>
-                <td
-                  style={{
-                    width: "554pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={4}
-                >
-                  <p
-                    className="s5"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Fitment Images
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "15pt" }}>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Front
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "139pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Rear
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "139pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Side-1
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Side-2
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "110pt" }}>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <span></span>
-                  </p>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "142px",
-                      paddingLeft: "5px",
-                    }}
-                    src={data?.["data"]?.frontimage}
-                  />
-                  <p />
-                </td>
-                <td
-                  style={{
-                    width: "139pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <span></span>
-                  </p>
-                  <img
-                    style={{ width: "100%", height: "142px" }}
-                    src={data?.["data"]?.leftimage}
-                  />
-                  <p />
-                </td>
-                <td
-                  style={{
-                    width: "139pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <span></span>
-                  </p>
-                  <img
-                    style={{ width: "100%", height: "142px" }}
-                    src={data?.["data"]?.rightimage}
-                  />
-                  <p />
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    <span></span>
-                  </p>
-                  <img
-                    style={{ width: "100%", height: "142px" }}
-                    src={data?.["data"]?.backimage}
-                  />
-                  <p />
-                </td>
-              </tr>
-              <tr style={{ height: "25pt" }}>
-                <td
-                  style={{
-                    width: "554pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={4}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    We hereby certify that supplied/installed ICAT / ARAI
-                    Approved Retro Reflective Tapes as per CMRV rule 104
-                    specified under CMVR GSR 784 (E)
-                  </p>
-                </td>
-              </tr>
-              <tr style={{ height: "54pt" }}>
-                <td
-                  style={{
-                    width: "416pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "1px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "1px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                  colSpan={3}
-                >
-                  <p
-                    className="s6"
-                    style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    For APPU (RMAPMMS12)
-                  </p>
-                  <p style={{ textIndent: "0pt", textAlign: "left" }}>
-                    <br />
-                  </p>
-                  <p
-                    className="s7"
-                    style={{
-                      paddingLeft: "1pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Authorized Dealer Seal &amp; Signature
-                  </p>
-                </td>
-                <td
-                  style={{
-                    width: "138pt",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "1px",
-                    borderLeftStyle: "solid",
-                    borderLeftWidth: "0px",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "1px",
-                    borderRightStyle: "solid",
-                    borderRightWidth: "1px",
-                    borderColor: "#000000",
-                  }}
-                >
-                  <p style={{ textIndent: "0pt", textAlign: "left" }}>
-                    <br />
-                  </p>
-                  <p
-                    className="s7"
-                    style={{
-                      paddingLeft: "32pt",
-                      textIndent: "0pt",
-                      textAlign: "left",
-                    }}
-                  >
-                    Customer Signature
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p
-            className="s10"
-            style={{
-              paddingLeft: "67pt",
-              textIndent: "0pt",
-              lineHeight: "9pt",
-              textAlign: "center",
-              marginBottom: "20px",
-            }}
-          >
-            <a
-              href="http://WWW.RTVSTA.TN.GOV.IN/"
-              className="a"
-              target="_blank"
-            >
-              [Note: This certi cate was downloaded from{" "}
-            </a>
-            WWW.RTVSTA.TN.GOV.IN]
-          </p>
         </>
       </div>
       <div className="d-flex justify-content-center py-3">
@@ -1460,7 +571,7 @@ const ViewEntries = (props) => {
             color="success"
             type="button"
             variant="outline"
-            onClick={() => onPrint()}
+            onClick={() => downloadPDF()}
             className="me-3"
           >
             Print
