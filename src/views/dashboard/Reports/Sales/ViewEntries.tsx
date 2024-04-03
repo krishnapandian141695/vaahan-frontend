@@ -246,12 +246,10 @@ const ViewEntries = () => {
                   </small>
                 </p>
                 <p className="m-0 py-2 border-top border-start">
-                  <small>
-                    Engine NO : {data?.["data"]?.vehiclemanufacturingyear}
-                  </small>
+                  <small>Engine No : {data?.["data"]?.engineno}</small>
                 </p>
                 <p className="m-0 py-2 border-top border-start">
-                  <small>Vehicle Model : {data?.["data"]?.engineno}</small>
+                  <small>Vehicle Model : {data?.["data"]?.vehiclemodel}</small>
                 </p>
               </div>
             </div>
