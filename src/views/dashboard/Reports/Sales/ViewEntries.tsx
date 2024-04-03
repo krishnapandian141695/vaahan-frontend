@@ -350,7 +350,7 @@ const ViewEntries = () => {
                       </div>
                     </td>
                     <td>
-                      <p>
+                      <p style={{margin : "0px"}}>
                         <b>Distributor Address:</b>
                       </p>
                       <div
