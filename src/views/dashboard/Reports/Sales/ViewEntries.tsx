@@ -9,8 +9,9 @@ import {
   useGetRegistrationsSaleByUserQuery,
 } from "../../../../Services/sales";
 import { CBadge, CButton } from "@coreui/react";
-import mm3 from "../../../../assets/images/3mm.png";
+import mm3 from "../../../../assets/images/3M_logo.png";
 import qrcode from "../../../../assets/images/qr.png";
+import backgroundImg from "../../../../assets/images/background.jpg";
 
 const ViewEntries = () => {
   const sectionToPrintRef = useRef(null);
@@ -27,565 +28,644 @@ const ViewEntries = () => {
     isLoading: registerrationLoding,
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlStringAdmin);
-  console.log(id, "queryParams43", registerrationSaleData?.["data"]?.total);
-
-  // React.useEffect(() => {
-  //   if (id) {
-  //     //   refetch();
-  //     // setTimeout(() => {
-  //     //   downloadPDF().then(() => {
-  //     //     navigate("/certificate-list");
-  //     //   });
-  //     // }, 2000);
-  //   }
-  // }, [id]);
+  console.log(id, "queryParams43", data?.["data"]);
 
   const onPrint = () => {
-    function navigateAfterPrint() {
-      // Navigate to another page after print
-      // navigate("/Entries"); // Replace with the actual URL
-    }
-
-    function handleAfterPrint() {
-      // This function will be called after the print operation is complete
-      console.log("Print operation completed");
-
-      // Navigate to another page if printing hasn't already occurred
-      // if (!printed) {
-      //   navigateAfterPrint();
-      //   setPrinted(true); // Update the state to indicate that printing has occurred
-      // }
-    }
-
-    // Attach the afterprint event listener
-    if (window.matchMedia) {
-      // For modern browsers
-      window.matchMedia("print").addListener((mediaEvent) => {
-        if (!mediaEvent.matches) {
-          // The print operation has finished
-          handleAfterPrint();
-        }
-      });
-    } else {
-      // For older browsers
-      window.onafterprint = handleAfterPrint;
-    }
-
-    // Initiate the print operation if it hasn't occurred already
-    if (!printed) {
-      setTimeout(() => {
-        const section = sectionToPrintRef.current;
-        if (section) {
-          // Clone the section element to avoid altering the original DOM
-          const clonedSection = section.cloneNode(true);
-          // Append the cloned section to the current document body
-          document.body.appendChild(clonedSection);
-          // Initiate printing
-          window.print();
-          // Remove the cloned section from the document after printing
-          document.body.removeChild(clonedSection);
-        }
-      }, 1000);
-    }
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      if (window.matchMedia) {
-        window.matchMedia("print").removeListener(() => {});
-      } else {
-        window.onafterprint = null;
-      }
-    };
-  };
-
-  const downloadPDF = async () => {
-    const element = document.getElementById("certificateContent");
-
-    const canvas = await html2canvas(element, {
-      scale: 4,
-      useCORS: true,
-      logging: true,
-    });
-
-    const imgData = canvas.toDataURL("image/png");
-
-    const aspectRatio = canvas.width / canvas.height;
-    const pdfWidth = 215;
-    const pdfHeight = pdfWidth / aspectRatio;
-    const padding = 10;
-    const adjustedPdfWidth = pdfWidth - 2 * padding;
-    const adjustedPdfHeight = pdfHeight - 2 * padding;
-
-    const pdf = new jsPDF({
-      unit: "mm",
-      format: [pdfWidth, pdfHeight],
-    });
-
-    pdf.addImage(
-      imgData,
-      "PNG",
-      padding,
-      padding,
-      adjustedPdfWidth,
-      adjustedPdfHeight
+    var divContents = document.getElementById("Certificate").innerHTML;
+    var printWindow = window.open("", "", "height=1000,width=800");
+    printWindow.document.write(
+      "<html><head> <style>.table tbody tr td { font-size:14px;color:black;padding-left:10px;padding:0px; }</style><title>Customer Copy</title>"
     );
-
-    // Create a temporary URL for the PDF blob
-    const pdfBlob = pdf.output("blob");
-    const pdfURL = URL.createObjectURL(pdfBlob);
-
-    // Open the PDF in a new tab for preview
-    window.open(pdfURL, "_blank");
-
-    // Optionally, you can also save the PDF
-    // pdf.save("certificate.pdf");
+    printWindow.document.write(
+      '</head><body style="padding:0;margin-top:20;">'
+    );
+    printWindow.document.write(divContents);
+    printWindow.document.write("</body></html>");
+    printWindow.document.close();
+    function show() {
+      if (printWindow.document.readyState === "complete") {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+      } else {
+        setTimeout(show, 100);
+      }
+    }
+    show();
   };
 
   return (
     <>
-      <div
-        id="certificateContent"
-        className="p-2"
-        style={{ background: "white" }}
-        ref={sectionToPrintRef}
-      >
-        <>
+      <>
+        <style
+          type="text/css"
+          dangerouslySetInnerHTML={{
+            __html:
+              "\n        @page {\n   size: 7in 9.25in;\n   margin: 27mm 16mm 27mm 16mm;\n}\n        .tr {\n            font-family:'Arial, Helvetica, sans-serif'\n        }\n    ",
+          }}
+        />
+        <div
+          id="Certificate"
+          className="container-fluid"
+          style={{ marginTop: 30, width: 800, background: "white" }}
+        >
+          <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+          <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
           <style
-            type="text/css"
             dangerouslySetInnerHTML={{
               __html:
-                "p {padding: 5px;}h5{margin:0px}.border {border: 1.5px solid black;} div#certificateContent { position: relative;   background: white; } #certificateContent:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 90%)), url(http://127.0.0.1:5173/src/assets/images/3mmjpg.jpg);  opacity: 0.1; background-size: 75px;}   ",
+                "\n            .table {\n                width: 100%;\n            }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n        ",
             }}
           />
-          <div className="row">
-            <div className="col-sm-3 d-flex align-items-center">
-              <img src={qrcode} width={120} height={120} />
-            </div>
-            <div className="col-sm-6 text-center">
-              <p className="m-0">
-                <strong>3M INDIA LIMITED</strong>
-              </p>
-              <p className="m-0">
-                <small>VECHICLE CONSPICUITY ONLINE MIS CERTIFICATE</small>
-              </p>
-              <small>
-                COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089,090&037
-              </small>
-            </div>
-            <div className="col-sm-3 d-flex justify-content-end align-items-center">
-              <img src={mm3} width={160} height={120} />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-3 d-flex align-items-end">
-              <p className="d-flex  m-0">
-                <small>TO :</small>
-                <small>
-                  The regional Transport Office <br /> {data?.["data"]?.rto}
-                </small>
-              </p>
-            </div>
-            <div className="col-sm-6 text-center d-flex justify-content-center mb-1 align-items-end">
-              <p
-                className="m-0"
+          <div
+            className="container-fluid"
+            style={{ margin: "auto", padding: 0 }}
+          >
+            <div
+              className="row"
+              style={{
+                margin: "auto",
+                padding: 0,
+                color: "black",
+                height: 120,
+              }}
+            >
+              <div style={{ position: "relative" }}>
+                <img
+                  src={backgroundImg}
+                  style={{
+                    position: "absolute",
+                    width: 800,
+                    height: 1050,
+                    zIndex: -1,
+                    opacity: ".3",
+                    left: "-18px",
+                  }}
+                />
+              </div>
+              {/* <div style={{zIndex : 9}}> */}
+              <div
                 style={{
-                  border: "1px dashed",
-                  width: "inherit",
-                  padding: "15px 10px 20px",
-                  height: "fit-content",
+                  position: "absolute",
+                  height: 35,
+                  width: 200,
+                  marginLeft: 300,
+                  marginTop: 120,
+                  border: "dashed 1px grey",
+                  textAlign: "center",
+                  color: "GrayText",
+                  paddingTop: 5,
                 }}
               >
-                Past Hologram here
-              </p>
-            </div>
-            <div className="col-sm-3 d-flex align-items-center justify-content-end">
-              <div>
-                <p className="d-flex m-0 justify-content-end">
-                  <small>Hologram No :</small>
-                  <small>{data?.["data"]?.hologramnum}</small>
-                </p>
-                <p className="d-flex m-0 justify-content-end">
-                  <small>Certificate NO : </small>
-                  <small>
-                    <b>{data?.["data"]?.certificateno}</b>
-                  </small>
-                </p>
-                <p className="d-flex m-0 justify-content-end">
-                  <small>Fitment Date : </small>
-                  <small>
-                    <b>{data?.["data"]?.date}</b>
-                  </small>
-                </p>
+                Paste Hologram here
               </div>
-            </div>
-          </div>
-          <div className="border mb-1">
-            <div className="row">
-              <div className="col-sm-12 p-0">
-                <p className="m-0 py-2">
-                  <h5>Vehicle Details</h5>
-                </p>
-              </div>
-              <div className="col-sm-6 p-0 text-center">
-                <p className="m-0 py-2 border-top">
-                  <small>
-                    Registration No : {data?.["data"]?.vehicleregno}
-                  </small>
-                </p>
-                <p className="m-0 py-2 border-top">
-                  Chassis No : {data?.["data"]?.chassisnum}
-                </p>
-                <p className="m-0 py-2 border-top">
-                  <small> Vehicle Make: {data?.["data"]?.vehiclemake}</small>
-                </p>
-              </div>
-              <div className="col-sm-6 p-0 text-center">
-                <p className="m-0 py-2 border-top border-start">
-                  <small>
-                    Registration Year:{data?.["data"]?.vehiclemanufacturingyear}
-                  </small>
-                </p>
-                <p className="m-0 py-2 border-top border-start">
-                  <small>Engine No : {data?.["data"]?.engineno}</small>
-                </p>
-                <p className="m-0 py-2 border-top border-start">
-                  <small>Vehicle Model : {data?.["data"]?.vehiclemodel}</small>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="border mb-1">
-            <div className="row">
-              <div className="col-sm-5 p-0">
-                <p className="m-0 py-2 border-top">
-                  <h5>Vehicle Owner Details</h5>
-                </p>
-                <p className="m-0 py-2 border-top" style={{ height: "70px" }}>
-                  <small className="m-0">
-                    Company Name/Owner Name : {data?.["data"]?.ownername}
-                  </small>
-                  <br />
-                  <small className="m-0">
-                    Contact Number : {data?.["data"]?.phoneo}
-                  </small>
-                  <br />
-                </p>
-              </div>
-              <div className="col-sm-7 p-0 ">
-                <p className="m-0 py-2 border-top border-start">
-                  <h5>Manufacture & Distributor Details</h5>
-                </p>
-                <p
-                  className="m-0 py-2 border-top border-start"
-                  style={{ height: "70px" }}
+              <div
+                className="container-fluid"
+                style={{ margin: "auto", padding: 0 }}
+              >
+                <div
+                  className="row"
+                  style={{ margin: "auto", padding: 0, color: "black" }}
                 >
-                  <small className="m-0">
-                    Manufacturer Name : {data?.["data"]?.manufacturer_name}
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-5 p-0 d-flex">
-                <p className="m-0 py-2 border-top w-100">
-                  <small className="m-0">
-                    Owner Address / Register Address : {data?.["data"]?.address}
-                    ,
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-7 p-0 ">
-                <div className="row">
-                  <div className="col-sm-6 p-0">
-                    <p className="m-0 py-2 border-top border-start">
-                      <small className="m-0">
-                        MFG Address: 3M India Limited Plot No-48-51,Electronic
-                        City Hosur Road-560100 Bangalore / Karnataka, India
-                      </small>
-                    </p>
-                  </div>
-                  <div className="col-sm-6 p-0">
-                    <p className="m-0 py-2 border-top border-start">
-                      <small className="m-0">
-                        MFG Address: 3M India Limited Plot No-48-51,Electronic
-                        City Hosur Road-560100 Bangalore / Karnataka, India
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border mb-1">
-            <div className="row">
-              <div className="col-sm-4 p-0">
-                <h6 className="m-0 p-2 border-top">
-                  Conspicuity Tapes 20MM Fitment Details
-                </h6>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0">
-                <h6 className="m-0 p-2 border-top border-start">
-                  Rear Marking Plates Details
-                </h6>
-              </div>
-              <div className="col-sm-4 p-0">
-                <h6 className="m-0 p-2 border-top border-start">
-                  Certificate Details
-                </h6>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4 p-0 d-flex">
-                <p className="m-0 py-2 border-top w-100">
-                  <small className="m-0">20MM - RED : 0.00 Mtrs</small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    Class 3 : Red Retro Reflective and Yellow Retro Reflective -
-                    Alternative Strips
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">Type Approved Number: A94495</small>
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4 p-0 d-flex">
-                <p className="m-0 py-2 border-top w-100">
-                  <small className="m-0">20MM WHITE : 0.00 Mtrs</small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    Class 4 : Red Retro Reflective border and Yellow Retro
-                    Reflective Centre
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    COP Number : SHL/16/2018-2019/3000002951/COP/2711
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4 p-0 d-flex">
-                <p className="m-0 py-2 border-top w-100">
-                  <small className="m-0">
-                    Conspicuity Tapes 50MM Fitment Details
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">Previous Certificate Details</small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    Test Report Number :SHL/16/2007-2008/2528/1584
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-4 p-0 d-flex">
-                <p className="m-0 py-2 border-top w-100">
-                  <small className="m-0">50MM-RED : 0.50 Mtrs</small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    Old Certificate No. : {data?.["data"]?.oldcertificatenum}
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-4 ps-0 pe-0 d-flex">
-                <p className="m-0 py-2 border-top border-start w-100">
-                  <small className="m-0">
-                    EC MARK:REAR MARK :SHL/16/2013/-2014/9149/2783 /17.12.2014
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-8 p-0 d-flex">
-                <div className="row w-100">
-                  <div className="col-sm-6 p-0 d-flex">
-                    <p className="m-0 py-2 border-top w-100">
-                      <small className="m-0">50MM-WHITE : 0.50 Mtrs</small>
-                    </p>
-                  </div>
-                  <div className="col-sm-6 p-0 d-flex">
-                    <p className="m-0 py-2 border-top border-start w-100">
-                      <small className="m-0">Old Certificate date : NA</small>
-                    </p>
-                  </div>
-                  <div className="col-sm-6 p-0 d-flex">
-                    <p className="m-0 py-2 border-top w-100">
-                      <small className="m-0">50MM-WHITE : 0.50 Mtrs</small>
-                    </p>
-                  </div>
-                  <div className="col-sm-6 p-0 d-flex">
-                    <p className="m-0 py-2 border-top border-start w-100">
-                      <small className="m-0">
-                        Old Certificate date :{" "}
-                        {data?.["data"]?.oldcertificatedate}
-                      </small>
-                    </p>
+                  <div
+                    className="container-fluid"
+                    style={{ margin: "auto", padding: 0 }}
+                  >
+                    <div style={{ width: 800, margin: "auto" }}>
+                      <div style={{ float: "left", marginLeft: 0 }}>
+                        <img src={qrcode} style={{ height: 110 }} />
+                      </div>
+                      <div style={{ float: "left", marginLeft: 60 }}>
+                        <center>
+                          {" "}
+                          <h3
+                            style={{
+                              fontFamily: "Arial, Helvetica, sans-serif",
+                              fontWeight: "bold",
+                              fontSize: 22,
+                              paddingTop: 0,
+                              paddingBottom: 0,
+                              marginBottom: 0,
+                            }}
+                          >
+                            3M INDIA LIMITED
+                          </h3>
+                          <p
+                            style={{
+                              fontFamily: "Arial, Helvetica, sans-serif",
+                              fontWeight: "bold",
+                              fontSize: 12,
+                              margin: 0,
+                              padding: 0,
+                            }}
+                          >
+                            VECHICLE CONSPICUITY ONLINE MIS CERTIFICATE
+                          </p>
+                          <p
+                            style={{
+                              fontFamily: "Arial, Helvetica, sans-serif",
+                              fontWeight: "bold",
+                              alignContent: "center",
+                              fontSize: 12,
+                              margin: 0,
+                              padding: 0,
+                            }}
+                          >
+                            COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD
+                            -089,090&amp;037
+                            <br />
+                          </p>
+                        </center>
+                      </div>
+                      <div style={{ float: "right", paddingRight: 0 }}>
+                        <img
+                          src={mm3}
+                          style={{
+                            height: 100,
+                            marginTop: 0,
+                            marginRight: "17px",
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-sm-4 ps-0 p-0 d-flex">
-                <p className="m-0 py-2 border-top border-start  w-100">
-                  <small className="m-0">
-                    EC MARK:REAR MARK :SHL/16/2013/-2014/9149/2783 /17.12.2014
-                  </small>
-                </p>
               </div>
-            </div>
+            {/* </div> */}
           </div>
-          <div className="border mb-1">
-            <div className="row">
-              <div className="col-sm-6 p-0 d-flex">
-                <p className="m-0 py-2">
-                  <small className="m-0">
-                    The Maximun Retail Price for the products specified in this
-                    Certificate is Rs.300 only.
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-6 p-0 d-flex">
-                <p className="m-0 py-2 border-start">
-                  <small className="m-0">
-                    20mm: Rs. 30/feet | 50mm: Rs.46/feet | C3: Rs.650/piece |
-                    C4: Rs.750/piece
-                  </small>
-                </p>
-              </div>
-              <div className="col-sm-12 p-0 ">
-                <p className="m-0 py-2 border-top">
-                  <small className="m-0">Fitment Images</small>
-                </p>
-              </div>
-              <div className="col-sm-3 p-0">
-                <p className="m-0 py-2 border-top">
-                  <img
-                    src={data?.["data"]?.frontimage}
-                    width={200}
-                    height={150}
-                  />
-                </p>
-              </div>
-              <div className="col-sm-3 p-0">
-                <p className="m-0 py-2 border-top border-start">
-                  <img
-                    src={data?.["data"]?.backimage}
-                    width={200}
-                    height={150}
-                  />
-                </p>
-              </div>
-              <div className="col-sm-3 p-0">
-                <p className="m-0 py-2 border-top border-start">
-                  <img
-                    src={data?.["data"]?.leftimage}
-                    width={200}
-                    height={150}
-                  />
-                </p>
-              </div>
-              <div className="col-sm-3 p-0 ">
-                <p className="m-0 py-2 border-top border-start">
-                  <img src={data?.["data"]?.rcimage} width={200} height={150} />
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-9 p-0 d-flex">
-                <div className="row w-100">
-                  <div className="col-sm-12 p-0 d-flex">
-                    <p className="m-0 py-2 border-top w-100">
-                      <small className="m-0">
+          <div className="row">
+            <div style={{ width: "99%", margin: "auto", fontSize: 12 }}>
+              <span style={{ margin: 0, paddingLeft: 5, float: "right" }}>
+                Hologram No.: {data?.["data"]?.hologramnum}
+              </span>
+              <br />
+              <span style={{ margin: 0, paddingLeft: 5, float: "left" }}>
+                TO:
+              </span>
+              <span style={{ paddingLeft: 5, float: "left", width: 400 }}>
+                The Regional Transport Office
+                <br />
+                {data?.["data"]?.rto}
+              </span>
+              <span style={{ float: "right", textAlign: "right" }}>
+                Certificate NO :<b> {data?.["data"]?.certificateno} </b>
+                <br />
+                Fitment Date : {data?.["data"]?.date}{" "}
+              </span>
+              <table
+                className="table table-bordered"
+                style={{
+                  borderCollapse: "collapse",
+                  float: "left",
+                  border: "solid 2px black",
+                  marginBottom: 2,
+                  width: "100%",
+                  fontFamily: "Calibri",
+                  textAlign: "center",
+                }}
+              >
+                <tbody>
+                  <tr>
+                    <td colSpan={2} style={{ textAlign: "left", fontSize: 18 }}>
+                      <b>Vehicle Details</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>Registration No : </span>
+                      <span id="vhlnolbl" style={{ fontWeight: "bold" }}>
+                        {data?.["data"]?.hologramnum}
+                      </span>
+                    </td>
+                    <td>
+                      Registration Year:<b>{data?.["data"]?.vehiclemanufacturingyear}</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>Chassis No : </span>
+                      <span id="chissnolbl" style={{ fontWeight: "bold" }}>
+                        {data?.["data"]?.chassisnum}
+                      </span>
+                    </td>
+                    <td>
+                      <span>Engine NO : </span>
+                      <span id="englbl" style={{ fontWeight: "bold" }}>
+                        {data?.["data"]?.engineno}
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>Vehicle Make: </span>
+                      <span id="vhlmakelbl">{data?.["data"]?.vehiclemake}</span>
+                    </td>
+                    <td>
+                      <span>Vehicle Model : </span>
+                      <span id="modellbl">{data?.["data"]?.vehiclemodel}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                className="col-sm-12 table table-bordered"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  borderCollapse: "collapse",
+                  border: "solid 2px black",
+                  marginBottom: 2,
+                  fontFamily: "Calibri",
+                }}
+              >
+                <tbody>
+                  <tr>
+                    <td style={{ fontSize: 18, width: "50%" }}>
+                      <b>Vehicle Owner Details</b>
+                    </td>
+                    <td colSpan={2} style={{ fontSize: 18 }}>
+                      <b>Manufacture &amp; Distributor Details</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>Company Name/Owner Name : </span>
+                      <span id="ownerlbl">{data?.["data"]?.ownername}</span>
+                      <br />
+                      <span>Contact Number : </span>
+                      <span id="phonelbl">{data?.["data"]?.phoneo}</span>
+                    </td>
+                    <td colSpan={2}>
+                      <span>Manufacturer Name : </span>
+                      <span id="Label1">{data?.["data"]?.vehiclemanufacturingyear}</span>
+                      <br />
+                      <span>
+                        <span id="distname" />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span style={{ fontWeight: "bold" }}>
+                        Owner Address / Register Address :
+                      </span>
+                      <div
+                        style={{
+                          minHeight: 70,
+                          maxHeight: 150,
+                          paddingLeft: 5,
+                          paddingRight: 5,
+                          paddingTop: 0,
+                          paddingBottom: 0,
+                        }}
+                      >
+                        <p style={{ padding: 0, margin: 0 }}>
+                          {data?.["data"]?.address}
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <span
+                        style={{
+                          fontFamily: "Times New Roman",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        MFG Address:
+                      </span>
+                      <div
+                        style={{
+                          minHeight: 70,
+                          maxHeight: 150,
+                          paddingLeft: 5,
+                          paddingRight: 5,
+                          paddingTop: 0,
+                          paddingBottom: 0,
+                        }}
+                      >
+                        <p style={{ padding: 0, margin: 0 }}>
+                          {data?.["data"]?.address}
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <p>
+                        <b>Distributor Address:</b>
+                      </p>
+                      <div
+                        style={{
+                          minHeight: 70,
+                          maxHeight: 150,
+                          paddingLeft: 5,
+                          paddingRight: 5,
+                          paddingTop: 0,
+                          paddingBottom: 0,
+                        }}
+                      >
+                        <p style={{ padding: 0, margin: 0 }}>
+                          {data?.["data"]?.address}
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                className="col-sm-12 table table-bordered"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  borderCollapse: "collapse",
+                  marginBottom: 2,
+                  verticalAlign: "central",
+                  fontSize: 12,
+                  border: "solid 2px black",
+                }}
+              >
+                <tbody>
+                  <tr style={{ fontSize: 14, fontWeight: "bold" }}>
+                    <td style={{ fontSize: 14, minWidth: "30%" }}>
+                      Conspicuity Tapes 20MM Fitment Details
+                    </td>
+                    <td colSpan={2} style={{ width: 20, fontSize: 14 }}>
+                      Rear Marking Plates Details
+                    </td>
+                    <td style={{ fontSize: 14 }}>Certificate Details</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>20MM - RED : </span>
+                      <span id="redlbl20mm">1.10 Mtrs</span>
+                    </td>
+                    <td style={{borderRight : "0px"}}>
+                      Class 3 : Red Retro Reflective and Yellow Retro Reflective
+                      - Alternative Strips
+                    </td>
+                    <td style={{border: "none"}}></td>
+                    <td>Type Approved Number: A94495</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>20MM WHITE :</span>
+                      <span id="White20lbl">1.40 Mtrs</span>
+                    </td>
+                    <td style={{borderRight : "0px"}}>
+                      Class 4 : Red Retro Reflective border and Yellow Retro
+                      Reflective Centre{" "}
+                    </td>
+                    <td style={{border: "none"}}></td>
+                    <td>
+                      COP Number :<br />
+                      SHL/16/2018-2019/3000002951/COP/2711
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={{ fontWeight: "bold", fontSize: 14 }}>
+                      Conspicuity Tapes 50MM Fitment Details
+                    </td>
+                    <td
+                      colSpan={2}
+                      style={{ width: 20, fontSize: 14, fontWeight: "bold" }}
+                    >
+                      Previous Certificate Details
+                    </td>
+                    <td>Test Report Number :SHL/16/2007-2008/2528/1584</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>50MM-RED : </span>
+                      <span id="red50mmlbl">0.00 Mtrs</span>
+                    </td>
+                    <td colSpan={2}>Old Certificate No. : NA </td>
+                    <td>
+                      EC MARK:REAR MARK :SHL/16/2013/-2014/9149/2783 /17.12.2014
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>50MM-WHITE : </span>
+                      <span id="white50mmlbl">0.00 Mtrs</span>
+                    </td>
+                    <td colSpan={2}>Old Certificate date : NA</td>
+                    <td rowSpan={2}>
+                      Certified By : The Automotive Research Association of
+                      India (ARAI)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>50MM-YELLOW : </span>
+                      <span id="yellow50mmlbl">0.00 Mtrs</span>
+                    </td>
+                    <td colSpan={2}> Old Certificate RTO :NA</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                className="col-sm-12 table table-bordered"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  borderCollapse: "collapse",
+                  border: "solid 2px black",
+                  marginBottom: 2,
+                }}
+              >
+                <tbody>
+                  <tr>
+                    <td colSpan={2}>
+                      {" "}
+                      The Maximun Retail Price for the products specified in
+                      this Certificate is Rs.250 only.
+                      <br />
+                    </td>
+                    <td colSpan={2}>
+                      20mm: Rs. 30/feet | 50mm: Rs.46/feet | C3: Rs.650/piece |
+                      C4: Rs.750/piece
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={4}>
+                      <b>Fitment Images</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Front</td>
+                    <td>Back</td>
+                    <td>Side-1</td>
+                    <td>Side-2</td>
+                  </tr>
+                  <tr>
+                    <td style={{ margin: 0, width: "25%" }}>
+                      <img
+                        src={data?.["data"]?.frontimage}
+                        style={{ width: 150, height : 150 }}
+                      />
+                    </td>
+                    <td style={{ margin: 0, width: "25%" }}>
+                      <img
+                        src={data?.["data"]?.backimage}
+                        style={{ width: 150, height : 150 }}
+                      />
+                    </td>
+                    <td style={{ margin: 0, width: "25%" }}>
+                      <img
+                        src={data?.["data"]?.leftimage}
+                        style={{ width: 150, height : 150 }}
+                      />
+                    </td>
+                    <td style={{ margin: 0, width: "25%" }}>
+                      <img
+                        src={data?.["data"]?.rcimage}
+                        style={{ width: 150, height : 150 }}
+                      />
+                    </td>
+                  </tr>
+                  <tr style={{ paddingBottom: 0 }}>
+                    <td colSpan={3}>
+                      <p
+                        style={{
+                          verticalAlign: "bottom",
+                          fontFamily: '"Times New Roman"',
+                          fontSize: 10,
+                          margin: 0,
+                        }}
+                      >
                         This is to certify that we have authorised Distributor /
-                        Dealer for the sale AIS-089,090,&037 Compliant 3M Brand
-                        Retro reflective Tapes Supplied by us as per CMVR
-                        104-1989. The New Print no:{" "}
-                        {registerrationSaleData?.["data"]?.total}
-                      </small>
-                    </p>
-                  </div>
-                  <div className="col-sm-12 p-0 d-flex">
-                    <p className="m-0 py-2 border-top w-100">
-                      <small className="m-0">
+                        Dealer for the sale AIS-089,090,&amp;037 Compliant 3M
+                        Brand Retro reflective Tapes Supplied by us as per CMVR
+                        104-1989. The New Print no: {registerrationSaleData?.["data"]?.total}
+                      </p>
+                    </td>
+                    <td
+                      rowSpan={2}
+                      style={{
+                        paddingBottom: 0,
+                        width: 300,
+                        verticalAlign: "bottom",
+                        textAlign: "center",
+                      }}
+                    >
+                      <p
+                        style={{
+                          verticalAlign: "bottom",
+                          paddingBottom: 0,
+                          fontSize: 10,
+                          marginBottom: 0,
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <br />
+                        <br />
+                        Authorized Distributor Seal &amp; Signature
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={3}>
+                      <p
+                        style={{
+                          verticalAlign: "bottom",
+                          marginBottom: 0,
+                          fontSize: 10,
+                        }}
+                      >
                         We hereby certify that we have supplied/installed
                         ICAT/ARAI Approved Retro Reflective Tapes as per CMRV
                         rule 104 specified under CMVR GSR 784 (E)
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3 ps-0 p-0 d-flex">
-                <p className="m-0 py-2 border-start border-top w-100 d-flex align-items-end">
-                  <small className="m-0">
-                    Authorized Distributor Seal & Signatur
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div
-              className="d-flex justify-content-between align-items-end border-top"
-              style={{ height: "100px" }}
-            >
-              <div className="">
-                <p className="m-0 border-top">Authorized Dealer Signature</p>
-              </div>
-              <div className="">
-                <p className="m-0 border-top">Customer Signature</p>
-              </div>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={4}>
+                      <div style={{ paddingTop: 50 }}>
+                        <div
+                          style={{
+                            float: "left",
+                            fontSize: 12,
+                            fontWeight: "bold",
+                            borderTop: "solid 1px black",
+                          }}
+                        >
+                          Authorized Dealer Signature
+                        </div>
+                        <div
+                          style={{
+                            float: "right",
+                            marginRight: 50,
+                            fontSize: 12,
+                            fontWeight: "bold",
+                            borderTop: "solid 1px black",
+                          }}
+                        >
+                          Customer Signature
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div className="bottompring text-center">
-            <h4>
-              [Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT VALID]
-            </h4>
-          </div>
-        </>
-      </div>
-      <div className="d-flex justify-content-center py-3">
-        <div>
-          <CButton
-            color="success"
-            type="button"
-            variant="outline"
-            onClick={() => downloadPDF()}
-            className="me-3"
+          <div
+            style={{
+              textAlign: "center",
+              color: "black",
+              fontWeight: "bold",
+              fontSize: 16,
+              margin: "auto",
+              width: "99%",
+            }}
           >
-            Print
-          </CButton>
-          <Link to={"/dashboard"}>
-            <CButton color="dark" type="button" variant="outline">
-              New Enttriy
-            </CButton>
-          </Link>
+            [Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT VALID]
+          </div>
         </div>
-        {/* <Link to={"/Entries"}>
-          <CButton color="danger" type="button" variant="outline">
-            Back
-          </CButton>
-        </Link> */}
-      </div>
+        <div style={{ margin: "auto" }}>
+          <table
+            style={{
+              marginBottom: 10,
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: 10,
+              padding: 10,
+            }}
+          >
+            <tbody>
+              <tr>
+                <td style={{ padding: 10 }}>
+                  <CButton
+                    name="Print"
+                    type="button"
+                    className="btn btn-success"
+                    onClick={() => onPrint()}
+                  >
+                    PRINT COPY
+                  </CButton>
+                </td>
+                <td style={{ padding: 10 }}>
+                  <Link to="/dashboard">
+                    <CButton className="btn btn-primary">New Entry</CButton>
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style={{ width: 700, margin: "auto" }}>
+            <p
+              style={{
+                color: "red",
+                margin: "auto",
+                paddingLeft: 50,
+                paddingBottom: 100,
+              }}
+            >
+              Note : While Saving Customer Copy as PDF please select paper size
+              as A4. For More details{" "}
+            </p>
+          </div>
+        </div>
+      </>
     </>
   );
 };
