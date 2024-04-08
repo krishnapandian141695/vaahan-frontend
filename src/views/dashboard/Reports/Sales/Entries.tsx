@@ -5,12 +5,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
 import { useGetRegistrationsSaleByUserQuery } from "../../../../Services/sales";
 import { Link } from "react-router-dom";
+import { formatDateTime } from "../../../../../configData";
 
 const Entries = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
-  let dealerName: any = `dealer_name=${userInfo?.name}`;
-  let distributer: any = `distributer_name=${userInfo?.name}`;
-  let subDistributer: any = `sub_distributer_name=${userInfo?.name}`;
+  let dealerName: any = `dealername=${userInfo?.userId}`;
+  let distributer: any = `distributer_id=${userInfo?.userId}`;
+  let subDistributer: any = `subdistributer_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `dealerName=`;
   let finalQUery =
     userInfo?.role_id === "2"
@@ -26,36 +27,29 @@ const Entries = () => {
     error: registerationError,
     isLoading: registerrationLoding,
     refetch: registerrationRefetch,
-  } = useGetRegistrationsSaleByUserQuery(urlStringAdmin);
+  } = useGetRegistrationsSaleByUserQuery(finalQUery);
 
   console.log(registerrationSaleData, "registerrationSaleData45234");
 
   const columns = [
-    { key: "Action" },
-    { key: "certificateno", label: "Certificate No" },
+    { key: "created_at", label: "Date" },
+
     { key: "vehicleregno", label: "Vehical No" },
-    { key: "date", label: "Entrie Date" },
+    { key: "certificateno", label: "Certificate No" },
+    // { key: "date", label: "Entrie Date" },
     { key: "ownername", label: "Owner Name" },
-    { key: "address" },
+    // { key: "address" },
     { key: "phoneo", label: "Phone Number" },
     { key: "rto" },
-    { key: "invoice_number" },
+    // { key: "invoice_number" },
   ];
 
   const scopedColumns = {
-    Action: (item) => {
+    created_at: (item) => {
       console.log(item, "item4523452");
-      return (
-        <td>
-          <Link to={`/ViewEntries/${item?.id}`}>
-            <CButton variant="ghost" type="button">
-              View
-            </CButton>
-          </Link>
-        </td>
-      );
+      return <td>{formatDateTime(item?.created_at)}</td>;
     },
-    certificateno: (item) => {
+    vehicleregno: (item) => {
       console.log(item, "item4523452");
       return (
         <td>

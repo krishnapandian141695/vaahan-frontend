@@ -77,7 +77,7 @@ const ChangePassword = () => {
         </CCardHeader>
         <CCardBody>
           <div className="row">
-            {userInfo?.role_id && (
+            {userInfo?.role_id === "1" && (
               <div className="col-sm-6 mb-3">
                 <Controller
                   name="user_name"

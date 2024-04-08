@@ -4,6 +4,7 @@ import ViewEntries from "./views/dashboard/Reports/Sales/ViewEntries";
 import DealerSale from "./views/dashboard/Reports/Sales/DealerSale";
 import ChangePassword from "./views/dashboard/ChangePassword";
 import PrintCertificate from "./views/PrintCertificate";
+import AllSales from "./views/dashboard/Reports/Sales/AllSales";
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
 const AddCompany = React.lazy(() => import("./views/dashboard/AddCompany"));
 const Manufacturer = React.lazy(
@@ -51,6 +52,11 @@ const routes = [
     path: "/PrintCertificate/:id",
     name: "Print Certificate",
     element: PrintCertificate,
+  },
+  {
+    path: "/AllSales",
+    name: "All Sales",
+    element: AllSales,
   },
 ];
 

@@ -12,6 +12,7 @@ import { CBadge, CButton } from "@coreui/react";
 import mm3 from "../../../../assets/images/3M_logo.png";
 import qrcode from "../../../../assets/images/qr.png";
 import backgroundImg from "../../../../assets/images/background.jpg";
+import tick from "../../../../assets/images/tick.png";
 
 const ViewEntries = () => {
   const sectionToPrintRef = useRef(null);
@@ -29,6 +30,10 @@ const ViewEntries = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlStringAdmin);
   console.log(id, "queryParams43", data?.["data"]);
+
+  React.useEffect(() => {
+    refetch();
+  }, []);
 
   const onPrint = () => {
     var divContents = document.getElementById("Certificate").innerHTML;
@@ -191,7 +196,7 @@ const ViewEntries = () => {
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
             {/* </div> */}
           </div>
           <div className="row">
@@ -235,11 +240,12 @@ const ViewEntries = () => {
                     <td>
                       <span>Registration No : </span>
                       <span id="vhlnolbl" style={{ fontWeight: "bold" }}>
-                        {data?.["data"]?.hologramnum}
+                        {data?.["data"]?.vehicleregno}
                       </span>
                     </td>
                     <td>
-                      Registration Year:<b>{data?.["data"]?.vehiclemanufacturingyear}</b>
+                      Registration Year:
+                      <b>{data?.["data"]?.vehiclemanufacturingyear}</b>
                     </td>
                   </tr>
                   <tr>
@@ -298,7 +304,7 @@ const ViewEntries = () => {
                     </td>
                     <td colSpan={2}>
                       <span>Manufacturer Name : </span>
-                      <span id="Label1">{data?.["data"]?.vehiclemanufacturingyear}</span>
+                      <span id="Label1">3M INDIA LIMITED</span>
                       <br />
                       <span>
                         <span id="distname" />
@@ -344,13 +350,20 @@ const ViewEntries = () => {
                           paddingBottom: 0,
                         }}
                       >
-                        <p style={{ padding: 0, margin: 0 }}>
-                          {data?.["data"]?.address}
+                        <p style={{ padding: "0px", margin: "0px" }}>
+                          3M India Limited
+                          <br />
+                          Plot No-48-51,Electronic City
+                          <br />
+                          Hosur Road-560100
+                          <br />
+                          Bangalore
+                          <br />/ Karnataka, India.
                         </p>
                       </div>
                     </td>
                     <td>
-                      <p style={{margin : "0px"}}>
+                      <p style={{ margin: "0px" }}>
                         <b>Distributor Address:</b>
                       </p>
                       <div
@@ -364,7 +377,12 @@ const ViewEntries = () => {
                         }}
                       >
                         <p style={{ padding: 0, margin: 0 }}>
-                          {data?.["data"]?.address}
+                          No 4B, Soundarya Apartments,
+                          <br />
+                          Melayanambakkam,
+                          <br />
+                          Chennai-600095,
+                          <br />
                         </p>
                       </div>
                     </td>
@@ -396,25 +414,50 @@ const ViewEntries = () => {
                   <tr>
                     <td>
                       <span>20MM - RED : </span>
-                      <span id="redlbl20mm">1.10 Mtrs</span>
+                      <span id="redlbl20mm">
+                        {data?.["data"]?.red20mm
+                          ? data?.["data"]?.red20mm
+                          : "0.00 Mtrs"}
+                      </span>
                     </td>
-                    <td style={{borderRight : "0px"}}>
+                    <td>
                       Class 3 : Red Retro Reflective and Yellow Retro Reflective
                       - Alternative Strips
                     </td>
-                    <td style={{border: "none"}}></td>
+
+                    <td>
+                      {data?.["data"]?.class3 === "1" && (
+                        <img
+                          style={{ width: "25px", marginTop: "7px" }}
+                          src={tick}
+                        />
+                      )}
+                    </td>
+
                     <td>Type Approved Number: A94495</td>
                   </tr>
                   <tr>
                     <td>
                       <span>20MM WHITE :</span>
-                      <span id="White20lbl">1.40 Mtrs</span>
+                      <span id="White20lbl">
+                        {data?.["data"]?.white20mm
+                          ? data?.["data"]?.white20mm
+                          : "0.00 Mtrs"}
+                      </span>
                     </td>
-                    <td style={{borderRight : "0px"}}>
+                    <td>
                       Class 4 : Red Retro Reflective border and Yellow Retro
                       Reflective Centre{" "}
                     </td>
-                    <td style={{border: "none"}}></td>
+
+                    <td>
+                      {data?.["data"]?.class4 === "1" && (
+                        <img
+                          style={{ width: "25px", marginTop: "7px" }}
+                          src={tick}
+                        />
+                      )}
+                    </td>
                     <td>
                       COP Number :<br />
                       SHL/16/2018-2019/3000002951/COP/2711
@@ -477,12 +520,16 @@ const ViewEntries = () => {
                     <td colSpan={2}>
                       {" "}
                       The Maximun Retail Price for the products specified in
-                      this Certificate is Rs.250 only.
+                      this Certificate is Rs.
+                      {(Number(data?.["data"]?.red20mm) +
+                        Number(data?.["data"]?.white20mm)) *
+                        1000}
+                      only.
                       <br />
                     </td>
                     <td colSpan={2}>
-                      20mm: Rs. 30/feet | 50mm: Rs.46/feet | C3: Rs.650/piece |
-                      C4: Rs.750/piece
+                      20mm: Rs. 100/Mtr | 50mm: Rs.150/tr | C3: Rs.1100/piece |
+                      C4: Rs.1350/piece
                     </td>
                   </tr>
                   <tr>
@@ -500,25 +547,25 @@ const ViewEntries = () => {
                     <td style={{ margin: 0, width: "25%" }}>
                       <img
                         src={data?.["data"]?.frontimage}
-                        style={{ width: 150, height : 150 }}
+                        style={{ width: 150, height: 150 }}
                       />
                     </td>
                     <td style={{ margin: 0, width: "25%" }}>
                       <img
                         src={data?.["data"]?.backimage}
-                        style={{ width: 150, height : 150 }}
+                        style={{ width: 150, height: 150 }}
                       />
                     </td>
                     <td style={{ margin: 0, width: "25%" }}>
                       <img
                         src={data?.["data"]?.leftimage}
-                        style={{ width: 150, height : 150 }}
+                        style={{ width: 150, height: 150 }}
                       />
                     </td>
                     <td style={{ margin: 0, width: "25%" }}>
                       <img
-                        src={data?.["data"]?.rcimage}
-                        style={{ width: 150, height : 150 }}
+                        src={data?.["data"]?.rightimage}
+                        style={{ width: 150, height: 150 }}
                       />
                     </td>
                   </tr>
@@ -535,7 +582,8 @@ const ViewEntries = () => {
                         This is to certify that we have authorised Distributor /
                         Dealer for the sale AIS-089,090,&amp;037 Compliant 3M
                         Brand Retro reflective Tapes Supplied by us as per CMVR
-                        104-1989. The New Print no: {registerrationSaleData?.["data"]?.total}
+                        104-1989. The New Print no:{" "}
+                        {registerrationSaleData?.["data"]?.total}
                       </p>
                     </td>
                     <td

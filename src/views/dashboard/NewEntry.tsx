@@ -30,7 +30,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
     data: byDealerUser,
     error: byDealerUserError,
     refetch: byDealerUserRefetch,
-  } = useGetByDealerUserNameQuery(userInfo?.name);
+  } = useGetByDealerUserNameQuery(userInfo?.userId);
 
   const {
     control,
@@ -40,7 +40,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
   } = useForm();
 
   const formData = watch();
-  console.log(formData, "324532");
+  console.log(formData, "324532", byDealerUser);
   const onSubmit = async (data) => {
     console.log(data, "data");
     let tempData = {
@@ -67,6 +67,9 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
     } catch (error) {
       console.error("Error making POST request:", error);
     }
+  };
+  const validateClass = (value) => {
+    return value === "0" || value === "1";
   };
   return (
     <>
@@ -362,7 +365,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="Owner Name"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder=""
                             />
                           )}
                         />
@@ -383,7 +386,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="Address"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder=""
                             />
                           )}
                         />
@@ -404,7 +407,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="Phone No"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="+91"
                             />
                           )}
                         />
@@ -483,15 +486,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="red20mm"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
-                              className="border text-danger"
+                              className="border"
                               label="RED 20MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -506,7 +509,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="white20mm"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
@@ -514,7 +517,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="WHITE 20MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -528,15 +531,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="red50mm"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
-                              className="border text-danger"
+                              className="border"
                               label="RED 50MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -550,7 +553,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="white50mm"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
@@ -558,7 +561,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="WHITE 50MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -572,15 +575,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="yellow50mm"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
-                              className="border text-warning"
+                              className="border"
                               label="YELLOW 50MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -595,15 +598,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="red80circularreflector"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
-                              className="border text-danger"
+                              className="border"
                               label="RED 80MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -617,7 +620,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="white80circularreflector"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
@@ -625,7 +628,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                               label="WHITE 80MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -639,15 +642,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="yellow80circularreflector"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          // rules={{ required: "Field is required" }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
-                              className="border text-warning"
+                              className="border"
                               label="YLLOW 80MM"
                               {...field}
                               type="text"
-                              placeholder="0"
+                              placeholder="0.00"
                             />
                           )}
                         />
@@ -662,10 +665,11 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="class3"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          rules={{ pattern: /^[01]$/ }}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
+                              disabled={!formData?.class4 ? false : true}
                               className="border"
                               label="CLASS 3"
                               {...field}
@@ -676,7 +680,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         />
                         {errors.class3 && (
                           <div className="text-danger">
-                            {"Field is required"}
+                            {"Please enter either 0 or 1"}
                           </div>
                         )}
                       </div>
@@ -684,7 +688,8 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         <Controller
                           name="class4"
                           control={control}
-                          rules={{ required: "Field is required" }}
+                          rules={{ pattern: /^[01]$/ }}
+                          disabled={!formData?.class3 ? false : true}
                           defaultValue=""
                           render={({ field }) => (
                             <CFormInput
@@ -696,13 +701,13 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                             />
                           )}
                         />
-                        {errors.white50mm && (
+                        {errors.class4 && (
                           <div className="text-danger">
-                            {"Field is required"}
+                            {"Please enter either 0 or 1"}
                           </div>
                         )}
                       </div>
-                      <div className="col-sm-6 mb-3">
+                      {/* <div className="col-sm-6 mb-3">
                         <Controller
                           name="hologram"
                           control={control}
@@ -723,8 +728,8 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                             {"Field is required"}
                           </div>
                         )}
-                      </div>
-                      <div className="col-sm-6 mb-3">
+                      </div> */}
+                      {/* <div className="col-sm-6 mb-3">
                         <Controller
                           name="invoice_number"
                           control={control}
@@ -745,7 +750,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                             {"Field is required"}
                           </div>
                         )}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -759,7 +764,7 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 <div className="row">
                   <div className="col-sm-12">
                     <div className="row">
-                      <div className="col-sm-3 mb-3">
+                      {/* <div className="col-sm-3 mb-3">
                         <Controller
                           name="rcimage"
                           control={control}
@@ -783,16 +788,17 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                             Field is required
                           </p>
                         )}
-                      </div>
+                      </div> */}
                       <div className="col-sm-3 mb-3">
                         <Controller
                           name="frontimage"
                           control={control}
                           rules={{ required: true }}
                           render={({ field }) => (
-                            <input
+                            <CFormInput
                               className={"form-control form-control-md shadow"}
                               type={"file"}
+                              label={"Front Image"}
                               onChange={(e) => {
                                 console.log(
                                   "Custom onChange:",
@@ -815,8 +821,9 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                           control={control}
                           rules={{ required: true }}
                           render={({ field }) => (
-                            <input
+                            <CFormInput
                               className={"form-control form-control-md shadow"}
+                              label={"Back Image"}
                               type={"file"}
                               onChange={(e) => {
                                 // Your custom onChange logic here
@@ -842,7 +849,8 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                           control={control}
                           rules={{ required: true }}
                           render={({ field }) => (
-                            <input
+                            <CFormInput
+                              label={"Right Image"}
                               className={"form-control form-control-md shadow"}
                               type={"file"}
                               onChange={(e) => {
@@ -869,7 +877,8 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                           control={control}
                           rules={{ required: true }}
                           render={({ field }) => (
-                            <input
+                            <CFormInput
+                              label="Left Image"
                               type={"file"}
                               className={"form-control form-control-md shadow"}
                               onChange={(e) => {

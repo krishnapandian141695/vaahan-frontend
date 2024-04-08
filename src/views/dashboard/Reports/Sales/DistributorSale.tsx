@@ -7,6 +7,7 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
+import { formatDateTime } from "../../../../../configData";
 
 const DistributorSale = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -33,8 +34,12 @@ const DistributorSale = () => {
 
   const columns = [
     {
+      key: "created_at",
+      label: "Date",
+    },
+    {
       key: "dealerName",
-      label : "Distributor Name"
+      label: "Distributor Name",
     },
     {
       key: "red20mm",
@@ -73,10 +78,18 @@ const DistributorSale = () => {
       key: "invoiceNumber",
     },
   ];
+
+  const scopedColumns = {
+    created_at: (item) => {
+      console.log(item, "item4523452");
+      return <td>{formatDateTime(item?.created_at)}</td>;
+    },
+  };
   return (
     <CCard className="mb-4 pb-3 p-3">
       {distributerSaleData && (
         <Table
+          scopedColumns={scopedColumns}
           column={columns}
           data={distributerSaleData?.["data"]?.data}
           TableName={"Distributer Sale"}

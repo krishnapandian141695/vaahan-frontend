@@ -266,9 +266,11 @@ const Dashboard = () => {
 
         // Subtract totals from data2 array from totals of data1 array
         fieldsToCalculate.forEach((fieldName) => {
-          finalTotal[fieldName] =
-            calculatedTotalForData[fieldName] -
-            calculatedTotalForData2[fieldName];
+          const difference =
+            Number(calculatedTotalForData[fieldName]) -
+            Number(calculatedTotalForData2[fieldName]);
+          // Round the result to 2 decimal places and pad with zero if necessary
+          finalTotal[fieldName] = difference.toFixed(2);
         });
       } else {
         // If data2 is empty, final total is the same as calculated total for data1
@@ -288,9 +290,9 @@ const Dashboard = () => {
   ]);
 
   const calculateTotalForDistributor = (data, dealerName, fieldName) => {
-    let total = 0;
+    let total: any = 0;
     data?.forEach((item) => {
-      console.log(item?.dealer_id, "item", dealerName);
+      console.log(item, "item", dealerName);
       if (
         item?.dealer_id === dealerName ||
         item?.dealerName === dealerName ||
@@ -298,8 +300,8 @@ const Dashboard = () => {
         item?.distributer_id === dealerName
       ) {
         // Parse the field value to ensure it's a number
-        const fieldValue = parseInt(item[fieldName]) || 0;
-        total += fieldValue;
+        const fieldValue = item[fieldName] || "0"; // Use default '0' if value is null
+        total = (parseFloat(total) + parseFloat(fieldValue)).toFixed(2);
         console.log(`Adding ${fieldValue} for ${fieldName}`);
       }
     });
@@ -703,7 +705,7 @@ const Dashboard = () => {
                           label="RED 20MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -724,7 +726,7 @@ const Dashboard = () => {
                           label="WHITE 20MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -744,7 +746,7 @@ const Dashboard = () => {
                           label="RED 50MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -764,7 +766,7 @@ const Dashboard = () => {
                           label="WHITE 50MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -784,7 +786,7 @@ const Dashboard = () => {
                           label="YELLOW 50MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -805,7 +807,7 @@ const Dashboard = () => {
                           label="RED 80MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -825,7 +827,7 @@ const Dashboard = () => {
                           label="WHITE 80MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -845,7 +847,7 @@ const Dashboard = () => {
                           label="YLLOW 80MM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -866,7 +868,7 @@ const Dashboard = () => {
                           label="CLASS 3"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -886,7 +888,7 @@ const Dashboard = () => {
                           label="CLASS 4"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -906,7 +908,7 @@ const Dashboard = () => {
                           label="HOLOGRAM"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder="0.00"
                         />
                       )}
                     />
@@ -926,7 +928,7 @@ const Dashboard = () => {
                           label="INVOICE NUMBER"
                           {...field}
                           type="text"
-                          placeholder="0"
+                          placeholder=""
                         />
                       )}
                     />

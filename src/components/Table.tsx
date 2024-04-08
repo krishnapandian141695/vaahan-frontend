@@ -17,10 +17,10 @@ const Table = ({
         columns={column}
         tableFilter
         items={data}
-        itemsPerPage={50}
+        itemsPerPage={10}
         pagination
         tableProps={{
-          className: `add-this-class  customStayless ${className}`,
+          className: `add-this-class  customStayless ${className} mt-3`,
           responsive: true,
           striped: true,
           hover: true,

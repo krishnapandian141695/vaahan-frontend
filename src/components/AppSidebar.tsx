@@ -100,7 +100,7 @@ const AppSidebar = () => {
           component: CNavItem,
           name: "Entries",
           to: "/Entries",
-          display: true,
+          display: userInfo?.role_id === "1" || userInfo?.role_id === "4" ? true : false,
         },
         {
           component: CNavItem,
@@ -123,6 +123,17 @@ const AppSidebar = () => {
           to: "/DealerSale",
           display:
             userInfo?.role_id === "1" || userInfo?.role_id === "2"
+              ? true
+              : false,
+        },
+        {
+          component: CNavItem,
+          name: "Sales",
+          to: "/AllSales",
+          display:
+            userInfo?.role_id === "3" ||
+            userInfo?.role_id === "4" ||
+            userInfo?.role_id === "2"
               ? true
               : false,
         },

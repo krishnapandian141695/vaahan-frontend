@@ -28,6 +28,7 @@ import {
   useGetManufacturerQuery,
   useGetSubDistributerQuery,
 } from "../../Services/sales";
+import { rtoList } from "../../../configData";
 
 const AddCompany = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -494,12 +495,23 @@ const AddCompany = () => {
                     rules={{ required: "RTO is required" }}
                     defaultValue=""
                     render={({ field }) => (
-                      <CFormInput
-                        className="border"
+                      <CFormSelect
+                        // label="Select RTO"
+                        aria-label="Default select"
+                        className="border form-control"
                         {...field}
-                        type="text"
-                        placeholder="RTO"
-                      />
+                      >
+                        <option>Select</option>
+                        {rtoList &&
+                          Object.entries(rtoList)?.map((item, index) => {
+                            console.log(item, "item3245");
+                            return (
+                              <option value={`${item[0] + "" + item[1]}`}>
+                                {item[0]}
+                              </option>
+                            );
+                          })}
+                      </CFormSelect>
                     )}
                   />
                   {errors.rto && (

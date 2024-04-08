@@ -8,6 +8,7 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
+import { formatDateTime } from "../../../../../configData";
 
 const SubDistributorSale = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -20,7 +21,7 @@ const SubDistributorSale = () => {
       : userInfo?.role_id === "2"
       ? distributer
       : urlStringAdmin;
-      
+
   const {
     data: subDistributerSaleData,
     error: subDistributerError,
@@ -36,12 +37,16 @@ const SubDistributorSale = () => {
 
   const columns = [
     {
+      key: "created_at",
+      label: "Date",
+    },
+    {
       key: "distributer_name",
-      label : "Distributor Name"
+      label: "Distributor Name",
     },
     {
       key: "dealerName",
-      label : "Sub Distributor Name"
+      label: "Sub Distributor Name",
     },
     {
       key: "red20mm",
@@ -80,11 +85,19 @@ const SubDistributorSale = () => {
       key: "invoiceNumber",
     },
   ];
+
+  const scopedColumns = {
+    created_at: (item) => {
+      console.log(item, "item4523452");
+      return <td>{formatDateTime(item?.created_at)}</td>;
+    },
+  };
   return (
     <CCard className="mb-4 pb-3 p-3">
       {subDistributerSaleData && (
         <Table
           column={columns}
+          scopedColumns={scopedColumns}
           data={subDistributerSaleData?.["data"]?.data}
           TableName={"SubDistributor Sale"}
         />
