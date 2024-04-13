@@ -43,29 +43,34 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
   console.log(formData, "324532", byDealerUser);
   const onSubmit = async (data) => {
     console.log(data, "data");
-    let tempData = {
-      ...data,
-      dealername: userInfo?.userId,
-      dealer_id: userInfo?.userId,
-    };
-    console.log("datafrom data form", tempData.dealername);
-    const formData = new FormData();
-    for (const key in tempData) {
-      formData.append(key, tempData[key]);
-      console.log(formData);
+    if (totalEachIitemValues?.hologram <= 0) {
+      alert("Hologram stock not available")
     }
-    console.log("data from formData Faizal", data);
-    try {
-      const result = await createDealerStock(formData);
-      console.log(result, "result252345234");
-      if (!result?.["data"]?.["response"]) {
-        alert("Certificate Title already exists");
-      } else {
-        // setIsOpen(true);
-        navigate("/Entries");
+    else {
+      let tempData = {
+        ...data,
+        dealername: userInfo?.userId,
+        dealer_id: userInfo?.userId,
+      };
+      console.log("datafrom data form", tempData.dealername);
+      const formData = new FormData();
+      for (const key in tempData) {
+        formData.append(key, tempData[key]);
+        console.log(formData);
       }
-    } catch (error) {
-      console.error("Error making POST request:", error);
+      console.log("data from formData Faizal", data);
+      try {
+        const result = await createDealerStock(formData);
+        console.log(result, "result252345234");
+        if (!result?.["data"]?.["response"]) {
+          alert("Certificate Title already exists");
+        } else {
+          // setIsOpen(true);
+          navigate("/Entries");
+        }
+      } catch (error) {
+        console.error("Error making POST request:", error);
+      }
     }
   };
   const validateClass = (value) => {
@@ -151,14 +156,15 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 title: "Class4",
                 value: totalEachIitemValues?.class4,
                 background: "#3399ff63",
-              },
-              {
-                color: "black",
-                textColor: "black",
-                title: "Hologram",
-                value: totalEachIitemValues?.hologram,
-                background: "#3399ff63",
-              },
+              }
+              
+              // {
+              //   color: "black",
+              //   textColor: "black",
+              //   title: "Hologram",
+              //   value: totalEachIitemValues?.hologram,
+              //   background: "#3399ff63",
+              // },
             ].map((item, index) => (
               <div className="col-sm-2">
                 <CCard
@@ -248,10 +254,10 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         />
                         {errors.vehiclemanufacturingyear?.type ===
                           "required" && (
-                          <div className="text-danger">
-                            {"Field is required"}
-                          </div>
-                        )}
+                            <div className="text-danger">
+                              {"Field is required"}
+                            </div>
+                          )}
                       </div>
                       <div className="col-sm-6 mb-3">
                         <Controller

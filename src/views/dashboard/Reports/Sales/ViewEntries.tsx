@@ -523,7 +523,7 @@ const ViewEntries = () => {
                       this Certificate is Rs.
                       {(Number(data?.["data"]?.red20mm) +
                         Number(data?.["data"]?.white20mm)) *
-                        1000}
+                        100}
                       only.
                       <br />
                     </td>
