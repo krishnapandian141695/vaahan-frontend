@@ -98,6 +98,7 @@ const AddCompany = () => {
       username: data?.user_name,
       password: data?.password,
       role_id: userType,
+      status: "Active",
     };
 
     try {
