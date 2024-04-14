@@ -4,7 +4,7 @@ import Table from "../../../../components/Table";
 import { useGetDisbutersQuery } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
-import { useUpdateDistributerMutation } from "../../../../Services/user";
+import { useUpdateDistributerMutation, useUpdateUserNameMutation } from "../../../../Services/user";
 
 const Distributor = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -41,6 +41,11 @@ const Distributor = () => {
                   ...item,
                   status: "InActive",
                 };
+                let registerTemp: any = {
+                  status: "InActive",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -59,6 +64,11 @@ const Distributor = () => {
                   ...item,
                   status: "Active",
                 };
+                let registerTemp: any = {
+                  status: "Active",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

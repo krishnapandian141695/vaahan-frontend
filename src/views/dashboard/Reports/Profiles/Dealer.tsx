@@ -8,7 +8,10 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
-import { useUpdateDealerMutation } from "../../../../Services/user";
+import {
+  useUpdateDealerMutation,
+  useUpdateUserNameMutation,
+} from "../../../../Services/user";
 
 const Dealer = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -52,8 +55,13 @@ const Dealer = () => {
                   ...item,
                   status: "InActive",
                 };
+                let registerTemp: any = {
+                  status: "InActive",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateDealer(tempdata);
-                console.log(restult, "restult");
+                console.log(restult, "restult", result);
                 if (restult) {
                   setReload((prev) => !prev);
                 }
@@ -70,8 +78,13 @@ const Dealer = () => {
                   ...item,
                   status: "Active",
                 };
+                let registerTemp: any = {
+                  status: "Active",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateDealer(tempdata);
-                console.log(restult, "restult");
+                console.log(restult, "restult", result);
                 if (restult) {
                   setReload((prev) => !prev);
                 }

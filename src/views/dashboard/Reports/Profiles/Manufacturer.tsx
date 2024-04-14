@@ -3,9 +3,15 @@ import React from "react";
 import Table from "../../../../components/Table";
 import { useGetManufacturerQuery } from "../../../../Services/sales";
 import { Link } from "react-router-dom";
-import { useUpdateManufacturerMutation } from "../../../../Services/user";
+import {
+  useUpdateManufacturerMutation,
+  useUpdateUserNameMutation,
+} from "../../../../Services/user";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../Store";
 
 const Manufacturer = () => {
+  const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   const [reload, setReload] = React.useState(false);
   const {
     data: manifactData,
@@ -36,6 +42,11 @@ const Manufacturer = () => {
                   ...item,
                   status: "InActive",
                 };
+                let registerTemp: any = {
+                  status: "InActive",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateManufac(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -54,6 +65,11 @@ const Manufacturer = () => {
                   ...item,
                   status: "Active",
                 };
+                let registerTemp: any = {
+                  status: "Active",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateManufac(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

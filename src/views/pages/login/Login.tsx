@@ -34,22 +34,32 @@ const Login = () => {
       const result = await loginApi(data);
       console.log(result, "sadfasd");
       if (result?.["data"]?.success) {
-        localStorage.setItem("token", result?.["data"]?.data?.access_token);
-        localStorage.setItem("name", result?.["data"]?.data?.user?.name);
-        localStorage.setItem("role_id", result?.["data"]?.data?.user?.role_id);
-        localStorage.setItem("userId", result?.["data"]?.data?.user?.mobile);
-        localStorage.setItem(
-          "username",
-          result?.["data"]?.data?.user?.username
-        );
-        let userinfo: any = {
-          token: result?.["data"]?.data?.access_token,
-          name: result?.["data"]?.data?.user?.name,
-          userId: result?.["data"]?.data?.user?.id,
-          role_id: result?.["data"]?.data?.user?.role_id,
-          username: result?.["data"]?.data?.user?.username,
-        };
-        dispatch(login(userinfo));
+        if (result?.["data"]?.data?.user?.status === "Active") {
+          localStorage.setItem("token", result?.["data"]?.data?.access_token);
+          localStorage.setItem("name", result?.["data"]?.data?.user?.name);
+          localStorage.setItem(
+            "role_id",
+            result?.["data"]?.data?.user?.role_id
+          );
+          localStorage.setItem("userId", result?.["data"]?.data?.user?.mobile);
+          localStorage.setItem(
+            "username",
+            result?.["data"]?.data?.user?.username
+          );
+          localStorage.setItem("profileId", result?.["data"]?.data?.user?.id);
+          let userinfo: any = {
+            token: result?.["data"]?.data?.access_token,
+            name: result?.["data"]?.data?.user?.name,
+            userId: result?.["data"]?.data?.user?.id,
+            role_id: result?.["data"]?.data?.user?.role_id,
+            username: result?.["data"]?.data?.user?.username,
+            profileId: result?.["data"]?.data?.user?.id,
+          };
+
+          dispatch(login(userinfo));
+        } else {
+          alert("Please check your username and password");
+        }
       } else {
         alert(result?.["error"]?.["data"]?.data?.error);
       }
@@ -62,7 +72,7 @@ const Login = () => {
     <div className="mainLogin">
       <div className="wrapperlogin">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Login</h1>
+          <h1 style={{color: "black"}}>Login</h1>
           <div className="input-box">
             <Controller
               name="username"

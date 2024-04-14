@@ -110,6 +110,13 @@ export const usersApi = createApi({
         body,
       }),
     }),
+    updateUserName: builder.mutation({
+      query: (body: any) => ({
+        url: `/register/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
   }),
 });
 
@@ -130,5 +137,6 @@ export const {
   useUpdateDistributerMutation,
   useUpdateManufacturerMutation,
   useUpdateSubDistributerMutation,
+  useUpdateUserNameMutation
 } = usersApi;
 export const { endpoints } = usersApi;

@@ -7,7 +7,10 @@ import {
 } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
-import { useUpdateSubDistributerMutation } from "../../../../Services/user";
+import {
+  useUpdateSubDistributerMutation,
+  useUpdateUserNameMutation,
+} from "../../../../Services/user";
 
 const SubDistributor = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -15,7 +18,7 @@ const SubDistributor = () => {
 
   const [updateSubDistributor] = useUpdateSubDistributerMutation();
 
-  console.log(userInfo, "userInfo4352354")
+  console.log(userInfo, "userInfo4352354");
 
   let urlString: any = `distributor_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `distributor_name=`;
@@ -52,6 +55,11 @@ const SubDistributor = () => {
                   ...item,
                   status: "InActive",
                 };
+                let registerTemp: any = {
+                  status: "InActive",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -70,6 +78,11 @@ const SubDistributor = () => {
                   ...item,
                   status: "Active",
                 };
+                let registerTemp: any = {
+                  status: "Active",
+                  id: userInfo?.profileId,
+                };
+                let result = await useUpdateUserNameMutation(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

@@ -28,6 +28,7 @@ function App() {
   let role_id: any = localStorage.getItem("role_id");
   let userId: any = localStorage.getItem("userId");
   let username: any = localStorage.getItem("username");
+  let profileId: any = localStorage.getItem("profileId");
 
   window.addEventListener("focus", async function (event) {
     var prevTime = sessionStorage.getItem("currentTime");
@@ -59,6 +60,7 @@ function App() {
         role_id: role_id,
         userId: userId,
         username: username,
+        profileId: profileId,
       };
       dispatch(login(userinfo));
     } else {
