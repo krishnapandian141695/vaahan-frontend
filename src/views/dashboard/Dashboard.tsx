@@ -366,6 +366,7 @@ const Dashboard = () => {
 
   return userInfo?.role_id === "4" ? (
     <NewEntry
+      registerrationSaleData={registerrationSaleData}
       heading={
         <CCardHeader className="py-3 detailHeader">
           <div className="d-flex justify-content-between">

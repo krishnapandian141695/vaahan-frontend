@@ -17,6 +17,8 @@ const SubDistributor = () => {
   const [reload, setReload] = React.useState(false);
 
   const [updateSubDistributor] = useUpdateSubDistributerMutation();
+  const [updateUser] = useUpdateUserNameMutation();
+
 
   console.log(userInfo, "userInfo4352354");
 
@@ -59,7 +61,7 @@ const SubDistributor = () => {
                   status: "InActive",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -82,7 +84,7 @@ const SubDistributor = () => {
                   status: "Active",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

@@ -21,6 +21,8 @@ const Manufacturer = () => {
   } = useGetManufacturerQuery();
 
   const [updateManufac] = useUpdateManufacturerMutation();
+  const [updateUser] = useUpdateUserNameMutation();
+
 
   React.useEffect(() => {
     refetch();
@@ -46,7 +48,7 @@ const Manufacturer = () => {
                   status: "InActive",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateManufac(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -69,7 +71,7 @@ const Manufacturer = () => {
                   status: "Active",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateManufac(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

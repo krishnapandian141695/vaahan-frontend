@@ -18,6 +18,7 @@ const Dealer = () => {
   const [reload, setReload] = React.useState(false);
 
   const [updateDealer] = useUpdateDealerMutation();
+  const [updateUser] = useUpdateUserNameMutation();
 
   let urlString: any = `distributor_name=${userInfo?.name}`;
   let urlStringSubDis: any = `sub_distributor_name=${userInfo?.name}`;
@@ -59,7 +60,7 @@ const Dealer = () => {
                   status: "InActive",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateDealer(tempdata);
                 console.log(restult, "restult", result);
                 if (restult) {
@@ -82,7 +83,7 @@ const Dealer = () => {
                   status: "Active",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateDealer(tempdata);
                 console.log(restult, "restult", result);
                 if (restult) {

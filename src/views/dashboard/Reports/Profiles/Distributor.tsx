@@ -11,6 +11,8 @@ const Distributor = () => {
   const [reload, setReload] = React.useState(false);
 
   const [updateDistributor] = useUpdateDistributerMutation();
+  const [updateUser] = useUpdateUserNameMutation();
+
   const {
     data: distributerData,
     error: distributerError,
@@ -45,7 +47,7 @@ const Distributor = () => {
                   status: "InActive",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {
@@ -68,7 +70,7 @@ const Distributor = () => {
                   status: "Active",
                   id: userInfo?.profileId,
                 };
-                let result = await useUpdateUserNameMutation(registerTemp);
+                let result = await updateUser(registerTemp);
                 let restult = await updateDistributor(tempdata);
                 console.log(restult, "restult");
                 if (restult) {

@@ -21,7 +21,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../Store";
 import { useGetByDealerUserNameQuery } from "../../Services/user";
 import { companies, modalTypes, rtoList } from "../../../configData";
-const NewEntry = ({ heading, totalEachIitemValues }) => {
+const NewEntry = ({
+  heading,
+  totalEachIitemValues,
+  registerrationSaleData,
+}) => {
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -43,7 +47,10 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
   console.log(formData, "324532", byDealerUser);
   const onSubmit = async (data) => {
     console.log(data, "data");
-    if (totalEachIitemValues?.hologram <= 0) {
+    let tempCountCheck =
+      Number(totalEachIitemValues?.hologram) -
+      Number(registerrationSaleData?.["data"]?.data?.length);
+    if (tempCountCheck <= 0) {
       alert("Hologram stock not available");
     } else {
       let tempData = {
@@ -166,7 +173,11 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 color: "black",
                 textColor: "black",
                 title: "Hologram",
-                value: totalEachIitemValues?.hologram,
+                value:
+                  userInfo?.role_id === "4"
+                    ? Number(totalEachIitemValues?.hologram) -
+                      Number(registerrationSaleData?.["data"]?.data?.length)
+                    : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
               },
             ].map((item, index) => (
