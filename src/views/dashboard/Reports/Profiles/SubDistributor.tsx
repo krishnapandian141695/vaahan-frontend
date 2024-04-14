@@ -15,7 +15,9 @@ const SubDistributor = () => {
 
   const [updateSubDistributor] = useUpdateSubDistributerMutation();
 
-  let urlString: any = `distributor_name=${userInfo?.name}`;
+  console.log(userInfo, "userInfo4352354")
+
+  let urlString: any = `distributor_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `distributor_name=`;
   let finalQUery = userInfo?.role_id === "2" ? urlString : urlStringAdmin;
   const {

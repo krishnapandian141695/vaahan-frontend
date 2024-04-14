@@ -53,7 +53,7 @@ const Entries = () => {
       console.log(item, "item4523452");
       return (
         <td>
-          <Link to={`/ViewEntries/${item?.id}`}>{item?.certificateno}</Link>
+          <Link to={`/ViewEntries/${item?.id}`}>{item?.vehicleregno}</Link>
         </td>
       );
     },

@@ -63,7 +63,7 @@ const Dashboard = () => {
     refetch: distributerRefetch,
   } = useGetDisbutersQuery();
 
-  let urlSubDistributorString: any = `distributor_name=${userInfo?.name}`;
+  let urlSubDistributorString: any = `distributor_id=${userInfo?.userId}`;
   const {
     data: subDistributerData,
     error: subDistributerError,
@@ -71,7 +71,7 @@ const Dashboard = () => {
     refetch: subDistributerRefetcg,
   } = useGetSubDistributerQuery(urlSubDistributorString);
 
-  let urlDealerStringSubDis: any = `sub_distributor_name=${userInfo?.name}`;
+  let urlDealerStringSubDis: any = `sub_distributor_id=${userInfo?.userId}`;
   const {
     data: dealerData,
     error: dealerError,
@@ -647,14 +647,20 @@ const Dashboard = () => {
                     color: "black",
                     textColor: "black",
                     title: "Class3",
-                    value: totalEachIitemValues?.class3,
+                    value:
+                      totalEachIitemValues?.class3 === "NaN"
+                        ? 0
+                        : totalEachIitemValues?.class3,
                     background: "#3399ff63",
                   },
                   {
                     color: "black",
                     textColor: "black",
                     title: "Class4",
-                    value: totalEachIitemValues?.class4,
+                    value:
+                      totalEachIitemValues?.class4 === "NaN"
+                        ? 0
+                        : totalEachIitemValues?.class4,
                     background: "#3399ff63",
                   },
                   {

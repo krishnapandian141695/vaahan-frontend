@@ -478,7 +478,11 @@ const ViewEntries = () => {
                   <tr>
                     <td>
                       <span>50MM-RED : </span>
-                      <span id="red50mmlbl">0.00 Mtrs</span>
+                      <span id="red50mmlbl">
+                        {data?.["data"]?.red50mm
+                          ? data?.["data"]?.red50mm
+                          : "0.00 Mtrs"}
+                      </span>
                     </td>
                     <td colSpan={2}>Old Certificate No. : NA </td>
                     <td>
@@ -488,7 +492,11 @@ const ViewEntries = () => {
                   <tr>
                     <td>
                       <span>50MM-WHITE : </span>
-                      <span id="white50mmlbl">0.00 Mtrs</span>
+                      <span id="white50mmlbl">
+                        {data?.["data"]?.white50mm
+                          ? data?.["data"]?.white50mm
+                          : "0.00 Mtrs"}
+                      </span>
                     </td>
                     <td colSpan={2}>Old Certificate date : NA</td>
                     <td rowSpan={2}>
@@ -499,7 +507,11 @@ const ViewEntries = () => {
                   <tr>
                     <td>
                       <span>50MM-YELLOW : </span>
-                      <span id="yellow50mmlbl">0.00 Mtrs</span>
+                      <span id="yellow50mmlbl">
+                        {data?.["data"]?.yellow50mm
+                          ? data?.["data"]?.yellow50mm
+                          : "0.00 Mtrs"}
+                      </span>
                     </td>
                     <td colSpan={2}> Old Certificate RTO :NA</td>
                   </tr>
@@ -522,8 +534,16 @@ const ViewEntries = () => {
                       The Maximun Retail Price for the products specified in
                       this Certificate is Rs.
                       {(Number(data?.["data"]?.red20mm) +
-                        Number(data?.["data"]?.white20mm)) *
-                        100}
+                        Number(data?.["data"]?.white20mm) +
+                        Number(data?.["data"]?.yellow50mm) +
+                        Number(data?.["data"]?.white50mm) +
+                        Number(data?.["data"]?.red50mm)) *
+                        100 +
+                        (data?.["data"]?.class3
+                          ? 1100
+                          : data?.["data"]?.class4
+                          ? 1350
+                          : null)}
                       only.
                       <br />
                     </td>

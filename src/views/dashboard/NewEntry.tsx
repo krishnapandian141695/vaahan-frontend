@@ -44,9 +44,8 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
   const onSubmit = async (data) => {
     console.log(data, "data");
     if (totalEachIitemValues?.hologram <= 0) {
-      alert("Hologram stock not available")
-    }
-    else {
+      alert("Hologram stock not available");
+    } else {
       let tempData = {
         ...data,
         dealername: userInfo?.userId,
@@ -147,24 +146,29 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                 color: "black",
                 textColor: "black",
                 title: "Class3",
-                value: totalEachIitemValues?.class3,
+                value:
+                  totalEachIitemValues?.class3 === "NaN"
+                    ? 0
+                    : totalEachIitemValues?.class3,
                 background: "#3399ff63",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Class4",
-                value: totalEachIitemValues?.class4,
+                value:
+                  totalEachIitemValues?.class4 === "NaN"
+                    ? 0
+                    : totalEachIitemValues?.class4,
                 background: "#3399ff63",
-              }
-              
-              // {
-              //   color: "black",
-              //   textColor: "black",
-              //   title: "Hologram",
-              //   value: totalEachIitemValues?.hologram,
-              //   background: "#3399ff63",
-              // },
+              },
+              {
+                color: "black",
+                textColor: "black",
+                title: "Hologram",
+                value: totalEachIitemValues?.hologram,
+                background: "#3399ff63",
+              },
             ].map((item, index) => (
               <div className="col-sm-2">
                 <CCard
@@ -254,10 +258,10 @@ const NewEntry = ({ heading, totalEachIitemValues }) => {
                         />
                         {errors.vehiclemanufacturingyear?.type ===
                           "required" && (
-                            <div className="text-danger">
-                              {"Field is required"}
-                            </div>
-                          )}
+                          <div className="text-danger">
+                            {"Field is required"}
+                          </div>
+                        )}
                       </div>
                       <div className="col-sm-6 mb-3">
                         <Controller
