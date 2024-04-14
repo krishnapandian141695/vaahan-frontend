@@ -171,6 +171,7 @@ const Dashboard = () => {
     byDealerUserRefetch();
     refetch();
     dealerStockRefetch();
+    registerrationRefetch();
   }, [userInfo]);
 
   React.useEffect(() => {
