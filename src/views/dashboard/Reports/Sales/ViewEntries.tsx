@@ -21,6 +21,7 @@ const ViewEntries = () => {
   const { id } = useParams();
   const { data, refetch } = useGetRegistrationsSaleByIdQuery(id);
   const [qrData, setQrData] = React.useState(window.location.href);
+  console.log(qrData , "qrData345234")
   let urlStringAdmin: any = `dealerName=`;
   // QR code data
   const {
@@ -138,7 +139,8 @@ const ViewEntries = () => {
                   >
                     <div style={{ width: 800, margin: "auto" }}>
                       <div style={{ float: "left", marginLeft: 0 }}>
-                        <img src={qrcode} style={{ height: 110 }} />
+                        <QRCode  style={{ height: 110, width : 110 }} value={`${qrData}?enptg&a0sdfasd35446yhdasd0asdasdfw356wyhsfgnhe45ytgf3q45wgsdflcnv98asd=70s9dfbn08qasdfasdasd8709fapsodhfasp9d345&asjdofansdf=9a7s6d709ofiasdsafda453rtgasr35trfsadfasdsdasdfad0f9aubsdb0fasdofiasfdssfyasdf7`} />
+                        {/* <img src={qrcode} style={{ height: 110 }} /> */}
                       </div>
                       <div style={{ float: "left", marginLeft: 60 }}>
                         <center>

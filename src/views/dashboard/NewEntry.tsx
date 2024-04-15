@@ -21,11 +21,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../Store";
 import { useGetByDealerUserNameQuery } from "../../Services/user";
 import { companies, modalTypes, rtoList } from "../../../configData";
+
 const NewEntry = ({
   heading,
   totalEachIitemValues,
   registerrationSaleData,
 }) => {
+  console.log(totalEachIitemValues , "totalEachIitemValues35634")
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -44,13 +46,13 @@ const NewEntry = ({
   } = useForm();
 
   const formData = watch();
-  console.log(formData, "324532", byDealerUser);
   const onSubmit = async (data) => {
     console.log(data, "data");
     let tempCountCheck =
       Number(totalEachIitemValues?.hologram) -
       Number(registerrationSaleData?.["data"]?.data?.length);
-    if (tempCountCheck <= 0) {
+    console.log(tempCountCheck, "tempCountCheck13123", totalEachIitemValues);
+    if (tempCountCheck <= 0 || !totalEachIitemValues) {
       alert("Hologram stock not available");
     } else {
       let tempData = {
@@ -79,9 +81,7 @@ const NewEntry = ({
       }
     }
   };
-  const validateClass = (value) => {
-    return value === "0" || value === "1";
-  };
+
   return (
     <>
       <CCard className="mb-4 pb-3 p-3 pt-0">
@@ -97,56 +97,72 @@ const NewEntry = ({
                 color: "black",
                 textColor: "black",
                 title: "Red20mm",
-                value: totalEachIitemValues?.red20mm,
+                value: totalEachIitemValues?.red20mm
+                  ? totalEachIitemValues?.red20mm
+                  : 0,
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "White20mm",
-                value: totalEachIitemValues?.white20mm,
+                value: totalEachIitemValues?.white20mm
+                  ? totalEachIitemValues?.white20mm
+                  : 0,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Red50mm",
-                value: totalEachIitemValues?.red50mm,
+                value: totalEachIitemValues?.red50mm
+                  ? totalEachIitemValues?.red50mm
+                  : 0,
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "white50mm",
-                value: totalEachIitemValues?.white50mm,
+                value: totalEachIitemValues?.white50mm
+                  ? totalEachIitemValues?.white50mm
+                  : 0,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Yellow50mm",
-                value: totalEachIitemValues?.yellow50mm,
+                value: totalEachIitemValues?.yellow50mm
+                  ? totalEachIitemValues?.yellow50mm
+                  : 0,
                 background: "#cddc3957",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Red80mm",
-                value: totalEachIitemValues?.redReflector80mm,
+                value: totalEachIitemValues?.redReflector80mm
+                  ? totalEachIitemValues?.redReflector80mm
+                  : 0,
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "White80mm",
-                value: totalEachIitemValues?.whiteReflector80mm,
+                value: totalEachIitemValues?.whiteReflector80mm
+                  ? totalEachIitemValues?.whiteReflector80mm
+                  : 0,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Yellow80mm",
-                value: totalEachIitemValues?.yellowReflector80mm,
+                value: totalEachIitemValues?.yellowReflector80mm
+                  ? totalEachIitemValues?.yellowReflector80mm
+                  : 0,
                 background: "#cddc3957",
               },
               {
@@ -156,7 +172,9 @@ const NewEntry = ({
                 value:
                   totalEachIitemValues?.class3 === "NaN"
                     ? 0
-                    : totalEachIitemValues?.class3,
+                    : totalEachIitemValues?.class3
+                    ? totalEachIitemValues?.class3
+                    : 0,
                 background: "#3399ff63",
               },
               {
@@ -166,7 +184,9 @@ const NewEntry = ({
                 value:
                   totalEachIitemValues?.class4 === "NaN"
                     ? 0
-                    : totalEachIitemValues?.class4,
+                    : totalEachIitemValues?.class4
+                    ? totalEachIitemValues?.class4
+                    : 0,
                 background: "#3399ff63",
               },
               {
@@ -175,8 +195,8 @@ const NewEntry = ({
                 title: "Hologram",
                 value:
                   userInfo?.role_id === "4"
-                    ? Number(totalEachIitemValues?.hologram) -
-                      Number(registerrationSaleData?.["data"]?.data?.length)
+                    ? totalEachIitemValues ? Number(totalEachIitemValues?.hologram) -
+                      Number(registerrationSaleData?.["data"]?.data?.length) : 0
                     : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
               },
