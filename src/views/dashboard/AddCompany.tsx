@@ -479,7 +479,9 @@ const AddCompany = () => {
                             ...subDistributerData?.["data"]?.data,
                           ]?.map((item) => {
                             return (
-                              <option value={item?.id}>{item?.name}</option>
+                              <option value={item?.phone_number}>
+                                {item?.name}
+                              </option>
                             );
                           })}
                       </CFormSelect>

@@ -97,7 +97,7 @@ const Dashboard = () => {
     refetch: byDealerUserRefetch,
   } = useGetByDealerUserNameQuery(userInfo?.userId);
 
-  console.log(byDealerUser, "byDealerUser3452345");
+  console.log("byDealerUser3452345", userInfo?.userId);
 
   const {
     data: manifactData,
