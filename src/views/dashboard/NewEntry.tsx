@@ -49,8 +49,8 @@ const NewEntry = ({
   const onSubmit = async (data) => {
     console.log(data, "data");
     let tempCountCheck =
-      Number(totalEachIitemValues?.hologram) -
-      Number(registerrationSaleData?.["data"]?.data?.length);
+      Number(registerrationSaleData?.["data"]?.data?.length) -
+      Number(totalEachIitemValues?.hologram);
     console.log(tempCountCheck, "tempCountCheck13123", totalEachIitemValues);
     if (tempCountCheck <= 0 || !totalEachIitemValues) {
       alert("Hologram stock not available");
