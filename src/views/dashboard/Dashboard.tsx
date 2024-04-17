@@ -268,8 +268,8 @@ const Dashboard = () => {
         // Subtract totals from data2 array from totals of data1 array
         fieldsToCalculate.forEach((fieldName) => {
           const difference =
-            Number(calculatedTotalForData[fieldName]) -
-            Number(calculatedTotalForData2[fieldName]);
+            Number(calculatedTotalForData2[fieldName]) -
+            Number(calculatedTotalForData[fieldName]);
           // Round the result to 2 decimal places and pad with zero if necessary
           finalTotal[fieldName] = difference.toFixed(2);
         });

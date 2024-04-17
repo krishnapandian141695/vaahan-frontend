@@ -27,7 +27,7 @@ const NewEntry = ({
   totalEachIitemValues,
   registerrationSaleData,
 }) => {
-  console.log(totalEachIitemValues , "totalEachIitemValues35634")
+  console.log(totalEachIitemValues, "totalEachIitemValues35634");
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -195,8 +195,10 @@ const NewEntry = ({
                 title: "Hologram",
                 value:
                   userInfo?.role_id === "4"
-                    ? totalEachIitemValues ? Number(totalEachIitemValues?.hologram) -
-                      Number(registerrationSaleData?.["data"]?.data?.length) : 0
+                    ? totalEachIitemValues
+                      ? Number(registerrationSaleData?.["data"]?.data?.length) -
+                        Number(totalEachIitemValues?.hologram)
+                      : 0
                     : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
               },
