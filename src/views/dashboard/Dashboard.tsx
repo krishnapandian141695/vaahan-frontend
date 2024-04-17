@@ -150,7 +150,7 @@ const Dashboard = () => {
     urlDealerStockStringSubDis
   );
 
-  let urlEntriesStockStringSubDis: any = `dealerName=${userInfo?.userId}`;
+  let urlEntriesStockStringSubDis: any = `dealername=${userInfo?.userId}`;
   const {
     data: registerrationSaleData,
     error: registerationError,
@@ -158,7 +158,7 @@ const Dashboard = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlEntriesStockStringSubDis);
 
-  console.log(registerrationSaleData, "registerrationSaleData4254");
+  console.log(registerrationSaleData?.["data"]?.data?.length, "registerrationSaleData4254");
 
   React.useEffect(() => {
     distributerSaleDataRefetch();

@@ -27,7 +27,11 @@ const NewEntry = ({
   totalEachIitemValues,
   registerrationSaleData,
 }) => {
-  console.log(totalEachIitemValues, "totalEachIitemValues35634");
+  console.log(
+    totalEachIitemValues?.hologram,
+    "totalEachIitemValues35634",
+    registerrationSaleData?.["data"]?.data?.length
+  );
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -48,9 +52,11 @@ const NewEntry = ({
   const formData = watch();
   const onSubmit = async (data) => {
     console.log(data, "data");
-    let tempCountCheck =
-      Number(registerrationSaleData?.["data"]?.data?.length) -
-      Number(totalEachIitemValues?.hologram);
+    let tempCountCheck = Math.max(
+      0,
+      Number(totalEachIitemValues?.hologram) -
+        Number(registerrationSaleData?.["data"]?.data?.length)
+    );
     console.log(tempCountCheck, "tempCountCheck13123", totalEachIitemValues);
     if (tempCountCheck <= 0 || !totalEachIitemValues) {
       alert("Hologram stock not available");
@@ -196,8 +202,13 @@ const NewEntry = ({
                 value:
                   userInfo?.role_id === "4"
                     ? totalEachIitemValues
-                      ? Number(registerrationSaleData?.["data"]?.data?.length) -
-                        Number(totalEachIitemValues?.hologram)
+                      ? Math.max(
+                          0,
+                          Number(totalEachIitemValues?.hologram) -
+                            Number(
+                              registerrationSaleData?.["data"]?.data?.length
+                            )
+                        )
                       : 0
                     : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
