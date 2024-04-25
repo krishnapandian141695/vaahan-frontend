@@ -368,6 +368,13 @@ const Dashboard = () => {
     return totalQuantity;
   };
 
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-indexed
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
   return userInfo?.role_id === "4" ? (
     <NewEntry
       registerrationSaleData={registerrationSaleData}
@@ -465,7 +472,7 @@ const Dashboard = () => {
                     : byDealerUser?.["data"]?.data?.[0]?.phone_number}
                 </h6>
                 <h6>
-                  <b>Date :</b> {new Date().toLocaleDateString()}
+                  <b>Date :</b> {formatDate(new Date())}
                 </h6>
               </div>
             )}
@@ -577,7 +584,7 @@ const Dashboard = () => {
                     : byDealerUser?.["data"]?.data?.[0]?.phone_number}
                 </h6>
                 <h6>
-                  <b>Date :</b> {new Date().toLocaleDateString()}
+                  <b>Date :</b> {formatDate(new Date())}
                 </h6>
               </div>
             )}
