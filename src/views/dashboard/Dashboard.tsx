@@ -37,6 +37,7 @@ import {
   useGetSubDistributerSaleQuery,
 } from "../../Services/sales";
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../../configData";
 const Dashboard = () => {
   const {
     control,
@@ -367,13 +368,6 @@ const Dashboard = () => {
     });
     return totalQuantity;
   };
-
-  function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-indexed
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
 
   return userInfo?.role_id === "4" ? (
     <NewEntry

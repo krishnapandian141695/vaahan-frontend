@@ -583,6 +583,9 @@ export const modalTypes = {
     "Toyota Innova",
     "TOYOTA INNOVA - 50mm",
     "Toyota Etios - 50mm",
+    "Toyota Crysta",
+    "Toyota Hycross",
+    "Toyota Fortuner"
   ],
   "VE COMMERCIAL": [
     "Eicher 10.75",
@@ -1349,3 +1352,10 @@ export const formatDateTime = (timestamp) => {
 
   return `${formatted_date} ${formatted_time}`;
 };
+
+export function formatDate(date) {
+  const day = String(date?.getDate()).padStart(2, '0');
+  const month = String(date?.getMonth() + 1).padStart(2, '0'); // Month is zero-indexed
+  const year = date?.getFullYear();
+  return `${day}/${month}/${year}`;
+}

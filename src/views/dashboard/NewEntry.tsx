@@ -20,7 +20,12 @@ import { useCreateDealerStockSaleMutation } from "../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Store";
 import { useGetByDealerUserNameQuery } from "../../Services/user";
-import { companies, modalTypes, rtoList } from "../../../configData";
+import {
+  companies,
+  formatDate,
+  modalTypes,
+  rtoList,
+} from "../../../configData";
 
 const NewEntry = ({
   heading,
@@ -42,7 +47,7 @@ const NewEntry = ({
     refetch: byDealerUserRefetch,
   } = useGetByDealerUserNameQuery(userInfo?.userId);
 
-  console.log(byDealerUser?.["data"]?.data?.[0], "byDealerUser4")
+  console.log(byDealerUser?.["data"]?.data?.[0], "byDealerUser4");
 
   const {
     control,
@@ -67,7 +72,7 @@ const NewEntry = ({
         ...data,
         dealername: userInfo?.userId,
         dealer_id: userInfo?.userId,
-        manufacturer_name:  byDealerUser?.["data"]?.data?.[0]?.manufacturer_name
+        manufacturer_name: byDealerUser?.["data"]?.data?.[0]?.manufacturer_name,
       };
       console.log("datafrom data form", tempData.dealername);
       const formData = new FormData();
@@ -956,34 +961,39 @@ const NewEntry = ({
                           </p>
                         )}
                       </div>
-                      {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "KTV3MINDIA" && <div className="col-sm-3 mb-3">
-                        <Controller
-                          name="rcimage"
-                          control={control}
-                          rules={{ required: true }}
-                          render={({ field }) => (
-                            <CFormInput
-                              label="RC Image"
-                              type={"file"}
-                              className={"form-control form-control-md shadow"}
-                              onChange={(e) => {
-                                // Your custom onChange logic here
-                                // For example, you can access the selected file using e.target.files[0]
-                                console.log(
-                                  "Custom onChange:",
-                                  e.target.files[0]
-                                );
-                                field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
-                              }}
-                            />
+                      {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
+                        "KTV3MINDIA" && (
+                        <div className="col-sm-3 mb-3">
+                          <Controller
+                            name="rcimage"
+                            control={control}
+                            rules={{ required: true }}
+                            render={({ field }) => (
+                              <CFormInput
+                                label="RC Image"
+                                type={"file"}
+                                className={
+                                  "form-control form-control-md shadow"
+                                }
+                                onChange={(e) => {
+                                  // Your custom onChange logic here
+                                  // For example, you can access the selected file using e.target.files[0]
+                                  console.log(
+                                    "Custom onChange:",
+                                    e.target.files[0]
+                                  );
+                                  field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
+                                }}
+                              />
+                            )}
+                          />
+                          {errors.rcimage?.type === "required" && (
+                            <p role="alert" className="error">
+                              Field is required
+                            </p>
                           )}
-                        />
-                        {errors.rcimage?.type === "required" && (
-                          <p role="alert" className="error">
-                            Field is required
-                          </p>
-                        )}
-                      </div>}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
