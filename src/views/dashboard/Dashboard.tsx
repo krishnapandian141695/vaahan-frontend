@@ -158,7 +158,10 @@ const Dashboard = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlEntriesStockStringSubDis);
 
-  console.log(registerrationSaleData?.["data"]?.data?.length, "registerrationSaleData4254");
+  console.log(
+    registerrationSaleData?.["data"]?.data?.length,
+    "registerrationSaleData4254"
+  );
 
   React.useEffect(() => {
     distributerSaleDataRefetch();
@@ -233,18 +236,12 @@ const Dashboard = () => {
         ? registerrationSaleData?.["data"]?.data
         : null;
 
-    console.log("calculateData123453", calculateDate2);
+    console.log(calculateData1, "calculateData123453", calculateDate2);
 
     if (calculateData1?.length > 0) {
       const calculatedTotalForData = {};
       const calculatedTotalForData2 = {};
       const finalTotal = {};
-
-      console.log(
-        calculatedTotalForData,
-        "calculatedTotalForData2",
-        calculatedTotalForData2
-      );
 
       // Calculate total for each field for data1 array
       fieldsToCalculate.forEach((fieldName) => {
@@ -267,11 +264,17 @@ const Dashboard = () => {
 
         // Subtract totals from data2 array from totals of data1 array
         fieldsToCalculate.forEach((fieldName) => {
-          const difference = Number(calculatedTotalForData[fieldName]);
-          -Number(calculatedTotalForData2[fieldName]);
+          const difference =
+            Number(calculatedTotalForData[fieldName]) -
+            Number(calculatedTotalForData2[fieldName]);
           // Round the result to 2 decimal places and pad with zero if necessary
           finalTotal[fieldName] = difference.toFixed(2);
         });
+        console.log(
+          calculatedTotalForData,
+          "calculatedTotalForData2",
+          calculatedTotalForData2
+        );
       } else {
         // If data2 is empty, final total is the same as calculated total for data1
         Object.assign(finalTotal, calculatedTotalForData);
@@ -294,6 +297,7 @@ const Dashboard = () => {
     data?.forEach((item) => {
       console.log(item, "item", dealerName);
       if (
+        item?.dealername === dealerName ||
         item?.dealer_id === dealerName ||
         item?.dealerName === dealerName ||
         item?.subdistributer_id === dealerName ||
