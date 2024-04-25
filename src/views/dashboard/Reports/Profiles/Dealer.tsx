@@ -20,8 +20,8 @@ const Dealer = () => {
   const [updateDealer] = useUpdateDealerMutation();
   const [updateUser] = useUpdateUserNameMutation();
 
-  let urlString: any = `distributor_name=${userInfo?.name}`;
-  let urlStringSubDis: any = `sub_distributor_name=${userInfo?.name}`;
+  let urlString: any = `distributor_id=${userInfo?.userId}`;
+  let urlStringSubDis: any = `sub_distributor_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `distributor_name=`;
   let finalQUery =
     userInfo?.role_id === "1"

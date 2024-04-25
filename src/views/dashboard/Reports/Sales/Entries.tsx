@@ -41,7 +41,7 @@ const Entries = () => {
     // { key: "address" },
     { key: "phoneo", label: "Phone Number" },
     { key: "rto" },
-    // { key: "invoice_number" },
+    { key: "manufacturer_name" },
   ];
 
   const scopedColumns = {
