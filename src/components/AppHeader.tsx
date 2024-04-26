@@ -24,13 +24,18 @@ const AppHeader = () => {
   const dispatch = useDispatch();
   const sidebarShow = useSelector((state: RootState) => state.sidebarShow);
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  const [sideBarVisibal, setSideBarVisibal] = React.useState(true);
+
+  React.useEffect(() => {
+    dispatch(updateSideNav(sideBarVisibal));
+  }, [sideBarVisibal]);
 
   return (
     <CHeader position="sticky" className="mb-4">
       <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
-          onClick={() => dispatch(updateSideNav(!sidebarShow))}
+          onClick={() => setSideBarVisibal((prev) => !prev)}
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>

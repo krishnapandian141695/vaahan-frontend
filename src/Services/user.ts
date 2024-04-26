@@ -21,7 +21,7 @@ export const usersApi = createApi({
       query: () => `/users`,
     }),
     getUserById: builder.query<any[], void>({
-      query: (id) => `/customers/${id}`,
+      query: (username) => `/getAllUser?username=${username}`,
     }),
     loginUsers: builder.mutation({
       query: (body) => ({
@@ -112,7 +112,7 @@ export const usersApi = createApi({
     }),
     updateUserName: builder.mutation({
       query: (body: any) => ({
-        url: `/register/${body?.id}`,
+        url: `/auth/register/${body?.id}`,
         method: "PUT",
         body,
       }),
@@ -137,6 +137,6 @@ export const {
   useUpdateDistributerMutation,
   useUpdateManufacturerMutation,
   useUpdateSubDistributerMutation,
-  useUpdateUserNameMutation
+  useUpdateUserNameMutation,
 } = usersApi;
 export const { endpoints } = usersApi;

@@ -9,6 +9,7 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
 import {
+  useGetUserByIdQuery,
   useUpdateDealerMutation,
   useUpdateUserNameMutation,
 } from "../../../../Services/user";
@@ -16,9 +17,21 @@ import {
 const Dealer = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   const [reload, setReload] = React.useState(false);
-
   const [updateDealer] = useUpdateDealerMutation();
   const [updateUser] = useUpdateUserNameMutation();
+  const [selectedUser, setSelectedUser] = React.useState(null);
+  const [selectType, setType] = React.useState(null);
+  const {
+    data: byRegisterUser,
+    error: byRegisterUserError,
+    refetch: byRegisterUserRefetch,
+  } = useGetUserByIdQuery(selectedUser?.user_name);
+
+  console.log(
+    byRegisterUser?.["data"]?.data?.[0]?.id,
+    "byRegisterUser",
+    selectedUser
+  );
 
   let urlString: any = `distributor_id=${userInfo?.userId}`;
   let urlStringSubDis: any = `sub_distributor_id=${userInfo?.userId}`;
@@ -42,6 +55,56 @@ const Dealer = () => {
     dealerRefetch();
   }, [reload]);
 
+  React.useEffect(() => {
+    const updateUserAndDealer = async () => {
+      if (
+        selectType === "InActive" &&
+        byRegisterUser &&
+        byRegisterUser?.["data"]?.data?.length > 0
+      ) {
+        let tempdata = {
+          ...selectedUser,
+          status: "InActive", // Corrected status to "Inactive"
+        };
+        let registerTemp: any = {
+          status: "InActive", // Corrected status to "Inactive"
+          id: byRegisterUser?.["data"]?.data?.[0]?.id,
+        };
+        let result = await updateUser(registerTemp);
+        let restult = await updateDealer(tempdata);
+        console.log(restult, "restult", result);
+        if (restult) {
+          setSelectedUser(null);
+          setType(null);
+          setReload((prev) => !prev);
+        }
+      } else if (
+        selectType === "Active" &&
+        byRegisterUser &&
+        byRegisterUser?.["data"]?.data?.length > 0
+      ) {
+        let tempdata = {
+          ...selectedUser,
+          status: "Active",
+        };
+        let registerTemp: any = {
+          status: "Active",
+          id: byRegisterUser?.["data"]?.data?.[0]?.id,
+        };
+        let result = await updateUser(registerTemp);
+        let restult = await updateDealer(tempdata);
+        console.log(restult, "restult", result);
+        if (restult) {
+          setSelectedUser(null);
+          setType(null);
+          setReload((prev) => !prev);
+        }
+      }
+    };
+
+    updateUserAndDealer();
+  }, [byRegisterUser]);
+
   const scopedColumns = {
     Action: (item) => {
       console.log(item, "item4523452");
@@ -52,20 +115,8 @@ const Dealer = () => {
               variant="ghost"
               type="button"
               onClick={async () => {
-                let tempdata = {
-                  ...item,
-                  status: "InActive",
-                };
-                let registerTemp: any = {
-                  status: "InActive",
-                  id: userInfo?.profileId,
-                };
-                let result = await updateUser(registerTemp);
-                let restult = await updateDealer(tempdata);
-                console.log(restult, "restult", result);
-                if (restult) {
-                  setReload((prev) => !prev);
-                }
+                setType("InActive");
+                setSelectedUser(item);
               }}
             >
               InActive
@@ -75,20 +126,8 @@ const Dealer = () => {
               variant="ghost"
               type="button"
               onClick={async () => {
-                let tempdata = {
-                  ...item,
-                  status: "Active",
-                };
-                let registerTemp: any = {
-                  status: "Active",
-                  id: userInfo?.profileId,
-                };
-                let result = await updateUser(registerTemp);
-                let restult = await updateDealer(tempdata);
-                console.log(restult, "restult", result);
-                if (restult) {
-                  setReload((prev) => !prev);
-                }
+                setSelectedUser(item);
+                setType("Active");
               }}
             >
               Active
@@ -118,6 +157,9 @@ const Dealer = () => {
     },
     {
       key: "distributor_name",
+    },
+    {
+      key: "status",
     },
   ];
   return (

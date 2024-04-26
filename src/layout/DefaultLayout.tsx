@@ -17,7 +17,7 @@ const DefaultLayout = () => {
   let username: any = localStorage.getItem("username");
   let profileId: any = localStorage.getItem("profileId");
   React.useEffect(() => {
-    if (userInfo) {
+    if (token) {
       let userinfo: any = {
         token: token,
         name: name,

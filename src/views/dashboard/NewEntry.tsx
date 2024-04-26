@@ -40,6 +40,9 @@ const NewEntry = ({
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  // const currenUserInfo = useSelector((state: RootState) => state.loginState.loginDetails);
+
+  // console.log(currenUserInfo, "currenUserInfo2543")
 
   const {
     data: byDealerUser,
@@ -531,6 +534,30 @@ const NewEntry = ({
                           </div>
                         )}
                       </div>
+                      {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
+                        "KTV3MINDIA" && (
+                        <div className="col-sm-6 mb-3">
+                          <Controller
+                            name="remarks"
+                            control={control}
+                            rules={{ required: true }}
+                            render={({ field }) => (
+                              <CFormInput
+                                className="border"
+                                label="Dealer Name"
+                                {...field}
+                                type="text"
+                                placeholder=""
+                              />
+                            )}
+                          />
+                          {errors.remarks?.type === "required" && (
+                            <div className="text-danger">
+                              {"Field is required"}
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

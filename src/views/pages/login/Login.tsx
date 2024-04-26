@@ -72,7 +72,7 @@ const Login = () => {
     <div className="mainLogin">
       <div className="wrapperlogin">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1 style={{color: "black"}}>Login</h1>
+          <h1 style={{ color: "black" }}>Login</h1>
           <div className="input-box">
             <Controller
               name="username"

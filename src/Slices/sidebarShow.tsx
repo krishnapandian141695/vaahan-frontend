@@ -6,7 +6,7 @@ export interface updateSideNav {
 }
 
 const initialState: updateSideNav = {
-  sidebarShow: false,
+  sidebarShow: true,
 };
 
 export const updateSideNavSlice = createSlice({

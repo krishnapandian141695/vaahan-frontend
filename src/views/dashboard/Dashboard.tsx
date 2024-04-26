@@ -21,7 +21,7 @@ import {
   useGetBySubDistributerUserNameQuery,
 } from "../../Services/user";
 import NewEntry from "./NewEntry";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Store";
 import {
   useCreateDealerStockMutation,
@@ -38,6 +38,7 @@ import {
 } from "../../Services/sales";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../../configData";
+import { currenUserInfo } from "../../Slices/loginSlice";
 const Dashboard = () => {
   const {
     control,
@@ -53,7 +54,7 @@ const Dashboard = () => {
   const [roleList, setRoleList] = React.useState(null);
 
   const [totalEachIitemValues, setTotalEachItemValues] = React.useState(null);
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   console.log(roleList, "roleList", userInfo);
 
@@ -189,10 +190,13 @@ const Dashboard = () => {
     ) {
       if (userInfo?.role_id === "1") {
         setRoleList(distributerData?.["data"]?.data);
+        dispatch(currenUserInfo(byDistributerUser?.["data"]?.data));
       } else if (userInfo?.role_id === "2") {
         setRoleList(subDistributerData?.["data"]?.data);
+        dispatch(currenUserInfo(bySubDistributerUser?.["data"]?.data));
       } else if (userInfo?.role_id === "3") {
         setRoleList(dealerData?.["data"]?.data);
+        dispatch(currenUserInfo(byDealerUser?.["data"]?.data));
       }
     }
   }, [

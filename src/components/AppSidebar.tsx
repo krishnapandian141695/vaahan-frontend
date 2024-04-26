@@ -145,10 +145,11 @@ const AppSidebar = () => {
     (state: RootState) => state.sidebarShow.sidebarShow
   );
 
+  console.log(sidebarShow, "sidebarShow134")
   return (
     <CSidebar
       position="fixed"
-      visible={true}
+      visible={sidebarShow}
       onVisibleChange={(visible) => {
         dispatch(updateSideNav(visible));
       }}

@@ -67,23 +67,30 @@ const ViewEntries = () => {
           type="text/css"
           dangerouslySetInnerHTML={{
             __html:
-              "\n        @page {\n   size: 7in 9.25in;\n   margin: 27mm 16mm 27mm 16mm;\n}\n        .tr {\n            font-family:'Arial, Helvetica, sans-serif'\n        }\n    ",
+              "\n        @page {\n   size: 7in 9.25in;\n   margin: 27mm 16mm 27mm 16mm;\n}\n        .tr {\n                font-family: `sans-serif` \n .table {\n                margin-bottom: `0px` \n         }\n   thead, tbody, tfoot, tr, td, th ",
           }}
         />
         <div
           id="Certificate"
           className="container-fluid"
-          style={{ marginTop: 30, width: 800, background: "white" }}
+          style={{
+            marginTop: 30,
+            width:
+              data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? 800 : "100%",
+            background: "white",
+          }}
         >
           <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
           <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+
           <style
             dangerouslySetInnerHTML={{
               __html:
-                "\n            .table {\n                width: 100%;\n            }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n        ",
+                "\n            .table {\n                width: 100%;\n     margin-bottom: 1px;\n       }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n                    margin-top: 0;\n                    margin-bottom: .5rem;\n                    font-weight: 500;\n                    line-height: 1.2;\n      font-family: sans-serif;\n               }\n       ",
             }}
           />
-          {data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ?
+
+          {data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? (
             <>
               <div
                 className="container-fluid"
@@ -709,8 +716,490 @@ const ViewEntries = () => {
                 [Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT
                 VALID]
               </div>
-            </> : <p>KTV</p>
-          }
+            </>
+          ) : (
+            <table style={{ width: "100%" }}>
+              <tbody>
+                <tr>
+                  <td>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td
+                            style={{ width: "8.33333333%", textAlign: "left" }}
+                          ></td>
+                          <td
+                            style={{
+                              textAlign: "center",
+                              width: "83.33333333%",
+                            }}
+                          >
+                            <h4 style={{ fontSize: "26px" }}>
+                              VEHICLE CONSPICUITY ONLINE MIS CERTIFICATE
+                            </h4>
+                            <h5 style={{ fontSize: "16px" }}>
+                              COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089
+                              &amp; 090
+                            </h5>
+                            <h2 style={{ fontSize: "20px" }}>
+                              {" "}
+                              <b>(Generated online in rtvsta.tn.gov.in)</b>
+                            </h2>
+                          </td>
+                          <td
+                            style={{ width: "8.33333333%", textAlign: "right" }}
+                          >
+                            <QRCode
+                              style={{
+                                height: 120,
+                                width: 120,
+                                marginTop: "10px",
+                              }}
+                              value={`Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}`}
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      border={1}
+                      style={{ width: "100%", border: "transparent" }}
+                    >
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table
+                              border={1}
+                              style={{ width: "100%", border: "transparent" }}
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style={{
+                                      textAlign: "start",
+                                      fontSize: 14,
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    To:
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    style={{ textAlign: "start", fontSize: 14 }}
+                                  >
+                                    <b>The Regional Transport Office</b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    style={{ textAlign: "start", fontSize: 14 }}
+                                  >
+                                    <b>{data?.["data"]?.rto}</b>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td></td>
+                          <td>
+                            <table
+                              border={1}
+                              id="pholo"
+                              style={{ width: "100%", border: "transparent" }}
+                            >
+                              <tbody>
+                                <tr id="nested pholo">
+                                  <td
+                                    style={{
+                                      textAlign: "center",
+                                      height: 40,
+                                      fontSize: "larger",
+                                    }}
+                                  >
+                                    <strong>RTV - CERTIFICATE </strong>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table
+                              border={1}
+                              style={{ width: "100%", border: "transparent" }}
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style={{
+                                      fontSize: 14,
+                                      textAlign: "end",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    Certificate No:{" "}
+                                    <span
+                                      style={{
+                                        fontWeight: "bold",
+                                        fontSize: 12,
+                                        textTransform: "uppercase",
+                                      }}
+                                    >
+                                      {data?.["data"]?.certificateno}
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    style={{
+                                      fontSize: 14,
+                                      textAlign: "end",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    Fitment Date:{" "}
+                                    <span
+                                      style={{
+                                        fontWeight: "bold",
+                                        fontSize: 12,
+                                        textTransform: "uppercase",
+                                      }}
+                                    >
+                                      {data?.["data"]?.date}
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      className="table table-bordered"
+                      style={{
+                        borderCollapse: "collapse",
+                        float: "left",
+                        border: "solid 2px black",
+                        marginBottom: 2,
+                        width: "100%",
+                        fontFamily: "Calibri",
+                      }}
+                    >
+                      <tbody>
+                        <tr>
+                          <th
+                            style={{
+                              width: "33.33333333%",
+                              border: "1px solid black",
+                            }}
+                          >
+                            Vehicle Details
+                          </th>
+                          <th
+                            style={{ width: "25%", border: "1px solid black" }}
+                          >
+                            Vehicle Make &amp; Model
+                          </th>
+                          <th
+                            style={{
+                              width: "41.66666667%",
+                              border: "1px solid black",
+                            }}
+                          >
+                            Manufacturer &amp; Distributor Details
+                          </th>
+                        </tr>
+                        <tr>
+                          <td style={{ width: "33.33333333%" }}>
+                            Registration No :{" "}
+                            <strong>{data?.["data"]?.vehicleregno}</strong>
+                          </td>
+                          <td style={{ width: "25%" }}>
+                            Registration Year:
+                            {data?.["data"]?.vehiclemanufacturingyear}
+                          </td>
+                          <td style={{ width: "41.66666667%" }}>
+                            Trade Name : <strong>3M </strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style={{ width: "33.33333333%" }}>
+                            Chassis No : {data?.["data"]?.chassisnum}
+                          </td>
+                          <td style={{ width: "25%" }}>
+                            Engine No : {data?.["data"]?.engineno}
+                          </td>
+                          <td style={{ width: "41.66666667%", fontSize: 13 }}>
+                            Manufacturer Details: 3M INDIA LIMITED{" "}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style={{ width: "33.33333333%" }}>
+                            Vehicle Make: {data?.["data"]?.vehiclemake}
+                          </td>
+                          <td style={{ width: "25%" }}>
+                            Vehicle Model : {data?.["data"]?.vehiclemodel}
+                          </td>
+                          <td style={{ width: "41.66666667%", fontSize: 13 }}>
+                            Distributor Details: SAI SUKRAN VENTURES PVT LTD{" "}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      className="table table-bordered"
+                      style={{
+                        borderCollapse: "collapse",
+                        float: "left",
+                        border: "solid 2px black",
+                        marginBottom: 2,
+                        width: "100%",
+                        fontFamily: "Calibri",
+                      }}
+                    >
+                      <tbody>
+                        <tr>
+                          <th
+                            style={{ width: "50%", border: "1px solid black" }}
+                          >
+                            Vehicle Owner Details
+                          </th>
+                          <th
+                            style={{
+                              width: "50%",
+                              border: "1px solid black",
+                              borderRight: "1px solid black",
+                            }}
+                            colSpan={3}
+                          >
+                            RC IMAGE
+                          </th>
+                        </tr>
+                        <tr>
+                          <td style={{ width: "41.66666667%" }}>
+                            Company Name/Owner Name :{" "}
+                            {data?.["data"]?.ownername}
+                          </td>
+                          <td style={{ width: "1.0in" }} rowSpan={8}>
+                            <img
+                              src={data?.["data"]?.rightimage}
+                              height={100}
+                              width={100}
+                              style={{ width: "4.5in", height: "2.5in" }}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontSize: 13 }}>
+                            Owner Address / Register Address :{" "}
+                            {data?.["data"]?.address} <br />
+                            Contact Number : {data?.["data"]?.phoneo}
+                          </td>
+                        </tr>
+                        <tr>
+                          {" "}
+                          <th
+                            style={{ width: "25%", border: "1px solid black" }}
+                          >
+                            Conspicuity Tapes 20MM &amp; 50MM Fitment Details
+                          </th>
+                        </tr>
+                        <tr>
+                          {" "}
+                          <td>
+                            {" "}
+                            20MM RED :{" "}
+                            {data?.["data"]?.red20mm
+                              ? data?.["data"]?.red20mm
+                              : 0}{" "}
+                            Mtrs | 20MM WHITE :{" "}
+                            {data?.["data"]?.white20mm
+                              ? data?.["data"]?.white20mm
+                              : 0}{" "}
+                            Mtrs
+                          </td>{" "}
+                        </tr>
+                        <tr>
+                          <td>
+                            50MM Red :{" "}
+                            {data?.["data"]?.red50mm
+                              ? data?.["data"]?.red50mm
+                              : 0}{" "}
+                            Mtrs | 50MM White :{" "}
+                            {data?.["data"]?.white50mm
+                              ? data?.["data"]?.white50mm
+                              : 0}{" "}
+                            Mtrs | 50MM Yellow :{" "}
+                            {data?.["data"]?.yellow50mm
+                              ? data?.["data"]?.yellow50mm
+                              : 0}{" "}
+                            Mtrs
+                          </td>
+                        </tr>
+                        <tr>
+                          {" "}
+                          <th
+                            style={{ width: "25%", border: "1px solid black" }}
+                          >
+                            Rear Marking Plates Details
+                          </th>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            Class 3 : Red Retro Reflective and Yellow Retro
+                            Reflective - Alternative Strips{" "}
+                            {data?.["data"]?.class3 === "1" && (
+                              <img style={{ width: "20px" }} src={tick} />
+                            )}
+                          </td>{" "}
+                        </tr>{" "}
+                        <tr>
+                          <td className="col-md-6" colSpan={4}>
+                            Class 4 : Red Retro Reflective border and Yellow
+                            Retro Reflective Centre
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      className="table table-bordered"
+                      style={{
+                        borderCollapse: "collapse",
+                        float: "left",
+                        border: "solid 2px black",
+                        marginBottom: 2,
+                        width: "100%",
+                        fontFamily: "Calibri",
+                      }}
+                    >
+                      <tbody>
+                        <tr>
+                          <th style={{ border: "1px solid black" }}>
+                            Approval Details
+                          </th>
+                          <th
+                            colSpan={2}
+                            style={{
+                              border: "1px solid black",
+                              textAlign: "center",
+                            }}
+                          >
+                            Certified By ARAI / ICAT
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>TAC:A94495 </td>
+                          <td>
+                            COP Number : SHL/16/2020-2021/3000013406/COP/2621
+                          </td>
+                          <td>
+                            Test Report Number :SHL/16/2013-2014/9149/2783{" "}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      className="table table-bordered"
+                      style={{
+                        borderCollapse: "collapse",
+                        float: "left",
+                        border: "solid 2px black",
+                        marginBottom: 2,
+                        width: "100%",
+                        fontFamily: "Calibri",
+                      }}
+                    >
+                      <tbody>
+                        <tr>
+                          <th colSpan={4} style={{ border: "1px solid black" }}>
+                            Fitment Images
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Front</td>
+                          <td>Rear</td>
+                          <td>Side-1</td>
+                          <td>Side-2</td>
+                        </tr>
+                        <tr>
+                          <td style={{ width: "1.0in" }}>
+                            <img
+                              src={data?.["data"]?.frontimage}
+                              height={100}
+                              width={100}
+                              style={{ width: "2.3in", height: "1.8in" }}
+                            />
+                          </td>
+                          <td style={{ width: "1.0in" }}>
+                            <img
+                              src={data?.["data"]?.backimage}
+                              height={100}
+                              width={100}
+                              style={{ width: "2.3in", height: "1.8in" }}
+                            />
+                          </td>
+                          <td style={{ width: "1.0in" }}>
+                            <img
+                              src={data?.["data"]?.leftimage}
+                              height={100}
+                              width={100}
+                              style={{ width: "2.3in", height: "1.8in" }}
+                            />
+                          </td>
+                          <td style={{ width: "1.0in" }}>
+                            <img
+                              src={data?.["data"]?.rightimage}
+                              height={100}
+                              width={100}
+                              style={{ width: "2.3in", height: "1.8in" }}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={4} />
+                        </tr>
+                        <tr>
+                          <td colSpan={4}>
+                            <p>
+                              We hereby certify that supplied/installed ICAT /
+                              ARAI Approved Retro Reflective Tapes as per CMRV
+                              rule 104 specified under CMVR GSR 784 (E)
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={3}>
+                            For {data?.["data"]?.remarks} <br />
+                            <br />
+                            <br />
+                            <b> Authorized Dealer Seal &amp; Signature </b>
+                          </td>
+                          <td className="text-center">
+                            <br />
+                            <br />
+                            <br />
+                            <b>Customer Signature</b>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h6 style={{ textAlign: "center" }}>
+                      <b style={{ fontWeight: "bold", fontSize: 13 }}>
+                        [Note: This certificate was downloaded from
+                        WWW.RTVSTA.TN.GOV.IN]
+                      </b>
+                    </h6>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          )}
         </div>
         <div style={{ margin: "auto" }}>
           <table
