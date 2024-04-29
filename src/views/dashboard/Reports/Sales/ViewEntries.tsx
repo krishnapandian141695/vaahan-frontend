@@ -983,7 +983,7 @@ const ViewEntries = () => {
                           </td>
                           <td style={{ width: "1.0in" }} rowSpan={8}>
                             <img
-                              src={data?.["data"]?.rightimage}
+                              src={data?.["data"]?.rcimage}
                               height={100}
                               width={100}
                               style={{ width: "4.5in", height: "2.5in" }}
