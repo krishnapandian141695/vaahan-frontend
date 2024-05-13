@@ -29,6 +29,10 @@ const Entries = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(finalQUery);
 
+  React.useEffect(() => {
+    registerrationRefetch();
+  }, []);
+
   console.log(registerrationSaleData, "registerrationSaleData45234");
 
   const columns = [
