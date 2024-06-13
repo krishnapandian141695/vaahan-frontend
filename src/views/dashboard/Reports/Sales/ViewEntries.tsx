@@ -883,6 +883,7 @@ const ViewEntries = () => {
                         border: "solid 2px black",
                         marginBottom: 2,
                         width: "100%",
+                        height: "130px",
                         fontFamily: "Calibri",
                       }}
                     >
@@ -955,6 +956,7 @@ const ViewEntries = () => {
                         border: "solid 2px black",
                         marginBottom: 2,
                         width: "100%",
+                        height: "300px",
                         fontFamily: "Calibri",
                       }}
                     >
@@ -986,7 +988,7 @@ const ViewEntries = () => {
                               src={data?.["data"]?.rcimage}
                               height={100}
                               width={100}
-                              style={{ width: "4.5in", height: "2.5in" }}
+                              style={{ width: "4.6in", height: "3.2in" }}
                             />
                           </td>
                         </tr>
@@ -1075,6 +1077,7 @@ const ViewEntries = () => {
                         border: "solid 2px black",
                         marginBottom: 2,
                         width: "100%",
+                        height: "80px",
                         fontFamily: "Calibri",
                       }}
                     >
@@ -1112,6 +1115,7 @@ const ViewEntries = () => {
                         border: "solid 2px black",
                         marginBottom: 2,
                         width: "100%",
+                        height : "400px",
                         fontFamily: "Calibri",
                       }}
                     >
