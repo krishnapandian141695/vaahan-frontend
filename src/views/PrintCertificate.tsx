@@ -10,12 +10,6 @@ const PrintCertificate = () => {
       >
         <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
         <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "\n            .table {\n                width: 100%;\n            }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n        ",
-          }}
-        />
         <div className="container-fluid" style={{ margin: "auto", padding: 0 }}>
           <div
             className="row"

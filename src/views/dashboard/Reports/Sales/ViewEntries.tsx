@@ -40,7 +40,7 @@ const ViewEntries = () => {
     var divContents = document.getElementById("Certificate").innerHTML;
     var printWindow = window.open("", "", "height=1000,width=800");
     printWindow.document.write(
-      "<html><head> <style>.table tbody tr td { font-size:14px;color:black;padding-left:10px;padding:0px; }</style><title>Customer Copy</title>"
+      "<html><head> <style>.table tbody tr td { font-size:14px;color:black;padding-left:10px;padding:0px; }b, strong{font-weight: 500;color: black;}</style><title>Customer Copy</title>"
     );
     printWindow.document.write(
       '</head><body style="padding:0;margin-top:20;">'
@@ -76,7 +76,7 @@ const ViewEntries = () => {
           style={{
             marginTop: 30,
             width:
-              data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? 800 : "100%",
+              data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? 800 : 820,
             background: "white",
           }}
         >
@@ -86,7 +86,7 @@ const ViewEntries = () => {
           <style
             dangerouslySetInnerHTML={{
               __html:
-                "\n            .table {\n                width: 100%;\n     margin-bottom: 1px;\n       }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n                    margin-top: 0;\n                    margin-bottom: .5rem;\n                    font-weight: 500;\n                    line-height: 1.2;\n      font-family: sans-serif;\n               }\n       ",
+                "\n            .table {\n                width: 100%;\n     margin-bottom: 1px;\n       }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n                    margin-top: 0;\n                    margin-bottom: .5rem;\n                    font-weight: 500;\n                    line-height: 1.2;\n      font-family: sans-serif;\n               }\n    .table > :not(caption) > * > * {padding:3px}\n\n   ",
             }}
           />
 
@@ -237,7 +237,7 @@ const ViewEntries = () => {
                     style={{
                       borderCollapse: "collapse",
                       float: "left",
-                      border: "solid 2px black",
+                      border: "solid 1px black",
                       marginBottom: 2,
                       width: "100%",
                       fontFamily: "Calibri",
@@ -301,7 +301,7 @@ const ViewEntries = () => {
                       marginLeft: "auto",
                       marginRight: "auto",
                       borderCollapse: "collapse",
-                      border: "solid 2px black",
+                      border: "solid 1px black",
                       marginBottom: 2,
                       fontFamily: "Calibri",
                     }}
@@ -419,7 +419,7 @@ const ViewEntries = () => {
                       marginBottom: 2,
                       verticalAlign: "central",
                       fontSize: 12,
-                      border: "solid 2px black",
+                      border: "solid 1px black",
                     }}
                   >
                     <tbody>
@@ -549,7 +549,7 @@ const ViewEntries = () => {
                       marginLeft: "auto",
                       marginRight: "auto",
                       borderCollapse: "collapse",
-                      border: "solid 2px black",
+                      border: "solid 1px black",
                       marginBottom: 2,
                     }}
                   >
@@ -718,7 +718,7 @@ const ViewEntries = () => {
               </div>
             </>
           ) : (
-            <table style={{ width: "100%" }}>
+            <table style={{ width: "800px" }}>
               <tbody>
                 <tr>
                   <td>
@@ -734,14 +734,14 @@ const ViewEntries = () => {
                               width: "83.33333333%",
                             }}
                           >
-                            <h4 style={{ fontSize: "26px" }}>
+                            <h4 style={{ fontSize: "23px" }}>
                               VEHICLE CONSPICUITY ONLINE MIS CERTIFICATE
                             </h4>
-                            <h5 style={{ fontSize: "16px" }}>
+                            <h5 style={{ fontSize: "15px" }}>
                               COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089
                               &amp; 090
                             </h5>
-                            <h2 style={{ fontSize: "20px" }}>
+                            <h2 style={{ fontSize: "19px" }}>
                               {" "}
                               <b>(Generated online in rtvsta.tn.gov.in)</b>
                             </h2>
@@ -880,10 +880,9 @@ const ViewEntries = () => {
                       style={{
                         borderCollapse: "collapse",
                         float: "left",
-                        border: "solid 2px black",
+                        border: "solid 1px black",
                         marginBottom: 2,
                         width: "100%",
-                        height: "130px",
                         fontFamily: "Calibri",
                       }}
                     >
@@ -893,12 +892,21 @@ const ViewEntries = () => {
                             style={{
                               width: "33.33333333%",
                               border: "1px solid black",
+                              textAlign: "left",
+                              padding: "3px",
+                              fontSize: "16px",
                             }}
                           >
                             Vehicle Details
                           </th>
                           <th
-                            style={{ width: "25%", border: "1px solid black" }}
+                            style={{
+                              width: "25%",
+                              border: "1px solid black",
+                              textAlign: "left",
+                              padding: "3px",
+                              fontSize: "16px",
+                            }}
                           >
                             Vehicle Make &amp; Model
                           </th>
@@ -906,6 +914,9 @@ const ViewEntries = () => {
                             style={{
                               width: "41.66666667%",
                               border: "1px solid black",
+                              textAlign: "left",
+                              padding: "3px",
+                              fontSize: "16px",
                             }}
                           >
                             Manufacturer &amp; Distributor Details
@@ -953,17 +964,22 @@ const ViewEntries = () => {
                       style={{
                         borderCollapse: "collapse",
                         float: "left",
-                        border: "solid 2px black",
+                        border: "solid 1px black",
                         marginBottom: 2,
                         width: "100%",
-                        height: "300px",
                         fontFamily: "Calibri",
                       }}
                     >
                       <tbody>
                         <tr>
                           <th
-                            style={{ width: "50%", border: "1px solid black" }}
+                            style={{
+                              width: "50%",
+                              border: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
+                            }}
                           >
                             Vehicle Owner Details
                           </th>
@@ -972,6 +988,9 @@ const ViewEntries = () => {
                               width: "50%",
                               border: "1px solid black",
                               borderRight: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
                             }}
                             colSpan={3}
                           >
@@ -987,8 +1006,8 @@ const ViewEntries = () => {
                             <img
                               src={data?.["data"]?.rcimage}
                               height={100}
-                              width={100}
-                              style={{ width: "4.6in", height: "3.2in" }}
+                              width={"100%"}
+                              style={{ height: "2.5in" }}
                             />
                           </td>
                         </tr>
@@ -1002,7 +1021,13 @@ const ViewEntries = () => {
                         <tr>
                           {" "}
                           <th
-                            style={{ width: "25%", border: "1px solid black" }}
+                            style={{
+                              width: "25%",
+                              border: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
+                            }}
                           >
                             Conspicuity Tapes 20MM &amp; 50MM Fitment Details
                           </th>
@@ -1042,7 +1067,13 @@ const ViewEntries = () => {
                         <tr>
                           {" "}
                           <th
-                            style={{ width: "25%", border: "1px solid black" }}
+                            style={{
+                              width: "25%",
+                              border: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
+                            }}
                           >
                             Rear Marking Plates Details
                           </th>
@@ -1052,6 +1083,7 @@ const ViewEntries = () => {
                             style={{
                               display: "flex",
                               justifyContent: "space-between",
+                              border: "none",
                             }}
                           >
                             Class 3 : Red Retro Reflective and Yellow Retro
@@ -1074,16 +1106,22 @@ const ViewEntries = () => {
                       style={{
                         borderCollapse: "collapse",
                         float: "left",
-                        border: "solid 2px black",
+                        border: "solid 1px black",
                         marginBottom: 2,
                         width: "100%",
-                        height: "80px",
                         fontFamily: "Calibri",
                       }}
                     >
                       <tbody>
                         <tr>
-                          <th style={{ border: "1px solid black" }}>
+                          <th
+                            style={{
+                              border: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
+                            }}
+                          >
                             Approval Details
                           </th>
                           <th
@@ -1091,6 +1129,8 @@ const ViewEntries = () => {
                             style={{
                               border: "1px solid black",
                               textAlign: "center",
+                              fontSize: "16px",
+                              padding: "3px",
                             }}
                           >
                             Certified By ARAI / ICAT
@@ -1112,16 +1152,23 @@ const ViewEntries = () => {
                       style={{
                         borderCollapse: "collapse",
                         float: "left",
-                        border: "solid 2px black",
+                        border: "solid 1px black",
                         marginBottom: 2,
                         width: "100%",
-                        height : "400px",
                         fontFamily: "Calibri",
                       }}
                     >
                       <tbody>
                         <tr>
-                          <th colSpan={4} style={{ border: "1px solid black" }}>
+                          <th
+                            colSpan={4}
+                            style={{
+                              border: "1px solid black",
+                              fontSize: "16px",
+                              padding: "3px",
+                              textAlign: "left",
+                            }}
+                          >
                             Fitment Images
                           </th>
                         </tr>
@@ -1132,36 +1179,36 @@ const ViewEntries = () => {
                           <td>Side-2</td>
                         </tr>
                         <tr>
-                          <td style={{ width: "1.0in" }}>
+                          <td style={{ width: "2.3in" }}>
                             <img
                               src={data?.["data"]?.frontimage}
                               height={100}
                               width={100}
-                              style={{ width: "2.3in", height: "1.8in" }}
+                              style={{ width: "100%", height: "2in" }}
                             />
                           </td>
-                          <td style={{ width: "1.0in" }}>
+                          <td style={{ width: "2.3in" }}>
                             <img
                               src={data?.["data"]?.backimage}
                               height={100}
                               width={100}
-                              style={{ width: "2.3in", height: "1.8in" }}
+                              style={{ width: "100%", height: "2in" }}
                             />
                           </td>
-                          <td style={{ width: "1.0in" }}>
+                          <td style={{ width: "2.3in" }}>
                             <img
                               src={data?.["data"]?.leftimage}
                               height={100}
                               width={100}
-                              style={{ width: "2.3in", height: "1.8in" }}
+                              style={{ width: "100%", height: "2in" }}
                             />
                           </td>
-                          <td style={{ width: "1.0in" }}>
+                          <td style={{ width: "2.3in" }}>
                             <img
                               src={data?.["data"]?.rightimage}
                               height={100}
                               width={100}
-                              style={{ width: "2.3in", height: "1.8in" }}
+                              style={{ width: "100%", height: "2in" }}
                             />
                           </td>
                         </tr>
