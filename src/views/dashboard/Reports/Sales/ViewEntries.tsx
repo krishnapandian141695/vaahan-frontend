@@ -1184,7 +1184,7 @@ const ViewEntries = () => {
                               src={data?.["data"]?.frontimage}
                               height={100}
                               width={100}
-                              style={{ width: "100%", height: "2in" }}
+                              style={{ width: "100%", height: "1.5in" }}
                             />
                           </td>
                           <td style={{ width: "2.3in" }}>
@@ -1192,7 +1192,7 @@ const ViewEntries = () => {
                               src={data?.["data"]?.backimage}
                               height={100}
                               width={100}
-                              style={{ width: "100%", height: "2in" }}
+                              style={{ width: "100%", height: "1.5in" }}
                             />
                           </td>
                           <td style={{ width: "2.3in" }}>
@@ -1200,7 +1200,7 @@ const ViewEntries = () => {
                               src={data?.["data"]?.leftimage}
                               height={100}
                               width={100}
-                              style={{ width: "100%", height: "2in" }}
+                              style={{ width: "100%", height: "1.5in" }}
                             />
                           </td>
                           <td style={{ width: "2.3in" }}>
@@ -1208,7 +1208,7 @@ const ViewEntries = () => {
                               src={data?.["data"]?.rightimage}
                               height={100}
                               width={100}
-                              style={{ width: "100%", height: "2in" }}
+                              style={{ width: "100%", height: "1.5in" }}
                             />
                           </td>
                         </tr>
