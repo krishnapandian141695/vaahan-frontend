@@ -749,14 +749,15 @@ const ViewEntries = () => {
                           <td
                             style={{ width: "8.33333333%", textAlign: "right" }}
                           >
-                            <QRCode
+{/*                             <QRCode
                               style={{
                                 height: 120,
                                 width: 120,
                                 marginTop: "10px",
                               }}
                               value={`Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}`}
-                            />
+                            /> */}
+                            <img src={qrcode} style={{ height: 110 }} />
                           </td>
                         </tr>
                       </tbody>
