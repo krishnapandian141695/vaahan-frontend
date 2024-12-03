@@ -98,7 +98,7 @@ const AddCompany = () => {
       username: data?.user_name,
       password: data?.password,
       role_id: userType,
-      status: "Active",
+      status: "InActive",
     };
 
     try {
@@ -117,13 +117,13 @@ const AddCompany = () => {
                   byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
                 distributor_name: userInfo?.name,
                 distributor_id: userInfo?.userId,
-                status: "Active",
+                status: "InActive",
                 phone_number: formData?.mobile,
               }
             : {}),
           ...(userInfo?.role_id === "1"
             ? {
-                status: "Active",
+                status: "InActive",
                 phone_number: formData?.mobile,
               }
             : {}),
