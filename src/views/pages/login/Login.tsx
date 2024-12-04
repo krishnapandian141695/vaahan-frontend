@@ -19,7 +19,6 @@ const Login = () => {
   } = useForm();
   const formData = watch();
   const dispatch = useDispatch();
-  console.log(formData, "324532", userInfo);
 
   React.useEffect(() => {
     if (userInfo) {
@@ -32,7 +31,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const result = await loginApi(data);
-      console.log(result, "sadfasd");
       if (result?.["data"]?.success) {
         if (result?.["data"]?.data?.user?.status === "Active") {
           localStorage.setItem("token", result?.["data"]?.data?.access_token);

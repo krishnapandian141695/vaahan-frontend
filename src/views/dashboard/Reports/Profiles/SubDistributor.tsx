@@ -8,6 +8,7 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
 import {
+  useGetUsersQuery,
   useUpdateSubDistributerMutation,
   useUpdateUserNameMutation,
 } from "../../../../Services/user";
@@ -32,20 +33,19 @@ const SubDistributor = () => {
     refetch: subDistributerRefetcg,
   } = useGetSubDistributerQuery(finalQUery);
 
+  const {
+    data: userList,
+    error: userListError,
+    refetch: userLIstRefetch,
+  } = useGetUsersQuery();
+
   React.useEffect(() => {
     subDistributerRefetcg();
+    userLIstRefetch()
   }, [reload]);
-
-  console.log(
-    subDistributerData,
-    urlString,
-    "manifactDatamanifactDatamanifactData",
-    userInfo
-  );
 
   const scopedColumns = {
     Action: (item) => {
-      console.log(item, "item4523452");
       return (
         <td>
           {item?.status === "Active" ? (
@@ -57,14 +57,15 @@ const SubDistributor = () => {
                   ...item,
                   status: "InActive",
                 };
+
+                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
                 let registerTemp: any = {
                   status: "InActive",
-                  id: userInfo?.profileId,
+                  id: userId?.[0]?.id,
                 };
                 let result = await updateUser(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
-                console.log(restult, "restult");
-                if (restult) {
+                if (restult && result) {
                   setReload((prev) => !prev);
                 }
               }}
@@ -80,14 +81,15 @@ const SubDistributor = () => {
                   ...item,
                   status: "Active",
                 };
+                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
+
                 let registerTemp: any = {
                   status: "Active",
-                  id: userInfo?.profileId,
+                  id: userId?.[0]?.id,
                 };
                 let result = await updateUser(registerTemp);
                 let restult = await updateSubDistributor(tempdata);
-                console.log(restult, "restult");
-                if (restult) {
+                if (restult && result) {
                   setReload((prev) => !prev);
                 }
               }}

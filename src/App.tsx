@@ -37,7 +37,6 @@ function App() {
       let now = moment();
       let currentTime = now.format("mm");
       let totalMin = parseInt(currentTime) - parseInt(prevTime);
-      console.log(totalMin, "totalMintotalMin", currentTime, prevTime);
       if (totalMin > 15 || totalMin < 0) {
         if (panelStatusSession === null) {
           logOut();

@@ -18,7 +18,7 @@ export const usersApi = createApi({
   baseQuery: axiosBaseQuery,
   endpoints: (builder) => ({
     getUsers: builder.query<any[], void>({
-      query: () => `/users`,
+      query: () => `/getAllUser`,
     }),
     getUserById: builder.query<any[], void>({
       query: (username) => `/getAllUser?username=${username}`,

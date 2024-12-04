@@ -4,7 +4,7 @@ import Table from "../../../../components/Table";
 import { useGetDisbutersQuery } from "../../../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
-import { useUpdateDistributerMutation, useUpdateUserNameMutation } from "../../../../Services/user";
+import { useGetUsersQuery, useUpdateDistributerMutation, useUpdateUserNameMutation } from "../../../../Services/user";
 
 const Distributor = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -20,18 +20,24 @@ const Distributor = () => {
     refetch: distributerRefetch,
   } = useGetDisbutersQuery();
 
+  const {
+    data: userList,
+    error: userListError,
+    refetch: userLIstRefetch,
+  } = useGetUsersQuery();
+
+  console.log(
+    userList?.["data"]?.data, "userList09879"
+  );
+
+
   React.useEffect(() => {
     distributerRefetch();
+    userLIstRefetch()
   }, [reload]);
-  console.log(
-    distributerData,
-    "manifactDatamanifactDatamanifactData",
-    userInfo
-  );
 
   const scopedColumns = {
     Action: (item) => {
-      console.log(item, "item4523452");
       return (
         <td>
           {item?.status === "Active" ? (
@@ -43,14 +49,14 @@ const Distributor = () => {
                   ...item,
                   status: "InActive",
                 };
+                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
                 let registerTemp: any = {
                   status: "InActive",
-                  id: userInfo?.profileId,
+                  id: userId?.[0]?.id,
                 };
                 let result = await updateUser(registerTemp);
                 let restult = await updateDistributor(tempdata);
-                console.log(restult, "restult");
-                if (restult) {
+                if (restult && result) {
                   setReload((prev) => !prev);
                 }
               }}
@@ -66,14 +72,14 @@ const Distributor = () => {
                   ...item,
                   status: "Active",
                 };
+                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
                 let registerTemp: any = {
                   status: "Active",
-                  id: userInfo?.profileId,
+                  id: userId?.[0]?.id,
                 };
                 let result = await updateUser(registerTemp);
                 let restult = await updateDistributor(tempdata);
-                console.log(restult, "restult");
-                if (restult) {
+                if (restult && result) {
                   setReload((prev) => !prev);
                 }
               }}

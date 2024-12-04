@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
 import {
   useGetUserByIdQuery,
+  useGetUsersQuery,
   useUpdateDealerMutation,
   useUpdateUserNameMutation,
 } from "../../../../Services/user";
@@ -21,17 +22,12 @@ const Dealer = () => {
   const [updateUser] = useUpdateUserNameMutation();
   const [selectedUser, setSelectedUser] = React.useState(null);
   const [selectType, setType] = React.useState(null);
-  const {
-    data: byRegisterUser,
-    error: byRegisterUserError,
-    refetch: byRegisterUserRefetch,
-  } = useGetUserByIdQuery(selectedUser?.user_name);
 
-  console.log(
-    byRegisterUser?.["data"]?.data?.[0]?.id,
-    "byRegisterUser",
-    selectedUser
-  );
+  const {
+    data: userList,
+    error: userListError,
+    refetch: userLIstRefetch,
+  } = useGetUsersQuery();
 
   let urlString: any = `distributor_id=${userInfo?.userId}`;
   let urlStringSubDis: any = `sub_distributor_id=${userInfo?.userId}`;
@@ -43,7 +39,6 @@ const Dealer = () => {
       ? urlString
       : urlStringSubDis;
 
-  console.log(userInfo, "userInfo423");
   const {
     data: dealerData,
     error: dealerError,
@@ -53,48 +48,46 @@ const Dealer = () => {
 
   React.useEffect(() => {
     dealerRefetch();
+    userLIstRefetch();
   }, [reload]);
 
   React.useEffect(() => {
     const updateUserAndDealer = async () => {
       if (
-        selectType === "InActive" &&
-        byRegisterUser &&
-        byRegisterUser?.["data"]?.data?.length > 0
+        selectType === "InActive"
       ) {
         let tempdata = {
           ...selectedUser,
           status: "InActive", // Corrected status to "Inactive"
         };
+        let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === selectedUser?.phone_number)
         let registerTemp: any = {
           status: "InActive", // Corrected status to "Inactive"
-          id: byRegisterUser?.["data"]?.data?.[0]?.id,
+          id: userId?.[0]?.id,
         };
+        console.log(userId, "userId70978")
         let result = await updateUser(registerTemp);
         let restult = await updateDealer(tempdata);
-        console.log(restult, "restult", result);
-        if (restult) {
+        if (restult && result) {
           setSelectedUser(null);
           setType(null);
           setReload((prev) => !prev);
         }
       } else if (
-        selectType === "Active" &&
-        byRegisterUser &&
-        byRegisterUser?.["data"]?.data?.length > 0
+        selectType === "Active"
       ) {
         let tempdata = {
           ...selectedUser,
           status: "Active",
         };
+        let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === selectedUser?.phone_number)
         let registerTemp: any = {
-          status: "Active",
-          id: byRegisterUser?.["data"]?.data?.[0]?.id,
+          status: "Active", // Corrected status to "Inactive"
+          id: userId?.[0]?.id,
         };
         let result = await updateUser(registerTemp);
         let restult = await updateDealer(tempdata);
-        console.log(restult, "restult", result);
-        if (restult) {
+        if (restult && result) {
           setSelectedUser(null);
           setType(null);
           setReload((prev) => !prev);
@@ -103,11 +96,10 @@ const Dealer = () => {
     };
 
     updateUserAndDealer();
-  }, [byRegisterUser]);
+  }, [selectedUser]);
 
   const scopedColumns = {
     Action: (item) => {
-      console.log(item, "item4523452");
       return (
         <td>
           {item?.status === "Active" ? (

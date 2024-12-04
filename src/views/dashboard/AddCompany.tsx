@@ -103,7 +103,6 @@ const AddCompany = () => {
 
     try {
       let result = await registerApi(tempRegister);
-      console.log(result?.["error"]?.status, "result4352345");
       if (
         result &&
         (result?.["data"]?.code === 201 || result?.["error"]?.status === 422)
@@ -111,6 +110,7 @@ const AddCompany = () => {
         let tempResult: any;
         let tempFormData = {
           ...formData,
+          // product_name : ,
           ...(userInfo?.role_id === "2"
             ? {
                 manufacturer_name:
