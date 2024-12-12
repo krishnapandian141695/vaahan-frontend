@@ -714,14 +714,14 @@ const Dashboard = () => {
                       name="red20mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="RED 20MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -735,14 +735,14 @@ const Dashboard = () => {
                       name="white20mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="WHITE 20MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -755,14 +755,14 @@ const Dashboard = () => {
                       name="red50mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="RED 50MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -775,14 +775,14 @@ const Dashboard = () => {
                       name="white50mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="WHITE 50MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -795,14 +795,14 @@ const Dashboard = () => {
                       name="yellow50mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="YELLOW 50MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -816,14 +816,14 @@ const Dashboard = () => {
                       name="redReflector80mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="RED 80MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -836,14 +836,14 @@ const Dashboard = () => {
                       name="whiteReflector80mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="WHITE 80MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -856,14 +856,14 @@ const Dashboard = () => {
                       name="yellowReflector80mm"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="YLLOW 80MM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -877,14 +877,14 @@ const Dashboard = () => {
                       name="class3"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="CLASS 3"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -897,14 +897,14 @@ const Dashboard = () => {
                       name="class4"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="CLASS 4"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />
@@ -917,14 +917,14 @@ const Dashboard = () => {
                       name="hologram"
                       control={control}
                       rules={{ required: "Field is required" }}
-                      defaultValue=""
+                      defaultValue="0"
                       render={({ field }) => (
                         <CFormInput
                           className="border"
                           label="HOLOGRAM"
                           {...field}
                           type="text"
-                          placeholder="0.00"
+                          placeholder="0"
                         />
                       )}
                     />

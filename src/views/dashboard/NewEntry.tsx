@@ -575,15 +575,14 @@ const NewEntry = ({
                         <Controller
                           name="red20mm"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="RED 20MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -598,15 +597,14 @@ const NewEntry = ({
                         <Controller
                           name="white20mm"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="WHITE 20MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -620,15 +618,14 @@ const NewEntry = ({
                         <Controller
                           name="red50mm"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="RED 50MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -642,15 +639,14 @@ const NewEntry = ({
                         <Controller
                           name="white50mm"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="WHITE 50MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -664,15 +660,14 @@ const NewEntry = ({
                         <Controller
                           name="yellow50mm"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="YELLOW 50MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -687,15 +682,14 @@ const NewEntry = ({
                         <Controller
                           name="red80circularreflector"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="RED 80MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -709,15 +703,14 @@ const NewEntry = ({
                         <Controller
                           name="white80circularreflector"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="WHITE 80MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -731,15 +724,14 @@ const NewEntry = ({
                         <Controller
                           name="yellow80circularreflector"
                           control={control}
-                          // rules={{ required: "Field is required" }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               className="border"
                               label="YLLOW 80MM"
                               {...field}
                               type="text"
-                              placeholder="0.00"
+                              placeholder="0"
                             />
                           )}
                         />
@@ -755,7 +747,7 @@ const NewEntry = ({
                           name="class3"
                           control={control}
                           rules={{ pattern: /^[01]$/ }}
-                          defaultValue=""
+                          defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
                               disabled={!formData?.class4 ? false : true}
@@ -778,8 +770,8 @@ const NewEntry = ({
                           name="class4"
                           control={control}
                           rules={{ pattern: /^[01]$/ }}
+                          defaultValue="0"
                           disabled={!formData?.class3 ? false : true}
-                          defaultValue=""
                           render={({ field }) => (
                             <CFormInput
                               className="border"
