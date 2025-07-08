@@ -76,7 +76,7 @@ const ViewEntries = () => {
           style={{
             marginTop: 30,
             width:
-              data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? 800 : 820,
+              820,
             background: "white",
           }}
         >
@@ -90,7 +90,7 @@ const ViewEntries = () => {
             }}
           />
 
-          {data?.["data"]?.manufacturer_name !== "KTV3MINDIA" ? (
+          {data?.["data"]?.manufacturer_name !== "KTV3M INDIA" ? (
             <>
               <div
                 className="container-fluid"

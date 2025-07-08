@@ -535,7 +535,7 @@ const NewEntry = ({
                         )}
                       </div>
                       {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3MINDIA" && (
+                        "KTV3M INDIA" && (
                         <div className="col-sm-6 mb-3">
                           <Controller
                             name="remarks"
@@ -981,7 +981,7 @@ const NewEntry = ({
                         )}
                       </div>
                       {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3MINDIA" && (
+                        "KTV3M INDIA" && (
                         <div className="col-sm-3 mb-3">
                           <Controller
                             name="rcimage"
