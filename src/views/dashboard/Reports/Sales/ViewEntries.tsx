@@ -40,7 +40,7 @@ const ViewEntries = () => {
     var divContents = document.getElementById("Certificate").innerHTML;
     var printWindow = window.open("", "", "height=1000,width=800");
     printWindow.document.write(
-      "<html><head> <style>.table tbody tr td { font-size:14px;color:black;padding-left:10px;padding:0px; }b, strong{font-weight: 500;color: black;}</style><title>Customer Copy</title>"
+      "<html><head> <style>.table tbody tr td { font-size:14px;color:black;padding-left:10px;padding:0px;font-family:Arial, Helvetica, sans-serif }b, strong{font-weight: 500;color: black;}</style><title>Customer Copy</title>"
     );
     printWindow.document.write(
       '</head><body style="padding:0;margin-top:20;">'
@@ -67,7 +67,7 @@ const ViewEntries = () => {
           type="text/css"
           dangerouslySetInnerHTML={{
             __html:
-              "\n        @page {\n   size: 7in 9.25in;\n   margin: 27mm 16mm 27mm 16mm;\n}\n        .tr {\n                font-family: `sans-serif` \n .table {\n                margin-bottom: `0px` \n         }\n   thead, tbody, tfoot, tr, td, th ",
+              "\n        @page {\n   size: 7in 9.25in;\n   margin: 27mm 16mm 27mm 16mm;\n}\n        .tr {\n                font-family: `Arial, Helvetica, sans-serif` \n .table {\n                margin-bottom: `0px` \n         }\n   thead, tbody, tfoot, tr, td, th ",
           }}
         />
         <div
@@ -86,7 +86,7 @@ const ViewEntries = () => {
           <style
             dangerouslySetInnerHTML={{
               __html:
-                "\n            .table {\n                width: 100%;\n     margin-bottom: 1px;\n       }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n                    margin-top: 0;\n                    margin-bottom: .5rem;\n                    font-weight: 500;\n                    line-height: 1.2;\n      font-family: sans-serif;\n               }\n    .table > :not(caption) > * > * {padding:3px}\n\n   ",
+                "\n            .table {\n                width: 100%;\n     margin-bottom: 1px;\n       }\n\n                .table tbody tr td {\n                    padding: 3px !important;\n                    padding-bottom: 4px;\n                    font-size: 12px;\n                    font-family: 'Arial, Helvetica, sans-serif';\n                    color: black;\n                    padding-left: 10px;\n                    border: solid .1pt grey;\n                    vertical-align: top;\n                }\n\n                .table tbody tr {\n                    padding: 5px !important;\n                    padding-bottom: 5px;\n                    font-size: 14px;\n                    color: black;\n                    padding-left: 10px;\n                }\n .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n                    margin-top: 0;\n                    margin-bottom: .5rem;\n                    font-weight: 500;\n                    line-height: 1.2;\n      font-family: Arial, Helvetica, sans-serif;\n               }\n    .table > :not(caption) > * > * {padding:3px}\n\n   ",
             }}
           />
 
@@ -568,8 +568,8 @@ const ViewEntries = () => {
                             (data?.["data"]?.class3
                               ? 1100
                               : data?.["data"]?.class4
-                              ? 1350
-                              : null)}
+                                ? 1350
+                                : null)}
                           only.
                           <br />
                         </td>
@@ -743,7 +743,7 @@ const ViewEntries = () => {
                             </h5>
                             <h2 style={{ fontSize: "19px" }}>
                               {" "}
-                              <b>(Generated online in rtvsta.tn.gov.in)</b>
+                              <b>(Generated online in rtvsta.tn.in)</b>
                             </h2>
                           </td>
                           <td
@@ -818,7 +818,7 @@ const ViewEntries = () => {
                                       fontSize: "larger",
                                     }}
                                   >
-                                    <strong>RTV - CERTIFICATE </strong>
+                                    <strong>STVRTA - CERTIFICATE </strong>
                                   </td>
                                 </tr>
                               </tbody>
@@ -866,7 +866,9 @@ const ViewEntries = () => {
                                         textTransform: "uppercase",
                                       }}
                                     >
-                                      {data?.["data"]?.date}
+                                      {data?.["data"]?.date
+                                        ? data["data"].date.split("-").reverse().join("-")
+                                        : ""}
                                     </span>
                                   </td>
                                 </tr>
@@ -1244,7 +1246,7 @@ const ViewEntries = () => {
                     <h6 style={{ textAlign: "center" }}>
                       <b style={{ fontWeight: "bold", fontSize: 13 }}>
                         [Note: This certificate was downloaded from
-                        WWW.RTVSTA.TN.GOV.IN]
+                        WWW.STVRTA.TN.IN]
                       </b>
                     </h6>
                   </td>
