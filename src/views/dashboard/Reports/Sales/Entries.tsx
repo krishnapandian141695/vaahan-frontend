@@ -61,7 +61,9 @@ const Entries = () => {
     edit: (item) => {
       return (
         <td>
-          <Link to={`/dashboard/${item?.id}`}>Edit</Link>
+          {userInfo?.role_id === "2" ?  (
+            <Link to={`/dashboard/${item?.id}`}>Edit</Link>
+          ) : "Contact Distributor"}
         </td>
       );
     },
