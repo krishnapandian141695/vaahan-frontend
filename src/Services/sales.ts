@@ -41,7 +41,7 @@ export const salesApi = createApi({
     getRegistrationsSaleByUser: builder.query<any[], void>({
       query: (params) => `/registrations/?${params}`,
     }),
-    getRegistrationsSaleById: builder.query<any[], void>({
+    getRegistrationsSaleById: builder.query<any[], string>({
       query: (params) => `/registrations/${params}`,
     }),
     createDistributerSale: builder.mutation({
@@ -72,6 +72,13 @@ export const salesApi = createApi({
         body,
       }),
     }),
+    updateDealerStockSale: builder.mutation({
+      query: ({ id, ...body }: any) => ({
+        url: `/registrations/${id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
   }),
 });
 
@@ -89,5 +96,6 @@ export const {
   useGetDealerSaleQuery,
   useCreateDealerStockMutation,
   useGetRegistrationsSaleByIdQuery,
+  useUpdateDealerStockSaleMutation
 } = salesApi;
 export const { endpoints } = salesApi;

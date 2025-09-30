@@ -1,4 +1,4 @@
-import { CButton, CCard } from "@coreui/react";
+import { CButton, CCard, CFormSelect } from "@coreui/react";
 import React from "react";
 import Table from "../../../../components/Table";
 import {
@@ -22,7 +22,7 @@ const Dealer = () => {
   const [updateUser] = useUpdateUserNameMutation();
   const [selectedUser, setSelectedUser] = React.useState(null);
   const [selectType, setType] = React.useState(null);
-
+  const { data: subDistributerData } = useGetSubDistributerQuery();
   const {
     data: userList,
     error: userListError,
@@ -36,8 +36,8 @@ const Dealer = () => {
     userInfo?.role_id === "1"
       ? urlStringAdmin
       : userInfo?.role_id === "2"
-      ? urlString
-      : urlStringSubDis;
+        ? urlString
+        : urlStringSubDis;
 
   const {
     data: dealerData,
@@ -60,12 +60,11 @@ const Dealer = () => {
           ...selectedUser,
           status: "InActive", // Corrected status to "Inactive"
         };
-        let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === selectedUser?.phone_number)
+        let userId = userList?.["data"]?.data?.filter((data) => data?.username === selectedUser?.user_name)
         let registerTemp: any = {
           status: "InActive", // Corrected status to "Inactive"
           id: userId?.[0]?.id,
         };
-        console.log(userId, "userId70978")
         let result = await updateUser(registerTemp);
         let restult = await updateDealer(tempdata);
         if (restult && result) {
@@ -80,7 +79,7 @@ const Dealer = () => {
           ...selectedUser,
           status: "Active",
         };
-        let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === selectedUser?.phone_number)
+        let userId = userList?.["data"]?.data?.filter((data) => data?.username === selectedUser?.user_name)
         let registerTemp: any = {
           status: "Active", // Corrected status to "Inactive"
           id: userId?.[0]?.id,
@@ -88,6 +87,16 @@ const Dealer = () => {
         let result = await updateUser(registerTemp);
         let restult = await updateDealer(tempdata);
         if (restult && result) {
+          setSelectedUser(null);
+          setType(null);
+          setReload((prev) => !prev);
+        }
+      } else if (selectType === "UpdateSubDistributor") {
+        let tempdata = {
+          ...selectedUser,
+        };
+        let restult = await updateDealer(tempdata);
+        if (restult) {
           setSelectedUser(null);
           setType(null);
           setReload((prev) => !prev);
@@ -128,8 +137,25 @@ const Dealer = () => {
         </td>
       );
     },
+    SubDistributor_name: (item) => {
+      return (
+        <CFormSelect
+          value={item.sub_distributor_id || ""}
+          onChange={(e) => {
+            setSelectedUser({ ...item, sub_distributor_id: e.target.value });
+            setType("UpdateSubDistributor");
+          }}
+        >
+          <option value="">Select Sub-Distributor</option>
+          {subDistributerData?.["data"]?.data.map((sub) => (
+            <option key={sub.user_name} value={sub.user_name}>
+              {sub.name}
+            </option>
+          ))}
+        </CFormSelect>
+      );
+    },
   };
-  console.log(dealerData, "manifactDatamanifactDatamanifactData");
 
   const columns = [
     {
@@ -148,7 +174,7 @@ const Dealer = () => {
       key: "address",
     },
     {
-      key: "distributor_name",
+      key: "SubDistributor_name",
     },
     {
       key: "status",

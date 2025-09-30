@@ -15,8 +15,8 @@ import {
 import React from "react";
 import { useForm, Controller, useWatch } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useCreateDealerStockSaleMutation } from "../../Services/sales";
+import { useNavigate, useParams } from "react-router-dom";
+import { useCreateDealerStockSaleMutation, useUpdateDealerStockSaleMutation, useGetRegistrationsSaleByIdQuery } from "../../Services/sales";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Store";
 import { useGetByDealerUserNameQuery } from "../../Services/user";
@@ -31,15 +31,34 @@ const NewEntry = ({
   heading,
   totalEachIitemValues,
   registerrationSaleData,
+  id
 }) => {
-  console.log(
-    totalEachIitemValues?.hologram,
-    "totalEachIitemValues35634",
-    registerrationSaleData?.["data"]?.data?.length
-  );
+
   const navigate = useNavigate();
   const [createDealerStock] = useCreateDealerStockSaleMutation();
+  const [updateDealerStock] = useUpdateDealerStockSaleMutation();
+  const { data: registrationData, isLoading: isRegistrationDataLoading } =
+    useGetRegistrationsSaleByIdQuery(id, { skip: !id });
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
+  const [isSubmitDisabled, setIsSubmitDisabled] = React.useState(false);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    setValue,
+  } = useForm();
+
+  React.useEffect(() => {
+    if (id && registrationData) {
+      const dataToSet = registrationData?.["data"];
+      if (dataToSet) {
+        Object.keys(dataToSet).forEach((key) => {
+          setValue(key, dataToSet[key]);
+        });
+      }
+    }
+  }, [id, registrationData, setValue]);
   // const currenUserInfo = useSelector((state: RootState) => state.loginState.loginDetails);
 
   // console.log(currenUserInfo, "currenUserInfo2543")
@@ -50,54 +69,97 @@ const NewEntry = ({
     refetch: byDealerUserRefetch,
   } = useGetByDealerUserNameQuery(userInfo?.userId);
 
-  console.log(byDealerUser?.["data"]?.data?.[0], "byDealerUser4");
-
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = useForm();
-
   const formData = watch();
-  const onSubmit = async (data) => {
-    console.log(data, "data");
-    let tempCountCheck = Math.max(
-      0,
-      Number(totalEachIitemValues?.hologram) -
-        Number(registerrationSaleData?.["data"]?.data?.length)
-    );
-    console.log(tempCountCheck, "tempCountCheck13123", totalEachIitemValues);
-    if (tempCountCheck <= 0 || !totalEachIitemValues) {
-      alert("Hologram stock not available");
-    } else {
+
+  // React.useEffect(() => {
+  //   const checkDisableStatus = () => {
+  //     const valuesToCheck = [
+  //       formData.red20mm,
+  //       formData.white20mm,
+  //       formData.red50mm,
+  //       formData.white50mm,
+  //       formData.yellow50mm,
+  //       formData.redReflector80mm,
+  //       formData.whiteReflector80mm,
+  //       formData.yellowReflector80mm,
+  //       formData.class3,
+  //       formData.class4,
+  //       formData.hologram,
+  //     ];
+
+  //     const anyValueIsZeroOrFalsy = valuesToCheck?.some(
+  //       (value) => !value || Number(value) === 0
+  //     );
+  //     setIsSubmitDisabled(anyValueIsZeroOrFalsy);
+  //   };
+  //   checkDisableStatus();
+  // }, [formData]);
+
+  React.useEffect(() => {
+    if (formData.vehiclemake && formData.vehiclemodel) {
+      const selectedMakeData = modalTypes[formData.vehiclemake];
+      if (selectedMakeData) {
+        const selectedModelData = selectedMakeData[formData.vehiclemodel];
+        if (selectedModelData) {
+          setValue("red20mm", selectedModelData["RED 20MM"] || "0");
+          setValue("white20mm", selectedModelData["White 20MM"] || "0");
+          setValue("red50mm", selectedModelData["RED 50MM"] || "0");
+          setValue("white50mm", selectedModelData["White 50MM"] || "0");
+          setValue("yellow50mm", selectedModelData["Yellow 50MM"] || "0");
+          setValue("class3", selectedModelData["C3"] || "0");
+          setValue("class4", selectedModelData["C4"] || "0");
+        }
+      }
+    }
+  }, [formData.vehiclemake, formData.vehiclemodel, setValue]);
+
+  const onSubmit = async (data: any) => {
+    try {
+      let tempCountCheck = Math.max(
+        0,
+        Number(totalEachIitemValues?.hologram) -
+        Number(
+          (id ? registrationData : registerrationSaleData)?.["data"]?.data
+            ?.length
+        )
+      );
+      if (tempCountCheck <= 0 || !totalEachIitemValues) {
+        alert("Hologram stock not available");
+        return;
+      }
+
       let tempData = {
         ...data,
         dealername: userInfo?.userId,
         dealer_id: userInfo?.userId,
         manufacturer_name: byDealerUser?.["data"]?.data?.[0]?.manufacturer_name,
+        distributer_name: byDealerUser?.["data"]?.data?.[0]?.distributer_name,
       };
-      console.log("datafrom data form", tempData.dealername);
+
       const formData = new FormData();
       for (const key in tempData) {
         formData.append(key, tempData[key]);
-        console.log(formData);
       }
-      console.log("data from formData Faizal", data);
-      try {
+
+      if (id) {
+        await updateDealerStock({ id, ...tempData }); // Use tempData for update
+        navigate("/Entries");
+      } else {
         const result = await createDealerStock(formData);
-        console.log(result, "result252345234");
         if (!result?.["data"]?.["response"]) {
-          alert("Certificate Title already exists");
-        } else {
-          // setIsOpen(true);
-          navigate("/Entries");
+          return;
         }
-      } catch (error) {
-        console.error("Error making POST request:", error);
+        navigate("/Entries");
       }
+       navigate("/Entries");
+    } catch (error) {
+      console.error("Submission error:", error);
     }
   };
+
+  if (isRegistrationDataLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -190,8 +252,8 @@ const NewEntry = ({
                   totalEachIitemValues?.class3 === "NaN"
                     ? 0
                     : totalEachIitemValues?.class3
-                    ? totalEachIitemValues?.class3
-                    : 0,
+                      ? totalEachIitemValues?.class3
+                      : 0,
                 background: "#3399ff63",
               },
               {
@@ -202,8 +264,8 @@ const NewEntry = ({
                   totalEachIitemValues?.class4 === "NaN"
                     ? 0
                     : totalEachIitemValues?.class4
-                    ? totalEachIitemValues?.class4
-                    : 0,
+                      ? totalEachIitemValues?.class4
+                      : 0,
                 background: "#3399ff63",
               },
               {
@@ -214,12 +276,12 @@ const NewEntry = ({
                   userInfo?.role_id === "4"
                     ? totalEachIitemValues
                       ? Math.max(
-                          0,
-                          Number(totalEachIitemValues?.hologram) -
-                            Number(
-                              registerrationSaleData?.["data"]?.data?.length
-                            )
+                        0,
+                        Number(totalEachIitemValues?.hologram) -
+                        Number(
+                          registerrationSaleData?.["data"]?.data?.length
                         )
+                      )
                       : 0
                     : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
@@ -313,10 +375,10 @@ const NewEntry = ({
                         />
                         {errors.vehiclemanufacturingyear?.type ===
                           "required" && (
-                          <div className="text-danger">
-                            {"Field is required"}
-                          </div>
-                        )}
+                            <div className="text-danger">
+                              {"Field is required"}
+                            </div>
+                          )}
                       </div>
                       <div className="col-sm-6 mb-3">
                         <Controller
@@ -375,8 +437,7 @@ const NewEntry = ({
                               <option>{"Select"}</option>
 
                               {companies &&
-                                companies?.map((item, index) => {
-                                  console.log(item, "item3445234");
+                                companies?.map((item) => {
                                   return (
                                     <option value={Object.keys(item)[0]}>
                                       {Object.keys(item)[0]}
@@ -404,12 +465,13 @@ const NewEntry = ({
                               label="Vechicle Make"
                               {...field}
                             >
-                              {modalTypes &&
-                                modalTypes[formData?.vehiclemake]?.map(
-                                  (item, index) => {
-                                    return <option value={item}>{item}</option>;
-                                  }
-                                )}
+                              {modalTypes && formData?.vehiclemake &&
+                                Object?.entries(
+                                  modalTypes[formData.vehiclemake])?.map(
+                                    (item: any, index) => {
+                                      return <option value={item[0]}>{item[0]}</option>;
+                                    }
+                                  )}
                             </CFormSelect>
                           )}
                         />
@@ -496,8 +558,7 @@ const NewEntry = ({
                             >
                               <option>Select</option>
                               {rtoList &&
-                                Object.entries(rtoList)?.map((item, index) => {
-                                  console.log(item, "item3245");
+                                Object.entries(rtoList)?.map((item) => {
                                   return (
                                     <option value={`${item[0] + "" + item[1]}`}>
                                       {item[0]}
@@ -535,29 +596,29 @@ const NewEntry = ({
                         )}
                       </div>
                       {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3M INDIA" && (
-                        <div className="col-sm-6 mb-3">
-                          <Controller
-                            name="remarks"
-                            control={control}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                              <CFormInput
-                                className="border"
-                                label="Dealer Name"
-                                {...field}
-                                type="text"
-                                placeholder=""
-                              />
+                        "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex" && (
+                          <div className="col-sm-6 mb-3">
+                            <Controller
+                              name="remarks"
+                              control={control}
+                              rules={{ required: true }}
+                              render={({ field }) => (
+                                <CFormInput
+                                  className="border"
+                                  label="Dealer Name"
+                                  {...field}
+                                  type="text"
+                                  placeholder=""
+                                />
+                              )}
+                            />
+                            {errors.remarks?.type === "required" && (
+                              <div className="text-danger">
+                                {"Field is required"}
+                              </div>
                             )}
-                          />
-                          {errors.remarks?.type === "required" && (
-                            <div className="text-danger">
-                              {"Field is required"}
-                            </div>
-                          )}
-                        </div>
-                      )}
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
@@ -750,7 +811,6 @@ const NewEntry = ({
                           defaultValue="0"
                           render={({ field }) => (
                             <CFormInput
-                              disabled={!formData?.class4 ? false : true}
                               className="border"
                               label="CLASS 3"
                               {...field}
@@ -881,10 +941,6 @@ const NewEntry = ({
                               type={"file"}
                               label={"Front Image"}
                               onChange={(e) => {
-                                console.log(
-                                  "Custom onChange:",
-                                  e.target.files[0]
-                                );
                                 field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
                               }}
                             />
@@ -907,12 +963,6 @@ const NewEntry = ({
                               label={"Back Image"}
                               type={"file"}
                               onChange={(e) => {
-                                // Your custom onChange logic here
-                                // For example, you can access the selected file using e.target.files[0]
-                                console.log(
-                                  "Custom onChange:",
-                                  e.target.files[0]
-                                );
                                 field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
                               }}
                             />
@@ -935,12 +985,6 @@ const NewEntry = ({
                               className={"form-control form-control-md shadow"}
                               type={"file"}
                               onChange={(e) => {
-                                // Your custom onChange logic here
-                                // For example, you can access the selected file using e.target.files[0]
-                                console.log(
-                                  "Custom onChange:",
-                                  e.target.files[0]
-                                );
                                 field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
                               }}
                             />
@@ -963,12 +1007,6 @@ const NewEntry = ({
                               type={"file"}
                               className={"form-control form-control-md shadow"}
                               onChange={(e) => {
-                                // Your custom onChange logic here
-                                // For example, you can access the selected file using e.target.files[0]
-                                console.log(
-                                  "Custom onChange:",
-                                  e.target.files[0]
-                                );
                                 field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
                               }}
                             />
@@ -981,38 +1019,32 @@ const NewEntry = ({
                         )}
                       </div>
                       {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3M INDIA" && (
-                        <div className="col-sm-3 mb-3">
-                          <Controller
-                            name="rcimage"
-                            control={control}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                              <CFormInput
-                                label="RC Image"
-                                type={"file"}
-                                className={
-                                  "form-control form-control-md shadow"
-                                }
-                                onChange={(e) => {
-                                  // Your custom onChange logic here
-                                  // For example, you can access the selected file using e.target.files[0]
-                                  console.log(
-                                    "Custom onChange:",
-                                    e.target.files[0]
-                                  );
-                                  field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
-                                }}
-                              />
+                        "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex" && (
+                          <div className="col-sm-3 mb-3">
+                            <Controller
+                              name="rcimage"
+                              control={control}
+                              rules={{ required: true }}
+                              render={({ field }) => (
+                                <CFormInput
+                                  label="RC Image"
+                                  type={"file"}
+                                  className={
+                                    "form-control form-control-md shadow"
+                                  }
+                                  onChange={(e) => {
+                                    field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
+                                  }}
+                                />
+                              )}
+                            />
+                            {errors.rcimage?.type === "required" && (
+                              <p role="alert" className="error">
+                                Field is required
+                              </p>
                             )}
-                          />
-                          {errors.rcimage?.type === "required" && (
-                            <p role="alert" className="error">
-                              Field is required
-                            </p>
-                          )}
-                        </div>
-                      )}
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
@@ -1020,7 +1052,7 @@ const NewEntry = ({
             </CCard>
           </CCardBody>
           <div className="col-sm-12 text-center mb-3">
-            <CButton variant="outline" type="submit">
+            <CButton variant="outline" type="submit" disabled={isSubmitDisabled}>
               Submit
             </CButton>
           </div>

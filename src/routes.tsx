@@ -28,7 +28,7 @@ const distributorSale = React.lazy(
 
 const routes = [
   { path: "/", exact: false, name: "Home" },
-  { path: "/dashboard", name: "Dashboard", element: Dashboard },
+  { path: "/dashboard/:id?", name: "Dashboard", element: Dashboard },
   { path: "/companyAdd", name: "Company", element: AddCompany },
   { path: "/manufacturer", name: "Manufacturer", element: Manufacturer },
   { path: "/distributor", name: "Distributor", element: Distributor },

@@ -26,11 +26,6 @@ const Distributor = () => {
     refetch: userLIstRefetch,
   } = useGetUsersQuery();
 
-  console.log(
-    userList?.["data"]?.data, "userList09879"
-  );
-
-
   React.useEffect(() => {
     distributerRefetch();
     userLIstRefetch()
@@ -49,7 +44,7 @@ const Distributor = () => {
                   ...item,
                   status: "InActive",
                 };
-                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
+                let userId = userList?.["data"]?.data?.filter((data) => data?.username === item?.user_name)
                 let registerTemp: any = {
                   status: "InActive",
                   id: userId?.[0]?.id,
@@ -72,7 +67,7 @@ const Distributor = () => {
                   ...item,
                   status: "Active",
                 };
-                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
+                let userId = userList?.["data"]?.data?.filter((data) => data?.username === item?.user_name)
                 let registerTemp: any = {
                   status: "Active",
                   id: userId?.[0]?.id,

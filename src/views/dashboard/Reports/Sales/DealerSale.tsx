@@ -34,8 +34,6 @@ const DealerSale = () => {
     refetch: dealerRefetch,
   } = useGetDealerSaleQuery(finalQUery);
 
-  console.log(dealerData, "manifactDatamanifactDatamanifactData");
-
   const columns = [
     {
       key: "created_at",

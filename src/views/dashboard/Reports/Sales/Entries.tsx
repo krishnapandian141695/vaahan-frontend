@@ -33,8 +33,6 @@ const Entries = () => {
     registerrationRefetch();
   }, []);
 
-  console.log(registerrationSaleData, "registerrationSaleData45234");
-
   const columns = [
     { key: "created_at", label: "Date" },
 
@@ -46,18 +44,24 @@ const Entries = () => {
     { key: "phoneo", label: "Phone Number" },
     { key: "rto" },
     { key: "manufacturer_name" },
+    { key: "edit", label: "Edit" },
   ];
 
   const scopedColumns = {
     created_at: (item) => {
-      console.log(item, "item4523452");
       return <td>{formatDateTime(item?.created_at)}</td>;
     },
     vehicleregno: (item) => {
-      console.log(item, "item4523452");
       return (
         <td>
           <Link to={`/ViewEntries/${item?.id}`}>{item?.vehicleregno}</Link>
+        </td>
+      );
+    },
+    edit: (item) => {
+      return (
+        <td>
+          <Link to={`/dashboard/${item?.id}`}>Edit</Link>
         </td>
       );
     },

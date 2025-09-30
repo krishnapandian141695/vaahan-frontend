@@ -3,8 +3,8 @@ export const infoData = {
 };
 
 const tempCompanies = [
-  "DAIMLER INDIA COMMERCIAL VEHICLE",
   "ASHOK LEYLAND",
+  "DAIMLER INDIA",
   "ASIA MOTORS",
   "BAJAJ",
   "FORCE MOTORS",
@@ -16,9 +16,10 @@ const tempCompanies = [
   "MAN",
   "MARUTI SUZUKI",
   "RENAULT",
+  "KIA",
+  "TOYOTA KIRLOSKAR",
   "NISSAN",
   "SWARAJ MAZDA",
-  "TOYOTA KIRLOSKAR",
   "VE COMMERCIAL",
   "TATA MOTORS",
   "MAHINDRA & MAHINDRA",
@@ -26,6 +27,7 @@ const tempCompanies = [
   "AMW",
   "ISUZU MOTORS",
   "Tvs",
+  "DAIMLER INDIA COMMERCIAL VEHICLE",
   "BAJAJ TEMPO",
   "TAFE",
   "VOLVO",
@@ -41,16 +43,20 @@ const tempCompanies = [
   "OMEGA SEIKI EV",
   "MASKTRO MOTORS",
   "FORCE MOTORS LIMTED, A FIRODI TATA",
+  "TATA",
   "THIRUMALA AGROINDUSTRY",
   "ATUL AUTO LTD",
   "ISUZU MOTORS INDIA PVT LTD",
   "VE Commercials",
+  "TATA MOTORS LTD",
   "VSL Industries Ltd",
   "MAHINDRA $ MAHINDRA LIMITED",
   "SML ISUZU LTD",
   "ISUZU",
+  "V E Commercials",
   "VOLOVO INDIA PVT LTD",
   "FIRE EICHER",
+  "MAHINDRA & MAHINDRA LTD",
   "BMW",
   "REEP INDUSTRIES PVT LTD",
   "SAME DEVTZ FAHRI PVT LTD",
@@ -72,7 +78,6 @@ const tempCompanies = [
   "SUNDARAM MOTORS",
   "DAIMMLER 1 COMM VEH P LTD",
   "SWARAJ MAZDA LTD",
-  "МАН",
   "MAHINDRA MAHINDRA LIMITED",
   "BAJAJ AUTO",
   "ASHOK LEYLAND",
@@ -131,7 +136,6 @@ const tempCompanies = [
   "SUNDARAM MOTORS",
   "DAIMMLER 1 COMM VEH P LTD",
   "SWARAJ MAZDA LTD",
-  "МАН",
   "MAHINDRA MAHINDRA LIMITED",
   "BAJAJ AUTO",
   "ASHOK LEYLAND",
@@ -149,8 +153,11 @@ const tempCompanies = [
   "MAHINDRA MAHINDRA LIMITED",
   "BAJAJ AUTO",
   "ASHOK LEYLAND",
+  "ASHOK LAYLAND",
   "DAIMLER INDIA COMMERCIAL",
   "VE COMMERICAL VEHICLE LTD",
+  "TATA MOTOR LTD",
+  "VE COMMERICAL VEHICLE LTD"
 ];
 
 export const companies = [
@@ -160,1017 +167,8960 @@ export const companies = [
 ];
 
 export const modalTypes = {
-  "DAIMLER INDIA COMMERCIAL VEHICLE": [
-    "Bharath Benz 4928 TT 6X4",
-    "Bharath Benz 4928 TT 6X4",
-  ],
-  "ASHOK LEYLAND": [
-    "Ashok Leyland Taurus 2516",
-    "ALPSV 4/38",
-    "Ashok Leyland Comet 1611",
-    "Ashok Leyland DOST",
-    "Ashok Leyland ALPSV 4/161",
-    "ALFSV3/46-LYNX",
-    "Ashok Leyland PARTNER-c3",
-    "Ashok Leyland Lynx",
-    "Ashok Leyland Ecomet 1012",
-    "Ashok Leyland 1212",
-    "Ashok Leyland ALPSV 4/186",
-    "Ashok Leyland 1214 SMART",
-    "Ashok Leyland Viking ALPSV 4/247",
-    "Ashok leyland ALPSV 4/88",
-    "Ashok Leyland Tusker Super 2214",
-    "Ashok Leyland ALPSV Viking 4/83",
-    "Ashok Leyland ECOMET 1112",
-    "Ashok Leyland CT 1613",
-    "Ashok Leyland Ecomet 912",
-    "Ashok Leyland Ecomet 912",
-    "Ashok Leyland 3718",
-    "Ashok Leyland U 2523",
-    "Ashok Leyland Viking Bus",
-    "Ashok Leyland 3516 Trailer",
-    "Ashok Leyland 3517 Trailer",
-    "Ashok Leyland 3518 Tanker",
-    "Ashok Leyland 3518 Bulker",
-    "Ashok Leyland U-3123 T AL 2518 Tipper",
-    "Ashok Leyland ALPSV 4/89:",
-    "Ashok Leyland 1214 CONTAINER",
-    "Ashok Leyland 3118",
-    "AL 1611 CONTAINER",
-    "Ashok Leyland BOSS 1212",
-    "Ashok Leyland 2513",
-    "Ashok Leyland BOSS 1212 LE",
-    "Ashok Leyland COMMET TIPPER 1616XL",
-    "Ashok Leyland 2516 Tipper",
-    "Ashok Leyland TUSKER TURBO TRACTOR 3516",
-    "Ashok Leyland 1613 Tipper",
-    "Ashok Leyland ECOMET 1109",
-    "Ashok Leyland ALPEV 1/38",
-    "Ashok Leyland BOSS 1412 CONTAINER",
-    "Ashok Leyland BOSS 1115 CONTAINER",
-    "AL 4123 Tanker",
-    "Ashok Leyland STILE",
-    "Ashok Leyland GA 1920/43 H CO",
-    "Ashok Leyland Boss 1413",
-    "Ashok Leyland GURU 1111",
-    "Ashok Leyland 4923TT BULKER",
-    "AL 1618 lipper",
-    "Ashok Leyland 4923 Trailer",
-    "Ashok Leyland UE5525/39 TTCC",
-    "Ashok Leyland PARTNER MLS",
-    "AL 3516 Bulker:",
-    "Ashok Leyland 2513",
-    "Ashok Leyland 3518",
-    "Ashok Leyland PA 1215/52 HCC",
-    "Ashok Leyland ALPSV 4/56",
-    "Ashok Leyland 4921 WB",
-    "Ashok Leyland 709",
-    "Ashok Leyland Cargo 709",
-    "Ashok Leyland VK 1811",
-    "Ashok Leyland UE5525-39 TTCC",
-    "Ashok Leyland 4218",
-    "Ashok Leyland 4018",
-    "Ashok Leyland U 2512",
-    "Ashok Leyland 2514",
-    "AL 4023 Container",
-    "ECOMET 1015",
-    "ALCO 3/16-3600MM",
-    "ALPSV 1/40",
-    "AL 3516",
-    "AL 1918",
-    "PARTNER",
-    "AL STAG 3/26",
-    "AL STAG 3/26",
-    "3516 - canter - c3",
-    "CARGO 100.12",
-    "ALPSV",
-    "BOSS 913",
-    "GF3520/66HCO",
-    "MINI BUS",
-    "SCHOOL BUS",
-    "ASHOK LEYLAND TAURUS MK It 150WB",
-    "4018-C4",
-    "SS1008",
-    "CA1615/52 H FBL 1615",
-    "EA19020/43H",
-    "Dost ( New Vehicle)",
-    "1612L Goods Chasiss Cabin N3",
-    "Ashok Leyland 3611 - IL",
-    "207D| EX4SPCR10 CCD1 L3150 W",
-    "1616 XL Tipper",
-    "Ashok Leyland 1612 Tanker",
-    "Ashok Leyland 2513",
-    "Ashok Leyland 1612 Tanker",
-    "Ashok Leyland U2523 Tipper",
-    "CHEOTOH ALPS 1/30",
-    "AL 4921/4923 Cement Trailer",
-    "AL 3118 Bulker 12Wheel",
-    "ASHOK LEYLAND CRUSHER COMET",
-    "CRUSHER 2516",
-    "CRUSHER 2516",
-    "Ashok Leyland 1611/2-142 WB",
-    "2214/19 180WB TUSKER 6X2",
-    "AL 1618 LPG Tanker",
-    "GURU 1010 E4",
-    "Ashok leyland 3121 205 WB",
-    "Ashok Leyland 3516 Trailer",
-    "AL 1613",
-    "Ashok Leyland Boss 1113",
-    "Ashok Leyland 4023",
-    "AL 2214 Tusker Super Tanker",
-    "AL 1616 Tanker",
-    "GM4220/66 HCO",
-    "Ashok Leyland 2513",
-    "AL TF1812 Bus",
-    "AL ECOMET 1214/42 E4",
-    "AL CA1415/39",
-    "AL 4921 CEMENT TRAILER",
-    "AL 3516 BULKER AL 3516 BULKER",
-    "Ashok Leyland Comet 912",
-    "Ecomet 1212 E4/1",
-    "AL 4/157 Bus",
-    "Ashok Leyland 4018 Cement Trailer",
-    "ALPSV 3/41",
-    "Ashok Leyland DOST - 50mm",
-    "Ashok Leyland ALPSV 4/188",
-    "AL TUSKER SUPER 2214",
-    "AL 3116",
-    "AL 3118",
-    "AL 3718 Trailer",
-    "AL 4/157 MiniBus",
-    "AL CO 1510",
-    "Ashok Leyland 2513",
-    "AL 4/157 MiniBus",
-    "AL CO 1510",
-    "AL 2516 Tusker Super",
-    "AL 1616 222 WB",
-    "AL 2614 Trailer",
-    "AL 2516 Tanker",
-    "AL 1614 Tipper",
-    "AL Boss 912",
-    "AL 4921 Bulker",
-    "ALPSV 3/4 Bus",
-    "AL 2818",
-    "AL 2516 TANKER 10Wheel",
-    "AL 2518 Tanker",
-    "ALH 1/9 18 Wheel",
-    "AL 2516 30FT Container",
-    "AL COMET 1510",
-    "AL CARGO 909",
-    "HMV HEAVY GOODS CARRIER",
-    "AL 2518 Concrete Mixture",
-    "AL CA1015/39 Tanker",
-    "Ashok Leyland 2513",
-    "cnzusoos lanker",
-    "AL 1618 CONTAINER (27FT)",
-    "ALPSV 4/38 - MiniBus",
-    "AL 3116 12 Wheel",
-    "AL Tipper 6 Wheel",
-    "ALCO 3/1",
-    "ECOMET 1412",
-    "AL 1512 Cargo",
-    "AL 2518",
-    "AL 3116 12Wheel Tanker",
-    "AL 3718 Tanker 14Wheel",
-    "GP4825/66 H CO",
-    "2516T 198WB TUSKER SUPER 6X2",
-    "AL VK1611 Bus",
-    "AL 2818 Tanker",
-    "AL Boss 1112",
-    "AL 4188 210(WB)",
-    "AL 4/157",
-    "AL 4019 Cement Trailer",
-    "Ashok Leyland 2513",
-    "AL 4019 Cement Trailer",
-    "AL LS1310 Bus",
-    "AL 4019 Trailer (22 FT)",
-    "DOST - New Vehicle",
-    "AL COMET 415",
-    "AL 3718 BS IV",
-    "AL 4/19",
-    "AL Boss 1412",
-    "AL HMV BUS",
-    "AL CARGO 1312",
-    "AL TF1812 BUS AL 3611 Bulker",
-    "AL 2214 Container (22 FT)",
-    "AL 4023 Trailer",
-    "AL 1616 IL",
-    "AL 1618 Tanker",
-    "AL Boss 1113 Container",
-    "AL 4/38 Tanker",
-    "AL 1616 Container (32FT)",
-    "AL ALPSV 3/106",
-    "Ashok Leyland 2513",
-    "AL ALPSV 3/106",
-    "AL Ecomet 1110",
-    "AL 1616 Container",
-    "ALPSV 3/106 BSIII",
-    "AL MITR LES",
-    "AL 1613 Container (20FT)",
-    "AL 4123",
-    "AL COMET 910",
-    "AL 139.3D4R Bus",
-    "BOSS 1213",
-    "AL U2518 Tipper",
-    "AL Boss 1415",
-    "Tata Lop 7.5 T Star Bus Ultra",
-    "AL FV2518 Trailer",
-    "AL 4018",
-    "AL 3520/63",
-    "AL 1612 Container (18FT)",
-    "AL Educational Institution Vehicle",
-    "AL 3118 Tanker",
-    "AL CT1613H",
-    "AL CT1613H",
-    "AL 415/5 Trailer",
-    "AL 1256",
-    "AL 2214 Tusker",
-    "AL UE2825/39 TIPPER",
-    "AL 1612",
-    "AL 3118 IL Tanker (27FT)",
-    "AL 3123 Tipper 12W",
-    "AL 4825 16W",
-    "AL LS1308 Bus",
-    "AL 4188",
-    "AL 3718 Bulker",
-    "AL 1215 Container",
-    "AL 1/38 Container (32FT)",
-    "AL 2516 Container",
-    "AL 1618",
-    "AL 1616 Closed Body",
-    "1214 ECOMET",
-    "Ashok Leyland 2513",
-    "AL 1256",
-    "AL 2214 Tusker",
-    "AL UE2825/39 TIPPER",
-    "AL 1612",
-    "AL 3118 IL Tanker (27FT)",
-    "AL 3123 Tipper 12W",
-    "AL 4825 16W",
-    "AL LS1308 Bus",
-    "AL 4188",
-    "AL 3718 Bulker",
-    "AL 1215 Container",
-    "AL 1/38 Container (32FT)",
-    "AL 2518 Container (24FT)",
-    "AL 1616 Fire Service Tanker",
-    "AL 2516 Container*",
-    "AL 1618",
-    "AL 1616 Closed Body",
-    "1214 ECOMET",
-    "GA4020/34 TT CO",
-    "Ashok Leyland 2513",
-    "Ashok Leyland 3518 Trailer",
-    "Ashok Leyland 4019 Tanker",
-    "Ashok Leyland 4019 Trailer",
-    "Ashok Leyland 4019 Bulker",
-    "Ashok Leyland 4018 Bulker",
-    "Ashok Leyland 3116",
-    "Ashok Leyland ALPSV 4/28",
-    "AL 1616 Container (27FT)",
-    "AL 2518 Container (24FT)",
-    "AL 1616 Fire Service Tanker",
-  ],
-  "ASIA MOTORS": ["AMW 2518", "AMW 2518", "ASIA 2523", "AMW 2516"],
-  BAJAJ: [
-    "Bajaj Tempo Traveller Cruisier",
-    "Bajaj Tempo Traveller Cruisier",
-    "Bajaj Tempo",
-    "Bajaj Auto",
-    "Bajaj Auto - 50mm",
-    "Bajaj Auto - Yellow",
-    "Bajaj Matador 307",
-    "Bajaj Maxima Load Auto",
-    "Bajaj Minidoor",
-    "Bajaj Maxima Auto",
-  ],
-  "FORCE MOTORS": [
-    "Force Traveller",
-    "Force Traveller",
-    "Tempo Traveller",
-    "TRUMP 40 PICKUP",
-    "Minidor",
-    "MINIDOR - 50mm",
-    "TEMPO EXCELA",
-    "Force Cruiser",
-    "Trax",
-    "Force Citiline",
-  ],
-  FORD: ["Ford Figo", "Ford Figo Aspire", "Ford Figo - 50mm"],
-  "GENERAL MOTORS": [
-    "Cheverolet Tavera - 50mm",
-    "Cheverolet Tavera - 50mm",
-    "Cheverolet Enjoy",
-    "Chevrolet Beat",
-    "Chevrolet Sail",
-    "Cheverolet Tavera",
-    "Cheverolet Enjoy - 50mm",
-  ],
-  "HINDUSTAN MOTORS": ["Ambassador - 50mm"],
-  HONDA: [
-    "Honda Amaze",
-    "Honda Amaze",
-    "Honda City",
-    "Honda Mobilio",
-    "Honda Amaze - 50mm",
-  ],
-  HYUNDAI: [
-    "Hyundai Xcent - 50mm",
-    "Hyundai Xcent - 50mm",
-    "Hyundai SANTRO",
-    "Hyundai Grand",
-    "Hyundai 110",
-    "Hyundai EON",
-    "Hyundai Xcent",
-    "Hyundai i10 - 50mm",
-  ],
-  MAN: [
-    "MAN 25.250 TRUCK",
-    "MAN CLA Tanker",
-    "MAN CLA Trailer",
-    "MAN CLA Bulker",
-    "MAN CLA 16.220",
-    "MAN CLÁ 49.290",
-    "MAN CLA 25.80",
-    "MAN CLA 40.280",
-    "CLA 25.280 Concrete Mixure",
-    "CLA 25.280",
-    "MAN 40.220",
-    "MAN 25.180 Tanker",
-    "MAN 25.250 TRUCK",
-  ],
-  "MARUTI SUZUKI": [
-    "Maruti Suzuki Wagon R",
-    "Maruti Suzuki Wagon R",
-    "-Maruti Suzuki Ritz",
-    "Maruti Celerio",
-    "Maruti Suzuki Alto K10",
-    "Maruti Gypsy",
-    "Maruti Suzuki Esteem",
-    "Maruti Versa",
-    "Maruti Omni",
-    "Maruti Swift",
-    "Maruti Suzuki EECO",
-    "Swift Dzire Tour",
-    "Maruti Suzuki Ertiga",
-    "MARUTI SUPER CARRY",
-    "Swift Dzire - 50mm",
-    "MARUTI SUPER CARRY - 50mm",
-    "Maruti Omni - 50mm",
-    "Maruti Ritz - 50mm",
-    "Maruti Super Carry - 50mm Maruti Suzuki EECO - 50mm",
-    "Maruti Celerio - 50mm",
-  ],
-  RENAULT: [
-    "Renault Lodgy - 50mm",
-    "Renault Lodgy - 50mm",
-    "Renault Kwid",
-    "RENAULT LODGY",
-  ],
-  NISSAN: [
-    "Nissan Sunny",
-    "Nissan Sunny",
-    "Nissan Micra",
-    "Nissan Datsun GO",
-    "ALLWYN",
-    "Nissan Sunmy -50mm",
-    "Nissa",
-  ],
-  "SWARAJ MAZDA": [
-    "Swaraj Mazda ZT 54",
-    "Swaraj Mazda Super",
-    "SML Samrat",
-    "SML SARTAJ 5252",
-    "SML ISUZU WV 26S T3500",
-    "Swaraj Mazda T 3500",
-    "SML SAMRAT TURBO",
-    "Swaraj Mazda T3500 Bus",
-    "SML MAXI CAB / Omni Bus",
-    "Swaraj Mazda OMNI BUS",
-    "SWARAJ MAZDA WT48E",
-    "SML SARTAJ WV 26S  Bus",
-    "SWARAJ MAZDA SUPER",
-    "Swaraj Mazda SCHOOL BUS",
-    "SML 3500 Tourist Van",
-    "SML SARTAJ GS",
-    "CARGO BOX",
-    "SML - 25 Seater PSV",
-    "Swaraj Mazda G5",
-    "SML T3500 Tipper",
-    "SML Cosmo",
-    "Swaraj Mazda T3500 MiniBus",
-    "Swaraj Mazda ZT 54 Bus",
-    "SML Prestige",
-    "SML Samrat 4240 container (20FT)",
-    "SML Prestige Van",
-    "SML Single Stretcher Ambulance",
-    "SML S7 3335 Bus",
-    "SML T3500",
-    "LMW 17Ft",
-    "LMW 17Ft",
-    "SML WV 27U Ambulance",
-    "SML SARTAJ School Van",
-    "SML S7 5100 Bus 53 seater",
-    "SML Prestige 3940 32S Van",
-    "SML 3500 Tanker",
-    "SWARAJ MAZDA WT50 Van",
-    "SML Supreme 4760 Bus",
-    "SWARAJ MAZDA 3500",
-  ],
-  "TOYOTA KIRLOSKAR": [
-    "Toyota Etios",
-    "Toyota Etios LIVA",
-    "Toyota Innova",
-    "TOYOTA INNOVA - 50mm",
-    "Toyota Etios - 50mm",
-    "Toyota Crysta",
-    "Toyota Hycross",
-    "Toyota Fortuner"
-  ],
-  "VE COMMERCIAL": [
-    "Eicher 10.75",
-    "Eicher 10.50",
-    "Eicher 30.25",
-    "Eicher 20.15",
-    "Eicher 20.16",
-    "Eicher 11.10",
-    "Eicher 10.59 / Pro 1059",
-    "Eicher 10.90",
-    "Eicher 10.95",
-    "Eicher 10.80",
-    "Eicher 11.12",
-    "Eicher 10.70",
-    "Eicher Pro  11.10 container (20FT)",
-    "Eicher Terra 16",
-    "Eicher Mitsubishi Canter",
-    "Eicher 10.60",
-    "EICHER PRO 5016",
-    "EICHER 10.50 D BUS",
-    "EICHER LGV (OLD)",
-    "Eicher MAXI CAB",
-    "Eicher Pro 1049",
-    "EICHER 10.50 C BUS",
-    "MOTOR D VAN 150 HP",
-    "Eicher PRO 6025 T G CAB TIPPER 16 CUM",
-    "EICHER 10.75 BUS",
-    "EICHER PRO 3016",
-    "EICHER 10.70",
-    "EICHER PRO 6031 P CWC",
-    "EICHER 242 PREMIUM",
-    "EICHER PRO",
-    "EICHER 10.90 BUS",
-    "EICHER BUS",
-    "EICHER 35.31",
-    "EICHER PRO 1095",
-    "Tractor",
-    "EICHER PRO 5028",
-    "EICHER PRO 2095XPT",
-    "EICHER pro5035 D",
-    "EICHER -11.10 PRO(LBC -24 FEET)",
-    "EICHER -11.50(14- FEET)",
-    "EICHER 10.90 (17 FEET)",
-    "EICHER -10.50 (3 IN ALL)",
-    "EICHER -10.90(CAB & FSD)",
-    "EICHER CRUISER",
-    "EICHER 11.12 G DSD BS III",
-    "Eicher Pro 1055C",
-    "Eicher Pro 5019",
-    "EICHER 10.50 E HSD",
-    "Eicher Pro 2049",
-    "Eicher Pro 1114XP",
-    "Eicher 10.50 Van",
-    "Eicher 5016 Tipper",
-    "Eicher 20.15 Bus",
-    "Eicher Pro 10.50E",
-    "Eicher 10.70 Bus",
-    "Eicher Pro 1080XPT",
-    "EICHER -20.50D BUS",
-    "Eicher 50.16 Container",
-    "Eicher Pro 8049",
-    "Eicher Pro 5040 Trailer",
-    "EICHER 10.55 C BSIII",
-    "Eicher 10.50 Container",
-    "Eicher 30.15",
-    "Eicher Pro 6048",
-    "Eicher 10.50 27S StarBus",
-    "Eicher Pro 3009 Bus",
-    "Eicher PRO 2080XP F HSD",
-    "Eicher 3350",
-    "Eicher Pro21.10",
-    "Eicher Canter LCV",
-    "Eicher Terra 25G",
-    "Eicher pro 6025 s cowl",
-    "Eicher Pro 1110",
-    "Eicher 10.59 LGV",
-    "PRO 6037S",
-    "Eicher Pro 3012",
-    "Eicher 10.75 Bus",
-    "Eicher Pro 1095XP",
-    "EICHER 10.90 Container (20 FT)",
-    "Eicher Pro 2110 Container",
-    "Eicher Pro 2095 XP",
-    "Eicher 11.10 LCV",
-    "EICHER Pro 1090 15 Feet Container",
-    "EICHER  RHD E CAB AND HSD",
-    "Eicher Pro 6041",
-    "PRO 6037S SLEEPER BS3",
-    "Eicher 20.16 Tanker",
-    "Eicher 20.15 Bus",
-    "EICHER 20 16RHD R FACE COWL",
-    "Eicher Pro 1095X",
-    "EICHER  PRO 1110H CAB HSD BSIII",
-  ],
-  "TATA MOTORS": [
-    "TATA Magic",
-    "TATA ACE",
-    "TATA Indica",
-    "TATA Winger",
-    "TATA 4018",
-    "TATA 207",
-    "TATA Indigo",
-    "TATA  709 STARBUS",
-    "TATA 909",
-    "TATA  1615",
-    "TATA Magic Iris",
-    "TATA 3516",
-    "TATA 2515",
-    "TATA 1210 Tanker",
-    "TATA 1613",
-    "TATA  1616",
-    "TATA Marcopolo STARBUS",
-    "TATA Marcopolo STARBUS",
-    "TATA 709 - C3",
-    "TATA Indigo Manza",
-    "TATA Indica - 50mm",
-    "TATA  2515 Trailer",
-    "TATA 410",
-    "TATA 2518",
-    "TATA  1109",
-    "TATA  3118",
-    "TATA  407",
-    "TATA 1510",
-    "TATA 3718",
-    "TATA 712",
-    "TATA 712 STAR BUS",
-    "TATA Bolt",
-    "TATA Cityride Bus",
-    "TATA LPT 1512",
-    "TATA LPK 1612",
-    "TATA Sumo Gold",
-    "TATA SUMO VICTA",
-    "TATA Super Ace",
-    "TATA Tiago",
-    "TATA Ultra 912",
-    "TATA Ultra 1012",
-    "TATA Xenon Pick Up",
-    "TATA Zest",
-    "Tata  3516 Tanker",
-    "TATA 3516 Trailer",
-    "TATA 3516 Bulker",
-    "TATA 3518 Tanker",
-    "TATA 3518 Trailer",
-    "TATA 3518 Bulker",
-    "TATA 4018 Tanker",
-    "TATA  4018 Trailer",
-    "TATA 218",
-    "TATA 407",
-    "TATA Spacio Gold",
-    "TATA  2516",
-    "TATA SFC 407/31",
-    "TATA LPT 1412",
-    "TATA LPT 1010 CR X /38WB BSIV",
-    "TATA 912",
-    "TATA PRIMA LX4923S 6 X 4",
-    "TATA LPO 1515 BUS",
-    "TATA LPT 1112",
-    "TATA LPT 1212",
-    "Prima LX 2525",
-    "TATA  INTRA",
-    "TATA 4225",
-    "LPK 1618/36",
-    "Tata 709",
-    "LPC 4923",
-    "1109 BUS",
-    "TATA SIGNA 5523",
-    "TATA 3118 Tipper",
-    "TATA 1918",
-    "SFC 410/31 EX",
-    "LPT 4223",
-    "ULTRA 1518.T",
-    "Tata LP 1512 TC/59",
-    "LPK 2518 TIPPER",
-    "LPK 1613 697TC - Short",
-    "TATA LPT 1010 CRX/38WB BSIV",
-    "TATA 1613 HEAVY GOODS VEHICLE",
-    "TATA ACE ZIP BSIII",
-    " TATA CRUISER 912",
-    "TATA SIGNA 4923.S CRE BSIV",
-    "TATA LPS 4923",
-    "Tata 1613 Tanker",
-    "TATA 407 Tourist Van",
-    "TATA LPT 3118",
-    "Tata LPT 1618",
-    "LPT 909 Container",
-    "TATA SA 1212 T TC BS- IV  4X4",
-    "TATA SA 1212",
-    "LPT 2416",
-    "TATA LPK 912EX/27 BSIV",
-    "TATA ACE - 50mm",
-    "TATA Winger - 50mm",
-    "LPK 1616",
-    "Tata SUMO - 50mm",
-    "Tata 407/27 City Ride School Bus",
-    "Tata Intra V20 - 50mm",
-    "Tata Prima LX3125 Tipper",
-    "Tata Ultra T7",
-    "Tata Signa 2823",
-    "Tata 3118 Bulker",
-    "Tata 3118 Tanker",
-    "LPK 2523",
-    "Tata Zest - 50mm",
-    "MAGIC MAXI CAB",
-    "Tata Bolt - 50mm",
-    "Tata LPT 1913",
-    "Tata 609",
-    "Tata LT410 StarBus",
-    "LPT  1109 Container (18FT)",
-    "LPK 1212 Tipper",
-    "SFC 909 BUS",
-    "TATA DP 1313 TO 55",
-    "TATA DP 1313 TO 55",
-    "ULTRA 1014/39WB",
-    "Tata Super Ace Mint",
-    "TATA 207 - 50mm",
-    "LPT 1109",
-    "TATA 1210",
-    "TATA Ace Container",
-    "Tata 3015 cement trailer",
-    "LPK 1613 - Long",
-    "Tata LPT 407EX2/38 BSIV",
-    "Tata LPT 909 Tanker",
-    "Tata 712 Bus",
-    "Tata Ultra 1012/33",
-    "LPT 1615 Container",
-    "TATA Indigo - 50mm",
-    "TATA LPO1512 Bus",
-    "LPT 1212 Container",
-    "Tata ARIA - 50mm",
-    "Tata lpt-810",
-    "Tata Ultra 1518",
-    "TATA LPT 3723 TC",
-    "TATA LPT 3712",
-    "TATA 2518 Concrete Mixture",
-    "TATA Xenon Pick Up - 50mm",
-    "TATA Signa 4223",
-    "LPT 1109 - LCV",
-    "TATA LPT 3518 Tipper",
-    "Tata Ace Mega XL",
-    "Tata LPT 912",
-    "Tata  Lop 7.5 T Star Bus Ultra",
-    "TATA LP 912 Bus",
-    "TATA 2518 Tanker",
-    "TATA PRIMA 2525 Tipper",
-    "Lpo 1613 school Bus",
-    "TATA 2818 Container (18FT)",
-    "LPK 1616 Tipper",
-    "Tata LP 309/38 Bus",
-    "Tata Venture",
-    "3 CUM TIPPER",
-    "Tata Maxi Cab",
-    "Tata Signa 4223",
-    "TATA INTRA V30 BS-VI",
-    "Tatra-IND T815",
-    "PRIMA 3525",
-    "TATA LPS 4018",
-    "TATA LPS 4018",
-    "TATA LPS 4018",
-    "TATA MARCOPOLO LP810 FBV",
-  ],
-  "MAHINDRA & MAHINDRA": [
-    "Mahindra Bolero",
-    "Mahindra TUV 300",
-    "Mahindra Voyger",
-    "Mahindra  Marshall 2000",
-    "Mahindra Bolero Pick-up",
-    "Mahindra Maxx Maxi Truck",
-    "Mahindra Loadking",
-    "Mahindra Tourister",
-    "Mahindra Bolero Maxi truck",
-    "Mahindra DI3200",
-    "Mahindra Logan",
-    "Mahindra KUV 100",
-    "Mahindra Maxi Cab",
-    "Mahindra Navistar",
-    "Mahindra Maxximo Mini VAN",
-    "Mahindra Scorpio",
-    "Mahindra Torro 25",
-    "Mahindra Supro Mini Van",
-    "Mahindra Truxo",
-    "Mahindra Traco",
-    "Mahindra Xylo",
-    "Mahindra Verito",
-    "Mahindra Bolero  camper",
-    "Mahindra XUV500",
-    "Mahindra Loadking Tipper",
-    "Mahindra Genio",
-    "Mahindra ALFA",
-    "Mahindra SUPRO MAXI  TRUCK",
-    "Mahindra TRACTOR",
-    "Mahindra TRACTOR WITH TRAILER",
-    "MAHINDRA SINGLE CAB",
-    "Mahindra TRACTOR WITH SHORT TRAILER",
-    "Mahindra BLAZO",
-    "MAHINDRA CHAMPION CONTAINER",
-    "Mahindra MARAZZO",
-    "Mahindra Champion",
-    "MAHINDRA LOADKING-C3",
-    "MN 25 TANKAR",
-    "M BLAZO",
-    "MTB T25 BS4",
-    "Mahindra MN40X",
-    "Mahindra 575 Tractor",
-    "Mahindra Jeep - Load",
-    "Mahindra MN31 cement body",
-    "Mahindra Bolero Pick-up - 50mm",
-    "Mahindra Jeeto - 50mm",
-    "Mahindra Xylo - 50mm",
-    "Mahindra ALFA - 50mm",
-    "Mahindra Maxximo",
-    "Mahindra Maxximo - 50mm",
-    "Mahindra Bolero  camper - 50mm",
-    "Bolero ( New Vehicle)",
-    "Mahindra EJ470",
-    "BLAZO TRAILER",
-    "Mahindra ALFA - Yellow",
-    "MTB T40 Bus",
-    "Mahindra Jeeto",
-    "Mahindra Champion - 20mm",
-    "Mahindra Blanzo 45.5",
-    "Mahindra MARAZZO - 50mm",
-    "MTB T20 Maxi Cab",
-    "Mahindra Bolero Maxi truck - 50mm",
-    "Mahindra ALFA - Passenger",
-    "Mahindra Furio 12 / 14",
-    "Mahindra Alwyn Cab",
-    "Mahindra Jeeto - New Vehicle",
-    "Mahindra Ambulance",
-    "Cosmo Tourister",
-    "COMMANDER 750",
-    "Mahindra Maxximo Mini VAN - 50mm",
-    "Mahindra 475-D1 Tractor",
-    "Mahindra LGV",
-    "Mahindra cosmo",
-    "Bolero City Pickup Container",
-    "Mahindra Bolero Power",
-    "Mahindra  Blazo 49HL",
-    "Mahindra Imperio",
-    "Mahindra Navistar MN 25 Tanker",
-    "Mahindra Gio",
-    "Mahidra Tourister 25 seat",
-    "Mahindra open body van",
-    "Mahindra Verito - 50mm",
-    "Maxximo Load Container Auto",
-    "Mahindra Supro Mini Van",
-    "Mahindra Truxo Container - 28FT",
-    "Mahindra CabKing 3150",
-    "Mahindra Jeep",
-    "Mahindra Torro 25 Tipper",
-    "Mahindra Maxx",
-    "MN Tourister 4800",
-    "MAHINDRA XYLO D4VDICW",
-    "MAHINDRA XYLO D4VDICW",
-  ],
-  PIAGGIO: [
-    "Ape Auto",
-    "PIAGGIO PORTER 600",
-    "APE CARGO",
-    "APE XTRA LD",
-    "Ape Auto - 50mm",
-    "Ape Cargo - 50mm",
-    "Ape Auto - Yellow",
-    "Ape Auto - 3Yellow",
-    "PIAGGIO PORTER 600 - 50mm",
-    "APE XTRA LD - 50mm",
-    "Ape 4 wheel Auto",
-  ],
-  AMW: [
-    "AMW Tanker",
-    "AMW Trailer",
-    "AMW Bulker",
-    "AMW TRUCK 2518",
-    "AMW 2523 Tipper",
-    "AMW 2528 Tipper",
-    "AMW 3116",
-  ],
-  "ISUZU MOTORS": ["Isuzu D-max Flat Deck"],
-  Tvs: ["TVS Auto", "Tvs Auto - Yellow"],
-  "BAJAJ TEMPO": [
-    "BHARAT BENZ 1214R",
-    "BHARATBENZ 2523",
-    "BHARATBENZ 914R",
-    "BHARATH BENZ 1617 TANKER",
-    "BHARATBENZ 2528",
-    "BharatBenz BUS",
-    "BHARAT BENZ 14 R BS IV 10",
-    "BHARATBENZ 2523 6X2 BSIV",
-    "Bharat Benz 3723R",
-    "BHARAT BENZ 1617R",
-    "BHARAT BENZ 3723",
-    "Bharath Benz 1014R BSIV 3",
-    "BharatBenz 3123R container",
-    "Bharatbenz 1015R BSVI",
-    "BHARATBENZ 1923C",
-    "BharatBenz 2823",
-    "BharatBenz 1623C Tipper",
-    "BharatBenz 4228R",
-    "BharatBenz 5528TT",
-    "BharatBenz 2523 Tanker",
-    "BharatBenz 1215R",
-    "BharatBenz 2823 Tanker",
-    "BharatBenz 25.23",
-    "BharatBenz 4023 LPG Tanker",
-    "BharatBenz 4023 Trailer",
-    "BharatBenz 3128C",
-    "BharatBenz 2523 Container",
-    "BharatBenz 1617 container (32FT)",
-    "BharatBenz 3123R",
-    "BharatBenz 1214 Container (20FT)",
-    "BharatBenz 2523 Tipper",
-    "BharatBenz 1617 Container",
-    "BharatBenz 1217 Tipper",
-    "BharatBenz 3123",
-    "BharatBenz 1014R Container",
-    "BharatBenz 3123 Tanker",
-    "BharatBenz 1214 Road Sweeper",
-    "BharatBenz 4928 Bulker",
-    "BharatBenz 1214 Tanker",
-  ],
-  TAFE: [
-    "MF TAFE TRACTOR WITH TRAILER",
-    "TAFE MM TRACKTOR",
-    "Tafe Tractor (Trailer Only)",
-  ],
-  VOLVO: ["VOLVO 9400 B8R", "VOLVO", "Volvo B7R", "Volvo Fire Service"],
-  "JCB INDIA LIMITED": ["JCB"],
-  "FORCE TRAVELLER": ["FORCE TRUMP", "TRAX CRUISER"],
-  "HINDUSTAN MOTORS LTD": ["RTV DSL"],
-  "ESCORTS LTD": ["POWERTRAR 434 TRACTOR", "Escorts 340 Tractor"],
-  "Gujarath Tractor Corp LTD.": ["2 MV Tractor"],
-  "SCOOTERS INDIA LTD": ["Vikram 750cc Auto"],
-  "SML ISUZU": ["SAMRAT 2815"],
-  "ASHOK LEYLAND LTD": [
-    "3120 8 2 GOODS CHASSIS WCWW",
-    "AL 3518",
-    "AL 4218",
-    "AL GF 3520/66HCO",
-    "AL GF 4220/66HCO",
-    "FV4923",
-    "ASHOK LEYKAND DOST",
-    "HGV 3118XL TANKER",
-    "HAULAGE CHASSIS",
-    "1614 .1 TIPPER",
-    "3116IL GOODS CHASI W COWLWWB",
-    "2516t 198 wb tusker sup",
-    "VK1611.0D4R",
-    "ALPSV 4/170",
-    "TAURUS 2516/2",
-    "AL 3518 TANKAR",
-    "SS1008 .1D4RB(39+",
-    "SS1008 .1D4RB(39+) SHCOOL BUS",
-    "AL GB2820",
-    "AL 4118",
-    "2214",
-    "3015",
-    "E 2820 6X4 CONCRETE MIXER",
-    "AL 1611",
-    "LT1300.3D4RB/C",
-    "LPO 1616 TC BUS BS 2",
-    "HEAVY GOODS",
-    "ALPSV 4/186",
-    "AL BOSS",
-    "1616-185TUSKER SUPER",
-    "GURU 1111 GOOD CWC N2 BS IV",
-    "1612 170 5WB G",
-    "GURU 1111 GOOD CWC N2 BS IV",
-    "1612 170 5WB G",
-    "AL CT 1613H/1",
-    "2518T IL TIP CHAS CABIN TIP B",
-    "AL BEARER ALB 1/1 HAULOGO",
-    "DOST LS BS III",
-    "HIPPO TRUALAR",
-    "ASHOK LEYKAND 3118 BSIV",
-    "3718 T BSIV TIP CWC WO L",
-    "DOST LS BS III",
-    "2214/2S 198 (CWB) GOODS CHAS",
-    "AL 3116 DIESEL TANKAR",
-    "COMET SUPER",
-    "Cheetah ALPSV 1/30",
-    "3118IL AL",
-    "3118IL AL",
-    "3118IL AL",
-    "GURU 1111 GOOD CWC N2 BSIV",
-    "GURU 1111 GOOD CWC N2 BSIV",
-    "GURU 1111 GOOD CWC N2 BSIV",
-    "TUSKER SUPER",
-    "AL4923 BULKER",
-    "AL 4923 BULKER",
-    "1616 L4 GOOD N3 BSIII",
-    "FV.4923.BSIII",
-    "CA1015/28T TIP 2850",
-    "1612",
-    "ASHOK LEYKAND 3118 BSIV",
-    "CS 42/166",
-    "UJ3525/52T TIP 5250",
-    "2516 IL 193 WB",
-    "1616 XL/3 BSIII",
-    "ASHOK LEYLAND LTD 3118IL BSIII",
-    "TUSKER SUPER",
-    "2214/2S 198 (CWB) GOODS CHAS",
-    "VK1811.0D4R",
-    "LT 1309 .3D4R",
-    "AL3 116IL",
-    "OTHERS",
-    "DOST RLS BSIV",
-    "PARTNER LES",
-  ],
-  "MERCEDES-BENZ INDIA": ["E220 D"],
-  "OMEGA SEIKI EV": ["Rage plus"],
-  "MASKTRO MOTORS": ["ARJUN 500 SHARE AUTO"],
-  "FORCE MOTORS LIMTED, A FIRODI TATA": [
-    "TRAVELLER 11 AMBULANCE",
-    "TRAVELLER T2 SCHOOL  BUS",
-    "TRAVELLER T1 SCHOOL  BUS",
-  ],
-  "THIRUMALA AGROINDUSTRY": ["TEMPO TRAVELLER"],
-  "ATUL AUTO LTD": ["Atul Auto - 50mm"],
-  "ISUZU MOTORS INDIA PVT LTD": ["ISUZU D MAX CAB"],
-  "VE Commercials": ["Eicher Pro 3009 H BS IV"],
-  "VSL Industries Ltd": ["VSL Dot & Dot Mini"],
-  "MAHINDRA $ MAHINDRA LIMITED": [
-    "BOLERO CITY PIX UP 14 PS",
-    "BOLERO CITY PIX UP 14 PS",
-    "BOLERO CITY PIX UP 1.4 PS",
-    "BOLERO CITY PIX UP 1.25T BSIV",
-    "BOLERO PICK UP FB PS MH 2WD BS3",
-    "BMT PLUS PS127",
-    "SUPRO TRUCK VX",
-    "BOLERO MAXI TRUCK",
-  ],
-  "SML ISUZU LTD": [
-    "EXECUTIVE TC 111",
-    "SAMRAT 4760 CONTAINER",
-    "BSIV ZT 54E BSIV LWO",
-    "WV26SOTNSCHOOL BUS 21 SEAT",
-    "SARTAJGSHG72STEELHIGHDECKSHD12",
-    "S7 SCHOOL BUS BS IV",
-    "T3500 WT50L WB DELUXE",
-    "PRESTIGE 3940 LWB BUS STD",
-  ],
-  ISUZU: ["EXCECUTIVE TC III WV"],
-  "VOLOVO INDIA PVT LTD": ["OPEN PLW"],
-  "FIRE EICHER": ["FIRETENDER"],
-  BMW: ["BMW 520D", "BMW 730LD"],
-  "REEP INDUSTRIES PVT LTD": ["3WT (Electric)"],
-  Toyota: ["Toyota Qualis"],
-  "SAME DEVTZ FAHRI PVT LTD": ["SAME603"],
-  PREMIER: ["Premier Ferguson HMV", "Premier Tipper"],
-  "Vikram Auto": ["Vikram auto"],
-  "John Deer India Pvt LEg": ["John Deer 5045 V2"],
-  "Kirloskar Pneumatic co Itd": ["Road Ropar semi Trailer"],
-  "DCM TOYOTA LTD": ["LGV", "DCM TOYOTA MGV"],
-  "New Holland Tractor": ["3600 Tractor"],
-  "EICHER •": ["Eicher 6035 p cwc tankar"],
-  "EICHER MOTORS LTD": [
-    "EICHER TERRA 16",
-    "Eicher Pro 1059",
-    "10.75 H BUS NS BSIII",
-    "TONGA DIESEL 24 SOFT TOP",
-  ],
-  HMT: ["HMT 212 TRACTOR"],
-  "BHARAT BENZ": ["BHARAT BENZ 2523C BS 4"],
-  "BOBCAT COMPANY": ["AUTO RICKSHAW "],
-  "KINETIC GREEN ENERGY": ["JUMBO PICKUP", "JUMBO PICK UP"],
-  "BAJAJ TEMPO LTD": ["Force Minidor  Delivery Van"],
-  "FORCE MOTORS LIMTED,": [
-    "TRAVELLER T2 SCHOOL  BUS",
-    "TRUMP 40BS III PICK UP HSD",
-  ],
-  "Bharath Benz": ["BHARAT BENZ 914 BS3"],
-  "SUNDARAM MOTORS": ["AL 1612/4210WB"],
-  "DAIMMLER 1 COMM VEH P LTD": ["TIPPER"],
-  "SWARAJ MAZDA LTD": ["SEMI  SALLON", "SEMI  SALLON", "WT 50 1. WB"],
-  МАН: ["3118IL AL", "3118IL AL"],
-  "MAHINDRA MAHINDRA LIMITED": ["MAHINDRA  MAX TRUCK"],
-  "BAJAJ AUTO": [
-    "BAJAJ 3 WHEELER  AUTORICKSHAW",
-    "BAJAJ 3 WHEELER  AUTORICKSHAW",
-  ],
-  "TATA MOTORS LTD": ["TATA INFRA V30 NON AC BSVI"],
-  "DAIMLER INDIA COMMERCIAL": [
-    "Bharath benz 1215R BSVI",
-    "Bharath benz 1215R BSVI-WHITE",
-  ],
-  "VE COMMERICAL VEHICLE LTD": ["EICHER 1090 L 40/P D BSIV"],
+  "ASHOK LEYLAND": {
+    "Ashok Leyland 2513": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Taurus 2516": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Comet 1611": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV 4/38": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland DOST": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/161": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALFSV3/46-LYNX": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALFSV3/46-LYNX": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Lynx": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 3116": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Ecomet 1012": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 1212": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/186": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 1214 SMART": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Viking ALPSV 4/247": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/88": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland Tusker Super 2214": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV Viking 4/83": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland ECOMET 1112": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland CT 1613": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Ecomet 912": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 3718": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland U 2523": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Viking Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 3516 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 3517 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 22,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 3518 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 3518 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 3518 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 4019 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 4019 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 4019 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 4018 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland U-3123 T": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2518 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/89": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 1214 CONTAINER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 3118": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1611 CONTAINER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland BOSS 1212": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 3,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland BOSS 1212 LE": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland COMMET TIPPER 1616XL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.8,
+      "Yellow 50MM": 10.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 2516 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland TUSKER TURBO TRACTOR 3516": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 1613 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ECOMET 1109": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ALPEV 1/38": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland BOSS 1412 CONTAINER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 7,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland BOSS 1115 CONTAINER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 9,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4123 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland STILE": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland GA 1920/43 H CO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Boss 1413": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland GURU 1111": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 4923TT BULKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 1618 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 4923 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland UE5525/39 TTCC": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 23,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland PARTNER MLS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3516 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 3518": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland PA 1215/52 HCC": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/56": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 19,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 4921 WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland 709": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland Cargo 709": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland VK 1811": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland UE5525-39 TTCC": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 23,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 4218": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 4018": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland U 2512": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 2514": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4023 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 30,
+      "C3": 0,
+      "C4": 1
+    },
+    "ECOMET 1015": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALCO 3/16-3600MM": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV 1/40": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3516": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 1918": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "PARTNER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL STAG 3/26": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1.7,
+      "Yellow 50MM": 13,
+      "C3": 3,
+      "C4": 516
+    },
+    "3516 - canter - c3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "CARGO 100.12": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "BOSS 913": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "GF3520/66HCO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "MINI BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 0,
+      "C4": 0
+    },
+    "SCHOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "ASHOK LEYLAND TAURUS MK II 150WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4018-C4": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 0,
+      "C4": 1
+    },
+    "SS1008": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "CA1615/52 H FBL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.1,
+      "White 50MM": 2.1,
+      "Yellow 50MM": 14.8,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1615": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "EA19020/43H": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 0,
+      "C4": 1
+    },
+    "Dost ( New Vehicle)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "1612L Goods Chasiss Cabin N3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.1,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 3611 - IL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "207DI EX4SPCR10 CCD1 L3150 W": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "1616 XL Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 1612 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland U2523 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "CHEOTOH ALPS 1/30": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.6,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4921/4923 Cement Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 3118 Bulker 12Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "ASHOK LEYLAND CRUSHER COMET": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 6,
+      "C3": 1,
+      "C4": 0
+    },
+    "CRUSHER 2516": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "CRUSHER 2516 YEL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 1611/2-142 WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8.5,
+      "C3": 1,
+      "C4": 2
+    },
+    "2214/19 180WB TUSKER 6X2": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1618 LPG Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "GURU 1010 E4": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6.5,
+      "White 50MM": 1.4,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok leyland 3121 205 WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1613": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland Boss 1113": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13.4,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ashok Leyland 4023": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 2214 Tusker Super Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "GM4220/66 HCO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL TF1812 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL ECOMET 1214/42 E4": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL CA1415/39": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4921 CEMENT TRAILER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 3516 BULKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Ashok Leyland Comet 912": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Ecomet 1212 E4/1": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4/157 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland 4018 Cement Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 1
+    },
+    "ALPSV 3/41": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland DOST - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/28": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ashok Leyland ALPSV 4/188": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL TUSKER SUPER 2214": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3116": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3118": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3718 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 4/157 MiniBus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL CO 1510": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2516 Tusker Super": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 222 WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2614 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 2516 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2614 Trailer C3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 22,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1614 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Boss 912": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4921 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "ALPSV 3/4 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 2818": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2516 TANKER 10Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2518 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALH 1/9 18 Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 2516 30FT Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL COMET 1510": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL CARGO 909": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "HMV HEAVY GOODS CARRIER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2518 Concrete Mixture": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL CA1015/39 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1618 CONTAINER (27FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Container (27FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV 4/38 - MiniBus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3116 12 Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Tipper 6 Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALCO 3/1": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "ECOMET 1412": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1512 Cargo": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2518": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3116 12Wheel Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3718 Tanker 14Wheel": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "GP4825/66 H CO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "2516T 198WB TUSKER SUPER 6X2": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL VK1611 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 2818 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Boss 1112": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4188 210(WB)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 23,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4/157": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 23,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4019 Cement Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL LS1310 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 4019 Trailer (22 FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 1
+    },
+    "DOST - New Vehicle": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL COMET 415": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3718 BS IV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4/19": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Boss 1412": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL HMV BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL CARGO 1312": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL TF1812 BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3611 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 26,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 2214 Container (22 FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4023 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 1616 IL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1618 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Boss 1113 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4/38 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Container (32FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 22,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL ALPSV 3/106": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL Ecomet 1110": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV 3/106 BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL MITR LES": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 1613 Container (20FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4123": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL COMET 910": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 139.3D4R Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "BOSS 1213": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL U2518 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Boss 1415": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Tata Lop 7.5 T Star Bus Ultra": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL FV2518 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 4018": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 24,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 3520/63": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1612 Container (18FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL Educational Institution Vehicle": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3118 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL CT1613H": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 415/5 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "AL 1256": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2214 Tusker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL UE2825/39 TIPPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1612": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3118 IL Tanker (27FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 19,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3123 Tipper 12W": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4825 16W": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL LS1308 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 4188": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3718 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 19,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1215 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1/38 Container (32FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 7,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2518 Container (24FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Fire Service Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 2516 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 24,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1618": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1616 Closed Body": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 1,
+      "C4": 0
+    },
+    "1214 ECOMET": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 4,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3718": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "GA4020/34 TT CO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "DAIMLER INDIA": {
+    "Bharath Benz 4928 TT 6X4": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 1
+    }
+  },
+  "ASIA MOTORS": {
+    "AMW 2518": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "ASIA 2523": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AMW 2516": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  BAJAJ: {
+    "Bajaj Tempo Traveller Cruisier": {
+      "RED 20MM": 2,
+      "White 20MM": 2,
+      "RED 50MM": 9,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Tempo": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Auto": {
+      "RED 20MM": 1.25,
+      "White 20MM": 1.4,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Auto - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Auto - Yellow": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.4,
+      "Yellow 50MM": 1.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Matador 307": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Maxima Load Auto": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Minidoor": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.3,
+      "White 50MM": 1.2,
+      "Yellow 50MM": 5.6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Maxima Auto": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "FORCE MOTORS": {
+    "Force Traveller": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    },
+    "Tempo Traveller": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "TRUMP 40 PICKUP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Minidor": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "MINIDOR - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "TEMPO EXCELA": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "Force Cruiser": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "Trax": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Force Citiline": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10.5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  FORD: {
+    "Ford Figo": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ford Figo Aspire": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ford Figo - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "GENERAL MOTORS": {
+    "Cheverolet Tavera - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Cheverolet Enjoy": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Chevrolet Beat": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Chevrolet Sail": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Cheverolet Tavera": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Cheverolet Enjoy - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "HINDUSTAN MOTORS": {
+    "Ambassdor": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ambassador - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  HONDA: {
+    "Honda Amaze": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Honda City": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Honda Mobilio": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Honda Amaze - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  HYUNDAI: {
+    "Hyundai Xcent - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai SANTRO": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Grand": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai I10": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai EON": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Xcent": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai i10 - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Verna": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Verna 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Creta": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Creta 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Venue": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Venue 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai EV": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Hyundai Exter": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  MAN: {
+    "MAN 25.250 TRUCK": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "MAN CLA Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 4,
+      "Yellow 50MM": 23,
+      "C3": 0,
+      "C4": 1
+    },
+    "MAN CLA Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 0,
+      "C4": 1
+    },
+    "MAN CLA Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 30,
+      "C3": 0,
+      "C4": 1
+    },
+    "MAN CLA 16.220": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "MAN CLA 49.290": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 23.5,
+      "C3": 0,
+      "C4": 1
+    },
+    "MAN CLA 25.80": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "MAN CLA 40.280": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "CLA 25.280 Concrete Mixure": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "CLA 25.280": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "MAN 40.220": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 1,
+      "C4": 0
+    },
+    "MAN 25.180 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "MARUTI SUZUKI": {
+    "Maruti Suzuki Wagon R": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Ritz": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Celerio": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Alto K10": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Gypsy": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Esteem": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Versa": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Omni": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 5.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Swift": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.4,
+      "White 50MM": 1.4,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki EECO": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 7.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swift Dzire Tour": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Ertiga": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Brezza": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Fronx": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Grand Vitaara": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "MARUTI SUPER CARRY": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swift Dzire - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "MARUTI SUPER CARRY - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Omni - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 5.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki Baleno": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Super Carry - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Suzuki EECO - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Maruti Celerio - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swift Dzire Tour - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "MARUTI SUZUKI TOUR H1": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  RENAULT: {
+    "Renault Lodgy - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault kiger": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault Triber": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault kiger 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault Triber 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault Kwid": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "RENAULT LODGY": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Renault Duster": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  KIA: {
+    "Kia Carens": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Sonet": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Seltos": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Syros": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Carnival": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Ev9": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Ev6": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Carens 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Sonet 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Seltos 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Syros 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Carnival 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Ev9 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Kia Ev6 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "TOYOTA KIRLOSKAR": {
+    "Toyota Vellfire": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Fortuner": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Innova Hycross": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Innova Crysta": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Glanza": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Hyryder": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Taisor": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Rumion": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Urbancruiser": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Yaris": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Camry": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Vellfire 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Fortuner 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Innova Hycross 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Innova Crysta 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Glanza 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Hyryder 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Taisor 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Rumion 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Urbancruiser 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Yaris 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Camry 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Etios": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Etios LIVA": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Innova": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "TOYOTA INNOVA - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Toyota Etios - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  NISSAN: {
+    "Nissan Sunny": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Micra": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Datsun GO": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALLWYN Nissan": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.8,
+      "White 50MM": 1.8,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Sunny - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Evalia": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan magnite": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan micra": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan magnite 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan micra 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "SWARAJ MAZDA": {
+    "Nissan Sunny": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Micra": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Datsun GO": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALLWYN Nissan": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.8,
+      "White 50MM": 1.8,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Sunny - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.75,
+      "White 50MM": 1.75,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan Evalia": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan magnite": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan micra": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan magnite 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Nissan micra 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "VE COMMERCIAL": {
+    "Eicher": {
+      "Eicher 10.75": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.50": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 30.25": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 20.15": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 20.16": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 11.10": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.59 / Pro 1059": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.90": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.95": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.80": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 11.12": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.70": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 11.10 container (20FT)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Terra 16": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Mitsubishi Canter": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.60": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 5016": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.50 D BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER LGV (OLD)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher MAXI CAB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 1049": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER 10.50 C BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "MOTOR D VAN 150 HP": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher PRO 6025 T G CAB TIPPER 16 CUM": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.75 BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER PRO 3016": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.70": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 6031 P CWC": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 242 PREMIUM": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER PRO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.90 BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER 35.31": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 1095": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 1
+      },
+      "Tractor": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 5028": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 8,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 2095XPT": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER pro5035 D": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER -11.10 PRO(LBC -24 FEET)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER -11.50(14- FEET)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.90 (17 FEET)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER -10.50 (3 IN ALL)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9.6,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER -10.90(CAB & FSD)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.7,
+        "White 50MM": 1.7,
+        "Yellow 50MM": 8.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER CRUISER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 6.5,
+        "C3": 0,
+        "C4": 1
+      },
+      "EICHER 11.12 G DSD BS III": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 1055C": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 5019": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.50 E HSD": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 2049": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 1114XP": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.50 Van": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher 5016 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 20.15 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 7.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 10.50E": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher 10.70 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 1080XPT": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.8,
+        "White 50MM": 1.8,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER -20.50D BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher 50.16 Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 8049": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 24,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 5040 Trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER 10.55 C BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher 30.15": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 6048": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.50 27S StarBus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 3009 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher PRO 2080XP F HSD": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 3350": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro21.10": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Canter LCV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Terra 25G": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher pro 6025 s cowl": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 1110": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.59 LGV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 0,
+        "C4": 0
+      },
+      "PRO 6037S": {
+        "RED 20MM": 2,
+        "White 20MM": 2,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 3012": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 10.75 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 15,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 1095XP": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 10.90 Container (20 FT)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 2110 Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 2095 XP": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 11.10 LCV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 0,
+        "C4": 0
+      },
+      "EICHER Pro 1090 15 Feet Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER RHD E CAB AND HSD": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 4,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "Eicher Pro 6041": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 19,
+        "C3": 1,
+        "C4": 0
+      },
+      "PRO 6037S SLEEPER BS3": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher 20.16 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER 20 16RHD R FACE COWL": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 1095X": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "EICHER PRO 1110H CAB HSD BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.4,
+        "White 50MM": 1.4,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      }
+    }
+  },
+  "TATA MOTORS": {
+    "TATA": {
+      "TATA Magic": {
+        "RED 20MM": 2,
+        "White 20MM": 2,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA ACE": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Indica": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Winger": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 4018": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 25,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Indigo": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 709 STARBUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 909": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1615": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Magic Iris": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 3516": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 2515": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1210 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1613": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1616": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Marcopolo STARBUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 709 - C3": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Indigo Manza": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Indica - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 2515 Trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.75,
+        "Yellow 50MM": 19,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 410": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 2518": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1109": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 3118": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 407": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1510": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 3718": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 712": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 712 STAR BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Bolt": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Cityride Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 1512": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPK 1612": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Sumo Gold": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA SUMO VICTA": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Super Ace": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Tiago": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Ultra 912": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Ultra 1012": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Xenon Pick Up": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Zest": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata 3516 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3516 Trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 25,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3516 Bulker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 8,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 30,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3518 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3518 Trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 25,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3518 Bulker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 8,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 30,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 4018 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 4018 Trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 28,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 218": {
+        "RED 20MM": 1.3,
+        "White 20MM": 1.3,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Spacio Gold": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 2516": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA SFC 407/31": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 1412": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 1010 CR X /38WB BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 912": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA PRIMA LX4923S 6 X 4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 25,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPO 1515 BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 1112": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 1212": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Prima LX 2525": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA INTRA": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 4225": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 1618/36": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.2,
+        "White 50MM": 1.2,
+        "Yellow 50MM": 5.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 709": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPC 4923": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "1109 BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.3,
+        "White 50MM": 2.3,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA SIGNA 5523": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA 3118 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "SFC 410/31 EX": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPT 4223": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.1,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "ULTRA 1518.T": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.8,
+        "White 50MM": 1.4,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LP 1512 TC/59": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 2518 TIPPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 1613 697TC - Short": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 8,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 1010 CRX/38WB BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1613 HEAVY GOODS VEHICLE": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA ACE ZIP BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.3,
+        "Yellow 50MM": 3.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA CRUISER 912": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 6,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA SIGNA 4923.S CRE BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 2,
+        "Yellow 50MM": 23,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA LPS 4923": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 25,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 1613 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 407 Tourist Van": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 3118": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata LPT 1618": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPT 909 Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA SA 1212 T TC BS- IV 4X4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA SA 1212": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPT 2416": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPK 912EX/27 BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.8,
+        "White 50MM": 1.7,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA ACE - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Winger - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPK 1616": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata SUMO - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata 407/27 City Ride School Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Intra V20 - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.25,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Prima LX3125 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata Ultra T7": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Signa 2823": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 3118 Bulker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 3118 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 2523": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata Zest - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.25,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAGIC MAXI CAB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Bolt - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 3.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata LPT 1913": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.25,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 609": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata LT410 StarBus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPT 1109 Container (18FT)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 1212 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.25,
+        "White 50MM": 2,
+        "Yellow 50MM": 9.25,
+        "C3": 1,
+        "C4": 0
+      },
+      "SFC 909 BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA DP 1313 TO 55": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 10,
+        "White 50MM": 2,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 0
+      },
+      "ULTRA 1014/39WB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata Super Ace Mint": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 207 - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPT 1109": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 1210": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Ace Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata 3015 cement trailer": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 19,
+        "C3": 0,
+        "C4": 1
+      },
+      "LPK 1613 - Long": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 22,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata LPT 407EX2/38 BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata LPT 909 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata 712 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Ultra 1012/33": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPT 1615 Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 26,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Indigo - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPO1512 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPT 1212 Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata ARIA - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 4.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata lpt-810": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata Ultra 1518": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 3723 TC": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 3712": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA 2518 Concrete Mixture": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA Xenon Pick Up - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA Signa 4223": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "LPT 1109 - LCV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 3518 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata Ace Mega XL": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata LPT 912": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.7,
+        "White 50MM": 1.7,
+        "Yellow 50MM": 12.3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Lop 7.5 T Star Bus Ultra": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LP 912 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 2518 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA PRIMA 2525 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "Lpo 1613 school Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA 2818 Container (18FT)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPK 1616 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "Tata LP 309/38 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Venture": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "3 CUM TIPPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Maxi Cab": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tata Signa 4223": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA INTRA V30 BS-VI": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Tatra-IND T815": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.25,
+        "White 50MM": 2.25,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "PRIMA 3525": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPS 4018": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 0,
+        "C4": 1
+      },
+      "TATA MARCOPOLO LP810 FBV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA INTRA V50 BS-VI": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA INTRA V20": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      }
+    }
+  },
+  "MAHINDRA & MAHINDRA": {
+    "MAHINDRA & MAHINDRA": {
+      "Mahindra Bolero": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra TUV 300": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Voyger": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Marshall 2000": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero Pick-up": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Maxx Maxi Truck": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Loadking": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Tourister": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero Maxi truck": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra DI3200": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Logan": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra KUV 100": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Maxi Cab": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Navistar": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Maxximo Mini VAN": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Scorpio": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Torro 25": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Supro Mini Van": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.25,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Truxo": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Traco": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Xylo": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Verito": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero camper": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra XUV500": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Loadking Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Genio": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra ALFA": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra SUPRO MAXI TRUCK": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.25,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra TRACTOR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra TRACTOR WITH TRAILER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAHINDRA SINGLE CAB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra TRACTOR WITH SHORT TRAILER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.8,
+        "White 50MM": 1,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra BLAZO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "MAHINDRA CHAMPION CONTAINER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4.7,
+        "White 50MM": 1.2,
+        "Yellow 50MM": 3.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra MARAZZO": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 3.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Champion": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAHINDRA LOADKING-C3": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "MN 25 TANKAR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "M BLAZO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 30,
+        "C3": 0,
+        "C4": 1
+      },
+      "MTB T25 BS4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra MN40X": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 24.5,
+        "C3": 0,
+        "C4": 1
+      },
+      "Mahindra 575 Tractor": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Jeep - Load": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra MN31 cement body": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 1
+      },
+      "Mahindra Bolero Pick-up - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Jeeto - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Xylo - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra ALFA - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Maxximo": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Maxximo - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero camper - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Bolero ( New Vehicle)": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra EJ470": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "BLAZO TRAILER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 24,
+        "C3": 0,
+        "C4": 1
+      },
+      "Mahindra ALFA - Yellow": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.3,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "MTB T40 Bus": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Jeeto": {
+        "RED 20MM": 1.75,
+        "White 20MM": 1.75,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Champion - 20mm": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Blanzo 45.5": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 4,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 1
+      },
+      "Mahindra MARAZZO - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.25,
+        "White 50MM": 1.25,
+        "Yellow 50MM": 3.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "MTB T20 Maxi Cab": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero Maxi truck - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra ALFA - Passenger": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.3,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Furio 12 / 14": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Alwyn Cab": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Jeeto - New Vehicle": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Ambulance": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.8,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Cosmo Tourister": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "COMMANDER 750": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Maxximo Mini VAN - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra 475-D1 Tractor": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra LGV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra cosmo": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "Bolero City Pickup Container": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 1.4,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Bolero Power": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Blazo 49HL": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Imperio": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.6,
+        "White 50MM": 1.9,
+        "Yellow 50MM": 7.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Navistar MN 25 Tanker": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Gio": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahidra Tourister 25 seat": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra open body van": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 1.75,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Verito - 50mm": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 3,
+        "C3": 0,
+        "C4": 0
+      },
+      "Maxximo Load Container Auto": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 4,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Truxo Container - 28FT": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra CabKing 3150": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Jeep": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 4,
+        "C3": 0,
+        "C4": 0
+      },
+      "Mahindra Torro 25 Tipper": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "Mahindra Maxx": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      },
+      "MN Tourister 4800": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAHINDRA XYLO D4VDICW": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 5,
+        "C3": 0,
+        "C4": 0
+      }
+    }
+  },
+  PIAGGIO: {
+    "Ape Auto": {
+      "RED 20MM": 1.25,
+      "White 20MM": 1.25,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "PIAGGIO PORTER 600": {
+      "RED 20MM": 1.3,
+      "White 20MM": 1.3,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "APE CARGO": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "APE XTRA LD": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ape Auto - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ape Cargo - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ape Auto - Yellow": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 1.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ape Auto - 3Yellow": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "Ape 4 wheel Auto": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "APE XTRA LD - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  AMW: {
+    "AMW Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 6,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "AMW Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 0,
+      "C4": 1
+    },
+    "AMW Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 7,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "AMW TRUCK 2518": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "AMW 2523 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "AMW 2528 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "AMW 3116": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "ISUZU MOTORS": {
+    "Isuzu D-max Flat Deck": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  Tvs: {
+    "TVS Auto": {
+      "RED 20MM": 1.1,
+      "White 20MM": 1.4,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "Tvs Auto - Yellow": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.1,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 1.5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "DAIMLER INDIA COMMERCIAL VEHICLE": {
+    "BHARAT BENZ 1214R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATBENZ 2523": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATBENZ 914R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.15,
+      "White 50MM": 2.15,
+      "Yellow 50MM": 12.3,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATH BENZ 1617 TANKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATBENZ 2528": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "BHARAT BENZ 14 R BS IV 10": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.13,
+      "White 50MM": 2.13,
+      "Yellow 50MM": 9.75,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATBENZ 2523 6X2 BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "Bharat Benz 3723R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARAT BENZ 1617R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARAT BENZ 3723": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Bharath Benz 1014R BSIV 3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 3123R container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Bharatbenz 1015R BSVI": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "BHARATBENZ 1923C": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 2823": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1623C Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 4228R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 5528TT": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.3,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "BharatBenz 2523 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1215R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 2823 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 25.23": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 4023 LPG Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 1
+    },
+    "BharatBenz 4023 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "BharatBenz 3128C": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 2523 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1617 container (32FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 3123R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1214 Container (20FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 2523 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1617 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1217 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 3123": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1014R Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 3123 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 1214 Road Sweeper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "BharatBenz 4928 Bulker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "BharatBenz 1214 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "BAJAJ TEMPO": {
+    "TEMPO TRAX JUDO /GAMA": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Bajaj Tempo Traveller": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  TAFE: {
+    "MF TAFE TRACTOR WITH TRAILER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "TAFE MM TRACKTOR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 1.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Tafe Tractor (Trailer Only)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 0,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  VOLVO: {
+    "VOLVO 9400 B8R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 22,
+      "C3": 0,
+      "C4": 0
+    },
+    "VOLVO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "Volvo B7R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 25,
+      "C3": 0,
+      "C4": 1
+    },
+    "Volvo Fire Service": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "JCB INDIA LIMITED": {
+    "JCB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 4,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "FORCE TRAVELLER": {
+    "FORCE TRUMP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "TRAX CRUISER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "HINDUSTAN MOTORS LTD": {
+    "RTV DSL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "ESCORTS LTD": {
+    "POWERTRAR 434 TRACTOR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "Escorts 340 Tractor": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "Gujarath Tractor Corp LTD.": {
+    "[NO CONTENT FOUND]": {
+      "2 MV Tractor": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1,
+        "White 50MM": 1,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 1
+      }
+    }
+  },
+  "SCOOTERS INDIA LTD": {
+    "Vikram 750cc Auto": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "SML ISUZU": {
+    "SAMRAT 2815": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "ASHOK LEYLAND LTD": {
+    "Ashok Leyland": {
+      "3120 8 2 GOODS CHASSIS WCWW": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 3518": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 4218": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL GF 3520/66HCO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL GF 4220/66HCO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "FV4923": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "ASHOK LEYKAND DOST": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6.5,
+        "C3": 2,
+        "C4": 0
+      },
+      "HGV 3118XL TANKER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "HAULAGE CHASSIS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 16,
+        "C3": 1,
+        "C4": 0
+      },
+      "1614 .1 TIPPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "3116IL GOODS CHASI W COWLWWB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "2516t 198 wb tusker sup": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 5,
+        "Yellow 50MM": 2.5,
+        "C3": 16,
+        "C4": 1
+      },
+      "VK1611.0D4R": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "ALPSV 4/170": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 0,
+        "White 50MM": 3,
+        "Yellow 50MM": 3,
+        "C3": 17,
+        "C4": 0
+      },
+      "TAURUS 2516/2": {
+        "RED 20MM": 0,
+        "White 20MM": 2.5,
+        "RED 50MM": 2.5,
+        "White 50MM": 19,
+        "Yellow 50MM": 1,
+        "C3": 0,
+        "C4": 0
+      },
+      "AL 3518 TANKAR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 1
+      },
+      "SS1008 .1D4RB(39+) SHCOOL BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 0,
+        "C4": 0
+      },
+      "AL GB2820": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 24,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 4118": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "2214": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "3015": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "E 2820 6X4 CONCRETE MIXER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 3,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 1611": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "LT1300.3D4RB/C": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPO 1616 TC BUS BS 2": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "HEAVY GOODS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.4,
+        "White 50MM": 2.4,
+        "Yellow 50MM": 9.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "ALPSV 4/186": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "AL BOSS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "1616-185TUSKER SUPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "GURU 1111 GOOD CWC N2 BS IV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8.7,
+        "C3": 1,
+        "C4": 0
+      },
+      "1612 170 5WB G": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8.2,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL CT 1613H/1": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 1,
+        "C4": 0
+      },
+      "2518T IL TIP CHAS CABIN TIP B": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL BEARER ALB 1/1 HAULOGO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 16.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "DOST LS BS III": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "HIPPO TRUALAR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 28,
+        "C3": 1,
+        "C4": 0
+      },
+      "ASHOK LEYKAND 3118 BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.2,
+        "White 50MM": 2.7,
+        "Yellow 50MM": 12.6,
+        "C3": 0,
+        "C4": 0
+      },
+      "3718 T BSIV TIP CWC WO L": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 17,
+        "C3": 1,
+        "C4": 0
+      },
+      "2214/2S 198 (CWB) GOODS CHAS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 3116 DIESEL TANKAR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 1
+      },
+      "COMET SUPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "Cheetah ALPSV 1/30": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 3,
+        "Yellow 50MM": 17.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "3118IL AL": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.4,
+        "Yellow 50MM": 17,
+        "C3": 0,
+        "C4": 0
+      },
+      "GURU 1111 GOOD CWC N2 BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "TUSKER SUPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 0,
+        "C4": 0
+      },
+      "AL4923 BULKER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 6,
+        "C3": 1,
+        "C4": 0
+      },
+      "AL 4923 BULKER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 6,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "1616 L4 GOOD N3 BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "FV.4923.BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 26,
+        "C3": 1,
+        "C4": 0
+      },
+      "CA1015/28T TIP 285": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 1,
+        "C4": 0
+      },
+      "1612": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "CS 42/166": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "UJ3525/52T TIP 525": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 3,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      },
+      "2516 IL 193 WB": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 1,
+        "C4": 0
+      },
+      "1616 XL/3 BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "ASHOK LEYLAND LTD 3118IL BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "2214/2S 198 ( CWB ) GOODS CHAS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "VK1811.0D4R": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "LT 1309 .3D4R": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "AL3 116IL": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "OTHERS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.3,
+        "Yellow 50MM": 2.5,
+        "C3": 0,
+        "C4": 0
+      },
+      "DOST RLS BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "PARTNER LES": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 2.5,
+        "C3": 1,
+        "C4": 0
+      }
+    }
+  },
+  "MERCEDES-BENZ INDIA": {
+    "E220 D": {
+      "RED 20MM": 1.75,
+      "White 20MM": 1.75,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "OMEGA SEIKI EV": {
+    "Rage plus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.3,
+      "White 50MM": 1.3,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "MASKTRO MOTORS": {
+    "ARJUN 500 SHARE AUTO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "FORCE MOTORS LIMTED, A FIRODI TATA": {
+    "TRAVELLER 11 AMBULANCE": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "TRAVELLER T2 SCHOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "TRAVELLER T1 SCHOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "TATA": {
+    "207 Closed Body 50MM": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "THIRUMALA AGROINDUSTRY": {
+    "TEMPO TRAVELLER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "ATUL AUTO LTD": {
+    "Atul Auto - 50mm": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "ISUZU MOTORS INDIA PVT LTD": {
+    "ISUZU D MAX CAB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "VE Commercials": {
+    "Eicher Pro 3009 H BS IV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "TATA MOTORS LTD": {
+    "TATA": {
+      "TATA 1212": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPO 1512/55": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TANKER": {
+        "RED 20MM": 2.5,
+        "White 20MM": 2,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 13,
+        "C3": 1,
+        "C4": 0
+      },
+      "school Bus Lpo 1613": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 1109 HEX 2 36 WB CR TANCKER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA LPT 3118 TC/56": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA SIGNA 4018 CRE BS IV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 18,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA ACE MAGIC BS 3": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 2518 CONTAINER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.2,
+        "Yellow 50MM": 21,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPL 909 TIPPER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 9,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPO 1616 TC BUS BS 2": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 2.25,
+        "Yellow 50MM": 14.7,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPO 1624 63 RE LE D BSIV STAR": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.75,
+        "White 50MM": 2.25,
+        "Yellow 50MM": 10.7,
+        "C3": 0,
+        "C4": 0
+      },
+      "CLOSED": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.7,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 5.3,
+        "C3": 0,
+        "C4": 0
+      },
+      "SUMO VICTA EX": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATACITYRIDEEX50SK LP909/49BS4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.75,
+        "White 50MM": 2.75,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "LPK2518TC": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.1,
+        "White 50MM": 2.3,
+        "Yellow 50MM": 6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATACITYRIDEEX40 SKL 709/42 BS4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 13.2,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA CITYRIDEEX50SK LP909/49BS4": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 15.6,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA CITYRIDE 47+A+D SKOOL LP909/49": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 2.4,
+        "Yellow 50MM": 16.8,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPK 909 EX/27": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATAMOTORS SA 1212": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 12.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "SA1212": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "TATA ALPT 1618 5L TRBOTRONN BS IV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 22,
+        "C3": 1,
+        "C4": 0
+      },
+      "1.PT 1109/36 EX CLB BS III": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPT 1613/42": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14,
+        "C3": 1,
+        "C4": 0
+      },
+      "SCHOOL BUS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 8,
+        "C3": 0,
+        "C4": 0
+      },
+      "INDICA VIST AUA QJET": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "INDICA DLS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 0
+      },
+      "TATA LPT 1109HEX2/36 WB BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 8,
+        "C3": 1,
+        "C4": 0
+      },
+      "LPT 2518 TC": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2.5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 20,
+        "C3": 0,
+        "C4": 1
+      }
+    }
+  },
+  "VSL Industries Ltd": {
+    "VSL Dot & Dot Mini": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "MAHINDRA $ MAHINDRA LIMITED": {
+    "MAHINDRA": {
+      "BOLERO CITY PIX UP 14 PS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "BOLERO CITY PIX UP 1.4 PS": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.9,
+        "White 50MM": 1.4,
+        "Yellow 50MM": 2.6,
+        "C3": 0,
+        "C4": 0
+      },
+      "BOLERO CITY PIX UP 1.25T BSIV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.6,
+        "White 50MM": 1,
+        "Yellow 50MM": 6.6,
+        "C3": 0,
+        "C4": 0
+      },
+      "BOLERO PICK UP FB PS MH 2WD BS3": {
+        "RED 20MM": 0,
+        "White 20MM": 1.4,
+        "RED 50MM": 1.4,
+        "White 50MM": 0,
+        "Yellow 50MM": 5.8,
+        "C3": 0,
+        "C4": 0
+      },
+      "BMT PLUS PS12": {
+        "RED 20MM": 7,
+        "White 20MM": 1.1,
+        "RED 50MM": 1.5,
+        "White 50MM": 0,
+        "Yellow 50MM": 7,
+        "C3": 1,
+        "C4": 0
+      },
+      "SUPRO TRUCK VX": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 4,
+        "C3": 0,
+        "C4": 0
+      },
+      "BOLERO MAXI TRUCK": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.5,
+        "White 50MM": 1.5,
+        "Yellow 50MM": 9,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAHINDRA XUV700": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 7,
+        "C3": 0,
+        "C4": 0
+      },
+      "MAHINDRA XUV 300": {
+        "RED 20MM": 1.5,
+        "White 20MM": 1.5,
+        "RED 50MM": 0,
+        "White 50MM": 0,
+        "Yellow 50MM": 4,
+        "C3": 0,
+        "C4": 0
+      }
+    }
+  },
+  "SML ISUZU LTD": {
+    "SML Isuzu": {
+      "EXECUTIVE TC 1110": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "SAMRAT 4760 CONTAINER": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 5,
+        "White 50MM": 2.5,
+        "Yellow 50MM": 14.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "BSIV ZT 54E BSIV LWO": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "WV26SOTNSCHOOL BUS 21 SEAT": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 12,
+        "C3": 0,
+        "C4": 0
+      },
+      "SARTAJGSHG72STEELHIGHDECKSHD1": {
+        "RED 20MM": 2,
+        "White 20MM": 2,
+        "RED 50MM": 9,
+        "White 50MM": 0,
+        "Yellow 50MM": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "S7 SCHOOL BUS BS IV": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 18,
+        "C3": 0,
+        "C4": 0
+      },
+      "T3500 WT50L WB DELUXE": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 3,
+        "White 50MM": 3,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 0
+      },
+      "PRESTIGE 3940 LWB BUS STD": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 13,
+        "C3": 0,
+        "C4": 0
+      }
+    }
+  },
+  ISUZU: {
+    "EXCECUTIVE TC III WV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 6.5,
+      "Yellow 50MM": 34,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "V E Commercials": {
+    "Eicher 10.70": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "VOLOVO INDIA PVT LTD": {
+    "OPEN PLW": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "FIRE EICHER": {
+    "FIRETENDER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "MAHINDRA & MAHINDRA LTD": {
+    "Marshl FT/4WD/5DR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  BMW: {
+    "BMW 520D": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "BMW 730LD": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "REEP INDUSTRIES PVT LTD": {
+    "3WT (Electric)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 2.5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  Toyota: {
+    "Toyota Qualis": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3.5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "SAME DEVTZ FAHRI PVT LTD": {
+    "SAME603": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  PREMIER: {
+    "Premier Ferguson HMV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Premier Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "Vikram Auto": {
+    "Vikram Auto": {
+      "RED 20MM": 1.25,
+      "White 20MM": 1.25,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 1.25,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "John Deer India Pvt LEg": {
+    "John Deer 5045 V2": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "Kirloskar Pneumatic co Itd": {
+    "Road Ropar semi Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1,
+      "White 50MM": 1,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "DCM TOYOTA LTD": {
+    "LGV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    },
+    "DCM TOYOTA MGV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "New Holland Tractor": {
+    "3600 Tractor": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "EICHER •": {
+    "Eicher 6035 p cwc tankar": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "EICHER MOTORS LTD": {
+    "Eicher": {
+      "EICHER TERRA 16": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 10.5,
+        "C3": 1,
+        "C4": 0
+      },
+      "Eicher Pro 1059": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 11,
+        "C3": 1,
+        "C4": 0
+      },
+      "10.75 H BUS NS BSIII": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 2,
+        "White 50MM": 2,
+        "Yellow 50MM": 14,
+        "C3": 0,
+        "C4": 0
+      },
+      "TONGA DIESEL 24 SOFT TOP": {
+        "RED 20MM": 0,
+        "White 20MM": 0,
+        "RED 50MM": 1.3,
+        "White 50MM": 1.3,
+        "Yellow 50MM": 15,
+        "C3": 1,
+        "C4": 0
+      }
+    }
+  },
+  HMT: {
+    "HMT 212 TRACTOR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "BHARAT BENZ": {
+    "BHARAT BENZ 2523C BS 4": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 11.5,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "BOBCAT COMPANY": {
+    "AUTO RICKSHAW": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "KINETIC GREEN ENERGY": {
+    "JUMBO PICKUP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    },
+    "JUMBO PICK UP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.25,
+      "White 50MM": 1.25,
+      "Yellow 50MM": 3,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "BAJAJ TEMPO LTD": {
+    "Force Minidor Delivery Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 1.3,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "FORCE MOTORS LIMTED,": {
+    "TRAVELLER T2 SCHOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "TRUMP 40BS III PICK UP HSD": {
+      "RED 20MM": 1.4,
+      "White 20MM": 1.3,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 6.4,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "Bharath Benz": {
+    "BHARAT BENZ 914 BS3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "SUNDARAM MOTORS": {
+    "AL 1612/4210WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "DAIMMLER 1 COMM VEH P LTD": {
+    "TIPPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.2,
+      "White 50MM": 2.1,
+      "Yellow 50MM": 9.4,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "SWARAJ MAZDA LTD": {
+    "SEMI SALLON": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 1.9,
+      "Yellow 50MM": 13.8,
+      "C3": 0,
+      "C4": 0
+    },
+    "WT 50 1. WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  МАН: {
+    "3118IL AL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.4,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "MAHINDRA MAHINDRA LIMITED": {
+    "MAHINDRA MAX TRUCK": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "BAJAJ AUTO": {
+    "BAJAJ 3 WHEELER AUTORICKSHAW": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 2,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "DAIMLER INDIA COMMERCIAL": {
+    "Bharath benz 1215R BSVI": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 1.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Bharath benz 1215R BSVI-WHITE": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "ASHOK LYLAND": {
+    "ALPSV 4/185": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 3,
+      "Yellow 50MM": 8.5,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "ASHOK LAYLAND": {
+    "AL 1616 IL DIESEL TANKAR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 1
+    }
+  },
+  "VE COMMERCIAL VEHICLES LTD": {
+    "EICHER PRO 1090 F HSD BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    }
+  },
+  "TATA MOTOR LTD": {
+    "TATA INFRA V30 NON AC BSVI": {
+      "RED 20MM": 2,
+      "White 20MM": 2,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    }
+  },
+  "VE COMMERICAL VEHICLE LTD": {
+    "EICHER 1090 L 40/P D BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 0,
+      "C4": 0
+    }
+  }
 };
 
 export const rtoList = {
@@ -1347,8 +9297,8 @@ export const formatDateTime = (timestamp) => {
   const formatted_time = `${formatted_hours
     .toString()
     .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
-    .toString()
-    .padStart(2, "0")} ${period}`;
+      .toString()
+      .padStart(2, "0")} ${period}`;
 
   return `${formatted_date} ${formatted_time}`;
 };

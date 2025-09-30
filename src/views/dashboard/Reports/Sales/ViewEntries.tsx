@@ -21,7 +21,6 @@ const ViewEntries = () => {
   const { id } = useParams();
   const { data, refetch } = useGetRegistrationsSaleByIdQuery(id);
   const [qrData, setQrData] = React.useState(window.location.href);
-  console.log(qrData, "qrData345234");
   let urlStringAdmin: any = `dealerName=`;
   // QR code data
   const {
@@ -30,7 +29,6 @@ const ViewEntries = () => {
     isLoading: registerrationLoding,
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlStringAdmin);
-  console.log(id, "queryParams43", data?.["data"]);
 
   React.useEffect(() => {
     refetch();
@@ -90,7 +88,7 @@ const ViewEntries = () => {
             }}
           />
 
-          {data?.["data"]?.manufacturer_name !== "KTV3M INDIA" ? (
+          {data?.["data"]?.manufacturer_name !== "KTV3M INDIA" && data?.["data"]?.manufacturer_name !== "reflex" ? (
             <>
               <div
                 className="container-fluid"
@@ -741,10 +739,10 @@ const ViewEntries = () => {
                               COMPLIANCE TO AUTOMOTIVE INDUSTRY STANDARD - 089
                               &amp; 090
                             </h5>
-                            <h2 style={{ fontSize: "19px" }}>
+                            {data?.["data"]?.manufacturer_name !== "reflex" ? <h2 style={{ fontSize: "19px" }}>
                               {" "}
                               <b>(Generated online in rtvsta.tn.in)</b>
-                            </h2>
+                            </h2> : null}
                           </td>
                           <td
                             style={{ width: "8.33333333%", textAlign: "right" }}
@@ -755,7 +753,7 @@ const ViewEntries = () => {
                                 width: 120,
                                 marginTop: "10px",
                               }}
-                              value={`Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}`}
+                              value={data?.["data"]?.manufacturer_name !== "reflex" ? `Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}` : `Registrations No = ${data?.["data"]?.vehicleregno}`}
                             />
                             {/* <img src={qrcode} style={{ height: 110 }} /> */}
                           </td>
@@ -818,7 +816,7 @@ const ViewEntries = () => {
                                       fontSize: "larger",
                                     }}
                                   >
-                                    <strong>STVRTA - CERTIFICATE </strong>
+                                    <strong>{data?.["data"]?.manufacturer_name !== "reflex" ? "STVRTA" : "FITMENT"} - CERTIFICATE </strong>
                                   </td>
                                 </tr>
                               </tbody>
@@ -858,6 +856,26 @@ const ViewEntries = () => {
                                       fontWeight: "bold",
                                     }}
                                   >
+                                    Hologram No:{" "}
+                                    <span
+                                      style={{
+                                        fontWeight: "bold",
+                                        fontSize: 12,
+                                        textTransform: "uppercase",
+                                      }}
+                                    >
+                                       {data?.["data"]?.hologramnum}
+                                    </span>
+                                  </td>
+                                </tr>
+                                {data?.["data"]?.manufacturer_name === "reflex" ? <tr>
+                                  <td
+                                    style={{
+                                      fontSize: 14,
+                                      textAlign: "end",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
                                     Fitment Date:{" "}
                                     <span
                                       style={{
@@ -871,7 +889,7 @@ const ViewEntries = () => {
                                         : ""}
                                     </span>
                                   </td>
-                                </tr>
+                                </tr> : null}
                               </tbody>
                             </table>
                           </td>
@@ -922,7 +940,7 @@ const ViewEntries = () => {
                               fontSize: "16px",
                             }}
                           >
-                            Manufacturer &amp; Distributor Details
+                            Manufacturer &amp; {data?.["data"]?.manufacturer_name !== "reflex" ? "Distributor" : "Dealer"} Details
                           </th>
                         </tr>
                         <tr>
@@ -957,7 +975,7 @@ const ViewEntries = () => {
                             Vehicle Model : {data?.["data"]?.vehiclemodel}
                           </td>
                           <td style={{ width: "41.66666667%", fontSize: 13 }}>
-                            Distributor Details: SAI SUKRAN VENTURES PVT LTD{" "}
+                            {data?.["data"]?.manufacturer_name !== "reflex" ? "Distributor" : "Dealer"} Details: {data?.["data"]?.manufacturer_name !== "reflex" ? data?.["data"]?.distributer_name : data?.["data"]?.dealername}
                           </td>
                         </tr>
                       </tbody>
@@ -1245,8 +1263,8 @@ const ViewEntries = () => {
                     </table>
                     <h6 style={{ textAlign: "center" }}>
                       <b style={{ fontWeight: "bold", fontSize: 13 }}>
-                        [Note: This certificate was downloaded from
-                        WWW.STVRTA.TN.IN]
+                        {data?.["data"]?.manufacturer_name !== "reflex" ?`[Note: This certificate was downloaded from
+                        WWW.STVRTA.TN.IN]` : "[Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT VALID]"}
                       </b>
                     </h6>
                   </td>

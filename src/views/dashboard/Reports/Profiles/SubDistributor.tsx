@@ -58,7 +58,7 @@ const SubDistributor = () => {
                   status: "InActive",
                 };
 
-                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
+                let userId = userList?.["data"]?.data?.filter((data) => data?.username === item?.user_name)
                 let registerTemp: any = {
                   status: "InActive",
                   id: userId?.[0]?.id,
@@ -81,7 +81,7 @@ const SubDistributor = () => {
                   ...item,
                   status: "Active",
                 };
-                let userId = userList?.["data"]?.data?.filter((data) => data?.mobile === item?.phone_number)
+                let userId = userList?.["data"]?.data?.filter((data) => data?.username === item?.user_name)
 
                 let registerTemp: any = {
                   status: "Active",

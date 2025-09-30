@@ -36,7 +36,7 @@ import {
   useGetSubDistributerQuery,
   useGetSubDistributerSaleQuery,
 } from "../../Services/sales";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { formatDate } from "../../../configData";
 import { currenUserInfo } from "../../Slices/loginSlice";
 const Dashboard = () => {
@@ -47,6 +47,7 @@ const Dashboard = () => {
     watch,
   } = useForm();
   const formData = watch();
+  const { id } = useParams();
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   const [createDistributerSale] = useCreateDistributerSaleMutation();
   const [createSubDistributerSale] = useCreateSubDistributerSaleMutation();
@@ -55,8 +56,6 @@ const Dashboard = () => {
 
   const [totalEachIitemValues, setTotalEachItemValues] = React.useState(null);
   const dispatch = useDispatch();
-
-  console.log(roleList, "roleList", userInfo);
 
   const {
     data: distributerData,
@@ -99,7 +98,6 @@ const Dashboard = () => {
     refetch: byDealerUserRefetch,
   } = useGetByDealerUserNameQuery(userInfo?.userId);
 
-  console.log("byDealerUser3452345", userInfo?.userId);
 
   const {
     data: manifactData,
@@ -116,8 +114,6 @@ const Dashboard = () => {
     refetch: distributerSaleDataRefetch,
   } = useGetDisbutersSaleQuery(saleDistributorStockQuery);
 
-  console.log(distributerSaleData, "distributerSaleData");
-
   let salesubDistributorStockQuery: any =
     userInfo?.role_id === "2"
       ? `distributer_id=${userInfo?.userId}`
@@ -128,12 +124,6 @@ const Dashboard = () => {
     isLoading: subDistributerSaleDataLoading,
     refetch: subDistributerSaleDataRefetch,
   } = useGetSubDistributerSaleQuery(salesubDistributorStockQuery);
-
-  console.log(
-    subDistributerSaleData,
-    "subDistributerSaleData",
-    salesubDistributorStockQuery
-  );
 
   let urlDealerStockStringSubDis: any =
     userInfo?.role_id === "3"
@@ -146,12 +136,6 @@ const Dashboard = () => {
     refetch: dealerStockRefetch,
   } = useGetDealerSaleQuery(urlDealerStockStringSubDis);
 
-  console.log(
-    dealerStockData,
-    "subDistributerSaleData",
-    urlDealerStockStringSubDis
-  );
-
   let urlEntriesStockStringSubDis: any = `dealername=${userInfo?.userId}`;
   const {
     data: registerrationSaleData,
@@ -160,10 +144,6 @@ const Dashboard = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlEntriesStockStringSubDis);
 
-  console.log(
-    registerrationSaleData?.["data"]?.data?.length,
-    "registerrationSaleData4254"
-  );
 
   React.useEffect(() => {
     distributerSaleDataRefetch();
@@ -228,20 +208,18 @@ const Dashboard = () => {
       userInfo?.role_id === "2"
         ? distributerSaleData?.["data"]?.data
         : userInfo?.role_id === "3"
-        ? subDistributerSaleData?.["data"]?.data
-        : userInfo?.role_id === "4"
-        ? dealerStockData?.["data"]?.data
-        : null;
+          ? subDistributerSaleData?.["data"]?.data
+          : userInfo?.role_id === "4"
+            ? dealerStockData?.["data"]?.data
+            : null;
     let calculateDate2 =
       userInfo?.role_id === "2"
         ? subDistributerSaleData?.["data"]?.data
         : userInfo?.role_id === "3"
-        ? dealerStockData?.["data"]?.data
-        : userInfo?.role_id === "4"
-        ? registerrationSaleData?.["data"]?.data
-        : null;
-
-    console.log(calculateData1, "calculateData123453", calculateDate2);
+          ? dealerStockData?.["data"]?.data
+          : userInfo?.role_id === "4"
+            ? registerrationSaleData?.["data"]?.data
+            : null;
 
     if (calculateData1?.length > 0) {
       const calculatedTotalForData = {};
@@ -275,17 +253,11 @@ const Dashboard = () => {
           // Round the result to 2 decimal places and pad with zero if necessary
           finalTotal[fieldName] = difference.toFixed(2);
         });
-        console.log(
-          calculatedTotalForData,
-          "calculatedTotalForData2",
-          calculatedTotalForData2
-        );
       } else {
         // If data2 is empty, final total is the same as calculated total for data1
         Object.assign(finalTotal, calculatedTotalForData);
       }
 
-      console.log(finalTotal, "finalTotal56345");
       // Update state with calculated totals
       setTotalEachItemValues(finalTotal);
     }
@@ -300,7 +272,7 @@ const Dashboard = () => {
   const calculateTotalForDistributor = (data, dealerName, fieldName) => {
     let total: any = 0;
     data?.forEach((item) => {
-      console.log(item, "item", dealerName);
+
       if (
         item?.dealername === dealerName ||
         item?.dealer_id === dealerName ||
@@ -311,14 +283,12 @@ const Dashboard = () => {
         // Parse the field value to ensure it's a number
         const fieldValue = item[fieldName] || "0"; // Use default '0' if value is null
         total = (parseFloat(total) + parseFloat(fieldValue)).toFixed(2);
-        console.log(`Adding ${fieldValue} for ${fieldName}`);
       }
     });
     return total;
   };
 
-  const onSubmit = async (data) => {
-    console.log(data, "data32452345");
+  const onSubmit = async () => {
     let tempResult;
     try {
       if (userInfo?.role_id === "1") {
@@ -350,7 +320,6 @@ const Dashboard = () => {
         };
         tempResult = await createDealerStock(tempObjec);
       }
-      console.log(tempResult, "tempResult52345");
       if (tempResult?.["data"]?.code === 201) {
         location.reload();
       }
@@ -375,6 +344,7 @@ const Dashboard = () => {
 
   return userInfo?.role_id === "4" ? (
     <NewEntry
+      id={id}
       registerrationSaleData={registerrationSaleData}
       heading={
         <CCardHeader className="py-3 detailHeader">
@@ -420,11 +390,11 @@ const Dashboard = () => {
                   <p className="m-0 p-2 bg-white mt-2">
                     {userInfo?.role_id === "2"
                       ? byDistributerUser?.["data"]?.data?.[0]
-                          ?.manufacturer_name
+                        ?.manufacturer_name
                       : userInfo?.role_id === "3"
-                      ? bySubDistributerUser?.["data"]?.data?.[0]
+                        ? bySubDistributerUser?.["data"]?.data?.[0]
                           ?.manufacturer_name
-                      : byDealerUser?.["data"]?.data?.[0]?.manufacturer_name}
+                        : byDealerUser?.["data"]?.data?.[0]?.manufacturer_name}
                   </p>
                 </>
               )}
@@ -445,7 +415,7 @@ const Dashboard = () => {
                 <p className="m-0 p-2 bg-white mt-2">
                   {userInfo?.role_id === "3"
                     ? bySubDistributerUser?.["data"]?.data?.[0]
-                        ?.distributer_name
+                      ?.distributer_name
                     : byDealerUser?.["data"]?.data?.[0]?.distributor_name}
                 </p>
               </h6>
@@ -466,8 +436,8 @@ const Dashboard = () => {
                   {userInfo?.role_id === "2"
                     ? byDistributerUser?.["data"]?.data?.[0]?.phone_number
                     : userInfo?.role_id === "3"
-                    ? bySubDistributerUser?.["data"]?.data?.[0]?.phone_number
-                    : byDealerUser?.["data"]?.data?.[0]?.phone_number}
+                      ? bySubDistributerUser?.["data"]?.data?.[0]?.phone_number
+                      : byDealerUser?.["data"]?.data?.[0]?.phone_number}
                 </h6>
                 <h6>
                   <b>Date :</b> {formatDate(new Date())}
@@ -532,11 +502,11 @@ const Dashboard = () => {
                   <p className="m-0 p-2 bg-white mt-2">
                     {userInfo?.role_id === "2"
                       ? byDistributerUser?.["data"]?.data?.[0]
-                          ?.manufacturer_name
+                        ?.manufacturer_name
                       : userInfo?.role_id === "3"
-                      ? bySubDistributerUser?.["data"]?.data?.[0]
+                        ? bySubDistributerUser?.["data"]?.data?.[0]
                           ?.manufacturer_name
-                      : byDealerUser?.["data"]?.data?.[0]?.manufacturer_name}
+                        : byDealerUser?.["data"]?.data?.[0]?.manufacturer_name}
                   </p>
                 </>
               )}
@@ -559,7 +529,7 @@ const Dashboard = () => {
                 <p className="m-0 p-2 bg-white mt-2">
                   {userInfo?.role_id === "3"
                     ? bySubDistributerUser?.["data"]?.data?.[0]
-                        ?.distributor_name
+                      ?.distributor_name
                     : byDealerUser?.["data"]?.data?.[0]?.distributor_name}
                 </p>
               </h6>
@@ -578,8 +548,8 @@ const Dashboard = () => {
                   {userInfo?.role_id === "2"
                     ? byDistributerUser?.["data"]?.data?.[0]?.phone_number
                     : userInfo?.role_id === "3"
-                    ? bySubDistributerUser?.["data"]?.data?.[0]?.phone_number
-                    : byDealerUser?.["data"]?.data?.[0]?.phone_number}
+                      ? bySubDistributerUser?.["data"]?.data?.[0]?.phone_number
+                      : byDealerUser?.["data"]?.data?.[0]?.phone_number}
                 </h6>
                 <h6>
                   <b>Date :</b> {formatDate(new Date())}

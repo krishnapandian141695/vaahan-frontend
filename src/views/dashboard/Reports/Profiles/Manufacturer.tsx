@@ -28,8 +28,6 @@ const Manufacturer = () => {
     refetch();
   }, [reload]);
 
-  console.log(manifactData, "manifactDatamanifactDatamanifactData");
-
   const scopedColumns = {
     Action: (item) => {
       console.log(item, "item4523452");
