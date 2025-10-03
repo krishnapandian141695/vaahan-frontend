@@ -3721,808 +3721,806 @@ export const modalTypes = {
     }
   },
   "VE COMMERCIAL": {
-    "Eicher": {
-      "Eicher 10.75": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.50": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 30.25": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 13.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 20.15": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 20.16": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 11.10": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.59 / Pro 1059": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.90": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.95": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.80": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 9,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 11.12": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.70": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 11.10 container (20FT)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 6,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Terra 16": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Mitsubishi Canter": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.60": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 5016": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.50 D BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER LGV (OLD)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher MAXI CAB": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10.5,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 1049": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 7,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER 10.50 C BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8,
-        "C3": 0,
-        "C4": 0
-      },
-      "MOTOR D VAN 150 HP": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 6,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher PRO 6025 T G CAB TIPPER 16 CUM": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.75 BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12.5,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER PRO 3016": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.70": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 6031 P CWC": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 242 PREMIUM": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 8,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER PRO": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.90 BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER 35.31": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 18,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 1095": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 1
-      },
-      "Tractor": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 21,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 5028": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 8,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 2095XPT": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 9,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER pro5035 D": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER -11.10 PRO(LBC -24 FEET)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 15,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER -11.50(14- FEET)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.90 (17 FEET)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER -10.50 (3 IN ALL)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 9.6,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER -10.90(CAB & FSD)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.7,
-        "White 50MM": 1.7,
-        "Yellow 50MM": 8.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER CRUISER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 6.5,
-        "C3": 0,
-        "C4": 1
-      },
-      "EICHER 11.12 G DSD BS III": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 1055C": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 5,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 5019": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.50 E HSD": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 2049": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8.5,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 1114XP": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.50 Van": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher 5016 Tipper": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 11,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 20.15 Bus": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 7.5,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 10.50E": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher 10.70 Bus": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 1080XPT": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.8,
-        "White 50MM": 1.8,
-        "Yellow 50MM": 9,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER -20.50D BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher 50.16 Container": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 6,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 21,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 8049": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 24,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 5040 Trailer": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER 10.55 C BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 4,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher 30.15": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 6048": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.50 27S StarBus": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 3009 Bus": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher PRO 2080XP F HSD": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 3350": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro21.10": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Canter LCV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Terra 25G": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher pro 6025 s cowl": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 1110": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.59 LGV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11,
-        "C3": 0,
-        "C4": 0
-      },
-      "PRO 6037S": {
-        "RED 20MM": 2,
-        "White 20MM": 2,
-        "RED 50MM": 0,
-        "White 50MM": 0,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 3012": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 10.75 Bus": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 15,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 1095XP": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 10.90 Container (20 FT)": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 6,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 2110 Container": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 15,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 2095 XP": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 15,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 11.10 LCV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 11,
-        "C3": 0,
-        "C4": 0
-      },
-      "EICHER Pro 1090 15 Feet Container": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER RHD E CAB AND HSD": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 4,
-        "White 50MM": 4,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "Eicher Pro 6041": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 19,
-        "C3": 1,
-        "C4": 0
-      },
-      "PRO 6037S SLEEPER BS3": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 4,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 21,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher 20.16 Tanker": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER 20 16RHD R FACE COWL": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 21,
-        "C3": 1,
-        "C4": 0
-      },
-      "Eicher Pro 1095X": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 18,
-        "C3": 1,
-        "C4": 0
-      },
-      "EICHER PRO 1110H CAB HSD BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.4,
-        "White 50MM": 1.4,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      }
+    "Eicher 10.75": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.50": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 30.25": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 20.15": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 20.16": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 11.10": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.59 / Pro 1059": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.90": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.95": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.80": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 11.12": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.70": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 11.10 container (20FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Terra 16": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Mitsubishi Canter": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.60": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 5016": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.50 D BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER LGV (OLD)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher MAXI CAB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 1049": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER 10.50 C BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "MOTOR D VAN 150 HP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 6,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher PRO 6025 T G CAB TIPPER 16 CUM": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.75 BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER PRO 3016": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.70": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 6031 P CWC": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 242 PREMIUM": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER PRO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.90 BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER 35.31": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 1095": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 1
+    },
+    "Tractor": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 5028": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 8,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 2095XPT": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER pro5035 D": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER -11.10 PRO(LBC -24 FEET)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER -11.50(14- FEET)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.90 (17 FEET)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER -10.50 (3 IN ALL)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9.6,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER -10.90(CAB & FSD)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.7,
+      "White 50MM": 1.7,
+      "Yellow 50MM": 8.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER CRUISER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 6.5,
+      "C3": 0,
+      "C4": 1
+    },
+    "EICHER 11.12 G DSD BS III": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 1055C": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 5019": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.50 E HSD": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 2049": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 1114XP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.50 Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher 5016 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 20.15 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 7.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 10.50E": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher 10.70 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 1080XPT": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.8,
+      "White 50MM": 1.8,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER -20.50D BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher 50.16 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 8049": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 24,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 5040 Trailer": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER 10.55 C BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher 30.15": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 6048": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.50 27S StarBus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 3009 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher PRO 2080XP F HSD": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 3350": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro21.10": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Canter LCV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Terra 25G": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher pro 6025 s cowl": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 1110": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.59 LGV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "PRO 6037S": {
+      "RED 20MM": 2,
+      "White 20MM": 2,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 3012": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 10.75 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 1095XP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 10.90 Container (20 FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 2110 Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 2095 XP": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 11.10 LCV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "EICHER Pro 1090 15 Feet Container": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER RHD E CAB AND HSD": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 4,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "Eicher Pro 6041": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 19,
+      "C3": 1,
+      "C4": 0
+    },
+    "PRO 6037S SLEEPER BS3": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 4,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher 20.16 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER 20 16RHD R FACE COWL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 21,
+      "C3": 1,
+      "C4": 0
+    },
+    "Eicher Pro 1095X": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "EICHER PRO 1110H CAB HSD BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.4,
+      "White 50MM": 1.4,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
     }
   },
   "TATA MOTORS": {
@@ -7496,574 +7494,574 @@ export const modalTypes = {
     }
   },
   "ASHOK LEYLAND LTD": {
-      "3120 8 2 GOODS CHASSIS WCWW": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 3518": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 4218": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL GF 3520/66HCO": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL GF 4220/66HCO": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 18,
-        "C3": 1,
-        "C4": 0
-      },
-      "FV4923": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "ASHOK LEYKAND DOST": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 6.5,
-        "C3": 2,
-        "C4": 0
-      },
-      "HGV 3118XL TANKER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 18,
-        "C3": 1,
-        "C4": 0
-      },
-      "HAULAGE CHASSIS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 16,
-        "C3": 1,
-        "C4": 0
-      },
-      "1614 .1 TIPPER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "3116IL GOODS CHASI W COWLWWB": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "2516t 198 wb tusker sup": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 5,
-        "Yellow 50MM": 2.5,
-        "C3": 16,
-        "C4": 1
-      },
-      "VK1611.0D4R": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "ALPSV 4/170": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 0,
-        "White 50MM": 3,
-        "Yellow 50MM": 3,
-        "C3": 17,
-        "C4": 0
-      },
-      "TAURUS 2516/2": {
-        "RED 20MM": 0,
-        "White 20MM": 2.5,
-        "RED 50MM": 2.5,
-        "White 50MM": 19,
-        "Yellow 50MM": 1,
-        "C3": 0,
-        "C4": 0
-      },
-      "AL 3518 TANKAR": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 1
-      },
-      "SS1008 .1D4RB(39+) SHCOOL BUS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 15,
-        "C3": 0,
-        "C4": 0
-      },
-      "AL GB2820": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 24,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 4118": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "2214": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "3015": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "E 2820 6X4 CONCRETE MIXER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 3,
-        "White 50MM": 2,
-        "Yellow 50MM": 9,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 1611": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 13,
-        "C3": 1,
-        "C4": 0
-      },
-      "LT1300.3D4RB/C": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "LPO 1616 TC BUS BS 2": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 0
-      },
-      "HEAVY GOODS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.4,
-        "White 50MM": 2.4,
-        "Yellow 50MM": 9.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "ALPSV 4/186": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 14,
-        "C3": 0,
-        "C4": 0
-      },
-      "AL BOSS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 20,
-        "C3": 0,
-        "C4": 0
-      },
-      "1616-185TUSKER SUPER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "GURU 1111 GOOD CWC N2 BS IV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8.7,
-        "C3": 1,
-        "C4": 0
-      },
-      "1612 170 5WB G": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8.2,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL CT 1613H/1": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8,
-        "C3": 1,
-        "C4": 0
-      },
-      "2518T IL TIP CHAS CABIN TIP B": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL BEARER ALB 1/1 HAULOGO": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 16.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "DOST LS BS III": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 8,
-        "C3": 0,
-        "C4": 0
-      },
-      "HIPPO TRUALAR": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 28,
-        "C3": 1,
-        "C4": 0
-      },
-      "ASHOK LEYKAND 3118 BSIV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.2,
-        "White 50MM": 2.7,
-        "Yellow 50MM": 12.6,
-        "C3": 0,
-        "C4": 0
-      },
-      "3718 T BSIV TIP CWC WO L": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 17,
-        "C3": 1,
-        "C4": 0
-      },
-      "2214/2S 198 (CWB) GOODS CHAS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 3116 DIESEL TANKAR": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.2,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 1
-      },
-      "COMET SUPER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14,
-        "C3": 1,
-        "C4": 0
-      },
-      "Cheetah ALPSV 1/30": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 3,
-        "Yellow 50MM": 17.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "3118IL AL": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.4,
-        "Yellow 50MM": 17,
-        "C3": 0,
-        "C4": 0
-      },
-      "GURU 1111 GOOD CWC N2 BSIV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 9,
-        "C3": 1,
-        "C4": 0
-      },
-      "TUSKER SUPER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 0,
-        "C4": 0
-      },
-      "AL4923 BULKER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 6,
-        "C3": 1,
-        "C4": 0
-      },
-      "AL 4923 BULKER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 6,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "1616 L4 GOOD N3 BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 1,
-        "C4": 0
-      },
-      "FV.4923.BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 26,
-        "C3": 1,
-        "C4": 0
-      },
-      "CA1015/28T TIP 285": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8,
-        "C3": 1,
-        "C4": 0
-      },
-      "1612": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 15,
-        "C3": 1,
-        "C4": 0
-      },
-      "CS 42/166": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "UJ3525/52T TIP 525": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 3,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 15,
-        "C3": 1,
-        "C4": 0
-      },
-      "2516 IL 193 WB": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 1,
-        "C4": 0
-      },
-      "1616 XL/3 BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 1,
-        "C4": 0
-      },
-      "ASHOK LEYLAND LTD 3118IL BSIII": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 1,
-        "C4": 0
-      },
-      "2214/2S 198 ( CWB ) GOODS CHAS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 12,
-        "C3": 1,
-        "C4": 0
-      },
-      "VK1811.0D4R": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 0,
-        "C4": 0
-      },
-      "LT 1309 .3D4R": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 20,
-        "C3": 0,
-        "C4": 0
-      },
-      "AL3 116IL": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 10,
-        "C3": 1,
-        "C4": 0
-      },
-      "OTHERS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.3,
-        "White 50MM": 1.3,
-        "Yellow 50MM": 2.5,
-        "C3": 0,
-        "C4": 0
-      },
-      "DOST RLS BSIV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 8,
-        "C3": 0,
-        "C4": 0
-      },
-      "PARTNER LES": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2.5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 2.5,
-        "C3": 1,
-        "C4": 0
-      }
+    "3120 8 2 GOODS CHASSIS WCWW": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
     },
+    "AL 3518": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4218": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL GF 3520/66HCO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL GF 4220/66HCO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "FV4923": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "ASHOK LEYKAND DOST": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 6.5,
+      "C3": 2,
+      "C4": 0
+    },
+    "HGV 3118XL TANKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 1,
+      "C4": 0
+    },
+    "HAULAGE CHASSIS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "1614 .1 TIPPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "3116IL GOODS CHASI W COWLWWB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "2516t 198 wb tusker sup": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 5,
+      "Yellow 50MM": 2.5,
+      "C3": 16,
+      "C4": 1
+    },
+    "VK1611.0D4R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "ALPSV 4/170": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 0,
+      "White 50MM": 3,
+      "Yellow 50MM": 3,
+      "C3": 17,
+      "C4": 0
+    },
+    "TAURUS 2516/2": {
+      "RED 20MM": 0,
+      "White 20MM": 2.5,
+      "RED 50MM": 2.5,
+      "White 50MM": 19,
+      "Yellow 50MM": 1,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL 3518 TANKAR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 1
+    },
+    "SS1008 .1D4RB(39+) SHCOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL GB2820": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 24,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4118": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "2214": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "3015": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "E 2820 6X4 CONCRETE MIXER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 1611": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "LT1300.3D4RB/C": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "LPO 1616 TC BUS BS 2": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "HEAVY GOODS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.4,
+      "White 50MM": 2.4,
+      "Yellow 50MM": 9.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "ALPSV 4/186": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL BOSS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "1616-185TUSKER SUPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "GURU 1111 GOOD CWC N2 BS IV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8.7,
+      "C3": 1,
+      "C4": 0
+    },
+    "1612 170 5WB G": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8.2,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL CT 1613H/1": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 1,
+      "C4": 0
+    },
+    "2518T IL TIP CHAS CABIN TIP B": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL BEARER ALB 1/1 HAULOGO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "DOST LS BS III": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "HIPPO TRUALAR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 28,
+      "C3": 1,
+      "C4": 0
+    },
+    "ASHOK LEYKAND 3118 BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.2,
+      "White 50MM": 2.7,
+      "Yellow 50MM": 12.6,
+      "C3": 0,
+      "C4": 0
+    },
+    "3718 T BSIV TIP CWC WO L": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 17,
+      "C3": 1,
+      "C4": 0
+    },
+    "2214/2S 198 (CWB) GOODS CHAS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 3116 DIESEL TANKAR": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 1
+    },
+    "COMET SUPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "Cheetah ALPSV 1/30": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 3,
+      "Yellow 50MM": 17.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "3118IL AL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.4,
+      "Yellow 50MM": 17,
+      "C3": 0,
+      "C4": 0
+    },
+    "GURU 1111 GOOD CWC N2 BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
+      "C3": 1,
+      "C4": 0
+    },
+    "TUSKER SUPER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL4923 BULKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 6,
+      "C3": 1,
+      "C4": 0
+    },
+    "AL 4923 BULKER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "1616 L4 GOOD N3 BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "FV.4923.BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 26,
+      "C3": 1,
+      "C4": 0
+    },
+    "CA1015/28T TIP 285": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 1,
+      "C4": 0
+    },
+    "1612": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "CS 42/166": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "UJ3525/52T TIP 525": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 15,
+      "C3": 1,
+      "C4": 0
+    },
+    "2516 IL 193 WB": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 1,
+      "C4": 0
+    },
+    "1616 XL/3 BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "ASHOK LEYLAND LTD 3118IL BSIII": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "2214/2S 198 ( CWB ) GOODS CHAS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "VK1811.0D4R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "LT 1309 .3D4R": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 20,
+      "C3": 0,
+      "C4": 0
+    },
+    "AL3 116IL": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "OTHERS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.3,
+      "White 50MM": 1.3,
+      "Yellow 50MM": 2.5,
+      "C3": 0,
+      "C4": 0
+    },
+    "DOST RLS BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 8,
+      "C3": 0,
+      "C4": 0
+    },
+    "PARTNER LES": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 2.5,
+      "C3": 1,
+      "C4": 0
+    }
+  },
   "MERCEDES-BENZ INDIA": {
     "E220 D": {
       "RED 20MM": 1.75,
@@ -8467,162 +8465,162 @@ export const modalTypes = {
     }
   },
   "MAHINDRA $ MAHINDRA LIMITED": {
-      "BOLERO CITY PIX UP 14 PS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 7,
-        "C3": 0,
-        "C4": 0
-      },
-      "BOLERO CITY PIX UP 1.4 PS": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.9,
-        "White 50MM": 1.4,
-        "Yellow 50MM": 2.6,
-        "C3": 0,
-        "C4": 0
-      },
-      "BOLERO CITY PIX UP 1.25T BSIV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.6,
-        "White 50MM": 1,
-        "Yellow 50MM": 6.6,
-        "C3": 0,
-        "C4": 0
-      },
-      "BOLERO PICK UP FB PS MH 2WD BS3": {
-        "RED 20MM": 0,
-        "White 20MM": 1.4,
-        "RED 50MM": 1.4,
-        "White 50MM": 0,
-        "Yellow 50MM": 5.8,
-        "C3": 0,
-        "C4": 0
-      },
-      "BMT PLUS PS12": {
-        "RED 20MM": 7,
-        "White 20MM": 1.1,
-        "RED 50MM": 1.5,
-        "White 50MM": 0,
-        "Yellow 50MM": 7,
-        "C3": 1,
-        "C4": 0
-      },
-      "SUPRO TRUCK VX": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.3,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 4,
-        "C3": 0,
-        "C4": 0
-      },
-      "BOLERO MAXI TRUCK": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 1.5,
-        "White 50MM": 1.5,
-        "Yellow 50MM": 9,
-        "C3": 0,
-        "C4": 0
-      },
-      "MAHINDRA XUV700": {
-        "RED 20MM": 1.5,
-        "White 20MM": 1.5,
-        "RED 50MM": 0,
-        "White 50MM": 0,
-        "Yellow 50MM": 7,
-        "C3": 0,
-        "C4": 0
-      },
-      "MAHINDRA XUV 300": {
-        "RED 20MM": 1.5,
-        "White 20MM": 1.5,
-        "RED 50MM": 0,
-        "White 50MM": 0,
-        "Yellow 50MM": 4,
-        "C3": 0,
-        "C4": 0
-      }
+    "BOLERO CITY PIX UP 14 PS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
     },
+    "BOLERO CITY PIX UP 1.4 PS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.9,
+      "White 50MM": 1.4,
+      "Yellow 50MM": 2.6,
+      "C3": 0,
+      "C4": 0
+    },
+    "BOLERO CITY PIX UP 1.25T BSIV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.6,
+      "White 50MM": 1,
+      "Yellow 50MM": 6.6,
+      "C3": 0,
+      "C4": 0
+    },
+    "BOLERO PICK UP FB PS MH 2WD BS3": {
+      "RED 20MM": 0,
+      "White 20MM": 1.4,
+      "RED 50MM": 1.4,
+      "White 50MM": 0,
+      "Yellow 50MM": 5.8,
+      "C3": 0,
+      "C4": 0
+    },
+    "BMT PLUS PS12": {
+      "RED 20MM": 7,
+      "White 20MM": 1.1,
+      "RED 50MM": 1.5,
+      "White 50MM": 0,
+      "Yellow 50MM": 7,
+      "C3": 1,
+      "C4": 0
+    },
+    "SUPRO TRUCK VX": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.3,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    },
+    "BOLERO MAXI TRUCK": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.5,
+      "White 50MM": 1.5,
+      "Yellow 50MM": 9,
+      "C3": 0,
+      "C4": 0
+    },
+    "MAHINDRA XUV700": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 7,
+      "C3": 0,
+      "C4": 0
+    },
+    "MAHINDRA XUV 300": {
+      "RED 20MM": 1.5,
+      "White 20MM": 1.5,
+      "RED 50MM": 0,
+      "White 50MM": 0,
+      "Yellow 50MM": 4,
+      "C3": 0,
+      "C4": 0
+    }
+  },
   "SML ISUZU LTD": {
-      "EXECUTIVE TC 1110": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 0,
-        "C4": 0
-      },
-      "SAMRAT 4760 CONTAINER": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 5,
-        "White 50MM": 2.5,
-        "Yellow 50MM": 14.5,
-        "C3": 1,
-        "C4": 0
-      },
-      "BSIV ZT 54E BSIV LWO": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 14,
-        "C3": 0,
-        "C4": 0
-      },
-      "WV26SOTNSCHOOL BUS 21 SEAT": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 12,
-        "C3": 0,
-        "C4": 0
-      },
-      "SARTAJGSHG72STEELHIGHDECKSHD1": {
-        "RED 20MM": 2,
-        "White 20MM": 2,
-        "RED 50MM": 9,
-        "White 50MM": 0,
-        "Yellow 50MM": 0,
-        "C3": 0,
-        "C4": 0
-      },
-      "S7 SCHOOL BUS BS IV": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 18,
-        "C3": 0,
-        "C4": 0
-      },
-      "T3500 WT50L WB DELUXE": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 3,
-        "White 50MM": 3,
-        "Yellow 50MM": 13,
-        "C3": 0,
-        "C4": 0
-      },
-      "PRESTIGE 3940 LWB BUS STD": {
-        "RED 20MM": 0,
-        "White 20MM": 0,
-        "RED 50MM": 2,
-        "White 50MM": 2,
-        "Yellow 50MM": 13,
-        "C3": 0,
-        "C4": 0
-      }
+    "EXECUTIVE TC 1110": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
     },
+    "SAMRAT 4760 CONTAINER": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 14.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "BSIV ZT 54E BSIV LWO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "WV26SOTNSCHOOL BUS 21 SEAT": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "SARTAJGSHG72STEELHIGHDECKSHD1": {
+      "RED 20MM": 2,
+      "White 20MM": 2,
+      "RED 50MM": 9,
+      "White 50MM": 0,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "S7 SCHOOL BUS BS IV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "T3500 WT50L WB DELUXE": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 3,
+      "White 50MM": 3,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "PRESTIGE 3940 LWB BUS STD": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    }
+  },
   ISUZU: {
     "EXCECUTIVE TC III WV": {
       "RED 20MM": 0,
