@@ -463,9 +463,10 @@ const NewEntry = ({
                             <CFormSelect
                               aria-label="Default select"
                               className="border form-control"
-                              label="Vechicle Make"
+                              label="Vechicle Model"
                               {...field}
                             >
+                              <option value={''}>{'Select Model'}</option>
                               {modalTypes && formData?.vehiclemake &&
                                 Object?.entries(
                                   modalTypes[formData.vehiclemake])?.map(
