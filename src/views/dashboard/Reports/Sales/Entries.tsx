@@ -14,7 +14,6 @@ const Entries = () => {
   let subDistributer: any = `subdistributer_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `dealerName=`;
   let rto: any = `rto=${userInfo?.rto}`;
-  console.log(userInfo, "userInfo43524")
   let finalQUery =
     userInfo?.role_id === "2"
       ? distributer
@@ -62,9 +61,9 @@ const Entries = () => {
     edit: (item) => {
       return (
         <td>
-          {userInfo?.role_id === "2" ? (
+          {/* {userInfo?.role_id === "2" ? ( */}
             <Link to={`/dashboard/${item?.id}`}>Edit</Link>
-          ) : "Contact Distributor"}
+          {/* ) : "Contact Distributor"} */}
         </td>
       );
     },

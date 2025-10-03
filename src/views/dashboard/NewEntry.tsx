@@ -132,6 +132,7 @@ const NewEntry = ({
         ...data,
         dealername: userInfo?.userId,
         dealer_id: userInfo?.userId,
+        distributor_id: byDealerUser?.["data"]?.data?.[0]?.distributor_id,
         manufacturer_name: byDealerUser?.["data"]?.data?.[0]?.manufacturer_name,
         distributer_name: byDealerUser?.["data"]?.data?.[0]?.distributer_name,
       };
@@ -151,7 +152,7 @@ const NewEntry = ({
         }
         navigate("/Entries");
       }
-       navigate("/Entries");
+      navigate("/Entries");
     } catch (error) {
       console.error("Submission error:", error);
     }
@@ -595,8 +596,8 @@ const NewEntry = ({
                           </div>
                         )}
                       </div>
-                      {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex" && (
+                      {(byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
+                        "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex") && (
                           <div className="col-sm-6 mb-3">
                             <Controller
                               name="remarks"
@@ -1018,33 +1019,32 @@ const NewEntry = ({
                           </p>
                         )}
                       </div>
-                      {byDealerUser?.["data"]?.data?.[0]?.manufacturer_name ===
-                        "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex" && (
-                          <div className="col-sm-3 mb-3">
-                            <Controller
-                              name="rcimage"
-                              control={control}
-                              rules={{ required: true }}
-                              render={({ field }) => (
-                                <CFormInput
-                                  label="RC Image"
-                                  type={"file"}
-                                  className={
-                                    "form-control form-control-md shadow"
-                                  }
-                                  onChange={(e) => {
-                                    field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
-                                  }}
-                                />
-                              )}
-                            />
-                            {errors.rcimage?.type === "required" && (
-                              <p role="alert" className="error">
-                                Field is required
-                              </p>
+                      {(byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "KTV3M INDIA" || byDealerUser?.["data"]?.data?.[0]?.manufacturer_name === "reflex") && (
+                        <div className="col-sm-3 mb-3">
+                          <Controller
+                            name="rcimage"
+                            control={control}
+                            rules={{ required: true }}
+                            render={({ field }) => (
+                              <CFormInput
+                                label="RC Image"
+                                type={"file"}
+                                className={
+                                  "form-control form-control-md shadow"
+                                }
+                                onChange={(e) => {
+                                  field.onChange(e.target.files[0]); // Don't forget to call field.onChange to update the form state
+                                }}
+                              />
                             )}
-                          </div>
-                        )}
+                          />
+                          {errors.rcimage?.type === "required" && (
+                            <p role="alert" className="error">
+                              Field is required
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
