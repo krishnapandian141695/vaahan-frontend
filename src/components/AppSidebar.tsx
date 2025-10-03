@@ -18,13 +18,13 @@ const AppSidebar = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   console.log(userInfo, "userInfo2452134");
   const menuList = [
-    {
+    ...(userInfo?.role_id !== "7" ? [{
       component: CNavItem,
       name: "Dashboard",
       to: "/dashboard",
       icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
       display: true,
-    },
+    }] : []),
 
     {
       component: CNavItem,
@@ -36,7 +36,7 @@ const AppSidebar = () => {
         text: "NEW",
       },
       display:
-        userInfo?.role_id !== "4" && userInfo?.role_id !== "3" ? true : false,
+        userInfo?.role_id !== "4" && userInfo?.role_id !== "3" && userInfo?.role_id !== "7" ? true : false,
     },
     {
       component: CNavItem,
@@ -54,7 +54,7 @@ const AppSidebar = () => {
       name: "Profiles",
       to: "/manufacturer",
       display:
-        userInfo?.role_id !== "4" && userInfo?.role_id !== "3" ? true : false,
+        userInfo?.role_id !== "4" && userInfo?.role_id !== "3" && userInfo?.role_id !== "7" ? true : false,
       items: [
         {
           component: CNavItem,
@@ -83,8 +83,19 @@ const AppSidebar = () => {
           to: "/dealer",
           display:
             userInfo?.role_id === "1" ||
-            userInfo?.role_id === "2" ||
-            userInfo?.role_id === "3"
+              userInfo?.role_id === "2" ||
+              userInfo?.role_id === "3"
+              ? true
+              : false,
+        },
+        {
+          component: CNavItem,
+          name: "RTO",
+          to: "/rto",
+          display:
+            userInfo?.role_id === "1" ||
+              userInfo?.role_id === "2" ||
+              userInfo?.role_id === "3"
               ? true
               : false,
         },
@@ -100,7 +111,7 @@ const AppSidebar = () => {
           component: CNavItem,
           name: "Entries",
           to: "/Entries",
-          display: userInfo?.role_id === "1" || userInfo?.role_id === "4" ? true : false,
+          display: userInfo?.role_id === "1" || userInfo?.role_id === "4" || userInfo?.role_id === "7" || userInfo?.role_id === "2" ? true : false,
         },
         {
           component: CNavItem,
@@ -132,8 +143,8 @@ const AppSidebar = () => {
           to: "/AllSales",
           display:
             userInfo?.role_id === "3" ||
-            userInfo?.role_id === "4" ||
-            userInfo?.role_id === "2"
+              userInfo?.role_id === "4" ||
+              userInfo?.role_id === "2"
               ? true
               : false,
         },

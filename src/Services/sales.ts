@@ -23,6 +23,9 @@ export const salesApi = createApi({
     getDisbuters: builder.query<any[], void>({
       query: () => `/distributorUser`,
     }),
+    getRtoUser: builder.query<any[], void>({
+      query: () => `/rtoDetails`,
+    }),
     getSubDistributer: builder.query<any[], void>({
       query: (params) => `/subDistributorUser/?${params}`,
     }),
@@ -96,6 +99,7 @@ export const {
   useGetDealerSaleQuery,
   useCreateDealerStockMutation,
   useGetRegistrationsSaleByIdQuery,
-  useUpdateDealerStockSaleMutation
+  useUpdateDealerStockSaleMutation,
+  useGetRtoUserQuery,
 } = salesApi;
 export const { endpoints } = salesApi;

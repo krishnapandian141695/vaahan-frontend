@@ -16,7 +16,6 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action: PayloadAction) => {
-      console.log(action.payload, "action.payload34");
       state.userInfo = action.payload;
     },
     currenUserInfo: (state, action: PayloadAction) => {

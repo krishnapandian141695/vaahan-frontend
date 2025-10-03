@@ -18,6 +18,7 @@ import {
   useGetByDistributerUserNameQuery,
   useGetBySubDistributerUserNameQuery,
   useRegisterUserMutation,
+  useCreateRtoMutation
 } from "../../Services/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +33,6 @@ import { rtoList } from "../../../configData";
 
 const AddCompany = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
-  console.log(userInfo, "userInfo45");
   const {
     control,
     handleSubmit,
@@ -45,6 +45,7 @@ const AddCompany = () => {
   const [createDistributer] = useCreateDistributerMutation();
   const [createSubDistributer] = useCreateSubDistributerMutation();
   const [createDealer] = useCreateDealerMutation();
+  const [createRto] = useCreateRtoMutation();
   const [registerApi] = useRegisterUserMutation();
   const navigate = useNavigate();
 
@@ -54,7 +55,6 @@ const AddCompany = () => {
     refetch: byDistributerUserRefetch,
   } = useGetByDistributerUserNameQuery(userInfo?.username);
 
-  console.log(byDistributerUser, "byDistributerUser43523");
 
   const {
     data: manifactData,
@@ -88,16 +88,17 @@ const AddCompany = () => {
       data?.user_type === "Manufacturer"
         ? 6
         : data?.user_type === "Distributor"
-        ? 2
-        : data?.user_type === "Sub_Distributor"
-        ? 3
-        : 4;
+          ? 2
+          : data?.user_type === "Sub_Distributor"
+            ? 3
+            : data?.user_type === "Rto" ? 7 : 4;
     let tempRegister = {
       ...formData,
       name: data?.name,
       username: data?.user_name,
       password: data?.password,
       role_id: userType,
+      remember_token	: data?.rto,
       status: "InActive",
     };
 
@@ -113,19 +114,19 @@ const AddCompany = () => {
           // product_name : ,
           ...(userInfo?.role_id === "2"
             ? {
-                manufacturer_name:
-                  byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
-                distributor_name: userInfo?.name,
-                distributor_id: userInfo?.userId,
-                status: "InActive",
-                phone_number: formData?.mobile,
-              }
+              manufacturer_name:
+                byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name,
+              distributor_name: userInfo?.name,
+              distributor_id: userInfo?.userId,
+              status: "InActive",
+              phone_number: formData?.mobile,
+            }
             : {}),
           ...(userInfo?.role_id === "1"
             ? {
-                status: "InActive",
-                phone_number: formData?.mobile,
-              }
+              status: "InActive",
+              phone_number: formData?.mobile,
+            }
             : {}),
         };
         try {
@@ -135,10 +136,12 @@ const AddCompany = () => {
             tempResult = await createDistributer(tempFormData);
           } else if (data?.user_type === "Sub_Distributor") {
             tempResult = await createSubDistributer(tempFormData);
-          } else {
+          } else if (data?.user_type === "Rto") {
+            tempResult = await createRto(tempFormData);
+          }
+          else {
             tempResult = await createDealer(tempFormData);
           }
-          console.log(tempResult, "result");
           if (tempResult && tempResult?.["data"]?.code === 201) {
             alert("User creation success");
             navigate("/dashboard");
@@ -323,6 +326,7 @@ const AddCompany = () => {
                       <>
                         <option value="Manufacturer">Manufacturer</option>
                         <option value="Distributor">Distributor</option>
+                        <option value="Rto">Rto</option>
                       </>
                     )}
                     {userInfo?.role_id === "2" && (
@@ -338,6 +342,38 @@ const AddCompany = () => {
                 <div className="text-danger">{"Field is required"}</div>
               )}
             </div>
+            {formData.user_type === "Rto" &&
+              <div className="col-sm-6 mb-3">
+                <Controller
+                  name="rto_no"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field }) => (
+                    <CFormSelect
+                      label="Select RTO"
+                      aria-label="Default select"
+                      className="border form-control"
+                      {...field}
+                    >
+                      <option>Select</option>
+                      {rtoList &&
+                        Object.entries(rtoList)?.map((item) => {
+                          return (
+                            <option value={`${item[0] + "" + item[1]}`}>
+                              {item[0]}
+                            </option>
+                          );
+                        })}
+                    </CFormSelect>
+                  )}
+                />
+                {errors.rto_no && (
+                  <div className="text-danger">
+                    {"Field is required"}
+                  </div>
+                )}
+              </div>
+            }
             {formData.user_type === "Distributor" && (
               <div className="col-sm-6 mb-3">
                 <Controller
@@ -507,7 +543,6 @@ const AddCompany = () => {
                         <option>Select</option>
                         {rtoList &&
                           Object.entries(rtoList)?.map((item, index) => {
-                            console.log(item, "item3245");
                             return (
                               <option value={`${item[0] + "" + item[1]}`}>
                                 {item[0]}

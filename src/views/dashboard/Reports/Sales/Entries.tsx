@@ -13,14 +13,15 @@ const Entries = () => {
   let distributer: any = `distributer_id=${userInfo?.userId}`;
   let subDistributer: any = `subdistributer_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `dealerName=`;
+  let rto: any = `rto=${userInfo?.rto}`;
+  console.log(userInfo, "userInfo43524")
   let finalQUery =
     userInfo?.role_id === "2"
       ? distributer
       : userInfo?.role_id === "3"
-      ? subDistributer
-      : userInfo?.role_id === "4"
-      ? dealerName
-      : urlStringAdmin;
+        ? subDistributer
+        : userInfo?.role_id === "4"
+          ? dealerName : userInfo?.role_id === "7" ? rto : urlStringAdmin;
 
   const {
     data: registerrationSaleData,
@@ -61,7 +62,7 @@ const Entries = () => {
     edit: (item) => {
       return (
         <td>
-          {userInfo?.role_id === "2" ?  (
+          {userInfo?.role_id === "2" ? (
             <Link to={`/dashboard/${item?.id}`}>Edit</Link>
           ) : "Contact Distributor"}
         </td>

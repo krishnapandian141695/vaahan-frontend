@@ -5,6 +5,7 @@ import DealerSale from "./views/dashboard/Reports/Sales/DealerSale";
 import ChangePassword from "./views/dashboard/ChangePassword";
 import PrintCertificate from "./views/PrintCertificate";
 import AllSales from "./views/dashboard/Reports/Sales/AllSales";
+import Rto from "./views/dashboard/Reports/Profiles/Rto";
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
 const AddCompany = React.lazy(() => import("./views/dashboard/AddCompany"));
 const Manufacturer = React.lazy(
@@ -34,6 +35,7 @@ const routes = [
   { path: "/distributor", name: "Distributor", element: Distributor },
   { path: "/subDistributor", name: "Manufacturer", element: SubDistributor },
   { path: "/dealer", name: "Dealer", element: dealer },
+  { path: "/rto", name: "RTO", element: Rto },
   {
     path: "/distributorSale",
     name: "DistributorSale",

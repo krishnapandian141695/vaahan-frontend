@@ -65,6 +65,13 @@ export const usersApi = createApi({
         body,
       }),
     }),
+    createRto: builder.mutation({
+      query: (body: any) => ({
+        url: `/rtoDetails`,
+        method: "POST",
+        body,
+      }),
+    }),
     changePassword: builder.mutation({
       query: (body: any) => ({
         url: `/reset-pasword`,
@@ -110,6 +117,13 @@ export const usersApi = createApi({
         body,
       }),
     }),
+    updateRto: builder.mutation({
+      query: (body: any) => ({
+        url: `/rtoDetails/${body?.id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
     updateUserName: builder.mutation({
       query: (body: any) => ({
         url: `/auth/register/${body?.id}`,
@@ -138,5 +152,7 @@ export const {
   useUpdateManufacturerMutation,
   useUpdateSubDistributerMutation,
   useUpdateUserNameMutation,
+  useCreateRtoMutation,
+  useUpdateRtoMutation,
 } = usersApi;
 export const { endpoints } = usersApi;

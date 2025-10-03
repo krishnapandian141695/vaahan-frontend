@@ -21,6 +21,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    if(userInfo?.role_id === "7"){
+      navigate("/Entries");
+    }
     if (userInfo) {
       navigate("/dashboard");
     } else {
@@ -35,6 +38,7 @@ const Login = () => {
         if (result?.["data"]?.data?.user?.status === "Active") {
           localStorage.setItem("token", result?.["data"]?.data?.access_token);
           localStorage.setItem("name", result?.["data"]?.data?.user?.name);
+          localStorage.setItem("rto", result?.["data"]?.data?.user?.email_verified_at	);
           localStorage.setItem(
             "role_id",
             result?.["data"]?.data?.user?.role_id
@@ -51,6 +55,7 @@ const Login = () => {
             userId: result?.["data"]?.data?.user?.id,
             role_id: result?.["data"]?.data?.user?.role_id,
             username: result?.["data"]?.data?.user?.username,
+            rto: result?.["data"]?.data?.user?.email_verified_at,
             profileId: result?.["data"]?.data?.user?.id,
           };
 
