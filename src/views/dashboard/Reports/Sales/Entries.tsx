@@ -61,9 +61,9 @@ const Entries = () => {
     edit: (item) => {
       return (
         <td>
-          {/* {userInfo?.role_id === "2" ? ( */}
+          {userInfo?.role_id === "2" ? (
             <Link to={`/dashboard/${item?.id}`}>Edit</Link>
-          {/* ) : "Contact Distributor"} */}
+          ) : "Contact Distributor"} 
         </td>
       );
     },
