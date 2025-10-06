@@ -848,7 +848,7 @@ const ViewEntries = () => {
                                     </span>
                                   </td>
                                 </tr>
-                                <tr>
+                                {data?.["data"]?.manufacturer_name === "reflex" ? <tr>
                                   <td
                                     style={{
                                       fontSize: 14,
@@ -864,32 +864,32 @@ const ViewEntries = () => {
                                         textTransform: "uppercase",
                                       }}
                                     >
-                                       {data?.["data"]?.hologramnum}
+                                      {data?.["data"]?.hologramnum}
                                     </span>
                                   </td>
-                                </tr>
-                                {data?.["data"]?.manufacturer_name === "reflex" ? <tr>
-                                  <td
-                                    style={{
-                                      fontSize: 14,
-                                      textAlign: "end",
-                                      fontWeight: "bold",
-                                    }}
-                                  >
-                                    Fitment Date:{" "}
-                                    <span
+                                </tr> :
+                                  <tr>
+                                    <td
                                       style={{
+                                        fontSize: 14,
+                                        textAlign: "end",
                                         fontWeight: "bold",
-                                        fontSize: 12,
-                                        textTransform: "uppercase",
                                       }}
                                     >
-                                      {data?.["data"]?.date
-                                        ? data["data"].date.split("-").reverse().join("-")
-                                        : ""}
-                                    </span>
-                                  </td>
-                                </tr> : null}
+                                      Fitment Date:{" "}
+                                      <span
+                                        style={{
+                                          fontWeight: "bold",
+                                          fontSize: 12,
+                                          textTransform: "uppercase",
+                                        }}
+                                      >
+                                        {data?.["data"]?.date
+                                          ? data["data"].date.split("-").reverse().join("-")
+                                          : ""}
+                                      </span>
+                                    </td>
+                                  </tr>}
                               </tbody>
                             </table>
                           </td>
@@ -1263,7 +1263,7 @@ const ViewEntries = () => {
                     </table>
                     <h6 style={{ textAlign: "center" }}>
                       <b style={{ fontWeight: "bold", fontSize: 13 }}>
-                        {data?.["data"]?.manufacturer_name !== "reflex" ?`[Note: This certificate was downloaded from
+                        {data?.["data"]?.manufacturer_name !== "reflex" ? `[Note: This certificate was downloaded from
                         WWW.STVRTA.TN.IN]` : "[Note: HOLOGRAM MANDATORY WITHOUT HOLOGRAM CERTIFICATE NOT VALID]"}
                       </b>
                     </h6>
