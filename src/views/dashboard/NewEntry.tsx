@@ -41,6 +41,7 @@ const NewEntry = ({
     useGetRegistrationsSaleByIdQuery(id, { skip: !id });
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   const [isSubmitDisabled, setIsSubmitDisabled] = React.useState(false);
+  const [rtoSearchTerm, setRtoSearchTerm] = React.useState("");
   const {
     control,
     handleSubmit,
@@ -552,23 +553,36 @@ const NewEntry = ({
                           control={control}
                           rules={{ required: true }}
                           render={({ field }) => (
-                            <CFormSelect
-                              label="Select RTO"
-                              aria-label="Default select"
-                              className="border form-control"
-                              {...field}
-                            >
-                              <option>Select</option>
-                              {rtoList &&
-                                Object.entries(rtoList)?.map((item) => {
-                                  return (
-                                    <option value={`${item[0] + "" + item[1]}`}>
-                                      {item[0]}
-                                    </option>
-                                  );
-                                })}
-                            </CFormSelect>
-                          )}
+                              <>
+                                {/* <CFormInput
+                                  type="text"
+                                  placeholder="Search RTO"
+                                  value={rtoSearchTerm}
+                                  onChange={(e) => setRtoSearchTerm(e.target.value)}
+                                  className="mb-2"
+                                /> */}
+                                <CFormSelect
+                                  label="Select RTO"
+                                  aria-label="Default select"
+                                  className="border form-control"
+                                  {...field}
+                                >
+                                  <option>Select</option>
+                                  {rtoList &&
+                                    Object.entries(rtoList)
+                                      ?.filter(([key]) =>
+                                        key.toLowerCase().includes(rtoSearchTerm.toLowerCase())
+                                      )
+                                      .map((item) => {
+                                        return (
+                                          <option value={`${item[0] + "" + item[1]}`}>
+                                            {item[0]}
+                                          </option>
+                                        );
+                                      })}
+                                </CFormSelect>
+                              </>
+                            )}
                         />
                         {errors.user_type && (
                           <div className="text-danger">

@@ -9,6 +9,7 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../Store";
 import {
+  useGetByDistributerUserNameQuery,
   useGetUserByIdQuery,
   useGetUsersQuery,
   useUpdateDealerMutation,
@@ -28,6 +29,11 @@ const Dealer = () => {
     error: userListError,
     refetch: userLIstRefetch,
   } = useGetUsersQuery();
+  const {
+    data: byDistributerUser,
+    error: byDistributerUserError,
+    refetch: byDistributerUserRefetch,
+  } = useGetByDistributerUserNameQuery(userInfo?.username);
 
   let urlString: any = `distributor_id=${userInfo?.userId}`;
   let urlStringSubDis: any = `sub_distributor_id=${userInfo?.userId}`;
@@ -147,11 +153,17 @@ const Dealer = () => {
           }}
         >
           <option value="">Select Sub-Distributor</option>
-          {subDistributerData?.["data"]?.data.map((sub) => (
-            <option key={sub.user_name} value={sub.user_name}>
-              {sub.name}
-            </option>
-          ))}
+          {subDistributerData?.["data"]?.data
+            .filter(
+              (sub) =>
+                byDistributerUser?.["data"]?.data?.[0]?.manufacturer_name ===
+                sub?.manufacturer_name,
+            )
+            .map((sub) => (
+              <option key={sub.user_name} value={sub.user_name}>
+                {sub.name}
+              </option>
+            ))}
         </CFormSelect>
       );
     },
