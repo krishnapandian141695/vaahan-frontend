@@ -3629,93 +3629,336 @@ export const modalTypes = {
     }
   },
   "SWARAJ MAZDA": {
-    "Nissan Sunny": {
-      "RED 20MM": 1.75,
-      "White 20MM": 1.75,
-      "RED 50MM": 0,
-      "White 50MM": 0,
-      "Yellow 50MM": 3,
-      "C3": 0,
-      "C4": 0
-    },
-    "Nissan Micra": {
-      "RED 20MM": 1.75,
-      "White 20MM": 1.75,
-      "RED 50MM": 0,
-      "White 50MM": 0,
-      "Yellow 50MM": 3,
-      "C3": 0,
-      "C4": 0
-    },
-    "Nissan Datsun GO": {
-      "RED 20MM": 1.75,
-      "White 20MM": 1.75,
-      "RED 50MM": 0,
-      "White 50MM": 0,
-      "Yellow 50MM": 3,
-      "C3": 0,
-      "C4": 0
-    },
-    "ALLWYN Nissan": {
+    "Swaraj Mazda ZT 54": {
       "RED 20MM": 0,
       "White 20MM": 0,
-      "RED 50MM": 1.8,
-      "White 50MM": 1.8,
-      "Yellow 50MM": 8,
-      "C3": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 12,
+      "C3": 1,
       "C4": 0
     },
-    "Nissan Sunny - 50mm": {
+    "Swaraj Mazda Super": {
       "RED 20MM": 0,
       "White 20MM": 0,
-      "RED 50MM": 1.75,
-      "White 50MM": 1.75,
-      "Yellow 50MM": 3,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 9,
       "C3": 0,
       "C4": 0
     },
-    "Nissan Evalia": {
+    "SML Samrat": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML SARTAJ 525": {
+      "RED 20MM": 2,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 9,
+      "Yellow 50MM": 0,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML ISUZU WV 26S T3500": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "Swaraj Mazda T 3500": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML SAMRAT TURBO": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swaraj Mazda T3500 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 18,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML MAXI CAB / Omni Bus": {
       "RED 20MM": 0,
       "White 20MM": 0,
       "RED 50MM": 1.5,
       "White 50MM": 1.5,
-      "Yellow 50MM": 6,
+      "Yellow 50MM": 12,
       "C3": 0,
       "C4": 0
     },
-    "Nissan magnite": {
-      "RED 20MM": 1.5,
-      "White 20MM": 1.5,
-      "RED 50MM": 0,
-      "White 50MM": 0,
-      "Yellow 50MM": 3,
+    "SWARAJ MAZDA WT48E": {
+      "RED 20MM": 0,
+      "White 20MM": 2,
+      "RED 50MM": 1.5,
+      "White 50MM": 10,
+      "Yellow 50MM": 1,
       "C3": 0,
       "C4": 0
     },
-    "Nissan micra": {
-      "RED 20MM": 1.5,
-      "White 20MM": 1.5,
-      "RED 50MM": 0,
-      "White 50MM": 0,
-      "Yellow 50MM": 3,
-      "C3": 0,
-      "C4": 0
-    },
-    "Nissan magnite 50mm": {
+    "SML SARTAJ WV 26S Bus": {
       "RED 20MM": 0,
       "White 20MM": 0,
-      "RED 50MM": 1,
-      "White 50MM": 1,
-      "Yellow 50MM": 3,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
       "C3": 0,
       "C4": 0
     },
-    "Nissan micra 50mm": {
+    "SWARAJ MAZDA SUPER": {
       "RED 20MM": 0,
       "White 20MM": 0,
-      "RED 50MM": 1,
-      "White 50MM": 1,
-      "Yellow 50MM": 3,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10.5,
+      "C3": 1,
+      "C4": 0
+    },
+    "Swaraj Mazda SCHOOL BUS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML 3500 Tourist Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML SARTAJ GS": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "CARGO BOX": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML - 25 Seater PSV": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swaraj Mazda G5": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 1.7,
+      "White 50MM": 1.7,
+      "Yellow 50MM": 8,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML T3500 Tipper": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML Cosmo": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swaraj Mazda T3500 MiniBus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "Swaraj Mazda ZT 54 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML Prestige": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML Samrat 4240 container (20FT)": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 6,
+      "White 50MM": 2.5,
+      "Yellow 50MM": 16,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML Prestige Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML Single Stretcher Ambulance": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML S7 3335 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML T3500": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 1,
+      "C4": 0
+    },
+    "LMW 17Ft": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 13,
+      "C3": 1,
+      "C4": 0
+    },
+    "SML WV 27U Ambulance": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML SARTAJ School Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 11,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML S7 5100 Bus 53 seater": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML Prestige 3940 32S Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2.25,
+      "White 50MM": 2.25,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML 3500 Tanker": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 5,
+      "White 50MM": 2,
+      "Yellow 50MM": 10,
+      "C3": 1,
+      "C4": 0
+    },
+    "SWARAJ MAZDA WT50 Van": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 14,
+      "C3": 0,
+      "C4": 0
+    },
+    "SML Supreme 4760 Bus": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 16,
+      "C3": 0,
+      "C4": 0
+    },
+    "SWARAJ MAZDA 3500": {
+      "RED 20MM": 0,
+      "White 20MM": 0,
+      "RED 50MM": 2,
+      "White 50MM": 2,
+      "Yellow 50MM": 12,
       "C3": 0,
       "C4": 0
     }
@@ -9186,7 +9429,7 @@ export const rtoList = {
   TN81: "TRICHY(EAST) RTO",
   TN82: "MAYILADUTHURAI RTO",
   TN83: "VANIYAMBADI RTO",
-  TN83M: "TIRUPATTUR RTO",
+  TN83Z: "TIRUPATTUR RTO",
   TN84: "SRIVILLIPUTTUR RTO",
   TN85: "KUNDRATHUR RTO",
   TN86: "ERODE WEST RTO",

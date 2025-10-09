@@ -660,6 +660,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.red20mm}
                             />
                           )}
                         />
@@ -682,6 +683,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.white20mm}
                             />
                           )}
                         />
@@ -703,6 +705,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.red50mm}
                             />
                           )}
                         />
@@ -724,6 +727,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.white50mm}
                             />
                           )}
                         />
@@ -745,6 +749,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.yellow50mm}
                             />
                           )}
                         />
@@ -767,6 +772,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.red80circularreflector}
                             />
                           )}
                         />
@@ -788,6 +794,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.white80circularreflector}
                             />
                           )}
                         />
@@ -809,6 +816,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.yellow80circularreflector}
                             />
                           )}
                         />
@@ -832,6 +840,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.class3}
                             />
                           )}
                         />
@@ -855,6 +864,7 @@ const NewEntry = ({
                               {...field}
                               type="text"
                               placeholder="0"
+                              disabled={!!formData?.class4}
                             />
                           )}
                         />
