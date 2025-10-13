@@ -53,7 +53,7 @@ const Dashboard = () => {
   const [createSubDistributerSale] = useCreateSubDistributerSaleMutation();
   const [createDealerStock] = useCreateDealerStockMutation();
   const [roleList, setRoleList] = React.useState(null);
-
+  const [selectedFilter, setSelectedFilter] = React.useState(null);
   const [totalEachIitemValues, setTotalEachItemValues] = React.useState(null);
   const dispatch = useDispatch();
 
@@ -125,6 +125,16 @@ const Dashboard = () => {
     refetch: subDistributerSaleDataRefetch,
   } = useGetSubDistributerSaleQuery(salesubDistributorStockQuery);
 
+  const filterSubValue: any = `dealerName=${formData?.dealerName  || 'null'}`;
+  const {
+    data: selectedSubSalesData,
+    error: selectedSubSalesDataError,
+    isLoading: selectedSubSalesDataLoading,
+    refetch: selectedSubSalesDataRefetch,
+  } = useGetSubDistributerSaleQuery(filterSubValue);
+
+
+
   let urlDealerStockStringSubDis: any =
     userInfo?.role_id === "3"
       ? `subdistributer_id=${userInfo?.userId}`
@@ -136,6 +146,14 @@ const Dashboard = () => {
     refetch: dealerStockRefetch,
   } = useGetDealerSaleQuery(urlDealerStockStringSubDis);
 
+  let filterDealerValue: any = `dealerName=${formData?.dealerName || 'null'}`;
+  const {
+    data: selectedDealerStockData,
+    error: selectedDealerStockError,
+    isLoading: selectedDealerStockLoading,
+    refetch: selectedDealerStockRefetch,
+  } = useGetDealerSaleQuery(filterDealerValue)
+
   let urlEntriesStockStringSubDis: any = `dealername=${userInfo?.userId}`;
   const {
     data: registerrationSaleData,
@@ -144,6 +162,13 @@ const Dashboard = () => {
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(urlEntriesStockStringSubDis);
 
+  React.useEffect(() => {
+    selectedSubSalesDataRefetch();
+  }, [filterSubValue]);
+
+  React.useEffect(() => {
+    selectedDealerStockRefetch();
+  }, [filterDealerValue]);
 
   React.useEffect(() => {
     distributerSaleDataRefetch();
@@ -269,6 +294,70 @@ const Dashboard = () => {
     userInfo,
   ]);
 
+  const transformData = (apiData) => {
+  const aggregatedData = {
+    red20mm: 0,
+    red50mm: 0,
+    white20mm: 0,
+    white50mm: 0,
+    yellow50mm: 0,
+    redReflector80mm: 0,
+    whiteReflector80mm: 0,
+    yellowReflector80mm: 0,
+    class3: 0,
+    class4: 0,
+    hologram: 0,
+  };
+
+  apiData?.forEach((item) => {
+    // Keys to aggregate
+    const keysToAggregate = [
+      "red20mm",
+      "red50mm",
+      "white20mm",
+      "white50mm",
+      "yellow50mm",
+      "redReflector80mm",
+      "whiteReflector80mm",
+      "yellowReflector80mm",
+      "class3",
+      "class4",
+      "hologram",
+    ];
+
+    keysToAggregate.forEach((key) => {
+      // Ensure the value is a number before adding it.
+      // Use parseFloat to handle string-based numbers.
+      const value = parseFloat(item[key]);
+      if (!isNaN(value)) {
+        aggregatedData[key] += value;
+      }
+    });
+  });
+
+  // Convert the aggregated values to a string with two decimal places
+  const formattedData = {};
+  for (const key in aggregatedData) {
+    if (Object.hasOwnProperty.call(aggregatedData, key)) {
+      formattedData[key] = aggregatedData[key].toFixed(2);
+    }
+  }
+
+  return formattedData;
+};
+
+
+  React.useEffect(() => {
+    let calculateData1 = userInfo?.role_id === "3" ? selectedDealerStockData?.["data"]?.data : selectedSubSalesData?.["data"]?.data;
+    const result = transformData(calculateData1);
+      // Update state with calculated totals
+      setSelectedFilter(result);
+    
+  }, [
+    selectedSubSalesData,
+    selectedDealerStockData,
+  ]);
+
   const calculateTotalForDistributor = (data, dealerName, fieldName) => {
     let total: any = 0;
     data?.forEach((item) => {
@@ -321,6 +410,7 @@ const Dashboard = () => {
         tempResult = await createDealerStock(tempObjec);
       }
       if (tempResult?.["data"]?.code === 201) {
+        alert("Stock updated successfully");
         location.reload();
       }
     } catch (error) {
@@ -945,77 +1035,77 @@ const Dashboard = () => {
                 color: "black",
                 textColor: "black",
                 title: "Red20mm",
-                value: formData?.red20mm,
+                value: selectedFilter?.red20mm,
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "White20mm",
-                value: formData?.white20mm,
+                value: selectedFilter?.white20mm,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Red50mm",
-                value: formData?.red50mm,
+                value: selectedFilter?.red50mm, 
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "white50mm",
-                value: formData?.red20mm,
+                value: selectedFilter?.red20mm,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Yellow50mm",
-                value: formData?.white50mm,
+                value: selectedFilter?.white50mm,
                 background: "#cddc3957",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Red80mm",
-                value: formData?.redReflector80mm,
+                value: selectedFilter?.redReflector80mm,
                 background: "#f800004a",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "White80mm",
-                value: formData?.whiteReflector80mm,
+                value: selectedFilter?.whiteReflector80mm,
                 background: "#91919129",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Yellow80mm",
-                value: formData?.yellowReflector80mm,
+                value: selectedFilter?.yellowReflector80mm,
                 background: "#cddc3957",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Class3",
-                value: formData?.class3,
+                value: selectedFilter?.class3,
                 background: "#3399ff63",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Class4",
-                value: formData?.class4,
+                value: selectedFilter?.class4,
                 background: "#3399ff63",
               },
               {
                 color: "black",
                 textColor: "black",
                 title: "Hologram",
-                value: formData?.hologram,
+                value: selectedFilter?.hologram,
                 background: "#3399ff63",
               },
             ].map((item, index) => (

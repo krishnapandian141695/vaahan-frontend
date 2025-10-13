@@ -7,12 +7,84 @@ import axios from "axios";
 import {
   useGetRegistrationsSaleByIdQuery,
   useGetRegistrationsSaleByUserQuery,
+  useUpdateDealerStockSaleMutation,
 } from "../../../../Services/sales";
 import { CBadge, CButton } from "@coreui/react";
 import mm3 from "../../../../assets/images/3M_logo.png";
 import qrcode from "../../../../assets/images/qr.png";
 import backgroundImg from "../../../../assets/images/background.jpg";
+import reflexImg from "../../../../assets/images/reflex.jpg";
 import tick from "../../../../assets/images/tick.png";
+// import QRCode from "react-qrcode-logo";
+
+
+const QRCodeComponent = ({ data }) => {
+  if (!data || !data.data) {
+    return <div className="p-2 text-gray-700">Loading QR code data...</div>;
+  }
+
+  const qrData = data.data;
+  const registrationNumber = qrData.vehicleregno || "NO REG";
+  const certificateNumber = qrData.certificateno || "NO CERT";
+
+  // CRITICAL FIX: Encode only the Certificate Number (or a short URL)
+  // This reduces data density, making the QR code scannable at small sizes.
+  const qrValue = `CertificateNo=${certificateNumber}&RegNo=${registrationNumber}`;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        // borderRadius: "8px",
+        padding: "5px",
+        height: 110,
+        width: 110,
+        overflow: 'hidden',
+        position: 'relative',
+        backgroundColor: '#fff',
+        marginTop: "10px",
+      }}
+    >
+      <QRCode
+        // Size is set to the required 110px
+        value={qrValue}
+        size={110}
+        ecLevel="H" // MUST be 'H' (High)
+
+        // --- PROPS FOR THE VISUAL HACK ARE ADJUSTED FOR 110px ---
+        logoImage={"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYGD4DwAChwGAhX4hLgAAAABJRU5ErkJggg=="}
+        logoWidth={60}
+        logoHeight={20}
+        bgColor='#FFFFFF'
+        fgColor='#000000'
+      />
+
+      {/* ABSOLUTE POSITIONED TEXT OVERLAY (Adjusted for 110px size) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#F5F5DC', // Light background for visibility
+          padding: '2px 4px',
+          borderRadius: '4px',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          lineHeight: '1',
+          zIndex: 10,
+          maxWidth: '80%',
+        }}
+      >
+        {registrationNumber}
+      </div>
+    </div>
+  );
+};
+
 
 const ViewEntries = () => {
   const sectionToPrintRef = useRef(null);
@@ -20,6 +92,7 @@ const ViewEntries = () => {
   const [printed, setPrinted] = useState(false);
   const { id } = useParams();
   const { data, refetch } = useGetRegistrationsSaleByIdQuery(id);
+  const [updateDealerStock] = useUpdateDealerStockSaleMutation();
   const [qrData, setQrData] = React.useState(window.location.href);
   let urlStringAdmin: any = `dealerName=`;
   // QR code data
@@ -57,6 +130,14 @@ const ViewEntries = () => {
     }
     show();
   };
+
+
+  const onClickApprove = async () => {
+    if (id) {
+      await updateDealerStock({ id, status: "Approved" }); // Use tempData for update
+      navigate("/Entries");
+    }
+  }
 
   return (
     <>
@@ -716,7 +797,18 @@ const ViewEntries = () => {
               </div>
             </>
           ) : (
-            <table style={{ width: "800px" }}>
+            <table style={{ width: "800px", position: "relative" }}>
+              <img
+                src={reflexImg}
+                style={{
+                  position: "absolute",
+                  width: 800,
+                  height: 1000,
+                  zIndex: 1,
+                  opacity: ".3",
+                  left: "0px",
+                }}
+              />
               <tbody>
                 <tr>
                   <td>
@@ -753,8 +845,9 @@ const ViewEntries = () => {
                                 width: 120,
                                 marginTop: "10px",
                               }}
-                              value={data?.["data"]?.manufacturer_name !== "reflex" ? `Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}` : `Registrations No = ${data?.["data"]?.vehicleregno}`}
+                              value={`Address = ${data?.["data"]?.address};CertificateNo = ${data?.["data"]?.certificateno};Chassis = ${data?.["data"]?.chassisnum};Date = ${data?.["data"]?.date};Engine No = ${data?.["data"]?.engineno};Hologram No = ${data?.["data"]?.hologramnum};Owner Name = ${data?.["data"]?.ownername};Phone Number = ${data?.["data"]?.phoneo};RTO = ${data?.["data"]?.rto};Vehicle Make = ${data?.["data"]?.vehiclemake};Vehicle Model = ${data?.["data"]?.vehiclemodel};Registrations No = ${data?.["data"]?.vehicleregno};Registrations Year = ${data?.["data"]?.vehiclemanufacturingyear}`}
                             />
+                            {/* <QRCodeComponent data={data} /> */}
                             {/* <img src={qrcode} style={{ height: 110 }} /> */}
                           </td>
                         </tr>
@@ -1300,6 +1393,18 @@ const ViewEntries = () => {
                     <CButton className="btn btn-primary">New Entry</CButton>
                   </Link>
                 </td>
+                {data?.["data"]?.status !== "Approved" && (
+                  <td style={{ padding: 10 }}>
+                    <CButton
+                      name="Approve"
+                      type="button"
+                      className="btn btn-success"
+                      onClick={() => onClickApprove()}
+                    >
+                      APPROVE
+                    </CButton>
+                  </td>
+                )}
               </tr>
             </tbody>
           </table>

@@ -19,7 +19,6 @@ import { useGetDisbutersQuery } from "../../Services/sales";
 
 const ChangePassword = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
-  console.log(userInfo, "userInfo34523");
   const [ChangePassword] = useChangePasswordMutation();
   const {
     control,
@@ -46,13 +45,13 @@ const ChangePassword = () => {
   const onSubmit = async () => {
     let tempRegister = {
       ...formData,
+      id: userInfo?.userId,
       ...(userInfo?.role_id === "2"
         ? { distributor_user: "1" }
         : userInfo?.role_id === "3"
-        ? { sub_distributor_user: "1" }
-        : { dealer_user: "1" }),
+          ? { sub_distributor_user: "1" }
+          : { dealer_user: "1" }),
     };
-    console.log(tempRegister, "tempRegister342");
     try {
       await ChangePassword(tempRegister);
       alert("Password updated please login again");

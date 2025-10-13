@@ -6,6 +6,7 @@ import { RootState } from "../../../../Store";
 import { useGetRegistrationsSaleByUserQuery } from "../../../../Services/sales";
 import { Link } from "react-router-dom";
 import { formatDateTime } from "../../../../../configData";
+import { useGetByRtoUserNameQuery } from "../../../../Services/user";
 
 const Entries = () => {
   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
@@ -13,7 +14,14 @@ const Entries = () => {
   let distributer: any = `distributer_id=${userInfo?.userId}`;
   let subDistributer: any = `subdistributer_id=${userInfo?.userId}`;
   let urlStringAdmin: any = `dealerName=`;
-  let rto: any = `rto=${userInfo?.rto}`;
+  const rtoUser = userInfo?.username
+  const {
+    data: rtoData,
+    error: rtoError,
+    isLoading: rtoLoading,
+    refetch: rtoRefetch,
+  } = useGetByRtoUserNameQuery(rtoUser);
+  let rto: any = `rto=${rtoData?.['data']?.data?.[0]?.rto_no}`;
   let finalQUery =
     userInfo?.role_id === "2"
       ? distributer
@@ -21,13 +29,13 @@ const Entries = () => {
         ? subDistributer
         : userInfo?.role_id === "4"
           ? dealerName : userInfo?.role_id === "7" ? rto : urlStringAdmin;
-
   const {
     data: registerrationSaleData,
     error: registerationError,
     isLoading: registerrationLoding,
     refetch: registerrationRefetch,
   } = useGetRegistrationsSaleByUserQuery(finalQUery);
+
 
   React.useEffect(() => {
     registerrationRefetch();
@@ -44,7 +52,8 @@ const Entries = () => {
     { key: "phoneo", label: "Phone Number" },
     { key: "rto" },
     { key: "manufacturer_name" },
-    { key: "edit", label: "Edit" },
+    ...(userInfo?.role_id === "2" ? [{ key: "edit", label: "Edit" }] : []),
+    {key: "status", label: "Status"},
   ];
 
   const scopedColumns = {
@@ -63,7 +72,7 @@ const Entries = () => {
         <td>
           {userInfo?.role_id === "2" ? (
             <Link to={`/dashboard/${item?.id}`}>Edit</Link>
-          ) : "Contact Distributor"} 
+          ) : "Contact Distributor"}
         </td>
       );
     },

@@ -113,6 +113,7 @@ const NewEntry = ({
       }
     }
   }, [formData.vehiclemake, formData.vehiclemodel, setValue]);
+      console.log(byDealerUser?.["data"]?.data?.[0], "byDealerUser342523")
 
   const onSubmit = async (data: any) => {
     try {
@@ -129,11 +130,13 @@ const NewEntry = ({
         return;
       }
 
+
       let tempData = {
         ...data,
         dealername: userInfo?.userId,
         dealer_id: userInfo?.userId,
-        distributor_id: byDealerUser?.["data"]?.data?.[0]?.distributor_id,
+        distributer_id: byDealerUser?.["data"]?.data?.[0]?.distributor_id,
+        subdistributer_id: byDealerUser?.["data"]?.data?.[0]?.sub_distributor_id,
         manufacturer_name: byDealerUser?.["data"]?.data?.[0]?.manufacturer_name,
         distributer_name: byDealerUser?.["data"]?.data?.[0]?.distributer_name,
       };
