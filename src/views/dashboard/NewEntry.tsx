@@ -291,7 +291,7 @@ const NewEntry = ({
                     : totalEachIitemValues?.hologram,
                 background: "#3399ff63",
               },
-            ].map((item, index) => (
+            ]?.map((item, index) => (
               <div className="col-sm-2">
                 <CCard
                   textColor={item.textColor}

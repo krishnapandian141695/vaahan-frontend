@@ -140,6 +140,8 @@ const ViewEntries = () => {
     }
   }
 
+  console.log(userInfo, "345234524")
+
   return (
     <>
       <>
@@ -1394,7 +1396,7 @@ const ViewEntries = () => {
                     <CButton className="btn btn-primary">New Entry</CButton>
                   </Link>
                 </td>
-                {data?.["data"]?.status !== "Approved" && userInfo?.role_id === 7 && (
+                {data?.["data"]?.status !== "Approved" && userInfo?.role_id === '7' && (
                   <td style={{ padding: 10 }}>
                     <CButton
                       name="Approve"

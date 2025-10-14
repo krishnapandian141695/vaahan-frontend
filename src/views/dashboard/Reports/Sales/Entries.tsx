@@ -21,7 +21,9 @@ const Entries = () => {
     isLoading: rtoLoading,
     refetch: rtoRefetch,
   } = useGetByRtoUserNameQuery(rtoUser);
-  let rto: any = `rto=${rtoData?.['data']?.data?.[0]?.rto_no}`;
+  const encodedRTO = encodeURIComponent(rtoData?.['data']?.data?.[0]?.rto_no);
+  let rto: any = `rto=${encodedRTO}`;
+  console.log(rto, "rto325434")
   let finalQUery =
     userInfo?.role_id === "2"
       ? distributer
