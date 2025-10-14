@@ -15,6 +15,8 @@ import qrcode from "../../../../assets/images/qr.png";
 import backgroundImg from "../../../../assets/images/background.jpg";
 import reflexImg from "../../../../assets/images/reflex.jpg";
 import tick from "../../../../assets/images/tick.png";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../Store";
 // import QRCode from "react-qrcode-logo";
 
 
@@ -22,7 +24,6 @@ const QRCodeComponent = ({ data }) => {
   if (!data || !data.data) {
     return <div className="p-2 text-gray-700">Loading QR code data...</div>;
   }
-
   const qrData = data.data;
   const registrationNumber = qrData.vehicleregno || "NO REG";
   const certificateNumber = qrData.certificateno || "NO CERT";
@@ -89,7 +90,7 @@ const QRCodeComponent = ({ data }) => {
 const ViewEntries = () => {
   const sectionToPrintRef = useRef(null);
   const navigate = useNavigate();
-  const [printed, setPrinted] = useState(false);
+   const userInfo = useSelector((state: RootState) => state.loginState.userInfo);
   const { id } = useParams();
   const { data, refetch } = useGetRegistrationsSaleByIdQuery(id);
   const [updateDealerStock] = useUpdateDealerStockSaleMutation();
@@ -798,7 +799,7 @@ const ViewEntries = () => {
             </>
           ) : (
             <table style={{ width: "800px", position: "relative" }}>
-              <img
+              {data?.["data"]?.manufacturer_name === "reflex" ? <img
                 src={reflexImg}
                 style={{
                   position: "absolute",
@@ -808,7 +809,7 @@ const ViewEntries = () => {
                   opacity: ".3",
                   left: "0px",
                 }}
-              />
+              /> : null}
               <tbody>
                 <tr>
                   <td>
@@ -1393,7 +1394,7 @@ const ViewEntries = () => {
                     <CButton className="btn btn-primary">New Entry</CButton>
                   </Link>
                 </td>
-                {data?.["data"]?.status !== "Approved" && (
+                {data?.["data"]?.status !== "Approved" && userInfo?.role_id === 7 && (
                   <td style={{ padding: 10 }}>
                     <CButton
                       name="Approve"

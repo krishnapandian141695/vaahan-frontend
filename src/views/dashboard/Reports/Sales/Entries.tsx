@@ -28,7 +28,7 @@ const Entries = () => {
       : userInfo?.role_id === "3"
         ? subDistributer
         : userInfo?.role_id === "4"
-          ? dealerName : userInfo?.role_id === "7" ? rto : urlStringAdmin;
+          ? dealerName : userInfo?.role_id === "7" ? decodeURIComponent(rto) : urlStringAdmin;
   const {
     data: registerrationSaleData,
     error: registerationError,
@@ -73,6 +73,17 @@ const Entries = () => {
           {userInfo?.role_id === "2" ? (
             <Link to={`/dashboard/${item?.id}`}>Edit</Link>
           ) : "Contact Distributor"}
+        </td>
+      );
+    },
+    status: (item) => {
+      return (
+        <td>
+          {item?.status === "Approved" ? (
+            "Approved"
+          ) : (
+            "Pending"
+          )}
         </td>
       );
     },
